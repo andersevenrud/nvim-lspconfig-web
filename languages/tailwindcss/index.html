@@ -1218,6 +1218,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1396,6 +1409,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1427,45 +1453,42 @@ https://aur.archlinux.org/packages/tailwindcss-language-server/</p>
 <h2 id="setup">Setup</h2>
 <pre><code class="language-lua">require'lspconfig'.tailwindcss.setup{}
 </code></pre>
-<p><strong>Commands and default values:</strong></p>
-<pre><code class="language-lua">  Commands:
-
-  Default Values:
-    cmd = { &quot;tailwindcss-language-server&quot;, &quot;--stdio&quot; }
-    filetypes = { &quot;aspnetcorerazor&quot;, &quot;astro&quot;, &quot;astro-markdown&quot;, &quot;blade&quot;, &quot;django-html&quot;, &quot;edge&quot;, &quot;eelixir&quot;, &quot;ejs&quot;, &quot;erb&quot;, &quot;eruby&quot;, &quot;gohtml&quot;, &quot;haml&quot;, &quot;handlebars&quot;, &quot;hbs&quot;, &quot;html&quot;, &quot;html-eex&quot;, &quot;jade&quot;, &quot;leaf&quot;, &quot;liquid&quot;, &quot;markdown&quot;, &quot;mdx&quot;, &quot;mustache&quot;, &quot;njk&quot;, &quot;nunjucks&quot;, &quot;php&quot;, &quot;razor&quot;, &quot;slim&quot;, &quot;twig&quot;, &quot;css&quot;, &quot;less&quot;, &quot;postcss&quot;, &quot;sass&quot;, &quot;scss&quot;, &quot;stylus&quot;, &quot;sugarss&quot;, &quot;javascript&quot;, &quot;javascriptreact&quot;, &quot;reason&quot;, &quot;rescript&quot;, &quot;typescript&quot;, &quot;typescriptreact&quot;, &quot;vue&quot;, &quot;svelte&quot; }
-    init_options = {
-      userLanguages = {
-        eelixir = &quot;html-eex&quot;,
-        eruby = &quot;erb&quot;
-      }
+<h3 id="default-values">Default Values</h3>
+<pre><code class="language-lua">  cmd = { &quot;tailwindcss-language-server&quot;, &quot;--stdio&quot; }
+  filetypes = { &quot;aspnetcorerazor&quot;, &quot;astro&quot;, &quot;astro-markdown&quot;, &quot;blade&quot;, &quot;django-html&quot;, &quot;edge&quot;, &quot;eelixir&quot;, &quot;ejs&quot;, &quot;erb&quot;, &quot;eruby&quot;, &quot;gohtml&quot;, &quot;haml&quot;, &quot;handlebars&quot;, &quot;hbs&quot;, &quot;html&quot;, &quot;html-eex&quot;, &quot;jade&quot;, &quot;leaf&quot;, &quot;liquid&quot;, &quot;markdown&quot;, &quot;mdx&quot;, &quot;mustache&quot;, &quot;njk&quot;, &quot;nunjucks&quot;, &quot;php&quot;, &quot;razor&quot;, &quot;slim&quot;, &quot;twig&quot;, &quot;css&quot;, &quot;less&quot;, &quot;postcss&quot;, &quot;sass&quot;, &quot;scss&quot;, &quot;stylus&quot;, &quot;sugarss&quot;, &quot;javascript&quot;, &quot;javascriptreact&quot;, &quot;reason&quot;, &quot;rescript&quot;, &quot;typescript&quot;, &quot;typescriptreact&quot;, &quot;vue&quot;, &quot;svelte&quot; }
+  init_options = {
+    userLanguages = {
+      eelixir = &quot;html-eex&quot;,
+      eruby = &quot;erb&quot;
     }
-    on_new_config = function(new_config)
-          if not new_config.settings then
-            new_config.settings = {}
-          end
-          if not new_config.settings.editor then
-            new_config.settings.editor = {}
-          end
-          if not new_config.settings.editor.tabSize then
-            -- set tab size for hover
-            new_config.settings.editor.tabSize = vim.lsp.util.get_effective_tabstop()
-          end
-        end,
-    root_dir = root_pattern('tailwind.config.js', 'tailwind.config.ts', 'postcss.config.js', 'postcss.config.ts', 'package.json', 'node_modules', '.git')
-    settings = {
-      tailwindCSS = {
-        lint = {
-          cssConflict = &quot;warning&quot;,
-          invalidApply = &quot;error&quot;,
-          invalidConfigPath = &quot;error&quot;,
-          invalidScreen = &quot;error&quot;,
-          invalidTailwindDirective = &quot;error&quot;,
-          invalidVariant = &quot;error&quot;,
-          recommendedVariantOrder = &quot;warning&quot;
-        },
-        validate = true
-      }
+  }
+  on_new_config = function(new_config)
+        if not new_config.settings then
+          new_config.settings = {}
+        end
+        if not new_config.settings.editor then
+          new_config.settings.editor = {}
+        end
+        if not new_config.settings.editor.tabSize then
+          -- set tab size for hover
+          new_config.settings.editor.tabSize = vim.lsp.util.get_effective_tabstop()
+        end
+      end,
+  root_dir = root_pattern('tailwind.config.js', 'tailwind.config.ts', 'postcss.config.js', 'postcss.config.ts', 'package.json', 'node_modules', '.git')
+  settings = {
+    tailwindCSS = {
+      lint = {
+        cssConflict = &quot;warning&quot;,
+        invalidApply = &quot;error&quot;,
+        invalidConfigPath = &quot;error&quot;,
+        invalidScreen = &quot;error&quot;,
+        invalidTailwindDirective = &quot;error&quot;,
+        invalidVariant = &quot;error&quot;,
+        recommendedVariantOrder = &quot;warning&quot;
+      },
+      validate = true
     }
+  }
 </code></pre>
                 
               

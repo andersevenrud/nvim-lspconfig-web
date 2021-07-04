@@ -1026,6 +1026,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1396,6 +1409,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1420,15 +1446,12 @@ functionality that mimics DrRacket's code tools as closely as possible.</p>
 <h2 id="setup">Setup</h2>
 <pre><code class="language-lua">require'lspconfig'.racket_langserver.setup{}
 </code></pre>
-<p><strong>Commands and default values:</strong></p>
-<pre><code class="language-lua">  Commands:
-
-  Default Values:
-    cmd = { &quot;racket&quot;, &quot;--lib&quot;, &quot;racket-langserver&quot; }
-    filetypes = { &quot;racket&quot;, &quot;scheme&quot; }
-    root_dir = function(filename)
-          return util.root_pattern(unpack(root_files))(filename) or util.path.dirname(filename)
-        end,
+<h3 id="default-values">Default Values</h3>
+<pre><code class="language-lua">  cmd = { &quot;racket&quot;, &quot;--lib&quot;, &quot;racket-langserver&quot; }
+  filetypes = { &quot;racket&quot;, &quot;scheme&quot; }
+  root_dir = function(filename)
+        return util.root_pattern(unpack(root_files))(filename) or util.path.dirname(filename)
+      end,
 </code></pre>
                 
               

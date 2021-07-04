@@ -1038,6 +1038,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1396,6 +1409,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1433,16 +1459,13 @@ Take a look at <a href="https://github.com/rescript-lang/rescript-vscode#use-wit
 <h2 id="setup">Setup</h2>
 <pre><code class="language-lua">require'lspconfig'.rescriptls.setup{}
 </code></pre>
-<p><strong>Commands and default values:</strong></p>
-<pre><code class="language-lua">  Commands:
-
-  Default Values:
-    cmd = {}
-    filetypes = { &quot;rescript&quot; }
-    root_dir = function(startpath)
-        return M.search_ancestors(startpath, matcher)
-      end
-    settings = {}
+<h3 id="default-values">Default Values</h3>
+<pre><code class="language-lua">  cmd = {}
+  filetypes = { &quot;rescript&quot; }
+  root_dir = function(startpath)
+      return M.search_ancestors(startpath, matcher)
+    end
+  settings = {}
 </code></pre>
                 
               

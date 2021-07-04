@@ -870,6 +870,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1396,6 +1409,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1421,16 +1447,13 @@ opam install ocaml-lsp-server
 <h2 id="setup">Setup</h2>
 <pre><code class="language-lua">require'lspconfig'.ocamllsp.setup{}
 </code></pre>
-<p><strong>Commands and default values:</strong></p>
-<pre><code class="language-lua">  Commands:
-
-  Default Values:
-    cmd = { &quot;ocamllsp&quot; }
-    filetypes = { &quot;ocaml&quot;, &quot;reason&quot;, &quot;menhir&quot;, &quot;ocamlinterface&quot;, &quot;ocamllex&quot; }
-    get_language_id = function(_, ftype)
-      return language_id_of[ftype]
-    end
-    root_dir = root_pattern(&quot;*.opam&quot;, &quot;esy.json&quot;, &quot;package.json&quot;, &quot;.git&quot;)
+<h3 id="default-values">Default Values</h3>
+<pre><code class="language-lua">  cmd = { &quot;ocamllsp&quot; }
+  filetypes = { &quot;ocaml&quot;, &quot;ocamllex&quot;, &quot;menhir&quot;, &quot;reason&quot;, &quot;ocamlinterface&quot; }
+  get_language_id = function(_, ftype)
+    return language_id_of[ftype]
+  end
+  root_dir = root_pattern(&quot;*.opam&quot;, &quot;esy.json&quot;, &quot;package.json&quot;, &quot;.git&quot;)
 </code></pre>
                 
               

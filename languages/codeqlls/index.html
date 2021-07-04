@@ -426,6 +426,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1396,6 +1409,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1419,27 +1445,24 @@ https://github.com/github/codeql-cli-binaries</p>
 <h2 id="setup">Setup</h2>
 <pre><code class="language-lua">require'lspconfig'.codeqlls.setup{}
 </code></pre>
-<p><strong>Commands and default values:</strong></p>
-<pre><code class="language-lua">  Commands:
-
-  Default Values:
-    before_init = function(initialize_params)
-          initialize_params[&quot;workspaceFolders&quot;] = {
-            {
-              name = &quot;workspace&quot;,
-              uri = initialize_params[&quot;rootUri&quot;],
-            },
-          }
-        end,
-    cmd = { &quot;codeql&quot;, &quot;execute&quot;, &quot;language-server&quot;, &quot;--check-errors&quot;, &quot;ON_CHANGE&quot;, &quot;-q&quot; }
-    filetypes = { &quot;ql&quot; }
-    log_level = 2
-    root_dir = function(fname)
-          return root_pattern(fname) or util.path.dirname(fname)
-        end,
-    settings = {
-      search_path = &quot;list containing all search paths, eg: '~/codeql-home/codeql-repo'&quot;
-    }
+<h3 id="default-values">Default Values</h3>
+<pre><code class="language-lua">  before_init = function(initialize_params)
+        initialize_params[&quot;workspaceFolders&quot;] = {
+          {
+            name = &quot;workspace&quot;,
+            uri = initialize_params[&quot;rootUri&quot;],
+          },
+        }
+      end,
+  cmd = { &quot;codeql&quot;, &quot;execute&quot;, &quot;language-server&quot;, &quot;--check-errors&quot;, &quot;ON_CHANGE&quot;, &quot;-q&quot; }
+  filetypes = { &quot;ql&quot; }
+  log_level = 2
+  root_dir = function(fname)
+        return root_pattern(fname) or util.path.dirname(fname)
+      end,
+  settings = {
+    search_path = &quot;list containing all search paths, eg: '~/codeql-home/codeql-repo'&quot;
+  }
 </code></pre>
                 
               

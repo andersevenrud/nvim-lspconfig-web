@@ -786,6 +786,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1752,6 +1765,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2163,21 +2189,18 @@ a hard-coded path to the server.</p>
 <h2 id="setup">Setup</h2>
 <pre><code class="language-lua">require'lspconfig'.julials.setup{}
 </code></pre>
-<p><strong>Commands and default values:</strong></p>
-<pre><code class="language-lua">  Commands:
-
-  Default Values:
-    cmd = { &quot;julia&quot;, &quot;--startup-file=no&quot;, &quot;--history-file=no&quot;, &quot;-e&quot;, '    using Pkg;\n    Pkg.instantiate()\n    using LanguageServer; using SymbolServer;\n    depot_path = get(ENV, &quot;JULIA_DEPOT_PATH&quot;, &quot;&quot;)\n    project_path = dirname(something(Base.current_project(pwd()), Base.load_path_expand(LOAD_PATH[2])))\n    # Make sure that we only load packages from this environment specifically.\n    @info &quot;Running language server&quot; env=Base.load_path()[1] pwd() project_path depot_path\n    server = LanguageServer.LanguageServerInstance(stdin, stdout, project_path, depot_path);\n    server.runlinter = true;\n    run(server);\n  ' }
-    filetypes = { &quot;julia&quot; }
-    on_new_config = function(new_config, _)
-          local server_path = vim.fn.system &quot;julia --startup-file=no -q -e 'print(Base.find_package(\&quot;LanguageServer\&quot;))'&quot;
-          local new_cmd = vim.deepcopy(cmd)
-          table.insert(new_cmd, 2, &quot;--project=&quot; .. server_path:sub(0, -19))
-          new_config.cmd = new_cmd
-        end,
-    root_dir = function(fname)
-          return util.find_git_ancestor(fname) or vim.fn.getcwd()
-        end,
+<h3 id="default-values">Default Values</h3>
+<pre><code class="language-lua">  cmd = { &quot;julia&quot;, &quot;--startup-file=no&quot;, &quot;--history-file=no&quot;, &quot;-e&quot;, '    using Pkg;\n    Pkg.instantiate()\n    using LanguageServer; using SymbolServer;\n    depot_path = get(ENV, &quot;JULIA_DEPOT_PATH&quot;, &quot;&quot;)\n    project_path = dirname(something(Base.current_project(pwd()), Base.load_path_expand(LOAD_PATH[2])))\n    # Make sure that we only load packages from this environment specifically.\n    @info &quot;Running language server&quot; env=Base.load_path()[1] pwd() project_path depot_path\n    server = LanguageServer.LanguageServerInstance(stdin, stdout, project_path, depot_path);\n    server.runlinter = true;\n    run(server);\n  ' }
+  filetypes = { &quot;julia&quot; }
+  on_new_config = function(new_config, _)
+        local server_path = vim.fn.system &quot;julia --startup-file=no -q -e 'print(Base.find_package(\&quot;LanguageServer\&quot;))'&quot;
+        local new_cmd = vim.deepcopy(cmd)
+        table.insert(new_cmd, 2, &quot;--project=&quot; .. server_path:sub(0, -19))
+        new_config.cmd = new_cmd
+      end,
+  root_dir = function(fname)
+        return util.find_git_ancestor(fname) or vim.fn.getcwd()
+      end,
 </code></pre>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="available-settings">Available settings</h2>

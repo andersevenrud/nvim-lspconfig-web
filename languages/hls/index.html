@@ -702,6 +702,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1396,6 +1409,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1417,25 +1443,22 @@
 <h2 id="setup">Setup</h2>
 <pre><code class="language-lua">require'lspconfig'.hls.setup{}
 </code></pre>
-<p><strong>Commands and default values:</strong></p>
-<pre><code class="language-lua">  Commands:
-
-  Default Values:
-    cmd = { &quot;haskell-language-server-wrapper&quot;, &quot;--lsp&quot; }
-    filetypes = { &quot;haskell&quot;, &quot;lhaskell&quot; }
-    lspinfo = function(cfg)
-          -- return &quot;specific&quot;
-          if cfg.settings.languageServerHaskell.logFile or false then
-            return &quot;logfile: &quot; .. cfg.settings.languageServerHaskell.logFile
-          end
-          return &quot;&quot;
-        end,
-    root_dir = root_pattern(&quot;*.cabal&quot;, &quot;stack.yaml&quot;, &quot;cabal.project&quot;, &quot;package.yaml&quot;, &quot;hie.yaml&quot;)
-    settings = {
-      languageServerHaskell = {
-        formattingProvider = &quot;ormolu&quot;
-      }
+<h3 id="default-values">Default Values</h3>
+<pre><code class="language-lua">  cmd = { &quot;haskell-language-server-wrapper&quot;, &quot;--lsp&quot; }
+  filetypes = { &quot;haskell&quot;, &quot;lhaskell&quot; }
+  lspinfo = function(cfg)
+        -- return &quot;specific&quot;
+        if cfg.settings.languageServerHaskell.logFile or false then
+          return &quot;logfile: &quot; .. cfg.settings.languageServerHaskell.logFile
+        end
+        return &quot;&quot;
+      end,
+  root_dir = root_pattern(&quot;*.cabal&quot;, &quot;stack.yaml&quot;, &quot;cabal.project&quot;, &quot;package.yaml&quot;, &quot;hie.yaml&quot;)
+  settings = {
+    languageServerHaskell = {
+      formattingProvider = &quot;ormolu&quot;
     }
+  }
 </code></pre>
                 
               

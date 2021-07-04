@@ -774,6 +774,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1451,6 +1464,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1541,16 +1567,13 @@
 <h2 id="setup">Setup</h2>
 <pre><code class="language-lua">require'lspconfig'.jsonls.setup{}
 </code></pre>
-<p><strong>Commands and default values:</strong></p>
-<pre><code class="language-lua">  Commands:
-
-  Default Values:
-    cmd = { &quot;vscode-json-language-server&quot;, &quot;--stdio&quot; }
-    filetypes = { &quot;json&quot; }
-    init_options = {
-      provideFormatter = true
-    }
-    root_dir = root_pattern(&quot;.git&quot;, vim.fn.getcwd())
+<h3 id="default-values">Default Values</h3>
+<pre><code class="language-lua">  cmd = { &quot;vscode-json-language-server&quot;, &quot;--stdio&quot; }
+  filetypes = { &quot;json&quot; }
+  init_options = {
+    provideFormatter = true
+  }
+  root_dir = root_pattern(&quot;.git&quot;, vim.fn.getcwd())
 </code></pre>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="available-settings">Available settings</h2>

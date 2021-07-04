@@ -1254,6 +1254,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1396,6 +1409,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1418,13 +1444,10 @@ Installation instructions can be found in https://github.com/terraform-linters/t
 <h2 id="setup">Setup</h2>
 <pre><code class="language-lua">require'lspconfig'.tflint.setup{}
 </code></pre>
-<p><strong>Commands and default values:</strong></p>
-<pre><code class="language-lua">  Commands:
-
-  Default Values:
-    cmd = { &quot;tflint&quot;, &quot;--langserver&quot; }
-    filetypes = { &quot;terraform&quot; }
-    root_dir = root_pattern(&quot;.terraform&quot;, &quot;.git&quot;, &quot;.tflint.hcl&quot;)
+<h3 id="default-values">Default Values</h3>
+<pre><code class="language-lua">  cmd = { &quot;tflint&quot;, &quot;--langserver&quot; }
+  filetypes = { &quot;terraform&quot; }
+  root_dir = root_pattern(&quot;.terraform&quot;, &quot;.git&quot;, &quot;.tflint.hcl&quot;)
 </code></pre>
                 
               

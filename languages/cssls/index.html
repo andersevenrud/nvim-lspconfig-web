@@ -450,6 +450,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1396,6 +1409,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1428,24 +1454,21 @@ require'lspconfig'.cssls.setup {
 <h2 id="setup">Setup</h2>
 <pre><code class="language-lua">require'lspconfig'.cssls.setup{}
 </code></pre>
-<p><strong>Commands and default values:</strong></p>
-<pre><code class="language-lua">  Commands:
-
-  Default Values:
-    cmd = { &quot;vscode-css-language-server&quot;, &quot;--stdio&quot; }
-    filetypes = { &quot;css&quot;, &quot;scss&quot;, &quot;less&quot; }
-    root_dir = root_pattern(&quot;package.json&quot;)
-    settings = {
-      css = {
-        validate = true
-      },
-      less = {
-        validate = true
-      },
-      scss = {
-        validate = true
-      }
+<h3 id="default-values">Default Values</h3>
+<pre><code class="language-lua">  cmd = { &quot;vscode-css-language-server&quot;, &quot;--stdio&quot; }
+  filetypes = { &quot;css&quot;, &quot;scss&quot;, &quot;less&quot; }
+  root_dir = root_pattern(&quot;package.json&quot;)
+  settings = {
+    css = {
+      validate = true
+    },
+    less = {
+      validate = true
+    },
+    scss = {
+      validate = true
     }
+  }
 </code></pre>
                 
               

@@ -1014,6 +1014,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1472,6 +1485,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1577,14 +1603,11 @@ install.packages("languageserver")
 <h2 id="setup">Setup</h2>
 <pre><code class="language-lua">require'lspconfig'.r_language_server.setup{}
 </code></pre>
-<p><strong>Commands and default values:</strong></p>
-<pre><code class="language-lua">  Commands:
-
-  Default Values:
-    cmd = { &quot;R&quot;, &quot;--slave&quot;, &quot;-e&quot;, &quot;languageserver::run()&quot; }
-    filetypes = { &quot;r&quot;, &quot;rmd&quot; }
-    log_level = 2
-    root_dir = root_pattern(&quot;.git&quot;) or os_homedir
+<h3 id="default-values">Default Values</h3>
+<pre><code class="language-lua">  cmd = { &quot;R&quot;, &quot;--slave&quot;, &quot;-e&quot;, &quot;languageserver::run()&quot; }
+  filetypes = { &quot;r&quot;, &quot;rmd&quot; }
+  log_level = 2
+  root_dir = root_pattern(&quot;.git&quot;) or os_homedir
 </code></pre>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="available-settings">Available settings</h2>

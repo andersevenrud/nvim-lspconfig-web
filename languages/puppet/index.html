@@ -942,6 +942,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1396,6 +1409,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1435,13 +1461,10 @@
 <h2 id="setup">Setup</h2>
 <pre><code class="language-lua">require'lspconfig'.puppet.setup{}
 </code></pre>
-<p><strong>Commands and default values:</strong></p>
-<pre><code class="language-lua">  Commands:
-
-  Default Values:
-    cmd = { &quot;puppet-languageserver&quot;, &quot;--stdio&quot; }
-    filetypes = { &quot;puppet&quot; }
-    root_dir = root_pattern(&quot;manifests&quot;, &quot;.puppet-lint.rc&quot;, &quot;hiera.yaml&quot;, &quot;.git&quot;)
+<h3 id="default-values">Default Values</h3>
+<pre><code class="language-lua">  cmd = { &quot;puppet-languageserver&quot;, &quot;--stdio&quot; }
+  filetypes = { &quot;puppet&quot; }
+  root_dir = root_pattern(&quot;manifests&quot;, &quot;.puppet-lint.rc&quot;, &quot;hiera.yaml&quot;, &quot;.git&quot;)
 </code></pre>
                 
               

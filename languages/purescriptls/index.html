@@ -954,6 +954,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1556,6 +1569,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1739,13 +1765,10 @@
 <h2 id="setup">Setup</h2>
 <pre><code class="language-lua">require'lspconfig'.purescriptls.setup{}
 </code></pre>
-<p><strong>Commands and default values:</strong></p>
-<pre><code class="language-lua">  Commands:
-
-  Default Values:
-    cmd = { &quot;purescript-language-server&quot;, &quot;--stdio&quot; }
-    filetypes = { &quot;purescript&quot; }
-    root_dir = root_pattern(&quot;spago.dhall, bower.json&quot;)
+<h3 id="default-values">Default Values</h3>
+<pre><code class="language-lua">  cmd = { &quot;purescript-language-server&quot;, &quot;--stdio&quot; }
+  filetypes = { &quot;purescript&quot; }
+  root_dir = root_pattern(&quot;spago.dhall, bower.json&quot;)
 </code></pre>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="available-settings">Available settings</h2>

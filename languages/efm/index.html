@@ -534,6 +534,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1396,6 +1409,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1417,12 +1443,9 @@
 <h2 id="setup">Setup</h2>
 <pre><code class="language-lua">require'lspconfig'.efm.setup{}
 </code></pre>
-<p><strong>Commands and default values:</strong></p>
-<pre><code class="language-lua">  Commands:
-
-  Default Values:
-    cmd = { &quot;efm-langserver&quot; }
-    root_dir = util.root_pattern(&quot;.git&quot;)(fname) or util.path.dirname(fname)
+<h3 id="default-values">Default Values</h3>
+<pre><code class="language-lua">  cmd = { &quot;efm-langserver&quot; }
+  root_dir = util.root_pattern(&quot;.git&quot;)(fname) or util.path.dirname(fname)
 </code></pre>
                 
               

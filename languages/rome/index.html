@@ -1074,6 +1074,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1396,6 +1409,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1419,13 +1445,10 @@
 <h2 id="setup">Setup</h2>
 <pre><code class="language-lua">require'lspconfig'.rome.setup{}
 </code></pre>
-<p><strong>Commands and default values:</strong></p>
-<pre><code class="language-lua">  Commands:
-
-  Default Values:
-    cmd = { &quot;rome&quot;, &quot;lsp&quot; }
-    filetypes = { &quot;javascript&quot;, &quot;javascriptreact&quot;, &quot;json&quot;, &quot;typescript&quot;, &quot;typescript.tsx&quot;, &quot;typescriptreact&quot; }
-    root_dir = root_pattern('package.json', 'node_modules', '.git') or dirname
+<h3 id="default-values">Default Values</h3>
+<pre><code class="language-lua">  cmd = { &quot;rome&quot;, &quot;lsp&quot; }
+  filetypes = { &quot;javascript&quot;, &quot;javascriptreact&quot;, &quot;json&quot;, &quot;typescript&quot;, &quot;typescript.tsx&quot;, &quot;typescriptreact&quot; }
+  root_dir = root_pattern('package.json', 'node_modules', '.git') or dirname
 </code></pre>
                 
               

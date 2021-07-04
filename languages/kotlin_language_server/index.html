@@ -798,6 +798,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1535,6 +1548,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1701,13 +1727,10 @@ https://github.com/fwcd/kotlin-language-server
 <h2 id="setup">Setup</h2>
 <pre><code class="language-lua">require'lspconfig'.kotlin_language_server.setup{}
 </code></pre>
-<p><strong>Commands and default values:</strong></p>
-<pre><code class="language-lua">  Commands:
-
-  Default Values:
-    cmd = { &quot;kotlin-language-server&quot; }
-    filetypes = { &quot;kotlin&quot; }
-    root_dir = root_pattern(&quot;settings.gradle&quot;)
+<h3 id="default-values">Default Values</h3>
+<pre><code class="language-lua">  cmd = { &quot;kotlin-language-server&quot; }
+  filetypes = { &quot;kotlin&quot; }
+  root_dir = root_pattern(&quot;settings.gradle&quot;)
 </code></pre>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="available-settings">Available settings</h2>

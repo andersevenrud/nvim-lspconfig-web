@@ -1170,6 +1170,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1486,6 +1499,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1608,14 +1634,11 @@
 <h2 id="setup">Setup</h2>
 <pre><code class="language-lua">require'lspconfig'.stylelint_lsp.setup{}
 </code></pre>
-<p><strong>Commands and default values:</strong></p>
-<pre><code class="language-lua">  Commands:
-
-  Default Values:
-    cmd = { &quot;stylelint-lsp&quot;, &quot;--stdio&quot; }
-    filetypes = { &quot;css&quot;, &quot;less&quot;, &quot;scss&quot;, &quot;sugarss&quot;, &quot;vue&quot;, &quot;wxss&quot;, &quot;javascript&quot;, &quot;javascriptreact&quot;, &quot;typescript&quot;, &quot;typescriptreact&quot; }
-    root_dir =  root_pattern('.stylelintrc', 'package.json') 
-    settings = {}
+<h3 id="default-values">Default Values</h3>
+<pre><code class="language-lua">  cmd = { &quot;stylelint-lsp&quot;, &quot;--stdio&quot; }
+  filetypes = { &quot;css&quot;, &quot;less&quot;, &quot;scss&quot;, &quot;sugarss&quot;, &quot;vue&quot;, &quot;wxss&quot;, &quot;javascript&quot;, &quot;javascriptreact&quot;, &quot;typescript&quot;, &quot;typescriptreact&quot; }
+  root_dir =  root_pattern('.stylelintrc', 'package.json') 
+  settings = {}
 </code></pre>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="available-settings">Available settings</h2>

@@ -378,6 +378,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1396,6 +1409,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1434,13 +1460,10 @@ lspconfig.ccls.setup {
 <h2 id="setup">Setup</h2>
 <pre><code class="language-lua">require'lspconfig'.ccls.setup{}
 </code></pre>
-<p><strong>Commands and default values:</strong></p>
-<pre><code class="language-lua">  Commands:
-
-  Default Values:
-    cmd = { &quot;ccls&quot; }
-    filetypes = { &quot;c&quot;, &quot;cpp&quot;, &quot;objc&quot;, &quot;objcpp&quot; }
-    root_dir = root_pattern(&quot;compile_commands.json&quot;, &quot;compile_flags.txt&quot;, &quot;.git&quot;) or dirname
+<h3 id="default-values">Default Values</h3>
+<pre><code class="language-lua">  cmd = { &quot;ccls&quot; }
+  filetypes = { &quot;c&quot;, &quot;cpp&quot;, &quot;objc&quot;, &quot;objcpp&quot; }
+  root_dir = root_pattern(&quot;compile_commands.json&quot;, &quot;compile_flags.txt&quot;, &quot;.git&quot;) or dirname
 </code></pre>
                 
               

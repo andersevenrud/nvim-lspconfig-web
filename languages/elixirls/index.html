@@ -546,6 +546,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1458,6 +1471,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1555,12 +1581,9 @@ chmod +x /path/to/elixir-ls/language_server.sh
 <h2 id="setup">Setup</h2>
 <pre><code class="language-lua">require'lspconfig'.elixirls.setup{}
 </code></pre>
-<p><strong>Commands and default values:</strong></p>
-<pre><code class="language-lua">  Commands:
-
-  Default Values:
-    filetypes = { &quot;elixir&quot;, &quot;eelixir&quot; }
-    root_dir = root_pattern(&quot;mix.exs&quot;, &quot;.git&quot;) or vim.loop.os_homedir()
+<h3 id="default-values">Default Values</h3>
+<pre><code class="language-lua">  filetypes = { &quot;elixir&quot;, &quot;eelixir&quot; }
+  root_dir = root_pattern(&quot;mix.exs&quot;, &quot;.git&quot;) or vim.loop.os_homedir()
 </code></pre>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="available-settings">Available settings</h2>

@@ -1086,6 +1086,26 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    Commands
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2011,6 +2031,26 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    Commands
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2648,17 +2688,17 @@
 <h2 id="setup">Setup</h2>
 <pre><code class="language-lua">require'lspconfig'.rust_analyzer.setup{}
 </code></pre>
-<p><strong>Commands and default values:</strong></p>
-<pre><code class="language-lua">  Commands:
-  - CargoReload: Reload current cargo workspace
-
-  Default Values:
-    cmd = { &quot;rust-analyzer&quot; }
-    filetypes = { &quot;rust&quot; }
-    root_dir = root_pattern(&quot;Cargo.toml&quot;, &quot;rust-project.json&quot;)
-    settings = {
-      [&quot;rust-analyzer&quot;] = {}
-    }
+<h3 id="commands">Commands</h3>
+<ul>
+<li>CargoReload: Reload current cargo workspace</li>
+</ul>
+<h3 id="default-values">Default Values</h3>
+<pre><code class="language-lua">  cmd = { &quot;rust-analyzer&quot; }
+  filetypes = { &quot;rust&quot; }
+  root_dir = root_pattern(&quot;Cargo.toml&quot;, &quot;rust-project.json&quot;)
+  settings = {
+    [&quot;rust-analyzer&quot;] = {}
+  }
 </code></pre>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="available-settings">Available settings</h2>

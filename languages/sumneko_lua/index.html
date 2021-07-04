@@ -1182,6 +1182,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1717,6 +1730,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2106,20 +2132,17 @@ require'lspconfig'.sumneko_lua.setup {
 <h2 id="setup">Setup</h2>
 <pre><code class="language-lua">require'lspconfig'.sumneko_lua.setup{}
 </code></pre>
-<p><strong>Commands and default values:</strong></p>
-<pre><code class="language-lua">  Commands:
-
-  Default Values:
-    filetypes = { &quot;lua&quot; }
-    log_level = 2
-    root_dir = root_pattern(&quot;.git&quot;) or bufdir
-    settings = {
-      Lua = {
-        telemetry = {
-          enable = false
-        }
+<h3 id="default-values">Default Values</h3>
+<pre><code class="language-lua">  filetypes = { &quot;lua&quot; }
+  log_level = 2
+  root_dir = root_pattern(&quot;.git&quot;) or bufdir
+  settings = {
+    Lua = {
+      telemetry = {
+        enable = false
       }
     }
+  }
 </code></pre>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="available-settings">Available settings</h2>

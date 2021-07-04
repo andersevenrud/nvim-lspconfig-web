@@ -810,6 +810,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1396,6 +1409,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1421,21 +1447,18 @@
 <h2 id="setup">Setup</h2>
 <pre><code class="language-lua">require'lspconfig'.lean3ls.setup{}
 </code></pre>
-<p><strong>Commands and default values:</strong></p>
-<pre><code class="language-lua">  Commands:
-
-  Default Values:
-    cmd = { &quot;lean-language-server&quot;, &quot;--stdio&quot;, &quot;--&quot;, &quot;-M&quot;, &quot;4096&quot;, &quot;-T&quot;, &quot;100000&quot; }
-    filetypes = { &quot;lean3&quot; }
-    on_new_config = function(config, root)
-          if not util.path.is_file(root .. &quot;/leanpkg.toml&quot;) then
-            return
-          end
-          if not config.cmd_cwd then
-            config.cmd_cwd = root
-          end
-        end,
-    root_dir = root_pattern(&quot;leanpkg.toml&quot;) or root_pattern(&quot;.git&quot;) or path.dirname
+<h3 id="default-values">Default Values</h3>
+<pre><code class="language-lua">  cmd = { &quot;lean-language-server&quot;, &quot;--stdio&quot;, &quot;--&quot;, &quot;-M&quot;, &quot;4096&quot;, &quot;-T&quot;, &quot;100000&quot; }
+  filetypes = { &quot;lean3&quot; }
+  on_new_config = function(config, root)
+        if not util.path.is_file(root .. &quot;/leanpkg.toml&quot;) then
+          return
+        end
+        if not config.cmd_cwd then
+          config.cmd_cwd = root
+        end
+      end,
+  root_dir = root_pattern(&quot;leanpkg.toml&quot;) or root_pattern(&quot;.git&quot;) or path.dirname
 </code></pre>
                 
               

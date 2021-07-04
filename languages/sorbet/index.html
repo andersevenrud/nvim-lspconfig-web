@@ -1122,6 +1122,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1396,6 +1409,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1421,13 +1447,10 @@ Sorbet up for new projects: https://sorbet.org/docs/adopting.</p>
 <h2 id="setup">Setup</h2>
 <pre><code class="language-lua">require'lspconfig'.sorbet.setup{}
 </code></pre>
-<p><strong>Commands and default values:</strong></p>
-<pre><code class="language-lua">  Commands:
-
-  Default Values:
-    cmd = { &quot;srb&quot;, &quot;tc&quot;, &quot;--lsp&quot; }
-    filetypes = { &quot;ruby&quot; }
-    root_dir = root_pattern(&quot;Gemfile&quot;, &quot;.git&quot;)
+<h3 id="default-values">Default Values</h3>
+<pre><code class="language-lua">  cmd = { &quot;srb&quot;, &quot;tc&quot;, &quot;--lsp&quot; }
+  filetypes = { &quot;ruby&quot; }
+  root_dir = root_pattern(&quot;Gemfile&quot;, &quot;.git&quot;)
 </code></pre>
                 
               

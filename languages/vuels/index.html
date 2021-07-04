@@ -1314,6 +1314,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1661,6 +1674,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1950,51 +1976,48 @@
 <h2 id="setup">Setup</h2>
 <pre><code class="language-lua">require'lspconfig'.vuels.setup{}
 </code></pre>
-<p><strong>Commands and default values:</strong></p>
-<pre><code class="language-lua">  Commands:
-
-  Default Values:
-    cmd = { &quot;vls&quot; }
-    filetypes = { &quot;vue&quot; }
-    init_options = {
-      config = {
-        css = {},
-        emmet = {},
-        html = {
-          suggest = {}
+<h3 id="default-values">Default Values</h3>
+<pre><code class="language-lua">  cmd = { &quot;vls&quot; }
+  filetypes = { &quot;vue&quot; }
+  init_options = {
+    config = {
+      css = {},
+      emmet = {},
+      html = {
+        suggest = {}
+      },
+      javascript = {
+        format = {}
+      },
+      stylusSupremacy = {},
+      typescript = {
+        format = {}
+      },
+      vetur = {
+        completion = {
+          autoImport = false,
+          tagCasing = &quot;kebab&quot;,
+          useScaffoldSnippets = false
         },
-        javascript = {
-          format = {}
-        },
-        stylusSupremacy = {},
-        typescript = {
-          format = {}
-        },
-        vetur = {
-          completion = {
-            autoImport = false,
-            tagCasing = &quot;kebab&quot;,
-            useScaffoldSnippets = false
+        format = {
+          defaultFormatter = {
+            js = &quot;none&quot;,
+            ts = &quot;none&quot;
           },
-          format = {
-            defaultFormatter = {
-              js = &quot;none&quot;,
-              ts = &quot;none&quot;
-            },
-            defaultFormatterOptions = {},
-            scriptInitialIndent = false,
-            styleInitialIndent = false
-          },
-          useWorkspaceDependencies = false,
-          validation = {
-            script = true,
-            style = true,
-            template = true
-          }
+          defaultFormatterOptions = {},
+          scriptInitialIndent = false,
+          styleInitialIndent = false
+        },
+        useWorkspaceDependencies = false,
+        validation = {
+          script = true,
+          style = true,
+          template = true
         }
       }
     }
-    root_dir = root_pattern(&quot;package.json&quot;, &quot;vue.config.js&quot;)
+  }
+  root_dir = root_pattern(&quot;package.json&quot;, &quot;vue.config.js&quot;)
 </code></pre>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="available-settings">Available settings</h2>

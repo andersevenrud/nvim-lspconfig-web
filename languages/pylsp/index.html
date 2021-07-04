@@ -990,6 +990,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1396,6 +1409,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1420,22 +1446,19 @@ Further instructions can be found in the <a href="https://github.com/python-lsp/
 <h2 id="setup">Setup</h2>
 <pre><code class="language-lua">require'lspconfig'.pylsp.setup{}
 </code></pre>
-<p><strong>Commands and default values:</strong></p>
-<pre><code class="language-lua">  Commands:
-
-  Default Values:
-    cmd = { &quot;pylsp&quot; }
-    filetypes = { &quot;python&quot; }
-    root_dir = function(fname)
-          local root_files = {
-            &quot;pyproject.toml&quot;,
-            &quot;setup.py&quot;,
-            &quot;setup.cfg&quot;,
-            &quot;requirements.txt&quot;,
-            &quot;Pipfile&quot;,
-          }
-          return util.root_pattern(unpack(root_files))(fname) or util.find_git_ancestor(fname) or util.path.dirname(fname)
-        end,
+<h3 id="default-values">Default Values</h3>
+<pre><code class="language-lua">  cmd = { &quot;pylsp&quot; }
+  filetypes = { &quot;python&quot; }
+  root_dir = function(fname)
+        local root_files = {
+          &quot;pyproject.toml&quot;,
+          &quot;setup.py&quot;,
+          &quot;setup.cfg&quot;,
+          &quot;requirements.txt&quot;,
+          &quot;Pipfile&quot;,
+        }
+        return util.root_pattern(unpack(root_files))(fname) or util.find_git_ancestor(fname) or util.path.dirname(fname)
+      end,
 </code></pre>
                 
               

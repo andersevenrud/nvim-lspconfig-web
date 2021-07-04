@@ -750,6 +750,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1941,6 +1954,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2516,27 +2542,24 @@ export WORKSPACE=$HOME/workspace
 <h2 id="setup">Setup</h2>
 <pre><code class="language-lua">require'lspconfig'.jdtls.setup{}
 </code></pre>
-<p><strong>Commands and default values:</strong></p>
-<pre><code class="language-lua">  Commands:
-
-  Default Values:
-    cmd = { &quot;vim.NIL/bin/java&quot;, &quot;-Declipse.application=org.eclipse.jdt.ls.core.id1&quot;, &quot;-Dosgi.bundles.defaultStartLevel=4&quot;, &quot;-Declipse.product=org.eclipse.jdt.ls.core.product&quot;, &quot;-Dlog.protocol=true&quot;, &quot;-Dlog.level=ALL&quot;, &quot;-Xms1g&quot;, &quot;-Xmx2G&quot;, &quot;-jar&quot;, &quot;vim.NIL&quot;, &quot;-configuration&quot;, &quot;vim.NIL&quot;, &quot;-data&quot;, &quot;vim.NIL&quot;, &quot;--add-modules=ALL-SYSTEM&quot;, &quot;--add-opens java.base/java.util=ALL-UNNAMED&quot;, &quot;--add-opens java.base/java.lang=ALL-UNNAMED&quot; }
-    cmd_env = {
-      GRADLE_HOME = &quot;/usr/share/java/gradle&quot;,
-      JAR = vim.NIL
-    }
-    filetypes = { &quot;java&quot; }
-    handlers = {
-      [&quot;language/status&quot;] = &lt;function 1&gt;,
-      [&quot;textDocument/codeAction&quot;] = &lt;function 2&gt;,
-      [&quot;textDocument/rename&quot;] = &lt;function 3&gt;,
-      [&quot;workspace/applyEdit&quot;] = &lt;function 4&gt;
-    }
-    init_options = {
-      jvm_args = {},
-      workspace = &quot;/home/anders/workspace&quot;
-    }
-    root_dir = root_pattern(&quot;.git&quot;)
+<h3 id="default-values">Default Values</h3>
+<pre><code class="language-lua">  cmd = { &quot;vim.NIL/bin/java&quot;, &quot;-Declipse.application=org.eclipse.jdt.ls.core.id1&quot;, &quot;-Dosgi.bundles.defaultStartLevel=4&quot;, &quot;-Declipse.product=org.eclipse.jdt.ls.core.product&quot;, &quot;-Dlog.protocol=true&quot;, &quot;-Dlog.level=ALL&quot;, &quot;-Xms1g&quot;, &quot;-Xmx2G&quot;, &quot;-jar&quot;, &quot;vim.NIL&quot;, &quot;-configuration&quot;, &quot;vim.NIL&quot;, &quot;-data&quot;, &quot;vim.NIL&quot;, &quot;--add-modules=ALL-SYSTEM&quot;, &quot;--add-opens java.base/java.util=ALL-UNNAMED&quot;, &quot;--add-opens java.base/java.lang=ALL-UNNAMED&quot; }
+  cmd_env = {
+    GRADLE_HOME = &quot;/usr/share/java/gradle&quot;,
+    JAR = vim.NIL
+  }
+  filetypes = { &quot;java&quot; }
+  handlers = {
+    [&quot;language/status&quot;] = &lt;function 1&gt;,
+    [&quot;textDocument/codeAction&quot;] = &lt;function 2&gt;,
+    [&quot;textDocument/rename&quot;] = &lt;function 3&gt;,
+    [&quot;workspace/applyEdit&quot;] = &lt;function 4&gt;
+  }
+  init_options = {
+    jvm_args = {},
+    workspace = &quot;/home/anders/workspace&quot;
+  }
+  root_dir = root_pattern(&quot;.git&quot;)
 </code></pre>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="available-settings">Available settings</h2>

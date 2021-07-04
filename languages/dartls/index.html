@@ -462,6 +462,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2137,6 +2150,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2899,20 +2925,17 @@
 <h2 id="setup">Setup</h2>
 <pre><code class="language-lua">require'lspconfig'.dartls.setup{}
 </code></pre>
-<p><strong>Commands and default values:</strong></p>
-<pre><code class="language-lua">  Commands:
-
-  Default Values:
-    cmd = { &quot;dart&quot;, &quot;/opt/dart-sdk/bin/snapshots/analysis_server.dart.snapshot&quot;, &quot;--lsp&quot; }
-    filetypes = { &quot;dart&quot; }
-    init_options = {
-      closingLabels = false,
-      flutterOutline = false,
-      onlyAnalyzeProjectsWithOpenFiles = false,
-      outline = false,
-      suggestFromUnimportedLibraries = true
-    }
-    root_dir = root_pattern(&quot;pubspec.yaml&quot;)
+<h3 id="default-values">Default Values</h3>
+<pre><code class="language-lua">  cmd = { &quot;dart&quot;, &quot;/opt/dart-sdk/bin/snapshots/analysis_server.dart.snapshot&quot;, &quot;--lsp&quot; }
+  filetypes = { &quot;dart&quot; }
+  init_options = {
+    closingLabels = false,
+    flutterOutline = false,
+    onlyAnalyzeProjectsWithOpenFiles = false,
+    outline = false,
+    suggestFromUnimportedLibraries = true
+  }
+  root_dir = root_pattern(&quot;pubspec.yaml&quot;)
 </code></pre>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="available-settings">Available settings</h2>

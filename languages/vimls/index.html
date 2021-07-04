@@ -1290,6 +1290,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1396,6 +1409,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1419,33 +1445,30 @@
 <h2 id="setup">Setup</h2>
 <pre><code class="language-lua">require'lspconfig'.vimls.setup{}
 </code></pre>
-<p><strong>Commands and default values:</strong></p>
-<pre><code class="language-lua">  Commands:
-
-  Default Values:
-    cmd = { &quot;vim-language-server&quot;, &quot;--stdio&quot; }
-    filetypes = { &quot;vim&quot; }
-    init_options = {
-      diagnostic = {
-        enable = true
-      },
-      indexes = {
-        count = 3,
-        gap = 100,
-        projectRootPatterns = { &quot;runtime&quot;, &quot;nvim&quot;, &quot;.git&quot;, &quot;autoload&quot;, &quot;plugin&quot; },
-        runtimepath = true
-      },
-      iskeyword = &quot;@,48-57,_,192-255,-#&quot;,
-      runtimepath = &quot;&quot;,
-      suggest = {
-        fromRuntimepath = true,
-        fromVimruntime = true
-      },
-      vimruntime = &quot;&quot;
-    }
-    root_dir = function(fname)
-          return util.find_git_ancestor(fname) or vim.fn.getcwd()
-        end,
+<h3 id="default-values">Default Values</h3>
+<pre><code class="language-lua">  cmd = { &quot;vim-language-server&quot;, &quot;--stdio&quot; }
+  filetypes = { &quot;vim&quot; }
+  init_options = {
+    diagnostic = {
+      enable = true
+    },
+    indexes = {
+      count = 3,
+      gap = 100,
+      projectRootPatterns = { &quot;runtime&quot;, &quot;nvim&quot;, &quot;.git&quot;, &quot;autoload&quot;, &quot;plugin&quot; },
+      runtimepath = true
+    },
+    iskeyword = &quot;@,48-57,_,192-255,-#&quot;,
+    runtimepath = &quot;&quot;,
+    suggest = {
+      fromRuntimepath = true,
+      fromVimruntime = true
+    },
+    vimruntime = &quot;&quot;
+  }
+  root_dir = function(fname)
+        return util.find_git_ancestor(fname) or vim.fn.getcwd()
+      end,
 </code></pre>
                 
               

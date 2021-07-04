@@ -678,6 +678,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1396,6 +1409,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1432,21 +1458,18 @@ specify it using the <code>init_options.displayArguments</code> setting.</p>
 <h2 id="setup">Setup</h2>
 <pre><code class="language-lua">require'lspconfig'.haxe_language_server.setup{}
 </code></pre>
-<p><strong>Commands and default values:</strong></p>
-<pre><code class="language-lua">  Commands:
-
-  Default Values:
-    cmd = { &quot;haxe-language-server&quot; }
-    filetypes = { &quot;haxe&quot; }
-    init_options = {
-      displayArguments = { &quot;build.hxml&quot; }
+<h3 id="default-values">Default Values</h3>
+<pre><code class="language-lua">  cmd = { &quot;haxe-language-server&quot; }
+  filetypes = { &quot;haxe&quot; }
+  init_options = {
+    displayArguments = { &quot;build.hxml&quot; }
+  }
+  root_dir = root_pattern(&quot;*.hxml&quot;)
+  settings = {
+    haxe = {
+      executable = &quot;haxe&quot;
     }
-    root_dir = root_pattern(&quot;*.hxml&quot;)
-    settings = {
-      haxe = {
-        executable = &quot;haxe&quot;
-      }
-    }
+  }
 </code></pre>
                 
               

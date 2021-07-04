@@ -1242,6 +1242,26 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    Commands
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1396,6 +1416,26 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    Commands
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1418,40 +1458,40 @@
 <h2 id="setup">Setup</h2>
 <pre><code class="language-lua">require'lspconfig'.texlab.setup{}
 </code></pre>
-<p><strong>Commands and default values:</strong></p>
-<pre><code class="language-lua">  Commands:
-  - TexlabBuild: Build the current buffer
-  - TexlabForward: Forward search from current position
-
-  Default Values:
-    cmd = { &quot;texlab&quot; }
-    filetypes = { &quot;tex&quot;, &quot;bib&quot; }
-    root_dir = vim's starting directory
-    settings = {
-      texlab = {
-        auxDirectory = &quot;.&quot;,
-        bibtexFormatter = &quot;texlab&quot;,
-        build = {
-          args = { &quot;-pdf&quot;, &quot;-interaction=nonstopmode&quot;, &quot;-synctex=1&quot;, &quot;%f&quot; },
-          executable = &quot;latexmk&quot;,
-          forwardSearchAfter = false,
-          onSave = false
-        },
-        chktex = {
-          onEdit = false,
-          onOpenAndSave = false
-        },
-        diagnosticsDelay = 300,
-        formatterLineLength = 80,
-        forwardSearch = {
-          args = {}
-        },
-        latexFormatter = &quot;latexindent&quot;,
-        latexindent = {
-          modifyLineBreaks = false
-        }
+<h3 id="commands">Commands</h3>
+<ul>
+<li>TexlabBuild: Build the current buffer</li>
+<li>TexlabForward: Forward search from current position</li>
+</ul>
+<h3 id="default-values">Default Values</h3>
+<pre><code class="language-lua">  cmd = { &quot;texlab&quot; }
+  filetypes = { &quot;tex&quot;, &quot;bib&quot; }
+  root_dir = vim's starting directory
+  settings = {
+    texlab = {
+      auxDirectory = &quot;.&quot;,
+      bibtexFormatter = &quot;texlab&quot;,
+      build = {
+        args = { &quot;-pdf&quot;, &quot;-interaction=nonstopmode&quot;, &quot;-synctex=1&quot;, &quot;%f&quot; },
+        executable = &quot;latexmk&quot;,
+        forwardSearchAfter = false,
+        onSave = false
+      },
+      chktex = {
+        onEdit = false,
+        onOpenAndSave = false
+      },
+      diagnosticsDelay = 300,
+      formatterLineLength = 80,
+      forwardSearch = {
+        args = {}
+      },
+      latexFormatter = &quot;latexindent&quot;,
+      latexindent = {
+        modifyLineBreaks = false
       }
     }
+  }
 </code></pre>
                 
               

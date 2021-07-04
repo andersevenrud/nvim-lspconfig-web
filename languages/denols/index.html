@@ -474,6 +474,26 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    Commands
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1396,6 +1416,26 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    Commands
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1417,25 +1457,25 @@
 <h2 id="setup">Setup</h2>
 <pre><code class="language-lua">require'lspconfig'.denols.setup{}
 </code></pre>
-<p><strong>Commands and default values:</strong></p>
-<pre><code class="language-lua">  Commands:
-  - DenolsCache: Cache a module and all of its dependencies.
-  - DenolsDefinition: Jump to definition. This handle deno:/ schema in deno:// buffer.
-  - DenolsReferences: List references. This handle deno:/ schema in deno:// buffer.
-
-  Default Values:
-    cmd = { &quot;deno&quot;, &quot;lsp&quot; }
-    filetypes = { &quot;javascript&quot;, &quot;javascriptreact&quot;, &quot;javascript.jsx&quot;, &quot;typescript&quot;, &quot;typescriptreact&quot;, &quot;typescript.tsx&quot; }
-    handlers = {
-      [&quot;textDocument/definition&quot;] = &lt;function 1&gt;,
-      [&quot;textDocument/references&quot;] = &lt;function 1&gt;
-    }
-    init_options = {
-      enable = true,
-      lint = false,
-      unstable = false
-    }
-    root_dir = root_pattern(&quot;package.json&quot;, &quot;tsconfig.json&quot;, &quot;.git&quot;)
+<h3 id="commands">Commands</h3>
+<ul>
+<li>DenolsCache: Cache a module and all of its dependencies.</li>
+<li>DenolsDefinition: Jump to definition. This handle deno:/ schema in deno:// buffer.</li>
+<li>DenolsReferences: List references. This handle deno:/ schema in deno:// buffer.</li>
+</ul>
+<h3 id="default-values">Default Values</h3>
+<pre><code class="language-lua">  cmd = { &quot;deno&quot;, &quot;lsp&quot; }
+  filetypes = { &quot;javascript&quot;, &quot;javascriptreact&quot;, &quot;javascript.jsx&quot;, &quot;typescript&quot;, &quot;typescriptreact&quot;, &quot;typescript.tsx&quot; }
+  handlers = {
+    [&quot;textDocument/definition&quot;] = &lt;function 1&gt;,
+    [&quot;textDocument/references&quot;] = &lt;function 1&gt;
+  }
+  init_options = {
+    enable = true,
+    lint = false,
+    unstable = false
+  }
+  root_dir = root_pattern(&quot;package.json&quot;, &quot;tsconfig.json&quot;, &quot;.git&quot;)
 </code></pre>
                 
               

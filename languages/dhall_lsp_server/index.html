@@ -486,6 +486,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1396,6 +1409,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1415,21 +1441,18 @@
 <h2 id="setup">Setup</h2>
 <pre><code class="language-lua">require'lspconfig'.dhall_lsp_server.setup{}
 </code></pre>
-<p><strong>Commands and default values:</strong></p>
-<pre><code class="language-lua">  Commands:
-
-  Default Values:
-    cmd = { &quot;dhall-lsp-server&quot; }
-    docs = {
-      default_config = {
-        root_dir = 'root_pattern(&quot;.git&quot;, vim.fn.getcwd())'
-      },
-      description = &quot;https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-lsp-server\n\nlanguage server for dhall\n\n`dhall-lsp-server` can be installed via cabal:\n```sh\ncabal install dhall-lsp-server\n```\nprebuilt binaries can be found [here](https://github.com/dhall-lang/dhall-haskell/releases).\n&quot;
-    }
-    filetypes = { &quot;dhall&quot; }
-    root_dir = function(startpath)
-        return M.search_ancestors(startpath, matcher)
-      end
+<h3 id="default-values">Default Values</h3>
+<pre><code class="language-lua">  cmd = { &quot;dhall-lsp-server&quot; }
+  docs = {
+    default_config = {
+      root_dir = 'root_pattern(&quot;.git&quot;, vim.fn.getcwd())'
+    },
+    description = &quot;https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-lsp-server\n\nlanguage server for dhall\n\n`dhall-lsp-server` can be installed via cabal:\n```sh\ncabal install dhall-lsp-server\n```\nprebuilt binaries can be found [here](https://github.com/dhall-lang/dhall-haskell/releases).\n&quot;
+  }
+  filetypes = { &quot;dhall&quot; }
+  root_dir = function(startpath)
+      return M.search_ancestors(startpath, matcher)
+    end
 </code></pre>
                 
               

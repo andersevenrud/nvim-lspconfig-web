@@ -354,6 +354,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1396,6 +1409,19 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1417,16 +1443,13 @@
 <h2 id="setup">Setup</h2>
 <pre><code class="language-lua">require'lspconfig'.bashls.setup{}
 </code></pre>
-<p><strong>Commands and default values:</strong></p>
-<pre><code class="language-lua">  Commands:
-
-  Default Values:
-    cmd = { &quot;bash-language-server&quot;, &quot;start&quot; }
-    cmd_env = {
-      GLOB_PATTERN = &quot;*@(.sh|.inc|.bash|.command)&quot;
-    }
-    filetypes = { &quot;sh&quot; }
-    root_dir = vim's starting directory
+<h3 id="default-values">Default Values</h3>
+<pre><code class="language-lua">  cmd = { &quot;bash-language-server&quot;, &quot;start&quot; }
+  cmd_env = {
+    GLOB_PATTERN = &quot;*@(.sh|.inc|.bash|.command)&quot;
+  }
+  filetypes = { &quot;sh&quot; }
+  root_dir = vim's starting directory
 </code></pre>
                 
               
