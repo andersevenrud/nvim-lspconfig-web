@@ -1,0 +1,1918 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://example.com/languages/jdtls/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.9">
+    
+    
+      
+        <title>jdtls - nvim-lspconfig</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4cae4f">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="green" data-md-color-accent="green">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#jdtls" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="nvim-lspconfig" class="md-header__button md-logo" aria-label="nvim-lspconfig" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            nvim-lspconfig
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              jdtls
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../install/" class="md-tabs__link">
+      Install
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        Languages
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="nvim-lspconfig" class="md-nav__button md-logo" aria-label="nvim-lspconfig" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    nvim-lspconfig
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install/" class="md-nav__link">
+        Install
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        Languages
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Languages" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Languages
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Languages
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../als/" class="md-nav__link">
+        als
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../angularls/" class="md-nav__link">
+        angularls
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bashls/" class="md-nav__link">
+        bashls
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../beancount/" class="md-nav__link">
+        beancount
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ccls/" class="md-nav__link">
+        ccls
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clangd/" class="md-nav__link">
+        clangd
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clojure_lsp/" class="md-nav__link">
+        clojure_lsp
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cmake/" class="md-nav__link">
+        cmake
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../codeqlls/" class="md-nav__link">
+        codeqlls
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crystalline/" class="md-nav__link">
+        crystalline
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cssls/" class="md-nav__link">
+        cssls
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dartls/" class="md-nav__link">
+        dartls
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../denols/" class="md-nav__link">
+        denols
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dhall_lsp_server/" class="md-nav__link">
+        dhall_lsp_server
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagnosticls/" class="md-nav__link">
+        diagnosticls
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dockerls/" class="md-nav__link">
+        dockerls
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dotls/" class="md-nav__link">
+        dotls
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../efm/" class="md-nav__link">
+        efm
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../elixirls/" class="md-nav__link">
+        elixirls
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../elmls/" class="md-nav__link">
+        elmls
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../erlangls/" class="md-nav__link">
+        erlangls
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/" class="md-nav__link">
+        flow
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fortls/" class="md-nav__link">
+        fortls
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fsautocomplete/" class="md-nav__link">
+        fsautocomplete
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gdscript/" class="md-nav__link">
+        gdscript
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ghcide/" class="md-nav__link">
+        ghcide
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gopls/" class="md-nav__link">
+        gopls
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graphql/" class="md-nav__link">
+        graphql
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../groovyls/" class="md-nav__link">
+        groovyls
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../haxe_language_server/" class="md-nav__link">
+        haxe_language_server
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hie/" class="md-nav__link">
+        hie
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hls/" class="md-nav__link">
+        hls
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../html/" class="md-nav__link">
+        html
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intelephense/" class="md-nav__link">
+        intelephense
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_language_server/" class="md-nav__link">
+        java_language_server
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        jdtls
+      </a>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jedi_language_server/" class="md-nav__link">
+        jedi_language_server
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jsonls/" class="md-nav__link">
+        jsonls
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../julials/" class="md-nav__link">
+        julials
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kotlin_language_server/" class="md-nav__link">
+        kotlin_language_server
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lean3ls/" class="md-nav__link">
+        lean3ls
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../leanls/" class="md-nav__link">
+        leanls
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../metals/" class="md-nav__link">
+        metals
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nimls/" class="md-nav__link">
+        nimls
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ocamlls/" class="md-nav__link">
+        ocamlls
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ocamllsp/" class="md-nav__link">
+        ocamllsp
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../omnisharp/" class="md-nav__link">
+        omnisharp
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../perlls/" class="md-nav__link">
+        perlls
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phpactor/" class="md-nav__link">
+        phpactor
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../powershell_es/" class="md-nav__link">
+        powershell_es
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prismals/" class="md-nav__link">
+        prismals
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../puppet/" class="md-nav__link">
+        puppet
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../purescriptls/" class="md-nav__link">
+        purescriptls
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pyls/" class="md-nav__link">
+        Python (pyls)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pyls_ms/" class="md-nav__link">
+        pyls_ms
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pylsp/" class="md-nav__link">
+        pylsp
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pyright/" class="md-nav__link">
+        pyright
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../r_language_server/" class="md-nav__link">
+        r_language_server
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../racket_langserver/" class="md-nav__link">
+        racket_langserver
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rescriptls/" class="md-nav__link">
+        rescriptls
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rls/" class="md-nav__link">
+        rls
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rnix/" class="md-nav__link">
+        rnix
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rome/" class="md-nav__link">
+        rome
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rust_analyzer/" class="md-nav__link">
+        rust_analyzer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scry/" class="md-nav__link">
+        scry
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solargraph/" class="md-nav__link">
+        solargraph
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sorbet/" class="md-nav__link">
+        sorbet
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sourcekit/" class="md-nav__link">
+        sourcekit
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sqlls/" class="md-nav__link">
+        sqlls
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sqls/" class="md-nav__link">
+        sqls
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stylelint_lsp/" class="md-nav__link">
+        stylelint_lsp
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sumneko_lua/" class="md-nav__link">
+        sumneko_lua
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../svelte/" class="md-nav__link">
+        svelte
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../svls/" class="md-nav__link">
+        svls
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tailwindcss/" class="md-nav__link">
+        tailwindcss
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terraformls/" class="md-nav__link">
+        terraformls
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../texlab/" class="md-nav__link">
+        texlab
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tflint/" class="md-nav__link">
+        tflint
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tsserver/" class="md-nav__link">
+        tsserver
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vala_ls/" class="md-nav__link">
+        vala_ls
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vimls/" class="md-nav__link">
+        vimls
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vls/" class="md-nav__link">
+        vls
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vuels/" class="md-nav__link">
+        vuels
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../yamlls/" class="md-nav__link">
+        yamlls
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zeta_note/" class="md-nav__link">
+        zeta_note
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zls/" class="md-nav__link">
+        zls
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="jdtls">jdtls</h1>
+<p>https://projects.eclipse.org/projects/eclipse.jdt.ls</p>
+<p>Language server for Java.</p>
+<p>See project page for installation instructions.</p>
+<p>Due to the nature of java, the settings for eclipse jdtls cannot be automatically
+inferred. Please set the following environmental variables to match your installation. You can set these locally for your project with the help of <a href="https://github.com/direnv/direnv">direnv</a>. Note version numbers will change depending on your project's version of java, your version of eclipse, and in the case of JDTLS_CONFIG, your OS.</p>
+<pre><code class="language-bash">export JAR=/path/to/eclipse.jdt.ls/org.eclipse.jdt.ls.product/target/repository/plugins/org.eclipse.equinox.launcher_1.6.0.v20200915-1508.jar
+export GRADLE_HOME=$HOME/gradle
+export JAVA_HOME=$(readlink -f /usr/bin/java | sed &quot;s:/bin/java::&quot;)
+export JDTLS_CONFIG=/path/to/eclipse.jdt.ls/org.eclipse.jdt.ls.product/target/repository/config_linux
+export WORKSPACE=$HOME/workspace
+</code></pre>
+<p>This server accepts configuration via the <code>settings</code> key.</p>
+<details><summary>Available settings:</summary>
+
+- **`java.autobuild.enabled`**: `boolean`
+
+  Default: `true`
+
+  Enable\/disable the \'auto build\'
+
+- **`java.codeGeneration.generateComments`**: `boolean`
+
+  Generate method comments when generating the methods\.
+
+- **`java.codeGeneration.hashCodeEquals.useInstanceof`**: `boolean`
+
+  Use \'instanceof\' to compare types when generating the hashCode and equals methods\.
+
+- **`java.codeGeneration.hashCodeEquals.useJava7Objects`**: `boolean`
+
+  Use Objects\.hash and Objects\.equals when generating the hashCode and equals methods\. This setting only applies to Java 7 and higher\.
+
+- **`java.codeGeneration.insertionLocation`**: `enum { "afterCursor", "beforeCursor", "lastMember" }`
+
+  Default: `"afterCursor"`
+
+  Specifies the insertion location of the code generated by source actions\.
+
+- **`java.codeGeneration.toString.codeStyle`**: `enum { "STRING_CONCATENATION", "STRING_BUILDER", "STRING_BUILDER_CHAINED", "STRING_FORMAT" }`
+
+  Default: `"STRING_CONCATENATION"`
+
+  The code style for generating the toString method\.
+
+- **`java.codeGeneration.toString.limitElements`**: `integer`
+
+  Default: `0`
+
+  Limit number of items in arrays\/collections\/maps to list\, if 0 then list all\.
+
+- **`java.codeGeneration.toString.listArrayContents`**: `boolean`
+
+  Default: `true`
+
+  List contents of arrays instead of using native toString\(\)\.
+
+- **`java.codeGeneration.toString.skipNullValues`**: `boolean`
+
+  Skip null values when generating the toString method\.
+
+- **`java.codeGeneration.toString.template`**: `string`
+
+  Default: `"${object.className} [${member.name()}=${member.value}, ${otherMembers}]"`
+
+  The template for generating the toString method\.
+
+- **`java.codeGeneration.useBlocks`**: `boolean`
+
+  Use blocks in \'if\' statements when generating the methods\.
+
+- **`java.completion.enabled`**: `boolean`
+
+  Default: `true`
+
+  Enable\/disable code completion support
+
+- **`java.completion.favoriteStaticMembers`**: `array`
+
+  Default: `{ "org.junit.Assert.*", "org.junit.Assume.*", "org.junit.jupiter.api.Assertions.*", "org.junit.jupiter.api.Assumptions.*", "org.junit.jupiter.api.DynamicContainer.*", "org.junit.jupiter.api.DynamicTest.*", "org.mockito.Mockito.*", "org.mockito.ArgumentMatchers.*", "org.mockito.Answers.*" }`
+
+  Defines a list of static members or types with static members\. Content assist will propose those static members even if the import is missing\.
+
+- **`java.completion.filteredTypes`**: `array`
+
+  Default: `{ "java.awt.*", "com.sun.*", "sun.*" }`
+
+  Defines the type filters\. All types whose fully qualified name matches the selected filter strings will be ignored in content assist or quick fix proposals and when organizing imports\. For example \'java\.awt\.\*\' will hide all types from the awt packages\.
+
+- **`java.completion.guessMethodArguments`**: `boolean`
+
+  When set to true\, method arguments are guessed when a method is selected from as list of code assist proposals\.
+
+- **`java.completion.importOrder`**: `array`
+
+  Default: `{ "java", "javax", "com", "org" }`
+
+  Defines the sorting order of import statements\. A package or type name prefix \(e\.g\. \'org\.eclipse\'\) is a valid entry\. An import is always added to the most specific group\.
+
+- **`java.completion.maxResults`**: `integer`
+
+  Default: `0`
+
+  null
+
+- **`java.completion.overwrite`**: `boolean`
+
+  Default: `true`
+
+  When set to true\, code completion overwrites the current text\. When set to false\, code is simply added instead\.
+
+- **`java.configuration.checkProjectSettingsExclusions`**: `boolean`
+
+  Default: `true`
+
+  Controls whether to exclude extension\-generated project settings files \(\.project\, \.classpath\, \.factorypath\, \.settings\/\) from the file explorer\.
+
+- **`java.configuration.maven.globalSettings`**: `string`
+
+  Default: `vim.NIL`
+
+  Path to Maven\'s global settings\.xml
+
+- **`java.configuration.maven.notCoveredPluginExecutionSeverity`**: `enum { "ignore", "warning", "error" }`
+
+  Default: `"warning"`
+
+  Specifies severity if the plugin execution is not covered by Maven build lifecycle\.
+
+- **`java.configuration.maven.userSettings`**: `string`
+
+  Default: `vim.NIL`
+
+  Path to Maven\'s user settings\.xml
+
+- **`java.configuration.runtimes`**: `array`
+
+  Default: `{}`
+
+  Array items: `{additionalProperties = false,default = vim.empty_dict(),properties = {default = {description = "Is default runtime? Only one runtime can be default.",type = "boolean"},javadoc = {description = "JDK javadoc path.",type = "string"},name = {description = "Java Execution Environment name. Must be unique.",enum = { "J2SE-1.5", "JavaSE-1.6", "JavaSE-1.7", "JavaSE-1.8", "JavaSE-9", "JavaSE-10", "JavaSE-11", "JavaSE-12", "JavaSE-13", "JavaSE-14", "JavaSE-15", "JavaSE-16" },type = "string"},path = {description = 'JDK home path. Should be the JDK installation directory, not the Java bin path.\n On Windows, backslashes must be escaped, i.e.\n"path":"C:\\\\Program Files\\\\Java\\\\jdk1.8.0_161".',pattern = ".*(?<!\\/bin|\\/bin\\/|\\\\bin|\\\\bin\\\\)$",type = "string"},sources = {description = "JDK sources path.",type = "string"}},required = { "path", "name" },type = "object"}`
+
+  Map Java Execution Environments to local JDKs\.
+
+- **`java.configuration.updateBuildConfiguration`**: `enum { "disabled", "interactive", "automatic" }`
+
+  Default: `"interactive"`
+
+  Specifies how modifications on build files update the Java classpath\/configuration
+
+- **`java.contentProvider.preferred`**: `string`
+
+  Default: `vim.NIL`
+
+  Preferred content provider \(a 3rd party decompiler id\, usually\)
+
+- **`java.eclipse.downloadSources`**: `boolean`
+
+  Enable\/disable download of Maven source artifacts for Eclipse projects\.
+
+- **`java.errors.incompleteClasspath.severity`**: `enum { "ignore", "info", "warning", "error" }`
+
+  Default: `"warning"`
+
+  Specifies the severity of the message when the classpath is incomplete for a Java file
+
+- **`java.foldingRange.enabled`**: `boolean`
+
+  Default: `true`
+
+  Enable\/disable smart folding range support\. If disabled\, it will use the default indentation\-based folding range provided by VS Code\.
+
+- **`java.format.comments.enabled`**: `boolean`
+
+  Default: `true`
+
+  Includes the comments during code formatting\.
+
+- **`java.format.enabled`**: `boolean`
+
+  Default: `true`
+
+  Enable\/disable default Java formatter
+
+- **`java.format.onType.enabled`**: `boolean`
+
+  Default: `true`
+
+  Enable\/disable automatic block formatting when typing \`\;\`\, \`\<enter\>\` or \`\}\`
+
+- **`java.format.settings.profile`**: `string`
+
+  Default: `vim.NIL`
+
+  Optional formatter profile name from the Eclipse formatter settings\.
+
+- **`java.format.settings.url`**: `string`
+
+  Default: `vim.NIL`
+
+  null
+
+- **`java.home`**: `string|null`
+
+  Default: `vim.NIL`
+
+  Specifies the folder path to the JDK \(11 or more recent\) used to launch the Java Language Server\.
+  On Windows\, backslashes must be escaped\, i\.e\.
+  \"java\.home\"\:\"C\:\\\\Program Files\\\\Java\\\\jdk11\.0\_8\"
+
+- **`java.implementationsCodeLens.enabled`**: `boolean`
+
+  Enable\/disable the implementations code lens\.
+
+- **`java.import.exclusions`**: `array`
+
+  Default: `{ "**/node_modules/**", "**/.metadata/**", "**/archetype-resources/**", "**/META-INF/maven/**" }`
+
+  Configure glob patterns for excluding folders\. Use \`\!\` to negate patterns to allow subfolders imports\. You have to include a parent directory\. The order is important\.
+
+- **`java.import.gradle.arguments`**: `string`
+
+  Default: `vim.NIL`
+
+  Arguments to pass to Gradle\.
+
+- **`java.import.gradle.enabled`**: `boolean`
+
+  Default: `true`
+
+  Enable\/disable the Gradle importer\.
+
+- **`java.import.gradle.home`**: `string`
+
+  Default: `vim.NIL`
+
+  Use Gradle from the specified local installation directory or GRADLE\_HOME if the Gradle wrapper is missing or disabled and no \'java\.import\.gradle\.version\' is specified\.
+
+- **`java.import.gradle.java.home`**: `string`
+
+  Default: `vim.NIL`
+
+  The location to the JVM used to run the Gradle daemon\.
+
+- **`java.import.gradle.jvmArguments`**: `string`
+
+  Default: `vim.NIL`
+
+  JVM arguments to pass to Gradle\.
+
+- **`java.import.gradle.offline.enabled`**: `boolean`
+
+  Enable\/disable the Gradle offline mode\.
+
+- **`java.import.gradle.user.home`**: `string`
+
+  Default: `vim.NIL`
+
+  Setting for GRADLE\_USER\_HOME\.
+
+- **`java.import.gradle.version`**: `string`
+
+  Default: `vim.NIL`
+
+  Use Gradle from the specific version if the Gradle wrapper is missing or disabled\.
+
+- **`java.import.gradle.wrapper.enabled`**: `boolean`
+
+  Default: `true`
+
+  Use Gradle from the \'gradle\-wrapper\.properties\' file\.
+
+- **`java.import.maven.enabled`**: `boolean`
+
+  Default: `true`
+
+  Enable\/disable the Maven importer\.
+
+- **`java.imports.gradle.wrapper.checksums`**: `array`
+
+  Default: `{}`
+
+  Array items: `{additionalProperties = false,default = vim.empty_dict(),properties = {allowed = {default = true,label = "Is allowed?",type = "boolean"},sha256 = {label = "SHA-256 checksum.",type = "string"}},required = { "sha256" },type = "object",uniqueItems = true}`
+
+  Defines allowed\/disallowed SHA\-256 checksums of Gradle Wrappers
+
+- **`java.jdt.ls.vmargs`**: `string|null`
+
+  Default: `"-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m"`
+
+  Specifies extra VM arguments used to launch the Java Language Server\. Eg\. use \`\-XX\:+UseParallelGC \-XX\:GCTimeRatio\=4 \-XX\:AdaptiveSizePolicyWeight\=90 \-Dsun\.zip\.disableMemoryMapping\=true \-Xmx1G \-Xms100m \` to optimize memory usage with the parallel garbage collector
+
+- **`java.maven.downloadSources`**: `boolean`
+
+  Enable\/disable download of Maven source artifacts as part of importing Maven projects\.
+
+- **`java.maven.updateSnapshots`**: `boolean`
+
+  Force update of Snapshots\/Releases\.
+
+- **`java.maxConcurrentBuilds`**: `integer`
+
+  Default: `1`
+
+  Max simultaneous project builds
+
+- **`java.progressReports.enabled`**: `boolean`
+
+  Default: `true`
+
+  \[Experimental\] Enable\/disable progress reports from background processes on the server\.
+
+- **`java.project.importHint`**: `boolean`
+
+  Default: `true`
+
+  Enable\/disable the server\-mode switch information\, when Java projects import is skipped on startup\.
+
+- **`java.project.importOnFirstTimeStartup`**: `enum { "disabled", "interactive", "automatic" }`
+
+  Default: `"interactive"`
+
+  Specifies whether to import the Java projects\, when opening the folder in Hybrid mode for the first time\.
+
+- **`java.project.outputPath`**: `string|null`
+
+  Default: `""`
+
+  null
+
+- **`java.project.referencedLibraries`**: `array|object`
+
+  Default: `{ "lib/**/*.jar" }`
+
+  Configure glob patterns for referencing local libraries to a Java project\.
+
+- **`java.project.resourceFilters`**: `array`
+
+  Default: `{ "node_modules", ".git" }`
+
+  Excludes files and folders from being refreshed by the Java Language Server\, which can improve the overall performance\. For example\, \[\"node\_modules\"\,\"\.git\"\] will exclude all files and folders named \'node\_modules\' or \'\.git\'\. Defaults to \[\"node\_modules\"\,\"\.git\"\]\.
+
+- **`java.project.sourcePaths`**: `array`
+
+  Default: `{}`
+
+  Array items: `{type = "string"}`
+
+  null
+
+- **`java.recommendations.dependency.analytics.show`**: `boolean`
+
+  Default: `true`
+
+  Show the recommended Dependency Analytics extension\.
+
+- **`java.references.includeAccessors`**: `boolean`
+
+  Default: `true`
+
+  Include getter\, setter and builder\/constructor when finding references\.
+
+- **`java.references.includeDecompiledSources`**: `boolean`
+
+  Default: `true`
+
+  Include the decompiled sources when finding references\.
+
+- **`java.referencesCodeLens.enabled`**: `boolean`
+
+  Enable\/disable the references code lens\.
+
+- **`java.saveActions.organizeImports`**: `boolean`
+
+  Enable\/disable auto organize imports on save action
+
+- **`java.selectionRange.enabled`**: `boolean`
+
+  Default: `true`
+
+  Enable\/disable Smart Selection support for Java\. Disabling this option will not affect the VS Code built\-in word\-based and bracket\-based smart selection\.
+
+- **`java.semanticHighlighting.enabled`**: `boolean`
+
+  Default: `true`
+
+  Enable\/disable the semantic highlighting\.
+
+- **`java.server.launchMode`**: `enum { "Standard", "LightWeight", "Hybrid" }`
+
+  Default: `"Hybrid"`
+
+  The launch mode for the Java extension
+
+- **`java.settings.url`**: `string`
+
+  Default: `vim.NIL`
+
+  null
+
+- **`java.showBuildStatusOnStart.enabled`**: `boolean`
+
+  Automatically show build status on startup\.
+
+- **`java.signatureHelp.enabled`**: `boolean`
+
+  Enable\/disable the signature help\.
+
+- **`java.sources.organizeImports.starThreshold`**: `integer`
+
+  Default: `99`
+
+  Specifies the number of imports added before a star\-import declaration is used\.
+
+- **`java.sources.organizeImports.staticStarThreshold`**: `integer`
+
+  Default: `99`
+
+  Specifies the number of static imports added before a star\-import declaration is used\.
+
+- **`java.symbols.includeSourceMethodDeclarations`**: `boolean`
+
+  null
+
+- **`java.templates.fileHeader`**: `array`
+
+  Default: `{}`
+
+  null
+
+- **`java.templates.typeComment`**: `array`
+
+  Default: `{}`
+
+  null
+
+- **`java.trace.server`**: `enum { "off", "messages", "verbose" }`
+
+  Default: `"off"`
+
+  Traces the communication between VS Code and the Java language server\.
+
+- **`java.typeHierarchy.lazyLoad`**: `boolean`
+
+  Enable\/disable lazy loading the content in type hierarchy\. Lazy loading could save a lot of loading time but every type should be expanded manually to load its content\.
+
+</details>
+
+<p><strong>Snippet to enable the language server:</strong></p>
+<pre><code class="language-lua">require'lspconfig'.jdtls.setup{}
+</code></pre>
+<p><strong>Commands and default values:</strong></p>
+<pre><code class="language-lua">  Commands:
+
+  Default Values:
+    cmd = { &quot;vim.NIL/bin/java&quot;, &quot;-Declipse.application=org.eclipse.jdt.ls.core.id1&quot;, &quot;-Dosgi.bundles.defaultStartLevel=4&quot;, &quot;-Declipse.product=org.eclipse.jdt.ls.core.product&quot;, &quot;-Dlog.protocol=true&quot;, &quot;-Dlog.level=ALL&quot;, &quot;-Xms1g&quot;, &quot;-Xmx2G&quot;, &quot;-jar&quot;, &quot;vim.NIL&quot;, &quot;-configuration&quot;, &quot;vim.NIL&quot;, &quot;-data&quot;, &quot;vim.NIL&quot;, &quot;--add-modules=ALL-SYSTEM&quot;, &quot;--add-opens java.base/java.util=ALL-UNNAMED&quot;, &quot;--add-opens java.base/java.lang=ALL-UNNAMED&quot; }
+    cmd_env = {
+      GRADLE_HOME = &quot;/usr/share/java/gradle&quot;,
+      JAR = vim.NIL
+    }
+    filetypes = { &quot;java&quot; }
+    handlers = {
+      [&quot;language/status&quot;] = &lt;function 1&gt;,
+      [&quot;textDocument/codeAction&quot;] = &lt;function 2&gt;,
+      [&quot;textDocument/rename&quot;] = &lt;function 3&gt;,
+      [&quot;workspace/applyEdit&quot;] = &lt;function 4&gt;
+    }
+    init_options = {
+      jvm_args = {},
+      workspace = &quot;/home/anders/workspace&quot;
+    }
+    root_dir = root_pattern(&quot;.git&quot;)
+</code></pre>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../java_language_server/" class="md-footer__link md-footer__link--prev" aria-label="Previous: java_language_server" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              java_language_server
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../jedi_language_server/" class="md-footer__link md-footer__link--next" aria-label="Next: jedi_language_server" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              jedi_language_server
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.82b56eb2.min.js"></script>
+      
+    
+  </body>
+</html>
