@@ -1438,18 +1438,18 @@
                 
                 
                 <h1 id="svelte">svelte</h1>
-<p>https://github.com/sveltejs/language-tools/tree/master/packages/language-server</p>
-<p><code>svelte-language-server</code> can be installed via <code>npm</code>:</p>
-<pre><code class="language-sh">npm install -g svelte-language-server
-</code></pre>
+<p><a href="https://github.com/sveltejs/language-tools/tree/master/packages/language-server">https://github.com/sveltejs/language-tools/tree/master/packages/language-server</a></p>
+<p><code>svelte-language-server</code> can be installed via <code>npm</code>:
+<div class="highlight"><pre><span></span><code>npm install -g svelte-language-server
+</code></pre></div></p>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.svelte.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">svelte</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = { &quot;svelteserver&quot;, &quot;--stdio&quot; }
-  filetypes = { &quot;svelte&quot; }
-  root_dir = root_pattern(&quot;package.json&quot;, &quot;.git&quot;)
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;svelteserver&quot;</span><span class="p">,</span> <span class="s2">&quot;--stdio&quot;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;svelte&quot;</span> <span class="p">}</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;package.json&quot;</span><span class="p">,</span> <span class="s2">&quot;.git&quot;</span><span class="p">)</span>
+</code></pre></div>
                 
               
               

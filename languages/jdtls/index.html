@@ -2528,39 +2528,39 @@
                 
                 
                 <h1 id="jdtls">jdtls</h1>
-<p>https://projects.eclipse.org/projects/eclipse.jdt.ls</p>
+<p><a href="https://projects.eclipse.org/projects/eclipse.jdt.ls">https://projects.eclipse.org/projects/eclipse.jdt.ls</a></p>
 <p>Language server for Java.</p>
 <p>See project page for installation instructions.</p>
 <p>Due to the nature of java, the settings for eclipse jdtls cannot be automatically
 inferred. Please set the following environmental variables to match your installation. You can set these locally for your project with the help of <a href="https://github.com/direnv/direnv">direnv</a>. Note version numbers will change depending on your project's version of java, your version of eclipse, and in the case of JDTLS_CONFIG, your OS.</p>
-<pre><code class="language-bash">export JAR=/path/to/eclipse.jdt.ls/org.eclipse.jdt.ls.product/target/repository/plugins/org.eclipse.equinox.launcher_1.6.0.v20200915-1508.jar
-export GRADLE_HOME=$HOME/gradle
-export JAVA_HOME=$(readlink -f /usr/bin/java | sed &quot;s:/bin/java::&quot;)
-export JDTLS_CONFIG=/path/to/eclipse.jdt.ls/org.eclipse.jdt.ls.product/target/repository/config_linux
-export WORKSPACE=$HOME/workspace
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">JAR</span><span class="o">=</span>/path/to/eclipse.jdt.ls/org.eclipse.jdt.ls.product/target/repository/plugins/org.eclipse.equinox.launcher_1.6.0.v20200915-1508.jar
+<span class="nb">export</span> <span class="nv">GRADLE_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/gradle
+<span class="nb">export</span> <span class="nv">JAVA_HOME</span><span class="o">=</span><span class="k">$(</span>readlink -f /usr/bin/java <span class="p">|</span> sed <span class="s2">&quot;s:/bin/java::&quot;</span><span class="k">)</span>
+<span class="nb">export</span> <span class="nv">JDTLS_CONFIG</span><span class="o">=</span>/path/to/eclipse.jdt.ls/org.eclipse.jdt.ls.product/target/repository/config_linux
+<span class="nb">export</span> <span class="nv">WORKSPACE</span><span class="o">=</span><span class="nv">$HOME</span>/workspace
+</code></pre></div>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.jdtls.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">jdtls</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = { &quot;vim.NIL/bin/java&quot;, &quot;-Declipse.application=org.eclipse.jdt.ls.core.id1&quot;, &quot;-Dosgi.bundles.defaultStartLevel=4&quot;, &quot;-Declipse.product=org.eclipse.jdt.ls.core.product&quot;, &quot;-Dlog.protocol=true&quot;, &quot;-Dlog.level=ALL&quot;, &quot;-Xms1g&quot;, &quot;-Xmx2G&quot;, &quot;-jar&quot;, &quot;vim.NIL&quot;, &quot;-configuration&quot;, &quot;vim.NIL&quot;, &quot;-data&quot;, &quot;vim.NIL&quot;, &quot;--add-modules=ALL-SYSTEM&quot;, &quot;--add-opens java.base/java.util=ALL-UNNAMED&quot;, &quot;--add-opens java.base/java.lang=ALL-UNNAMED&quot; }
-  cmd_env = {
-    GRADLE_HOME = &quot;/usr/share/java/gradle&quot;,
-    JAR = vim.NIL
-  }
-  filetypes = { &quot;java&quot; }
-  handlers = {
-    [&quot;language/status&quot;] = &lt;function 1&gt;,
-    [&quot;textDocument/codeAction&quot;] = &lt;function 2&gt;,
-    [&quot;textDocument/rename&quot;] = &lt;function 3&gt;,
-    [&quot;workspace/applyEdit&quot;] = &lt;function 4&gt;
-  }
-  init_options = {
-    jvm_args = {},
-    workspace = &quot;/home/anders/workspace&quot;
-  }
-  root_dir = root_pattern(&quot;.git&quot;)
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;vim.NIL/bin/java&quot;</span><span class="p">,</span> <span class="s2">&quot;-Declipse.application=org.eclipse.jdt.ls.core.id1&quot;</span><span class="p">,</span> <span class="s2">&quot;-Dosgi.bundles.defaultStartLevel=4&quot;</span><span class="p">,</span> <span class="s2">&quot;-Declipse.product=org.eclipse.jdt.ls.core.product&quot;</span><span class="p">,</span> <span class="s2">&quot;-Dlog.protocol=true&quot;</span><span class="p">,</span> <span class="s2">&quot;-Dlog.level=ALL&quot;</span><span class="p">,</span> <span class="s2">&quot;-Xms1g&quot;</span><span class="p">,</span> <span class="s2">&quot;-Xmx2G&quot;</span><span class="p">,</span> <span class="s2">&quot;-jar&quot;</span><span class="p">,</span> <span class="s2">&quot;vim.NIL&quot;</span><span class="p">,</span> <span class="s2">&quot;-configuration&quot;</span><span class="p">,</span> <span class="s2">&quot;vim.NIL&quot;</span><span class="p">,</span> <span class="s2">&quot;-data&quot;</span><span class="p">,</span> <span class="s2">&quot;vim.NIL&quot;</span><span class="p">,</span> <span class="s2">&quot;--add-modules=ALL-SYSTEM&quot;</span><span class="p">,</span> <span class="s2">&quot;--add-opens java.base/java.util=ALL-UNNAMED&quot;</span><span class="p">,</span> <span class="s2">&quot;--add-opens java.base/java.lang=ALL-UNNAMED&quot;</span> <span class="p">}</span>
+  <span class="n">cmd_env</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">GRADLE_HOME</span> <span class="o">=</span> <span class="s2">&quot;/usr/share/java/gradle&quot;</span><span class="p">,</span>
+    <span class="n">JAR</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">NIL</span>
+  <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;java&quot;</span> <span class="p">}</span>
+  <span class="n">handlers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">[</span><span class="s2">&quot;language/status&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="o">&lt;</span><span class="kr">function</span> <span class="err">1&gt;,</span>
+    <span class="err">[&quot;</span><span class="nf">textDocument</span><span class="o">/</span><span class="n">codeAction</span><span class="s2">&quot;] = &lt;function 2&gt;,</span>
+<span class="s2">    [&quot;</span><span class="n">textDocument</span><span class="o">/</span><span class="n">rename</span><span class="s2">&quot;] = &lt;function 3&gt;,</span>
+<span class="s2">    [&quot;</span><span class="n">workspace</span><span class="o">/</span><span class="n">applyEdit</span><span class="s2">&quot;] = &lt;function 4&gt;</span>
+<span class="s2">  }</span>
+<span class="s2">  init_options = {</span>
+<span class="s2">    jvm_args = {},</span>
+<span class="s2">    workspace = &quot;</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">anders</span><span class="o">/</span><span class="n">workspace</span><span class="s2">&quot;</span>
+<span class="s2">  }</span>
+<span class="s2">  root_dir = root_pattern(&quot;</span><span class="p">.</span><span class="n">git</span><span class="s2">&quot;)</span>
+</code></pre></div>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="available-settings">Available settings</h2>
 <h3 id="javaautobuildenabled"><code>java.autobuild.enabled</code></h3>

@@ -1438,39 +1438,39 @@
                 
                 
                 <h1 id="haxe_language_server">haxe_language_server</h1>
-<p>https://github.com/vshaxe/haxe-language-server</p>
+<p><a href="https://github.com/vshaxe/haxe-language-server">https://github.com/vshaxe/haxe-language-server</a></p>
 <p>The Haxe language server can be built by running the following commands from
 the project's root directory:</p>
-<pre><code>npm install
+<div class="highlight"><pre><span></span><code>npm install
 npx lix run vshaxe-build -t language-server
-</code></pre>
+</code></pre></div>
 <p>This will create <code>bin/server.js</code>. Note that the server requires Haxe 3.4.0 or
 higher.</p>
 <p>After building the language server, set the <code>cmd</code> setting in your setup
 function:</p>
-<pre><code class="language-lua">lspconfig.haxe_language_server.setup({
-  cmd = {&quot;node&quot;, &quot;path/to/bin/server.js&quot;},
-})
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">lspconfig</span><span class="p">.</span><span class="n">haxe_language_server</span><span class="p">.</span><span class="n">setup</span><span class="p">({</span>
+  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;node&quot;</span><span class="p">,</span> <span class="s2">&quot;path/to/bin/server.js&quot;</span><span class="p">},</span>
+<span class="p">})</span>
+</code></pre></div>
 <p>By default, an HXML compiler arguments file named <code>build.hxml</code> is expected in
 your project's root directory. If your file is named something different,
 specify it using the <code>init_options.displayArguments</code> setting.</p>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.haxe_language_server.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">haxe_language_server</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = { &quot;haxe-language-server&quot; }
-  filetypes = { &quot;haxe&quot; }
-  init_options = {
-    displayArguments = { &quot;build.hxml&quot; }
-  }
-  root_dir = root_pattern(&quot;*.hxml&quot;)
-  settings = {
-    haxe = {
-      executable = &quot;haxe&quot;
-    }
-  }
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;haxe-language-server&quot;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;haxe&quot;</span> <span class="p">}</span>
+  <span class="n">init_options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">displayArguments</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;build.hxml&quot;</span> <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;*.hxml&quot;</span><span class="p">)</span>
+  <span class="n">settings</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">haxe</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="n">executable</span> <span class="o">=</span> <span class="s2">&quot;haxe&quot;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div>
                 
               
               

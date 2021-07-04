@@ -1438,18 +1438,18 @@
                 
                 
                 <h1 id="ocamlls">ocamlls</h1>
-<p>https://github.com/ocaml-lsp/ocaml-language-server</p>
-<p><code>ocaml-language-server</code> can be installed via <code>npm</code></p>
-<pre><code class="language-sh">npm install -g ocaml-langauge-server
-</code></pre>
+<p><a href="https://github.com/ocaml-lsp/ocaml-language-server">https://github.com/ocaml-lsp/ocaml-language-server</a></p>
+<p><code>ocaml-language-server</code> can be installed via <code>npm</code>
+<div class="highlight"><pre><span></span><code>npm install -g ocaml-langauge-server
+</code></pre></div></p>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.ocamlls.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">ocamlls</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = { &quot;ocaml-language-server&quot;, &quot;--stdio&quot; }
-  filetypes = { &quot;ocaml&quot;, &quot;reason&quot; }
-  root_dir = root_pattern(&quot;*.opam&quot;, &quot;esy.json&quot;, &quot;package.json&quot;)
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;ocaml-language-server&quot;</span><span class="p">,</span> <span class="s2">&quot;--stdio&quot;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;ocaml&quot;</span><span class="p">,</span> <span class="s2">&quot;reason&quot;</span> <span class="p">}</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;*.opam&quot;</span><span class="p">,</span> <span class="s2">&quot;esy.json&quot;</span><span class="p">,</span> <span class="s2">&quot;package.json&quot;</span><span class="p">)</span>
+</code></pre></div>
                 
               
               

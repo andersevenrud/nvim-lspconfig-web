@@ -1438,26 +1438,26 @@
                 
                 
                 <h1 id="groovyls">groovyls</h1>
-<p>https://github.com/prominic/groovy-language-server.git</p>
+<p><a href="https://github.com/prominic/groovy-language-server.git">https://github.com/prominic/groovy-language-server.git</a></p>
 <p>Requirements:
  - Linux/macOS (for now)
  - Java 11+</p>
 <p><code>groovyls</code> can be installed by following the instructions <a href="https://github.com/prominic/groovy-language-server.git#build">here</a>.</p>
 <p>If you have installed groovy language server, you can set the <code>cmd</code> custom path as follow:</p>
-<pre><code class="language-lua">require'lspconfig'.groovyls.setup{
-    -- Unix
-    cmd = { &quot;java&quot;, &quot;-jar&quot;, &quot;path/to/groovyls/groovy-language-server-all.jar&quot; },
-    ...
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">groovyls</span><span class="p">.</span><span class="n">setup</span><span class="p">{</span>
+    <span class="c1">-- Unix</span>
+    <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;java&quot;</span><span class="p">,</span> <span class="s2">&quot;-jar&quot;</span><span class="p">,</span> <span class="s2">&quot;path/to/groovyls/groovy-language-server-all.jar&quot;</span> <span class="p">},</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.groovyls.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">groovyls</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = { &quot;java&quot;, &quot;-jar&quot;, &quot;groovy-language-server-all.jar&quot; }
-  filetypes = { &quot;groovy&quot; }
-  root_dir = root_pattern(&quot;.git&quot;) or vim.loop.os_homedir()
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;java&quot;</span><span class="p">,</span> <span class="s2">&quot;-jar&quot;</span><span class="p">,</span> <span class="s2">&quot;groovy-language-server-all.jar&quot;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;groovy&quot;</span> <span class="p">}</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;.git&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">vim</span><span class="p">.</span><span class="n">loop</span><span class="p">.</span><span class="n">os_homedir</span><span class="p">()</span>
+</code></pre></div>
                 
               
               

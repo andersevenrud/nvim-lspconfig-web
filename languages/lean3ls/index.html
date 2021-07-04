@@ -1438,28 +1438,28 @@
                 
                 
                 <h1 id="lean3ls">lean3ls</h1>
-<p>https://github.com/leanprover/lean-client-js/tree/master/lean-language-server</p>
+<p><a href="https://github.com/leanprover/lean-client-js/tree/master/lean-language-server">https://github.com/leanprover/lean-client-js/tree/master/lean-language-server</a></p>
 <p>Lean installation instructions can be found
 <a href="https://leanprover-community.github.io/get_started.html#regular-install">here</a>.</p>
-<p>Once Lean is installed, you can install the Lean 3 language server by running</p>
-<pre><code class="language-sh">npm install -g lean-language-server
-</code></pre>
+<p>Once Lean is installed, you can install the Lean 3 language server by running
+<div class="highlight"><pre><span></span><code>npm install -g lean-language-server
+</code></pre></div></p>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.lean3ls.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">lean3ls</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = { &quot;lean-language-server&quot;, &quot;--stdio&quot;, &quot;--&quot;, &quot;-M&quot;, &quot;4096&quot;, &quot;-T&quot;, &quot;100000&quot; }
-  filetypes = { &quot;lean3&quot; }
-  on_new_config = function(config, root)
-        if not util.path.is_file(root .. &quot;/leanpkg.toml&quot;) then
-          return
-        end
-        if not config.cmd_cwd then
-          config.cmd_cwd = root
-        end
-      end,
-  root_dir = root_pattern(&quot;leanpkg.toml&quot;) or root_pattern(&quot;.git&quot;) or path.dirname
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;lean-language-server&quot;</span><span class="p">,</span> <span class="s2">&quot;--stdio&quot;</span><span class="p">,</span> <span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="s2">&quot;-M&quot;</span><span class="p">,</span> <span class="s2">&quot;4096&quot;</span><span class="p">,</span> <span class="s2">&quot;-T&quot;</span><span class="p">,</span> <span class="s2">&quot;100000&quot;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;lean3&quot;</span> <span class="p">}</span>
+  <span class="n">on_new_config</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">root</span><span class="p">)</span>
+        <span class="kr">if</span> <span class="ow">not</span> <span class="n">util</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">is_file</span><span class="p">(</span><span class="n">root</span> <span class="o">..</span> <span class="s2">&quot;/leanpkg.toml&quot;</span><span class="p">)</span> <span class="kr">then</span>
+          <span class="kr">return</span>
+        <span class="kr">end</span>
+        <span class="kr">if</span> <span class="ow">not</span> <span class="n">config</span><span class="p">.</span><span class="n">cmd_cwd</span> <span class="kr">then</span>
+          <span class="n">config</span><span class="p">.</span><span class="n">cmd_cwd</span> <span class="o">=</span> <span class="n">root</span>
+        <span class="kr">end</span>
+      <span class="kr">end</span><span class="p">,</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;leanpkg.toml&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;.git&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">path</span><span class="p">.</span><span class="n">dirname</span>
+</code></pre></div>
                 
               
               

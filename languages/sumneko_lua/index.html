@@ -2080,70 +2080,70 @@
                 
                 
                 <h1 id="sumneko_lua">sumneko_lua</h1>
-<p>https://github.com/sumneko/lua-language-server</p>
+<p><a href="https://github.com/sumneko/lua-language-server">https://github.com/sumneko/lua-language-server</a></p>
 <p>Lua language server.</p>
 <p><code>lua-language-server</code> can be installed by following the instructions <a href="https://github.com/sumneko/lua-language-server/wiki/Build-and-Run-(Standalone)">here</a>.</p>
 <p><strong>By default, lua-language-server doesn't have a <code>cmd</code> set.</strong> This is because nvim-lspconfig does not make assumptions about your path. You must add the following to your init.vim or init.lua to set <code>cmd</code> to the absolute path ($HOME and ~ are not expanded) of your unzipped and compiled lua-language-server.</p>
-<pre><code class="language-lua">local system_name
-if vim.fn.has(&quot;mac&quot;) == 1 then
-  system_name = &quot;macOS&quot;
-elseif vim.fn.has(&quot;unix&quot;) == 1 then
-  system_name = &quot;Linux&quot;
-elseif vim.fn.has('win32') == 1 then
-  system_name = &quot;Windows&quot;
-else
-  print(&quot;Unsupported system for sumneko&quot;)
-end
+<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">system_name</span>
+<span class="kr">if</span> <span class="n">vim</span><span class="p">.</span><span class="n">fn</span><span class="p">.</span><span class="n">has</span><span class="p">(</span><span class="s2">&quot;mac&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="kr">then</span>
+  <span class="n">system_name</span> <span class="o">=</span> <span class="s2">&quot;macOS&quot;</span>
+<span class="kr">elseif</span> <span class="n">vim</span><span class="p">.</span><span class="n">fn</span><span class="p">.</span><span class="n">has</span><span class="p">(</span><span class="s2">&quot;unix&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="kr">then</span>
+  <span class="n">system_name</span> <span class="o">=</span> <span class="s2">&quot;Linux&quot;</span>
+<span class="kr">elseif</span> <span class="n">vim</span><span class="p">.</span><span class="n">fn</span><span class="p">.</span><span class="n">has</span><span class="p">(</span><span class="s1">&#39;win32&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="kr">then</span>
+  <span class="n">system_name</span> <span class="o">=</span> <span class="s2">&quot;Windows&quot;</span>
+<span class="kr">else</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Unsupported system for sumneko&quot;</span><span class="p">)</span>
+<span class="kr">end</span>
 
--- set the path to the sumneko installation; if you previously installed via the now deprecated :LspInstall, use
-local sumneko_root_path = vim.fn.stdpath('cache')..'/lspconfig/sumneko_lua/lua-language-server'
-local sumneko_binary = sumneko_root_path..&quot;/bin/&quot;..system_name..&quot;/lua-language-server&quot;
+<span class="c1">-- set the path to the sumneko installation; if you previously installed via the now deprecated :LspInstall, use</span>
+<span class="kd">local</span> <span class="n">sumneko_root_path</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">fn</span><span class="p">.</span><span class="n">stdpath</span><span class="p">(</span><span class="s1">&#39;cache&#39;</span><span class="p">)</span><span class="o">..</span><span class="s1">&#39;/lspconfig/sumneko_lua/lua-language-server&#39;</span>
+<span class="kd">local</span> <span class="n">sumneko_binary</span> <span class="o">=</span> <span class="n">sumneko_root_path</span><span class="o">..</span><span class="s2">&quot;/bin/&quot;</span><span class="o">..</span><span class="n">system_name</span><span class="o">..</span><span class="s2">&quot;/lua-language-server&quot;</span>
 
-local runtime_path = vim.split(package.path, ';')
-table.insert(runtime_path, &quot;lua/?.lua&quot;)
-table.insert(runtime_path, &quot;lua/?/init.lua&quot;)
+<span class="kd">local</span> <span class="n">runtime_path</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="nb">package.path</span><span class="p">,</span> <span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<span class="nb">table.insert</span><span class="p">(</span><span class="n">runtime_path</span><span class="p">,</span> <span class="s2">&quot;lua/?.lua&quot;</span><span class="p">)</span>
+<span class="nb">table.insert</span><span class="p">(</span><span class="n">runtime_path</span><span class="p">,</span> <span class="s2">&quot;lua/?/init.lua&quot;</span><span class="p">)</span>
 
-require'lspconfig'.sumneko_lua.setup {
-  cmd = {sumneko_binary, &quot;-E&quot;, sumneko_root_path .. &quot;/main.lua&quot;};
-  settings = {
-    Lua = {
-      runtime = {
-        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-        version = 'LuaJIT',
-        -- Setup your lua path
-        path = runtime_path,
-      },
-      diagnostics = {
-        -- Get the language server to recognize the `vim` global
-        globals = {'vim'},
-      },
-      workspace = {
-        -- Make the server aware of Neovim runtime files
-        library = vim.api.nvim_get_runtime_file(&quot;&quot;, true),
-      },
-      -- Do not send telemetry data containing a randomized but unique identifier
-      telemetry = {
-        enable = false,
-      },
-    },
-  },
-}
-</code></pre>
+<span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">sumneko_lua</span><span class="p">.</span><span class="n">setup</span> <span class="p">{</span>
+  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span><span class="n">sumneko_binary</span><span class="p">,</span> <span class="s2">&quot;-E&quot;</span><span class="p">,</span> <span class="n">sumneko_root_path</span> <span class="o">..</span> <span class="s2">&quot;/main.lua&quot;</span><span class="p">};</span>
+  <span class="n">settings</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">Lua</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="n">runtime</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="c1">-- Tell the language server which version of Lua you&#39;re using (most likely LuaJIT in the case of Neovim)</span>
+        <span class="n">version</span> <span class="o">=</span> <span class="s1">&#39;LuaJIT&#39;</span><span class="p">,</span>
+        <span class="c1">-- Setup your lua path</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">runtime_path</span><span class="p">,</span>
+      <span class="p">},</span>
+      <span class="n">diagnostics</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="c1">-- Get the language server to recognize the `vim` global</span>
+        <span class="n">globals</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;vim&#39;</span><span class="p">},</span>
+      <span class="p">},</span>
+      <span class="n">workspace</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="c1">-- Make the server aware of Neovim runtime files</span>
+        <span class="n">library</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">api</span><span class="p">.</span><span class="n">nvim_get_runtime_file</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">),</span>
+      <span class="p">},</span>
+      <span class="c1">-- Do not send telemetry data containing a randomized but unique identifier</span>
+      <span class="n">telemetry</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">enable</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="p">},</span>
+    <span class="p">},</span>
+  <span class="p">},</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.sumneko_lua.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">sumneko_lua</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  filetypes = { &quot;lua&quot; }
-  log_level = 2
-  root_dir = root_pattern(&quot;.git&quot;) or bufdir
-  settings = {
-    Lua = {
-      telemetry = {
-        enable = false
-      }
-    }
-  }
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;lua&quot;</span> <span class="p">}</span>
+  <span class="n">log_level</span> <span class="o">=</span> <span class="mi">2</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;.git&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">bufdir</span>
+  <span class="n">settings</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">Lua</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="n">telemetry</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">enable</span> <span class="o">=</span> <span class="kc">false</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="available-settings">Available settings</h2>
 <h3 id="luacolormode"><code>Lua.color.mode</code></h3>

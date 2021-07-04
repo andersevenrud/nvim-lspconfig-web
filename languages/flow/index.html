@@ -1688,21 +1688,21 @@
                 
                 
                 <h1 id="flow">flow</h1>
-<p>https://flow.org/
-https://github.com/facebook/flow</p>
+<p><a href="https://flow.org/">https://flow.org/</a>
+<a href="https://github.com/facebook/flow">https://github.com/facebook/flow</a></p>
 <p>See below for how to setup Flow itself.
-https://flow.org/en/docs/install/</p>
+<a href="https://flow.org/en/docs/install/">https://flow.org/en/docs/install/</a></p>
 <p>See below for lsp command options.</p>
-<pre><code class="language-sh">npx flow lsp --help
-</code></pre>
+<div class="highlight"><pre><span></span><code>npx flow lsp --help
+</code></pre></div>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.flow.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">flow</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = { &quot;npx&quot;, &quot;--no-install&quot;, &quot;flow&quot;, &quot;lsp&quot; }
-  filetypes = { &quot;javascript&quot;, &quot;javascriptreact&quot;, &quot;javascript.jsx&quot; }
-  root_dir = root_pattern(&quot;.flowconfig&quot;)
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;npx&quot;</span><span class="p">,</span> <span class="s2">&quot;--no-install&quot;</span><span class="p">,</span> <span class="s2">&quot;flow&quot;</span><span class="p">,</span> <span class="s2">&quot;lsp&quot;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;javascript&quot;</span><span class="p">,</span> <span class="s2">&quot;javascriptreact&quot;</span><span class="p">,</span> <span class="s2">&quot;javascript.jsx&quot;</span> <span class="p">}</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;.flowconfig&quot;</span><span class="p">)</span>
+</code></pre></div>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="available-settings">Available settings</h2>
 <h3 id="flowcoverageseverity"><code>flow.coverageSeverity</code></h3>

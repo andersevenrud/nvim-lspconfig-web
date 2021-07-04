@@ -1438,18 +1438,18 @@
                 
                 
                 <h1 id="graphql">graphql</h1>
-<p>https://github.com/graphql/graphiql/tree/main/packages/graphql-language-service-cli</p>
+<p><a href="https://github.com/graphql/graphiql/tree/main/packages/graphql-language-service-cli">https://github.com/graphql/graphiql/tree/main/packages/graphql-language-service-cli</a></p>
 <p><code>graphql-lsp</code> can be installed via <code>npm</code>:</p>
-<pre><code class="language-sh">npm install -g graphql-language-service-cli
-</code></pre>
+<div class="highlight"><pre><span></span><code>npm install -g graphql-language-service-cli
+</code></pre></div>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.graphql.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">graphql</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = { &quot;graphql-lsp&quot;, &quot;server&quot;, &quot;-m&quot;, &quot;stream&quot; }
-  filetypes = { &quot;graphql&quot; }
-  root_dir = root_pattern('.git', '.graphqlrc')
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;graphql-lsp&quot;</span><span class="p">,</span> <span class="s2">&quot;server&quot;</span><span class="p">,</span> <span class="s2">&quot;-m&quot;</span><span class="p">,</span> <span class="s2">&quot;stream&quot;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;graphql&quot;</span> <span class="p">}</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s1">&#39;.git&#39;</span><span class="p">,</span> <span class="s1">&#39;.graphqlrc&#39;</span><span class="p">)</span>
+</code></pre></div>
                 
               
               

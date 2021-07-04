@@ -1562,29 +1562,29 @@
                 
                 
                 <h1 id="elixirls">elixirls</h1>
-<p>https://github.com/elixir-lsp/elixir-ls</p>
+<p><a href="https://github.com/elixir-lsp/elixir-ls">https://github.com/elixir-lsp/elixir-ls</a></p>
 <p><code>elixir-ls</code> can be installed by following the instructions <a href="https://github.com/elixir-lsp/elixir-ls#building-and-running">here</a>.</p>
-<pre><code class="language-bash">curl -fLO https://github.com/elixir-lsp/elixir-ls/releases/latest/download/elixir-ls.zip
+<div class="highlight"><pre><span></span><code>curl -fLO https://github.com/elixir-lsp/elixir-ls/releases/latest/download/elixir-ls.zip
 unzip elixir-ls.zip -d /path/to/elixir-ls
-# Unix
+<span class="c1"># Unix</span>
 chmod +x /path/to/elixir-ls/language_server.sh
-</code></pre>
+</code></pre></div>
 <p><strong>By default, elixir-ls doesn't have a <code>cmd</code> set.</strong> This is because nvim-lspconfig does not make assumptions about your path. You must add the following to your init.vim or init.lua to set <code>cmd</code> to the absolute path ($HOME and ~ are not expanded) of your unzipped elixir-ls.</p>
-<pre><code class="language-lua">require'lspconfig'.elixirls.setup{
-    -- Unix
-    cmd = { &quot;/path/to/elixir-ls/language_server.sh&quot; };
-    -- Windows
-    cmd = { &quot;/path/to/elixir-ls/language_server.bat&quot; };
-    ...
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">elixirls</span><span class="p">.</span><span class="n">setup</span><span class="p">{</span>
+    <span class="c1">-- Unix</span>
+    <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;/path/to/elixir-ls/language_server.sh&quot;</span> <span class="p">};</span>
+    <span class="c1">-- Windows</span>
+    <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;/path/to/elixir-ls/language_server.bat&quot;</span> <span class="p">};</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.elixirls.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">elixirls</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  filetypes = { &quot;elixir&quot;, &quot;eelixir&quot; }
-  root_dir = root_pattern(&quot;mix.exs&quot;, &quot;.git&quot;) or vim.loop.os_homedir()
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;elixir&quot;</span><span class="p">,</span> <span class="s2">&quot;eelixir&quot;</span> <span class="p">}</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;mix.exs&quot;</span><span class="p">,</span> <span class="s2">&quot;.git&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">vim</span><span class="p">.</span><span class="n">loop</span><span class="p">.</span><span class="n">os_homedir</span><span class="p">()</span>
+</code></pre></div>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="available-settings">Available settings</h2>
 <h3 id="elixirlsdialyzerenabled"><code>elixirLS.dialyzerEnabled</code></h3>

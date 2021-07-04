@@ -1438,20 +1438,20 @@
                 
                 
                 <h1 id="sorbet">sorbet</h1>
-<p>https://sorbet.org</p>
+<p><a href="https://sorbet.org">https://sorbet.org</a></p>
 <p>Sorbet is a fast, powerful type checker designed for Ruby.</p>
 <p>You can install Sorbet via gem install. You might also be interested in how to set
-Sorbet up for new projects: https://sorbet.org/docs/adopting.</p>
-<pre><code class="language-sh">gem install sorbet
-</code></pre>
+Sorbet up for new projects: <a href="https://sorbet.org/docs/adopting">https://sorbet.org/docs/adopting</a>.</p>
+<div class="highlight"><pre><span></span><code>gem install sorbet
+</code></pre></div>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.sorbet.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">sorbet</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = { &quot;srb&quot;, &quot;tc&quot;, &quot;--lsp&quot; }
-  filetypes = { &quot;ruby&quot; }
-  root_dir = root_pattern(&quot;Gemfile&quot;, &quot;.git&quot;)
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;srb&quot;</span><span class="p">,</span> <span class="s2">&quot;tc&quot;</span><span class="p">,</span> <span class="s2">&quot;--lsp&quot;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;ruby&quot;</span> <span class="p">}</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;Gemfile&quot;</span><span class="p">,</span> <span class="s2">&quot;.git&quot;</span><span class="p">)</span>
+</code></pre></div>
                 
               
               

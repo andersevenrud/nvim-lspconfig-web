@@ -1438,7 +1438,7 @@
                 
                 
                 <h1 id="erlangls">erlangls</h1>
-<p>https://erlang-ls.github.io</p>
+<p><a href="https://erlang-ls.github.io">https://erlang-ls.github.io</a></p>
 <p>Language Server for Erlang.</p>
 <p>Clone <a href="https://github.com/erlang-ls/erlang_ls">erlang_ls</a>
 Compile the project with <code>make</code> and copy resulting binaries somewhere in your $PATH eg. <code>cp _build/*/bin/* ~/local/bin</code></p>
@@ -1447,13 +1447,13 @@ Compile the project with <code>make</code> and copy resulting binaries somewhere
     - <a href="https://github.com/erlang/otp">Erlang OTP 21+</a>
     - <a href="https://github.com/erlang/rebar3">rebar3 3.9.1+</a></p>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.erlangls.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">erlangls</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = { &quot;erlang_ls&quot; }
-  filetypes = { &quot;erlang&quot; }
-  root_dir = root_pattern('rebar.config', 'erlang.mk', '.git') or util.path.dirname(fname)
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;erlang_ls&quot;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;erlang&quot;</span> <span class="p">}</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s1">&#39;rebar.config&#39;</span><span class="p">,</span> <span class="s1">&#39;erlang.mk&#39;</span><span class="p">,</span> <span class="s1">&#39;.git&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">util</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+</code></pre></div>
                 
               
               

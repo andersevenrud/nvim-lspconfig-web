@@ -1452,25 +1452,25 @@
                 
                 
                 <h1 id="clangd">clangd</h1>
-<p>https://clangd.llvm.org/installation.html</p>
+<p><a href="https://clangd.llvm.org/installation.html">https://clangd.llvm.org/installation.html</a></p>
 <p><strong>NOTE:</strong> Clang &gt;= 9 is recommended! See <a href="https://github.com/neovim/nvim-lsp/issues/23">this issue for more</a>.</p>
 <p>clangd relies on a <a href="https://clang.llvm.org/docs/JSONCompilationDatabase.html">JSON compilation database</a> specified
 as compile_commands.json or, for simpler projects, a compile_flags.txt.
 For details on how to automatically generate one using CMake look <a href="https://cmake.org/cmake/help/latest/variable/CMAKE_EXPORT_COMPILE_COMMANDS.html">here</a>.</p>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.clangd.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">clangd</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="commands">Commands</h3>
 <ul>
 <li>ClangdSwitchSourceHeader: Switch between source/header</li>
 </ul>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  capabilities = default capabilities, with offsetEncoding utf-8
-  cmd = { &quot;clangd&quot;, &quot;--background-index&quot; }
-  filetypes = { &quot;c&quot;, &quot;cpp&quot;, &quot;objc&quot;, &quot;objcpp&quot; }
-  on_init = function to handle changing offsetEncoding
-  root_dir = root_pattern(&quot;compile_commands.json&quot;, &quot;compile_flags.txt&quot;, &quot;.git&quot;) or dirname
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">capabilities</span> <span class="o">=</span> <span class="n">default</span> <span class="n">capabilities</span><span class="p">,</span> <span class="n">with</span> <span class="n">offsetEncoding</span> <span class="n">utf</span><span class="o">-</span><span class="mi">8</span>
+  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;clangd&quot;</span><span class="p">,</span> <span class="s2">&quot;--background-index&quot;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;cpp&quot;</span><span class="p">,</span> <span class="s2">&quot;objc&quot;</span><span class="p">,</span> <span class="s2">&quot;objcpp&quot;</span> <span class="p">}</span>
+  <span class="n">on_init</span> <span class="o">=</span> <span class="kr">function</span> <span class="nf">to</span> <span class="n">handle</span> <span class="n">changing</span> <span class="n">offsetEncoding</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;compile_commands.json&quot;</span><span class="p">,</span> <span class="s2">&quot;compile_flags.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;.git&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">dirname</span>
+</code></pre></div>
                 
               
               

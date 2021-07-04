@@ -1660,19 +1660,19 @@
                 
                 
                 <h1 id="fortls">fortls</h1>
-<p>https://github.com/hansec/fortran-language-server</p>
+<p><a href="https://github.com/hansec/fortran-language-server">https://github.com/hansec/fortran-language-server</a></p>
 <p>Fortran Language Server for the Language Server Protocol</p>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.fortls.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">fortls</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = { &quot;fortls&quot; }
-  filetypes = { &quot;fortran&quot; }
-  root_dir = root_pattern(&quot;.fortls&quot;)
-  settings = {
-    nthreads = 1
-  }
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;fortls&quot;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;fortran&quot;</span> <span class="p">}</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;.fortls&quot;</span><span class="p">)</span>
+  <span class="n">settings</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">nthreads</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="p">}</span>
+</code></pre></div>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="available-settings">Available settings</h2>
 <h3 id="fortran-lsautocompleteprefix"><code>fortran-ls.autocompletePrefix</code></h3>

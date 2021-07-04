@@ -1438,20 +1438,20 @@
                 
                 
                 <h1 id="rnix">rnix</h1>
-<p>https://github.com/nix-community/rnix-lsp</p>
+<p><a href="https://github.com/nix-community/rnix-lsp">https://github.com/nix-community/rnix-lsp</a></p>
 <p>A language server for Nix providing basic completion and formatting via nixpkgs-fmt.</p>
 <p>To install manually, run <code>cargo install rnix-lsp</code>. If you are using nix, rnix-lsp is in nixpkgs.</p>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.rnix.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">rnix</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = { &quot;rnix-lsp&quot; }
-  filetypes = { &quot;nix&quot; }
-  init_options = {}
-  root_dir = vim's starting directory
-  settings = {}
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;rnix-lsp&quot;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;nix&quot;</span> <span class="p">}</span>
+  <span class="n">init_options</span> <span class="o">=</span> <span class="p">{}</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">vim</span><span class="s1">&#39;s starting directory</span>
+<span class="s1">  settings = {}</span>
+</code></pre></div>
                 
               
               

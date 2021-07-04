@@ -1548,33 +1548,33 @@
                 
                 
                 <h1 id="jsonls">jsonls</h1>
-<p>https://github.com/hrsh7th/vscode-langservers-extracted</p>
+<p><a href="https://github.com/hrsh7th/vscode-langservers-extracted">https://github.com/hrsh7th/vscode-langservers-extracted</a></p>
 <p>vscode-json-language-server, a language server for JSON and JSON schema</p>
-<p><code>vscode-json-language-server</code> can be installed via <code>npm</code>:</p>
-<pre><code class="language-sh">npm i -g vscode-langservers-extracted
-</code></pre>
+<p><code>vscode-json-language-server</code> can be installed via <code>npm</code>:
+<div class="highlight"><pre><span></span><code>npm i -g vscode-langservers-extracted
+</code></pre></div></p>
 <p>vscode-json-language-server only provides range formatting. You can map a command that applies range formatting to the entire document:</p>
-<pre><code class="language-lua">require'lspconfig'.jsonls.setup {
-    commands = {
-      Format = {
-        function()
-          vim.lsp.buf.range_formatting({},{0,0},{vim.fn.line(&quot;$&quot;),0})
-        end
-      }
-    }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">jsonls</span><span class="p">.</span><span class="n">setup</span> <span class="p">{</span>
+    <span class="n">commands</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="n">Format</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="kr">function</span><span class="p">()</span>
+          <span class="n">vim</span><span class="p">.</span><span class="n">lsp</span><span class="p">.</span><span class="n">buf</span><span class="p">.</span><span class="n">range_formatting</span><span class="p">({},{</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">},{</span><span class="n">vim</span><span class="p">.</span><span class="n">fn</span><span class="p">.</span><span class="n">line</span><span class="p">(</span><span class="s2">&quot;$&quot;</span><span class="p">),</span><span class="mi">0</span><span class="p">})</span>
+        <span class="kr">end</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.jsonls.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">jsonls</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = { &quot;vscode-json-language-server&quot;, &quot;--stdio&quot; }
-  filetypes = { &quot;json&quot; }
-  init_options = {
-    provideFormatter = true
-  }
-  root_dir = root_pattern(&quot;.git&quot;, vim.fn.getcwd())
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;vscode-json-language-server&quot;</span><span class="p">,</span> <span class="s2">&quot;--stdio&quot;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;json&quot;</span> <span class="p">}</span>
+  <span class="n">init_options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">provideFormatter</span> <span class="o">=</span> <span class="kc">true</span>
+  <span class="p">}</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;.git&quot;</span><span class="p">,</span> <span class="n">vim</span><span class="p">.</span><span class="n">fn</span><span class="p">.</span><span class="n">getcwd</span><span class="p">())</span>
+</code></pre></div>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="available-settings">Available settings</h2>
 <h3 id="jsoncolordecoratorsenable"><code>json.colorDecorators.enable</code></h3>

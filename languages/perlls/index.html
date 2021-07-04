@@ -1702,25 +1702,25 @@
                 
                 
                 <h1 id="perlls">perlls</h1>
-<p>https://github.com/richterger/Perl-LanguageServer/tree/master/clients/vscode/perl</p>
+<p><a href="https://github.com/richterger/Perl-LanguageServer/tree/master/clients/vscode/perl">https://github.com/richterger/Perl-LanguageServer/tree/master/clients/vscode/perl</a></p>
 <p><code>Perl-LanguageServer</code>, a language server for Perl.</p>
 <p>To use the language server, ensure that you have Perl::LanguageServer installed and perl command is on your path.</p>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.perlls.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">perlls</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = { &quot;perl&quot;, &quot;-MPerl::LanguageServer&quot;, &quot;-e&quot;, &quot;Perl::LanguageServer::run&quot;, &quot;--&quot;, &quot;--port 13603&quot;, &quot;--nostdio 0&quot;, &quot;--version 2.1.0&quot; }
-  filetypes = { &quot;perl&quot; }
-  root_dir = vim's starting directory
-  settings = {
-    perl = {
-      fileFilter = { &quot;.pm&quot;, &quot;.pl&quot; },
-      ignoreDirs = &quot;.git&quot;,
-      perlCmd = &quot;perl&quot;,
-      perlInc = &quot; &quot;
-    }
-  }
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;perl&quot;</span><span class="p">,</span> <span class="s2">&quot;-MPerl::LanguageServer&quot;</span><span class="p">,</span> <span class="s2">&quot;-e&quot;</span><span class="p">,</span> <span class="s2">&quot;Perl::LanguageServer::run&quot;</span><span class="p">,</span> <span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="s2">&quot;--port 13603&quot;</span><span class="p">,</span> <span class="s2">&quot;--nostdio 0&quot;</span><span class="p">,</span> <span class="s2">&quot;--version 2.1.0&quot;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;perl&quot;</span> <span class="p">}</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">vim</span><span class="s1">&#39;s starting directory</span>
+<span class="s1">  settings = {</span>
+<span class="s1">    perl = {</span>
+<span class="s1">      fileFilter = { &quot;.pm&quot;, &quot;.pl&quot; },</span>
+<span class="s1">      ignoreDirs = &quot;.git&quot;,</span>
+<span class="s1">      perlCmd = &quot;perl&quot;,</span>
+<span class="s1">      perlInc = &quot; &quot;</span>
+<span class="s1">    }</span>
+<span class="s1">  }</span>
+</code></pre></div>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="available-settings">Available settings</h2>
 <h3 id="perldebugadapterport"><code>perl.debugAdapterPort</code></h3>

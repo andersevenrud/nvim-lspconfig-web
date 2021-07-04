@@ -1439,31 +1439,31 @@
                 
                 <h1 id="codeqlls">codeqlls</h1>
 <p>Reference:
-https://help.semmle.com/codeql/codeql-cli.html</p>
+<a href="https://help.semmle.com/codeql/codeql-cli.html">https://help.semmle.com/codeql/codeql-cli.html</a></p>
 <p>Binaries:
-https://github.com/github/codeql-cli-binaries</p>
+<a href="https://github.com/github/codeql-cli-binaries">https://github.com/github/codeql-cli-binaries</a></p>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.codeqlls.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">codeqlls</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  before_init = function(initialize_params)
-        initialize_params[&quot;workspaceFolders&quot;] = {
-          {
-            name = &quot;workspace&quot;,
-            uri = initialize_params[&quot;rootUri&quot;],
-          },
-        }
-      end,
-  cmd = { &quot;codeql&quot;, &quot;execute&quot;, &quot;language-server&quot;, &quot;--check-errors&quot;, &quot;ON_CHANGE&quot;, &quot;-q&quot; }
-  filetypes = { &quot;ql&quot; }
-  log_level = 2
-  root_dir = function(fname)
-        return root_pattern(fname) or util.path.dirname(fname)
-      end,
-  settings = {
-    search_path = &quot;list containing all search paths, eg: '~/codeql-home/codeql-repo'&quot;
-  }
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">before_init</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">initialize_params</span><span class="p">)</span>
+        <span class="n">initialize_params</span><span class="p">[</span><span class="s2">&quot;workspaceFolders&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+          <span class="p">{</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;workspace&quot;</span><span class="p">,</span>
+            <span class="n">uri</span> <span class="o">=</span> <span class="n">initialize_params</span><span class="p">[</span><span class="s2">&quot;rootUri&quot;</span><span class="p">],</span>
+          <span class="p">},</span>
+        <span class="p">}</span>
+      <span class="kr">end</span><span class="p">,</span>
+  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;codeql&quot;</span><span class="p">,</span> <span class="s2">&quot;execute&quot;</span><span class="p">,</span> <span class="s2">&quot;language-server&quot;</span><span class="p">,</span> <span class="s2">&quot;--check-errors&quot;</span><span class="p">,</span> <span class="s2">&quot;ON_CHANGE&quot;</span><span class="p">,</span> <span class="s2">&quot;-q&quot;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;ql&quot;</span> <span class="p">}</span>
+  <span class="n">log_level</span> <span class="o">=</span> <span class="mi">2</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+        <span class="kr">return</span> <span class="n">root_pattern</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span> <span class="ow">or</span> <span class="n">util</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+      <span class="kr">end</span><span class="p">,</span>
+  <span class="n">settings</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">search_path</span> <span class="o">=</span> <span class="s2">&quot;list containing all search paths, eg: &#39;~/codeql-home/codeql-repo&#39;&quot;</span>
+  <span class="p">}</span>
+</code></pre></div>
                 
               
               

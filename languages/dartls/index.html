@@ -2920,23 +2920,23 @@
                 
                 
                 <h1 id="dartls">dartls</h1>
-<p>https://github.com/dart-lang/sdk/tree/master/pkg/analysis_server/tool/lsp_spec</p>
+<p><a href="https://github.com/dart-lang/sdk/tree/master/pkg/analysis_server/tool/lsp_spec">https://github.com/dart-lang/sdk/tree/master/pkg/analysis_server/tool/lsp_spec</a></p>
 <p>Language server for dart.</p>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.dartls.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">dartls</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = { &quot;dart&quot;, &quot;/opt/dart-sdk/bin/snapshots/analysis_server.dart.snapshot&quot;, &quot;--lsp&quot; }
-  filetypes = { &quot;dart&quot; }
-  init_options = {
-    closingLabels = false,
-    flutterOutline = false,
-    onlyAnalyzeProjectsWithOpenFiles = false,
-    outline = false,
-    suggestFromUnimportedLibraries = true
-  }
-  root_dir = root_pattern(&quot;pubspec.yaml&quot;)
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;dart&quot;</span><span class="p">,</span> <span class="s2">&quot;/opt/dart-sdk/bin/snapshots/analysis_server.dart.snapshot&quot;</span><span class="p">,</span> <span class="s2">&quot;--lsp&quot;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;dart&quot;</span> <span class="p">}</span>
+  <span class="n">init_options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">closingLabels</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="n">flutterOutline</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="n">onlyAnalyzeProjectsWithOpenFiles</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="n">outline</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="n">suggestFromUnimportedLibraries</span> <span class="o">=</span> <span class="kc">true</span>
+  <span class="p">}</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;pubspec.yaml&quot;</span><span class="p">)</span>
+</code></pre></div>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="available-settings">Available settings</h2>
 <h3 id="dartadditionalanalyzerfileextensions"><code>dart.additionalAnalyzerFileExtensions</code></h3>

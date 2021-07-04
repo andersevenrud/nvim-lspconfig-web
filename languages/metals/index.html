@@ -1438,36 +1438,36 @@
                 
                 
                 <h1 id="metals">metals</h1>
-<p>https://scalameta.org/metals/</p>
+<p><a href="https://scalameta.org/metals/">https://scalameta.org/metals/</a></p>
 <p>Scala language server with rich IDE features.</p>
 <p>See full instructions in the Metals documentation:</p>
-<p>https://scalameta.org/metals/docs/editors/vim.html#using-an-alternative-lsp-client</p>
+<p><a href="https://scalameta.org/metals/docs/editors/vim.html#using-an-alternative-lsp-client">https://scalameta.org/metals/docs/editors/vim.html#using-an-alternative-lsp-client</a></p>
 <p>Note: that if you're using <a href="https://github.com/scalameta/nvim-metals">nvim-metals</a>, that plugin fully handles the setup and installation of Metals, and you shouldn't set up Metals both with it and this plugin.</p>
 <p>To install Metals, make sure to have <a href="https://get-coursier.io/docs/cli-installation">coursier</a> installed, and once you do you can install the latest Metals with <code>cs install metals</code>. You can also manually bootstrap Metals with the following command.</p>
-<pre><code class="language-bash">cs bootstrap \
-  --java-opt -Xss4m \
-  --java-opt -Xms100m \
-  org.scalameta:metals_2.12:&lt;enter-version-here&gt; \
-  -r bintray:scalacenter/releases \
-  -r sonatype:snapshots \
+<div class="highlight"><pre><span></span><code>cs bootstrap <span class="se">\</span>
+  --java-opt -Xss4m <span class="se">\</span>
+  --java-opt -Xms100m <span class="se">\</span>
+  org.scalameta:metals_2.12:&lt;enter-version-here&gt; <span class="se">\</span>
+  -r bintray:scalacenter/releases <span class="se">\</span>
+  -r sonatype:snapshots <span class="se">\</span>
   -o /usr/local/bin/metals -f
-</code></pre>
+</code></pre></div>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.metals.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">metals</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = { &quot;metals&quot; }
-  filetypes = { &quot;scala&quot; }
-  init_options = {
-    compilerOptions = {
-      snippetAutoIndent = false
-    },
-    isHttpEnabled = true,
-    statusBarProvider = &quot;show-message&quot;
-  }
-  message_level = 4
-  root_dir = util.root_pattern(&quot;build.sbt&quot;, &quot;build.sc&quot;, &quot;build.gradle&quot;, &quot;pom.xml&quot;)
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;metals&quot;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;scala&quot;</span> <span class="p">}</span>
+  <span class="n">init_options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">compilerOptions</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="n">snippetAutoIndent</span> <span class="o">=</span> <span class="kc">false</span>
+    <span class="p">},</span>
+    <span class="n">isHttpEnabled</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="n">statusBarProvider</span> <span class="o">=</span> <span class="s2">&quot;show-message&quot;</span>
+  <span class="p">}</span>
+  <span class="n">message_level</span> <span class="o">=</span> <span class="mi">4</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;build.sbt&quot;</span><span class="p">,</span> <span class="s2">&quot;build.sc&quot;</span><span class="p">,</span> <span class="s2">&quot;build.gradle&quot;</span><span class="p">,</span> <span class="s2">&quot;pom.xml&quot;</span><span class="p">)</span>
+</code></pre></div>
                 
               
               

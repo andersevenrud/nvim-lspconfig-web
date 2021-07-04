@@ -1438,35 +1438,34 @@
                 
                 
                 <h1 id="rescriptls">rescriptls</h1>
-<p>https://github.com/rescript-lang/rescript-vscode</p>
+<p><a href="https://github.com/rescript-lang/rescript-vscode">https://github.com/rescript-lang/rescript-vscode</a></p>
 <p>ReScript language server</p>
 <p><strong>By default, rescriptls doesn't have a <code>cmd</code> set.</strong> This is because nvim-lspconfig does not make assumptions about your path.
 You have to install the language server manually.</p>
 <p>You can use the bundled language server inside the <a href="https://github.com/rescript-lang/vim-rescript">vim-rescript</a> repo.</p>
 <p>Clone the vim-rescript repo and point <code>cmd</code> to <code>server.js</code> inside <code>server/out</code> directory:</p>
-<pre><code class="language-lua">cmd = {'node', '&lt;path_to_repo&gt;/server/out/server.js', '--stdio'}
-
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;node&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;path_to_repo&gt;/server/out/server.js&#39;</span><span class="p">,</span> <span class="s1">&#39;--stdio&#39;</span><span class="p">}</span>
+</code></pre></div>
 <p>If you have vim-rescript installed you can also use that installation. for example if you're using packer.nvim you can set cmd to something like this:</p>
-<pre><code class="language-lua">cmd = {
-  'node',
-  '/home/username/.local/share/nvim/site/pack/packer/start/vim-rescript/server/out/server.js',
-  '--stdio'
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">&#39;node&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;/home/username/.local/share/nvim/site/pack/packer/start/vim-rescript/server/out/server.js&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;--stdio&#39;</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Another option is to use vscode extension <a href="https://github.com/rescript-lang/rescript-vscode/releases">release</a>.
 Take a look at <a href="https://github.com/rescript-lang/rescript-vscode#use-with-other-editors">here</a> for instructions.</p>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.rescriptls.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">rescriptls</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = {}
-  filetypes = { &quot;rescript&quot; }
-  root_dir = function(startpath)
-      return M.search_ancestors(startpath, matcher)
-    end
-  settings = {}
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;rescript&quot;</span> <span class="p">}</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">startpath</span><span class="p">)</span>
+      <span class="kr">return</span> <span class="n">M</span><span class="p">.</span><span class="n">search_ancestors</span><span class="p">(</span><span class="n">startpath</span><span class="p">,</span> <span class="n">matcher</span><span class="p">)</span>
+    <span class="kr">end</span>
+  <span class="n">settings</span> <span class="o">=</span> <span class="p">{}</span>
+</code></pre></div>
                 
               
               

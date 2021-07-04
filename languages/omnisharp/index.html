@@ -1438,33 +1438,33 @@
                 
                 
                 <h1 id="omnisharp">omnisharp</h1>
-<p>https://github.com/omnisharp/omnisharp-roslyn
+<p><a href="https://github.com/omnisharp/omnisharp-roslyn">https://github.com/omnisharp/omnisharp-roslyn</a>
 OmniSharp server based on Roslyn workspaces</p>
 <p><code>omnisharp-roslyn</code> can be installed by downloading and extracting a release from <a href="https://github.com/OmniSharp/omnisharp-roslyn/releases">here</a>.
 Omnisharp can also be built from source by following the instructions <a href="https://github.com/omnisharp/omnisharp-roslyn#downloading-omnisharp">here</a>.</p>
 <p>Omnisharp requires the <a href="https://dotnet.microsoft.com/download">dotnet-sdk</a> to be installed.</p>
 <p><strong>By default, omnisharp-roslyn doesn't have a <code>cmd</code> set.</strong> This is because nvim-lspconfig does not make assumptions about your path. You must add the following to your init.vim or init.lua to set <code>cmd</code> to the absolute path ($HOME and ~ are not expanded) of the unzipped run script or binary.</p>
-<pre><code class="language-lua">local pid = vim.fn.getpid()
--- On linux/darwin if using a release build, otherwise under scripts/OmniSharp(.Core)(.cmd)
-local omnisharp_bin = &quot;/path/to/omnisharp-repo/run&quot;
--- on Windows
--- local omnisharp_bin = &quot;/path/to/omnisharp/OmniSharp.exe&quot;
-require'lspconfig'.omnisharp.setup{
-    cmd = { omnisharp_bin, &quot;--languageserver&quot; , &quot;--hostPID&quot;, tostring(pid) };
-    ...
-}
-</code></pre>
-<p>Note, if you download the executable for darwin you will need to strip the quarantine label to run:</p>
-<pre><code class="language-bash">find /path/to/omnisharp-osx | xargs xattr -r -d com.apple.quarantine
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">pid</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">fn</span><span class="p">.</span><span class="n">getpid</span><span class="p">()</span>
+<span class="c1">-- On linux/darwin if using a release build, otherwise under scripts/OmniSharp(.Core)(.cmd)</span>
+<span class="kd">local</span> <span class="n">omnisharp_bin</span> <span class="o">=</span> <span class="s2">&quot;/path/to/omnisharp-repo/run&quot;</span>
+<span class="c1">-- on Windows</span>
+<span class="c1">-- local omnisharp_bin = &quot;/path/to/omnisharp/OmniSharp.exe&quot;</span>
+<span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">omnisharp</span><span class="p">.</span><span class="n">setup</span><span class="p">{</span>
+    <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="n">omnisharp_bin</span><span class="p">,</span> <span class="s2">&quot;--languageserver&quot;</span> <span class="p">,</span> <span class="s2">&quot;--hostPID&quot;</span><span class="p">,</span> <span class="nb">tostring</span><span class="p">(</span><span class="n">pid</span><span class="p">)</span> <span class="p">};</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Note, if you download the executable for darwin you will need to strip the quarantine label to run:
+<div class="highlight"><pre><span></span><code>find /path/to/omnisharp-osx <span class="p">|</span> xargs xattr -r -d com.apple.quarantine
+</code></pre></div></p>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.omnisharp.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">omnisharp</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  filetypes = { &quot;cs&quot;, &quot;vb&quot; }
-  init_options = {}
-  root_dir = root_pattern(&quot;.csproj&quot;, &quot;.sln&quot;)
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;cs&quot;</span><span class="p">,</span> <span class="s2">&quot;vb&quot;</span> <span class="p">}</span>
+  <span class="n">init_options</span> <span class="o">=</span> <span class="p">{}</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;.csproj&quot;</span><span class="p">,</span> <span class="s2">&quot;.sln&quot;</span><span class="p">)</span>
+</code></pre></div>
                 
               
               

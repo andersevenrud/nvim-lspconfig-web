@@ -1438,47 +1438,47 @@
                 
                 
                 <h1 id="pyls_ms">pyls_ms</h1>
-<p>https://github.com/Microsoft/python-language-server</p>
+<p><a href="https://github.com/Microsoft/python-language-server">https://github.com/Microsoft/python-language-server</a></p>
 <p><code>python-language-server</code>, a language server for Python.</p>
 <p>Requires <a href="https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-install-script">.NET Core</a> to run. On Linux or macOS:</p>
-<pre><code class="language-bash">curl -L https://dot.net/v1/dotnet-install.sh | sh
-</code></pre>
+<div class="highlight"><pre><span></span><code>curl -L https://dot.net/v1/dotnet-install.sh <span class="p">|</span> sh
+</code></pre></div>
 <p><code>python-language-server</code> can be installed via <a href="https://github.com/microsoft/python-language-server/blob/master/CONTRIBUTING.md#setup">build</a>.</p>
 <p>Set cmd to point to <code>Microsoft.Python.languageServer.dll</code>.</p>
-<pre><code class="language-lua">cmd = { &quot;dotnet&quot;, &quot;exec&quot;, &quot;path/to/Microsoft.Python.languageServer.dll&quot; };
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;dotnet&quot;</span><span class="p">,</span> <span class="s2">&quot;exec&quot;</span><span class="p">,</span> <span class="s2">&quot;path/to/Microsoft.Python.languageServer.dll&quot;</span> <span class="p">};</span>
+</code></pre></div>
 <p>If the <code>python</code> interpreter is not in your PATH environment variable, set the <code>InterpreterPath</code> and <code>Version</code> properties accordingly.</p>
-<pre><code class="language-lua">InterpreterPath = &quot;path/to/python&quot;,
-Version = &quot;3.8&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">InterpreterPath</span> <span class="o">=</span> <span class="s2">&quot;path/to/python&quot;</span><span class="p">,</span>
+<span class="n">Version</span> <span class="o">=</span> <span class="s2">&quot;3.8&quot;</span>
+</code></pre></div>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.pyls_ms.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">pyls_ms</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  filetypes = { &quot;python&quot; }
-  init_options = {
-    analysisUpdates = true,
-    asyncStartup = true,
-    displayOptions = {},
-    interpreter = {
-      properties = {
-        InterpreterPath = &quot;&quot;,
-        Version = &quot;&quot;
-      }
-    }
-  }
-  root_dir = vim's starting directory
-  settings = {
-    python = {
-      analysis = {
-        disabled = {},
-        errors = {},
-        info = {}
-      }
-    }
-  }
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;python&quot;</span> <span class="p">}</span>
+  <span class="n">init_options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">analysisUpdates</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="n">asyncStartup</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="n">displayOptions</span> <span class="o">=</span> <span class="p">{},</span>
+    <span class="n">interpreter</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="n">properties</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">InterpreterPath</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="n">Version</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">vim</span><span class="s1">&#39;s starting directory</span>
+<span class="s1">  settings = {</span>
+<span class="s1">    python = {</span>
+<span class="s1">      analysis = {</span>
+<span class="s1">        disabled = {},</span>
+<span class="s1">        errors = {},</span>
+<span class="s1">        info = {}</span>
+<span class="s1">      }</span>
+<span class="s1">    }</span>
+<span class="s1">  }</span>
+</code></pre></div>
                 
               
               

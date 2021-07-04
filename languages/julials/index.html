@@ -2150,58 +2150,58 @@
                 
                 
                 <h1 id="julials">julials</h1>
-<p>https://github.com/julia-vscode/julia-vscode</p>
-<p><code>LanguageServer.jl</code> can be installed with <code>julia</code> and <code>Pkg</code>:</p>
-<pre><code class="language-sh">julia -e 'using Pkg; Pkg.add(&quot;LanguageServer&quot;); Pkg.add(&quot;SymbolServer&quot;)'
-</code></pre>
-<p>The default config lazily evaluates the location of the julia language server from the your global julia packages.
+<p><a href="https://github.com/julia-vscode/julia-vscode">https://github.com/julia-vscode/julia-vscode</a></p>
+<p><code>LanguageServer.jl</code> can be installed with <code>julia</code> and <code>Pkg</code>:
+<div class="highlight"><pre><span></span><code>julia -e <span class="s1">&#39;using Pkg; Pkg.add(&quot;LanguageServer&quot;); Pkg.add(&quot;SymbolServer&quot;)&#39;</span>
+</code></pre></div>
+The default config lazily evaluates the location of the julia language server from the your global julia packages.
 This adds a small overhead on first opening of a julia file. To avoid this overhead, replace server_path in on_new_config with
 a hard-coded path to the server.</p>
-<pre><code class="language-lua">require'lspconfig'.julials.setup{
-    on_new_config = function(new_config,new_root_dir)
-      server_path = &quot;/path/to/directory/containing/LanguageServer.jl/src&quot;
-      cmd = {
-        &quot;julia&quot;,
-        &quot;--project=&quot;..server_path,
-        &quot;--startup-file=no&quot;,
-        &quot;--history-file=no&quot;,
-        &quot;-e&quot;, [[
-          using Pkg;
-          Pkg.instantiate()
-          using LanguageServer; using SymbolServer;
-          depot_path = get(ENV, &quot;JULIA_DEPOT_PATH&quot;, &quot;&quot;)
-          project_path = dirname(something(Base.current_project(pwd()), Base.load_path_expand(LOAD_PATH[2])))
-          # Make sure that we only load packages from this environment specifically.
-          @info &quot;Running language server&quot; env=Base.load_path()[1] pwd() project_path depot_path
-          server = LanguageServer.LanguageServerInstance(stdin, stdout, project_path, depot_path);
-          server.runlinter = true;
-          run(server);
-        \]\]
-    };
-      new_config.cmd = cmd
-    end
-}
-</code></pre>
-<p>You can find the path to the globally installed LanguageServer.jl package with the following command:</p>
-<pre><code class="language-bash">julia -e 'print(Base.find_package(&quot;LanguageServer&quot;))'
-</code></pre>
+<p><div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">julials</span><span class="p">.</span><span class="n">setup</span><span class="p">{</span>
+    <span class="n">on_new_config</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">new_config</span><span class="p">,</span><span class="n">new_root_dir</span><span class="p">)</span>
+      <span class="n">server_path</span> <span class="o">=</span> <span class="s2">&quot;/path/to/directory/containing/LanguageServer.jl/src&quot;</span>
+      <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;julia&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;--project=&quot;</span><span class="o">..</span><span class="n">server_path</span><span class="p">,</span>
+        <span class="s2">&quot;--startup-file=no&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;--history-file=no&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;-e&quot;</span><span class="p">,</span> <span class="p">[[</span>
+          <span class="n">using</span> <span class="n">Pkg</span><span class="p">;</span>
+          <span class="n">Pkg</span><span class="p">.</span><span class="n">instantiate</span><span class="p">()</span>
+          <span class="n">using</span> <span class="n">LanguageServer</span><span class="p">;</span> <span class="n">using</span> <span class="n">SymbolServer</span><span class="p">;</span>
+          <span class="n">depot_path</span> <span class="o">=</span> <span class="n">get</span><span class="p">(</span><span class="n">ENV</span><span class="p">,</span> <span class="s2">&quot;JULIA_DEPOT_PATH&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+          <span class="n">project_path</span> <span class="o">=</span> <span class="n">dirname</span><span class="p">(</span><span class="n">something</span><span class="p">(</span><span class="n">Base</span><span class="p">.</span><span class="n">current_project</span><span class="p">(</span><span class="n">pwd</span><span class="p">()),</span> <span class="n">Base</span><span class="p">.</span><span class="n">load_path_expand</span><span class="p">(</span><span class="n">LOAD_PATH</span><span class="p">[</span><span class="mi">2</span><span class="p">])))</span>
+          <span class="o">#</span> <span class="n">Make</span> <span class="n">sure</span> <span class="n">that</span> <span class="n">we</span> <span class="n">only</span> <span class="nb">load</span> <span class="n">packages</span> <span class="n">from</span> <span class="n">this</span> <span class="n">environment</span> <span class="n">specifically</span><span class="p">.</span>
+          <span class="err">@</span><span class="n">info</span> <span class="s2">&quot;Running language server&quot;</span> <span class="n">env</span><span class="o">=</span><span class="n">Base</span><span class="p">.</span><span class="n">load_path</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span> <span class="n">pwd</span><span class="p">()</span> <span class="n">project_path</span> <span class="n">depot_path</span>
+          <span class="n">server</span> <span class="o">=</span> <span class="n">LanguageServer</span><span class="p">.</span><span class="n">LanguageServerInstance</span><span class="p">(</span><span class="n">stdin</span><span class="p">,</span> <span class="n">stdout</span><span class="p">,</span> <span class="n">project_path</span><span class="p">,</span> <span class="n">depot_path</span><span class="p">);</span>
+          <span class="n">server</span><span class="p">.</span><span class="n">runlinter</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+          <span class="n">run</span><span class="p">(</span><span class="n">server</span><span class="p">);</span>
+        <span class="err">\</span><span class="p">]</span><span class="err">\</span><span class="p">]</span>
+    <span class="p">};</span>
+      <span class="n">new_config</span><span class="p">.</span><span class="n">cmd</span> <span class="o">=</span> <span class="n">cmd</span>
+    <span class="kr">end</span>
+<span class="p">}</span>
+</code></pre></div>
+You can find the path to the globally installed LanguageServer.jl package with the following command:</p>
+<div class="highlight"><pre><span></span><code>julia -e <span class="s1">&#39;print(Base.find_package(&quot;LanguageServer&quot;))&#39;</span>
+</code></pre></div>
 <p>Note: the directory passed to <code>--project=...</code> should terminate with src, not LanguageServer.jl.</p>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.julials.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">julials</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = { &quot;julia&quot;, &quot;--startup-file=no&quot;, &quot;--history-file=no&quot;, &quot;-e&quot;, '    using Pkg;\n    Pkg.instantiate()\n    using LanguageServer; using SymbolServer;\n    depot_path = get(ENV, &quot;JULIA_DEPOT_PATH&quot;, &quot;&quot;)\n    project_path = dirname(something(Base.current_project(pwd()), Base.load_path_expand(LOAD_PATH[2])))\n    # Make sure that we only load packages from this environment specifically.\n    @info &quot;Running language server&quot; env=Base.load_path()[1] pwd() project_path depot_path\n    server = LanguageServer.LanguageServerInstance(stdin, stdout, project_path, depot_path);\n    server.runlinter = true;\n    run(server);\n  ' }
-  filetypes = { &quot;julia&quot; }
-  on_new_config = function(new_config, _)
-        local server_path = vim.fn.system &quot;julia --startup-file=no -q -e 'print(Base.find_package(\&quot;LanguageServer\&quot;))'&quot;
-        local new_cmd = vim.deepcopy(cmd)
-        table.insert(new_cmd, 2, &quot;--project=&quot; .. server_path:sub(0, -19))
-        new_config.cmd = new_cmd
-      end,
-  root_dir = function(fname)
-        return util.find_git_ancestor(fname) or vim.fn.getcwd()
-      end,
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;julia&quot;</span><span class="p">,</span> <span class="s2">&quot;--startup-file=no&quot;</span><span class="p">,</span> <span class="s2">&quot;--history-file=no&quot;</span><span class="p">,</span> <span class="s2">&quot;-e&quot;</span><span class="p">,</span> <span class="s1">&#39;    using Pkg;</span><span class="se">\n</span><span class="s1">    Pkg.instantiate()</span><span class="se">\n</span><span class="s1">    using LanguageServer; using SymbolServer;</span><span class="se">\n</span><span class="s1">    depot_path = get(ENV, &quot;JULIA_DEPOT_PATH&quot;, &quot;&quot;)</span><span class="se">\n</span><span class="s1">    project_path = dirname(something(Base.current_project(pwd()), Base.load_path_expand(LOAD_PATH[2])))</span><span class="se">\n</span><span class="s1">    # Make sure that we only load packages from this environment specifically.</span><span class="se">\n</span><span class="s1">    @info &quot;Running language server&quot; env=Base.load_path()[1] pwd() project_path depot_path</span><span class="se">\n</span><span class="s1">    server = LanguageServer.LanguageServerInstance(stdin, stdout, project_path, depot_path);</span><span class="se">\n</span><span class="s1">    server.runlinter = true;</span><span class="se">\n</span><span class="s1">    run(server);</span><span class="se">\n</span><span class="s1">  &#39;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;julia&quot;</span> <span class="p">}</span>
+  <span class="n">on_new_config</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">new_config</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span>
+        <span class="kd">local</span> <span class="n">server_path</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">fn</span><span class="p">.</span><span class="n">system</span> <span class="s2">&quot;julia --startup-file=no -q -e &#39;print(Base.find_package(</span><span class="se">\&quot;</span><span class="s2">LanguageServer</span><span class="se">\&quot;</span><span class="s2">))&#39;&quot;</span>
+        <span class="kd">local</span> <span class="n">new_cmd</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+        <span class="nb">table.insert</span><span class="p">(</span><span class="n">new_cmd</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;--project=&quot;</span> <span class="o">..</span> <span class="n">server_path</span><span class="p">:</span><span class="n">sub</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">19</span><span class="p">))</span>
+        <span class="n">new_config</span><span class="p">.</span><span class="n">cmd</span> <span class="o">=</span> <span class="n">new_cmd</span>
+      <span class="kr">end</span><span class="p">,</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+        <span class="kr">return</span> <span class="n">util</span><span class="p">.</span><span class="n">find_git_ancestor</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span> <span class="ow">or</span> <span class="n">vim</span><span class="p">.</span><span class="n">fn</span><span class="p">.</span><span class="n">getcwd</span><span class="p">()</span>
+      <span class="kr">end</span><span class="p">,</span>
+</code></pre></div>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="available-settings">Available settings</h2>
 <h3 id="julianumthreads"><code>julia.NumThreads</code></h3>

@@ -2682,24 +2682,24 @@
                 
                 
                 <h1 id="rust_analyzer">rust_analyzer</h1>
-<p>https://github.com/rust-analyzer/rust-analyzer</p>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer">https://github.com/rust-analyzer/rust-analyzer</a></p>
 <p>rust-analyzer (aka rls 2.0), a language server for Rust</p>
 <p>See <a href="https://github.com/rust-analyzer/rust-analyzer/tree/master/docs/user#settings">docs</a> for extra settings.</p>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.rust_analyzer.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">rust_analyzer</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="commands">Commands</h3>
 <ul>
 <li>CargoReload: Reload current cargo workspace</li>
 </ul>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = { &quot;rust-analyzer&quot; }
-  filetypes = { &quot;rust&quot; }
-  root_dir = root_pattern(&quot;Cargo.toml&quot;, &quot;rust-project.json&quot;)
-  settings = {
-    [&quot;rust-analyzer&quot;] = {}
-  }
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;rust-analyzer&quot;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;rust&quot;</span> <span class="p">}</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;Cargo.toml&quot;</span><span class="p">,</span> <span class="s2">&quot;rust-project.json&quot;</span><span class="p">)</span>
+  <span class="n">settings</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">[</span><span class="s2">&quot;rust-analyzer&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+  <span class="p">}</span>
+</code></pre></div>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="available-settings">Available settings</h2>
 <h3 id="generated-end"><code>$generated-end</code></h3>

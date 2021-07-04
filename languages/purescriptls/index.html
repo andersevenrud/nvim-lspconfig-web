@@ -1758,18 +1758,18 @@
                 
                 
                 <h1 id="purescriptls">purescriptls</h1>
-<p>https://github.com/nwolverson/purescript-language-server
-<code>purescript-language-server</code> can be installed via <code>npm</code></p>
-<pre><code class="language-sh">npm install -g purescript-language-server
-</code></pre>
+<p><a href="https://github.com/nwolverson/purescript-language-server">https://github.com/nwolverson/purescript-language-server</a>
+<code>purescript-language-server</code> can be installed via <code>npm</code>
+<div class="highlight"><pre><span></span><code>npm install -g purescript-language-server
+</code></pre></div></p>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.purescriptls.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">purescriptls</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = { &quot;purescript-language-server&quot;, &quot;--stdio&quot; }
-  filetypes = { &quot;purescript&quot; }
-  root_dir = root_pattern(&quot;spago.dhall, bower.json&quot;)
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;purescript-language-server&quot;</span><span class="p">,</span> <span class="s2">&quot;--stdio&quot;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;purescript&quot;</span> <span class="p">}</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;spago.dhall, bower.json&quot;</span><span class="p">)</span>
+</code></pre></div>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="available-settings">Available settings</h2>
 <h3 id="purescriptaddnpmpath"><code>purescript.addNpmPath</code></h3>

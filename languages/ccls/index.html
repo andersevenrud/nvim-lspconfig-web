@@ -1438,33 +1438,32 @@
                 
                 
                 <h1 id="ccls">ccls</h1>
-<p>https://github.com/MaskRay/ccls/wiki</p>
+<p><a href="https://github.com/MaskRay/ccls/wiki">https://github.com/MaskRay/ccls/wiki</a></p>
 <p>ccls relies on a <a href="https://clang.llvm.org/docs/JSONCompilationDatabase.html">JSON compilation database</a> specified
 as compile_commands.json or, for simpler projects, a compile_flags.txt.
 For details on how to automatically generate one using CMake look <a href="https://cmake.org/cmake/help/latest/variable/CMAKE_EXPORT_COMPILE_COMMANDS.html">here</a>.</p>
 <p>Customization options are passed to ccls at initialization time via init_options, a list of available options can be found <a href="https://github.com/MaskRay/ccls/wiki/Customization#initialization-options">here</a>. For example:</p>
-<pre><code class="language-lua">local lspconfig = require'lspconfig'
-lspconfig.ccls.setup {
-  init_options = {
-    compilationDatabaseDirectory = &quot;build&quot;;
-    index = {
-      threads = 0;
-    };
-    clang = {
-      excludeArgs = { &quot;-frounding-math&quot;} ;
-    };
-  }
-}
-
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">lspconfig</span> <span class="o">=</span> <span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span>
+<span class="n">lspconfig</span><span class="p">.</span><span class="n">ccls</span><span class="p">.</span><span class="n">setup</span> <span class="p">{</span>
+  <span class="n">init_options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">compilationDatabaseDirectory</span> <span class="o">=</span> <span class="s2">&quot;build&quot;</span><span class="p">;</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="n">threads</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">};</span>
+    <span class="n">clang</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="n">excludeArgs</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;-frounding-math&quot;</span><span class="p">}</span> <span class="p">;</span>
+    <span class="p">};</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.ccls.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">ccls</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = { &quot;ccls&quot; }
-  filetypes = { &quot;c&quot;, &quot;cpp&quot;, &quot;objc&quot;, &quot;objcpp&quot; }
-  root_dir = root_pattern(&quot;compile_commands.json&quot;, &quot;compile_flags.txt&quot;, &quot;.git&quot;) or dirname
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;ccls&quot;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;cpp&quot;</span><span class="p">,</span> <span class="s2">&quot;objc&quot;</span><span class="p">,</span> <span class="s2">&quot;objcpp&quot;</span> <span class="p">}</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;compile_commands.json&quot;</span><span class="p">,</span> <span class="s2">&quot;compile_flags.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;.git&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">dirname</span>
+</code></pre></div>
                 
               
               

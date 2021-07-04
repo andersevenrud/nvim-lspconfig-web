@@ -1438,16 +1438,16 @@
                 
                 
                 <h1 id="diagnosticls">diagnosticls</h1>
-<p>https://github.com/iamcco/diagnostic-languageserver</p>
+<p><a href="https://github.com/iamcco/diagnostic-languageserver">https://github.com/iamcco/diagnostic-languageserver</a></p>
 <p>Diagnostic language server integrate with linters.</p>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.diagnosticls.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">diagnosticls</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = { &quot;diagnostic-languageserver&quot;, &quot;--stdio&quot; }
-  filetypes = Empty by default, override to add filetypes
-  root_dir = Vim's starting directory
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;diagnostic-languageserver&quot;</span><span class="p">,</span> <span class="s2">&quot;--stdio&quot;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="n">Empty</span> <span class="n">by</span> <span class="n">default</span><span class="p">,</span> <span class="n">override</span> <span class="n">to</span> <span class="n">add</span> <span class="n">filetypes</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">Vim</span><span class="s1">&#39;s starting directory</span>
+</code></pre></div>
                 
               
               

@@ -1438,58 +1438,58 @@
                 
                 
                 <h1 id="tailwindcss">tailwindcss</h1>
-<p>https://github.com/tailwindlabs/tailwindcss-intellisense</p>
+<p><a href="https://github.com/tailwindlabs/tailwindcss-intellisense">https://github.com/tailwindlabs/tailwindcss-intellisense</a></p>
 <p>Tailwind CSS Language Server</p>
 <p><strong>NOTE:</strong> The current tailwindcss-language-server npm package is a different project.</p>
 <p>Until the standalone server is published to npm, you can extract the server from the VS Code package:</p>
-<pre><code class="language-bash">curl -L -o tailwindcss-intellisense.vsix https://github.com/tailwindlabs/tailwindcss-intellisense/releases/download/v0.6.8/vscode-tailwindcss-0.6.8.vsix
+<div class="highlight"><pre><span></span><code>curl -L -o tailwindcss-intellisense.vsix https://github.com/tailwindlabs/tailwindcss-intellisense/releases/download/v0.6.8/vscode-tailwindcss-0.6.8.vsix
 unzip tailwindcss-intellisense.vsix -d tailwindcss-intellisense
-echo &quot;#\!/usr/bin/env node\n$(cat tailwindcss-intellisense/extension/dist/server/tailwindServer.js)&quot; &gt; tailwindcss-language-server
+<span class="nb">echo</span> <span class="s2">&quot;#\!/usr/bin/env node\n</span><span class="k">$(</span>cat tailwindcss-intellisense/extension/dist/server/tailwindServer.js<span class="k">)</span><span class="s2">&quot;</span> &gt; tailwindcss-language-server
 chmod +x tailwindcss-language-server
-</code></pre>
+</code></pre></div>
 <p>Copy or symlink tailwindcss-language-server to somewhere in your $PATH.</p>
 <p>Alternatively, it might be packaged for your operating system, eg.:
-https://aur.archlinux.org/packages/tailwindcss-language-server/</p>
+<a href="https://aur.archlinux.org/packages/tailwindcss-language-server/">https://aur.archlinux.org/packages/tailwindcss-language-server/</a></p>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.tailwindcss.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">tailwindcss</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = { &quot;tailwindcss-language-server&quot;, &quot;--stdio&quot; }
-  filetypes = { &quot;aspnetcorerazor&quot;, &quot;astro&quot;, &quot;astro-markdown&quot;, &quot;blade&quot;, &quot;django-html&quot;, &quot;edge&quot;, &quot;eelixir&quot;, &quot;ejs&quot;, &quot;erb&quot;, &quot;eruby&quot;, &quot;gohtml&quot;, &quot;haml&quot;, &quot;handlebars&quot;, &quot;hbs&quot;, &quot;html&quot;, &quot;html-eex&quot;, &quot;jade&quot;, &quot;leaf&quot;, &quot;liquid&quot;, &quot;markdown&quot;, &quot;mdx&quot;, &quot;mustache&quot;, &quot;njk&quot;, &quot;nunjucks&quot;, &quot;php&quot;, &quot;razor&quot;, &quot;slim&quot;, &quot;twig&quot;, &quot;css&quot;, &quot;less&quot;, &quot;postcss&quot;, &quot;sass&quot;, &quot;scss&quot;, &quot;stylus&quot;, &quot;sugarss&quot;, &quot;javascript&quot;, &quot;javascriptreact&quot;, &quot;reason&quot;, &quot;rescript&quot;, &quot;typescript&quot;, &quot;typescriptreact&quot;, &quot;vue&quot;, &quot;svelte&quot; }
-  init_options = {
-    userLanguages = {
-      eelixir = &quot;html-eex&quot;,
-      eruby = &quot;erb&quot;
-    }
-  }
-  on_new_config = function(new_config)
-        if not new_config.settings then
-          new_config.settings = {}
-        end
-        if not new_config.settings.editor then
-          new_config.settings.editor = {}
-        end
-        if not new_config.settings.editor.tabSize then
-          -- set tab size for hover
-          new_config.settings.editor.tabSize = vim.lsp.util.get_effective_tabstop()
-        end
-      end,
-  root_dir = root_pattern('tailwind.config.js', 'tailwind.config.ts', 'postcss.config.js', 'postcss.config.ts', 'package.json', 'node_modules', '.git')
-  settings = {
-    tailwindCSS = {
-      lint = {
-        cssConflict = &quot;warning&quot;,
-        invalidApply = &quot;error&quot;,
-        invalidConfigPath = &quot;error&quot;,
-        invalidScreen = &quot;error&quot;,
-        invalidTailwindDirective = &quot;error&quot;,
-        invalidVariant = &quot;error&quot;,
-        recommendedVariantOrder = &quot;warning&quot;
-      },
-      validate = true
-    }
-  }
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;tailwindcss-language-server&quot;</span><span class="p">,</span> <span class="s2">&quot;--stdio&quot;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;aspnetcorerazor&quot;</span><span class="p">,</span> <span class="s2">&quot;astro&quot;</span><span class="p">,</span> <span class="s2">&quot;astro-markdown&quot;</span><span class="p">,</span> <span class="s2">&quot;blade&quot;</span><span class="p">,</span> <span class="s2">&quot;django-html&quot;</span><span class="p">,</span> <span class="s2">&quot;edge&quot;</span><span class="p">,</span> <span class="s2">&quot;eelixir&quot;</span><span class="p">,</span> <span class="s2">&quot;ejs&quot;</span><span class="p">,</span> <span class="s2">&quot;erb&quot;</span><span class="p">,</span> <span class="s2">&quot;eruby&quot;</span><span class="p">,</span> <span class="s2">&quot;gohtml&quot;</span><span class="p">,</span> <span class="s2">&quot;haml&quot;</span><span class="p">,</span> <span class="s2">&quot;handlebars&quot;</span><span class="p">,</span> <span class="s2">&quot;hbs&quot;</span><span class="p">,</span> <span class="s2">&quot;html&quot;</span><span class="p">,</span> <span class="s2">&quot;html-eex&quot;</span><span class="p">,</span> <span class="s2">&quot;jade&quot;</span><span class="p">,</span> <span class="s2">&quot;leaf&quot;</span><span class="p">,</span> <span class="s2">&quot;liquid&quot;</span><span class="p">,</span> <span class="s2">&quot;markdown&quot;</span><span class="p">,</span> <span class="s2">&quot;mdx&quot;</span><span class="p">,</span> <span class="s2">&quot;mustache&quot;</span><span class="p">,</span> <span class="s2">&quot;njk&quot;</span><span class="p">,</span> <span class="s2">&quot;nunjucks&quot;</span><span class="p">,</span> <span class="s2">&quot;php&quot;</span><span class="p">,</span> <span class="s2">&quot;razor&quot;</span><span class="p">,</span> <span class="s2">&quot;slim&quot;</span><span class="p">,</span> <span class="s2">&quot;twig&quot;</span><span class="p">,</span> <span class="s2">&quot;css&quot;</span><span class="p">,</span> <span class="s2">&quot;less&quot;</span><span class="p">,</span> <span class="s2">&quot;postcss&quot;</span><span class="p">,</span> <span class="s2">&quot;sass&quot;</span><span class="p">,</span> <span class="s2">&quot;scss&quot;</span><span class="p">,</span> <span class="s2">&quot;stylus&quot;</span><span class="p">,</span> <span class="s2">&quot;sugarss&quot;</span><span class="p">,</span> <span class="s2">&quot;javascript&quot;</span><span class="p">,</span> <span class="s2">&quot;javascriptreact&quot;</span><span class="p">,</span> <span class="s2">&quot;reason&quot;</span><span class="p">,</span> <span class="s2">&quot;rescript&quot;</span><span class="p">,</span> <span class="s2">&quot;typescript&quot;</span><span class="p">,</span> <span class="s2">&quot;typescriptreact&quot;</span><span class="p">,</span> <span class="s2">&quot;vue&quot;</span><span class="p">,</span> <span class="s2">&quot;svelte&quot;</span> <span class="p">}</span>
+  <span class="n">init_options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">userLanguages</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="n">eelixir</span> <span class="o">=</span> <span class="s2">&quot;html-eex&quot;</span><span class="p">,</span>
+      <span class="n">eruby</span> <span class="o">=</span> <span class="s2">&quot;erb&quot;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="n">on_new_config</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">new_config</span><span class="p">)</span>
+        <span class="kr">if</span> <span class="ow">not</span> <span class="n">new_config</span><span class="p">.</span><span class="n">settings</span> <span class="kr">then</span>
+          <span class="n">new_config</span><span class="p">.</span><span class="n">settings</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="kr">end</span>
+        <span class="kr">if</span> <span class="ow">not</span> <span class="n">new_config</span><span class="p">.</span><span class="n">settings</span><span class="p">.</span><span class="n">editor</span> <span class="kr">then</span>
+          <span class="n">new_config</span><span class="p">.</span><span class="n">settings</span><span class="p">.</span><span class="n">editor</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="kr">end</span>
+        <span class="kr">if</span> <span class="ow">not</span> <span class="n">new_config</span><span class="p">.</span><span class="n">settings</span><span class="p">.</span><span class="n">editor</span><span class="p">.</span><span class="n">tabSize</span> <span class="kr">then</span>
+          <span class="c1">-- set tab size for hover</span>
+          <span class="n">new_config</span><span class="p">.</span><span class="n">settings</span><span class="p">.</span><span class="n">editor</span><span class="p">.</span><span class="n">tabSize</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">lsp</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">get_effective_tabstop</span><span class="p">()</span>
+        <span class="kr">end</span>
+      <span class="kr">end</span><span class="p">,</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s1">&#39;tailwind.config.js&#39;</span><span class="p">,</span> <span class="s1">&#39;tailwind.config.ts&#39;</span><span class="p">,</span> <span class="s1">&#39;postcss.config.js&#39;</span><span class="p">,</span> <span class="s1">&#39;postcss.config.ts&#39;</span><span class="p">,</span> <span class="s1">&#39;package.json&#39;</span><span class="p">,</span> <span class="s1">&#39;node_modules&#39;</span><span class="p">,</span> <span class="s1">&#39;.git&#39;</span><span class="p">)</span>
+  <span class="n">settings</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">tailwindCSS</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="n">lint</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">cssConflict</span> <span class="o">=</span> <span class="s2">&quot;warning&quot;</span><span class="p">,</span>
+        <span class="n">invalidApply</span> <span class="o">=</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span>
+        <span class="n">invalidConfigPath</span> <span class="o">=</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span>
+        <span class="n">invalidScreen</span> <span class="o">=</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span>
+        <span class="n">invalidTailwindDirective</span> <span class="o">=</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span>
+        <span class="n">invalidVariant</span> <span class="o">=</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span>
+        <span class="n">recommendedVariantOrder</span> <span class="o">=</span> <span class="s2">&quot;warning&quot;</span>
+      <span class="p">},</span>
+      <span class="n">validate</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div>
                 
               
               

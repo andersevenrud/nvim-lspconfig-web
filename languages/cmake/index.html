@@ -1438,19 +1438,19 @@
                 
                 
                 <h1 id="cmake">cmake</h1>
-<p>https://github.com/regen100/cmake-language-server</p>
+<p><a href="https://github.com/regen100/cmake-language-server">https://github.com/regen100/cmake-language-server</a></p>
 <p>CMake LSP Implementation</p>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.cmake.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">cmake</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = { &quot;cmake-language-server&quot; }
-  filetypes = { &quot;cmake&quot; }
-  init_options = {
-    buildDirectory = &quot;build&quot;
-  }
-  root_dir = root_pattern(&quot;.git&quot;, &quot;compile_commands.json&quot;, &quot;build&quot;) or dirname
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;cmake-language-server&quot;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;cmake&quot;</span> <span class="p">}</span>
+  <span class="n">init_options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">buildDirectory</span> <span class="o">=</span> <span class="s2">&quot;build&quot;</span>
+  <span class="p">}</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;.git&quot;</span><span class="p">,</span> <span class="s2">&quot;compile_commands.json&quot;</span><span class="p">,</span> <span class="s2">&quot;build&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">dirname</span>
+</code></pre></div>
                 
               
               

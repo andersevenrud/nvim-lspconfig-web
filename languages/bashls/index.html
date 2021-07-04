@@ -1438,19 +1438,19 @@
                 
                 
                 <h1 id="bashls">bashls</h1>
-<p>https://github.com/mads-hartmann/bash-language-server</p>
+<p><a href="https://github.com/mads-hartmann/bash-language-server">https://github.com/mads-hartmann/bash-language-server</a></p>
 <p>Language server for bash, written using tree sitter in typescript.</p>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.bashls.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">bashls</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = { &quot;bash-language-server&quot;, &quot;start&quot; }
-  cmd_env = {
-    GLOB_PATTERN = &quot;*@(.sh|.inc|.bash|.command)&quot;
-  }
-  filetypes = { &quot;sh&quot; }
-  root_dir = vim's starting directory
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;bash-language-server&quot;</span><span class="p">,</span> <span class="s2">&quot;start&quot;</span> <span class="p">}</span>
+  <span class="n">cmd_env</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">GLOB_PATTERN</span> <span class="o">=</span> <span class="s2">&quot;*@(.sh|.inc|.bash|.command)&quot;</span>
+  <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;sh&quot;</span> <span class="p">}</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">vim</span><span class="s1">&#39;s starting directory</span>
+</code></pre></div>
                 
               
               

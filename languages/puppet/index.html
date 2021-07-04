@@ -1443,7 +1443,7 @@
 <ul>
 <li>
 <p>Clone the editor-services repository:
-    https://github.com/puppetlabs/puppet-editor-services</p>
+    <a href="https://github.com/puppetlabs/puppet-editor-services">https://github.com/puppetlabs/puppet-editor-services</a></p>
 </li>
 <li>
 <p>Navigate into that directory and run: <code>bundle install</code></p>
@@ -1459,13 +1459,13 @@
 </li>
 </ul>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.puppet.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">puppet</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = { &quot;puppet-languageserver&quot;, &quot;--stdio&quot; }
-  filetypes = { &quot;puppet&quot; }
-  root_dir = root_pattern(&quot;manifests&quot;, &quot;.puppet-lint.rc&quot;, &quot;hiera.yaml&quot;, &quot;.git&quot;)
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;puppet-languageserver&quot;</span><span class="p">,</span> <span class="s2">&quot;--stdio&quot;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;puppet&quot;</span> <span class="p">}</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;manifests&quot;</span><span class="p">,</span> <span class="s2">&quot;.puppet-lint.rc&quot;</span><span class="p">,</span> <span class="s2">&quot;hiera.yaml&quot;</span><span class="p">,</span> <span class="s2">&quot;.git&quot;</span><span class="p">)</span>
+</code></pre></div>
                 
               
               

@@ -1528,33 +1528,27 @@
 <p>Requires <a href="https://github.com/neovim/neovim/releases/tag/v0.5.0">Neovim v0.5.0</a> or <a href="https://github.com/neovim/neovim/releases/tag/nightly">Nightly</a>. Update Neovim and nvim-lspconfig before reporting an issue.</p>
 </li>
 <li>
-<p>Install nvim-lspconfig like any other Vim plugin, e.g. with <a href="https://github.com/junegunn/vim-plug">vim-plug</a>:</p>
+<p>Install nvim-lspconfig like any other Vim plugin, e.g. with <a href="https://github.com/junegunn/vim-plug">vim-plug</a>:
+<div class="highlight"><pre><span></span><code><span class="p">:</span>Plug <span class="s1">&#39;neovim/nvim-lspconfig&#39;</span>
+</code></pre></div></p>
 </li>
 </ul>
-<pre><code class="language-vim">:Plug 'neovim/nvim-lspconfig'
-</code></pre>
 <h2 id="quickstart">Quickstart</h2>
 <ol>
-<li>Install a language server, e.g. <a href="CONFIG.md#pyright">pyright</a></li>
-</ol>
-<pre><code class="language-bash">npm i -g pyright
-</code></pre>
-<ol>
-<li>Add the language server setup to your init.vim. The server name must match those found in the table of contents in <a href="CONFIG.md">CONFIG.md</a></li>
-</ol>
-<pre><code class="language-vim">lua &lt;&lt; EOF
-require'lspconfig'.pyright.setup{}
+<li>Install a language server, e.g. <a href="CONFIG.md#pyright">pyright</a>
+<div class="highlight"><pre><span></span><code>npm i -g pyright
+</code></pre></div></li>
+<li>Add the language server setup to your init.vim. The server name must match those found in the table of contents in <a href="CONFIG.md">CONFIG.md</a>
+<div class="highlight"><pre><span></span><code><span class="k">lua</span> <span class="p">&lt;&lt;</span> EOF
+require<span class="s1">&#39;lspconfig&#39;</span>.pyright.setup{}
 EOF
-</code></pre>
-<ol>
-<li>Create a project, this project must contain a file matching the root directory trigger. See <a href="#Automatically-launching-language-servers">Automatically launching language servers</a> for additional info.</li>
-</ol>
-<pre><code class="language-bash">mkdir test_python_project
-cd test_python_project
+</code></pre></div></li>
+<li>Create a project, this project must contain a file matching the root directory trigger. See <a href="#Automatically-launching-language-servers">Automatically launching language servers</a> for additional info.
+<div class="highlight"><pre><span></span><code>mkdir test_python_project
+<span class="nb">cd</span> test_python_project
 git init
 touch main.py
-</code></pre>
-<ol>
+</code></pre></div></li>
 <li>Launch neovim, the language server will now be attached and providing diagnostics (see <code>:LspInfo</code>)
 <code>nvim main.py</code></li>
 <li>See <a href="#Keybindings-and-completion">Keybindings and completion</a> for mapping useful functions and enabling omnifunc completion</li>
@@ -1564,63 +1558,63 @@ touch main.py
 <p>Language servers require each project to have a <code>root</code> in order to provide completion and search across symbols that may not be defined in your current file, and to avoid having to index your entire filesystem on each startup.</p>
 <h2 id="enabling-additional-language-servers">Enabling additional language servers</h2>
 <p>Enabling most language servers is as easy as installing the language server, ensuring it is on your PATH, and adding the following to your config:</p>
-<pre><code class="language-vim">lua &lt;&lt; EOF
-require'lspconfig'.rust_analyzer.setup{}
+<p><div class="highlight"><pre><span></span><code><span class="k">lua</span> <span class="p">&lt;&lt;</span> EOF
+require<span class="s1">&#39;lspconfig&#39;</span>.rust_analyzer.setup{}
 EOF
-</code></pre>
-<p>For a full list of servers, see <a href="CONFIG.md">CONFIG.md</a>. This document contains installation instructions and additional, optional customization suggestions for each language server. For some servers that are not on your system path (jdtls, elixirls) you will be required to manually add <code>cmd</code> as an entry in the table passed to setup. Most language servers can be installed in less than a minute.</p>
+</code></pre></div>
+For a full list of servers, see <a href="CONFIG.md">CONFIG.md</a>. This document contains installation instructions and additional, optional customization suggestions for each language server. For some servers that are not on your system path (jdtls, elixirls) you will be required to manually add <code>cmd</code> as an entry in the table passed to setup. Most language servers can be installed in less than a minute.</p>
 <h2 id="keybindings-and-completion">Keybindings and completion</h2>
 <p>nvim-lspconfig does not map keybindings or enable completion by default. Manual, triggered completion can be provided by neovim's built-in omnifunc. For autocompletion, a general purpose <a href="https://github.com/neovim/nvim-lspconfig/wiki/Autocompletion">autocompletion plugin</a> is required. The following example configuration provides suggested keymaps for the most commonly used language server functions, and manually triggered completion with omnifunc (\&lt;c-x>\&lt;c-o>).</p>
-<pre><code class="language-vim">lua &lt;&lt; EOF
-local nvim_lsp = require('lspconfig')
+<p><div class="highlight"><pre><span></span><code><span class="k">lua</span> <span class="p">&lt;&lt;</span> EOF
+local nvim_lsp <span class="p">=</span> require<span class="p">(</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">)</span>
 
--- Use an on_attach function to only map the following keys
--- after the language server attaches to the current buffer
-local on_attach = function(client, bufnr)
-  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+<span class="p">--</span> Use an on_attach <span class="k">function</span> <span class="k">to</span> <span class="k">only</span> map the following keys
+<span class="p">--</span> after the <span class="k">language</span> server attaches <span class="k">to</span> the current buffer
+local on_attach <span class="p">=</span> <span class="k">function</span><span class="p">(</span>client<span class="p">,</span> bufnr<span class="p">)</span>
+  local <span class="k">function</span> buf_set_keymap<span class="p">(</span>...<span class="p">)</span> <span class="k">vim</span>.api.nvim_buf_set_keymap<span class="p">(</span>bufnr<span class="p">,</span> ...<span class="p">)</span> <span class="k">end</span>
+  local <span class="k">function</span> buf_set_option<span class="p">(</span>...<span class="p">)</span> <span class="k">vim</span>.api.nvim_buf_set_option<span class="p">(</span>bufnr<span class="p">,</span> ...<span class="p">)</span> <span class="k">end</span>
 
-  --Enable completion triggered by &lt;c-x&gt;&lt;c-o&gt;
-  buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+  <span class="p">--</span>Enable completion triggered by <span class="p">&lt;</span><span class="k">c</span><span class="p">-</span><span class="k">x</span><span class="p">&gt;&lt;</span><span class="k">c</span><span class="p">-</span><span class="k">o</span><span class="p">&gt;</span>
+  buf_set_option<span class="p">(</span><span class="s1">&#39;omnifunc&#39;</span><span class="p">,</span> <span class="s1">&#39;v:lua.vim.lsp.omnifunc&#39;</span><span class="p">)</span>
 
-  -- Mappings.
-  local opts = { noremap=true, silent=true }
+  <span class="p">--</span> Mappings.
+  local opts <span class="p">=</span> { <span class="nb">noremap</span><span class="p">=</span>true<span class="p">,</span> <span class="k">silent</span><span class="p">=</span>true }
 
-  -- See `:help vim.lsp.*` for documentation on any of the below functions
-  buf_set_keymap('n', 'gD', '&lt;Cmd&gt;lua vim.lsp.buf.declaration()&lt;CR&gt;', opts)
-  buf_set_keymap('n', 'gd', '&lt;Cmd&gt;lua vim.lsp.buf.definition()&lt;CR&gt;', opts)
-  buf_set_keymap('n', 'K', '&lt;Cmd&gt;lua vim.lsp.buf.hover()&lt;CR&gt;', opts)
-  buf_set_keymap('n', 'gi', '&lt;cmd&gt;lua vim.lsp.buf.implementation()&lt;CR&gt;', opts)
-  buf_set_keymap('n', '&lt;C-k&gt;', '&lt;cmd&gt;lua vim.lsp.buf.signature_help()&lt;CR&gt;', opts)
-  buf_set_keymap('n', '&lt;space&gt;wa', '&lt;cmd&gt;lua vim.lsp.buf.add_workspace_folder()&lt;CR&gt;', opts)
-  buf_set_keymap('n', '&lt;space&gt;wr', '&lt;cmd&gt;lua vim.lsp.buf.remove_workspace_folder()&lt;CR&gt;', opts)
-  buf_set_keymap('n', '&lt;space&gt;wl', '&lt;cmd&gt;lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))&lt;CR&gt;', opts)
-  buf_set_keymap('n', '&lt;space&gt;D', '&lt;cmd&gt;lua vim.lsp.buf.type_definition()&lt;CR&gt;', opts)
-  buf_set_keymap('n', '&lt;space&gt;rn', '&lt;cmd&gt;lua vim.lsp.buf.rename()&lt;CR&gt;', opts)
-  buf_set_keymap('n', '&lt;space&gt;ca', '&lt;cmd&gt;lua vim.lsp.buf.code_action()&lt;CR&gt;', opts)
-  buf_set_keymap('n', 'gr', '&lt;cmd&gt;lua vim.lsp.buf.references()&lt;CR&gt;', opts)
-  buf_set_keymap('n', '&lt;space&gt;e', '&lt;cmd&gt;lua vim.lsp.diagnostic.show_line_diagnostics()&lt;CR&gt;', opts)
-  buf_set_keymap('n', '[d', '&lt;cmd&gt;lua vim.lsp.diagnostic.goto_prev()&lt;CR&gt;', opts)
-  buf_set_keymap('n', ']d', '&lt;cmd&gt;lua vim.lsp.diagnostic.goto_next()&lt;CR&gt;', opts)
-  buf_set_keymap('n', '&lt;space&gt;q', '&lt;cmd&gt;lua vim.lsp.diagnostic.set_loclist()&lt;CR&gt;', opts)
-  buf_set_keymap(&quot;n&quot;, &quot;&lt;space&gt;f&quot;, &quot;&lt;cmd&gt;lua vim.lsp.buf.formatting()&lt;CR&gt;&quot;, opts)
+  <span class="p">--</span> See `:help <span class="k">vim</span>.<span class="nb">lsp</span>.*` <span class="k">for</span> documentation <span class="k">on</span> any of the <span class="k">below</span> functions
+  buf_set_keymap<span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;gD&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;Cmd&gt;lua vim.lsp.buf.declaration()&lt;CR&gt;&#39;</span><span class="p">,</span> opts<span class="p">)</span>
+  buf_set_keymap<span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;gd&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;Cmd&gt;lua vim.lsp.buf.definition()&lt;CR&gt;&#39;</span><span class="p">,</span> opts<span class="p">)</span>
+  buf_set_keymap<span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;K&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;Cmd&gt;lua vim.lsp.buf.hover()&lt;CR&gt;&#39;</span><span class="p">,</span> opts<span class="p">)</span>
+  buf_set_keymap<span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;gi&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;cmd&gt;lua vim.lsp.buf.implementation()&lt;CR&gt;&#39;</span><span class="p">,</span> opts<span class="p">)</span>
+  buf_set_keymap<span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;C-k&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;cmd&gt;lua vim.lsp.buf.signature_help()&lt;CR&gt;&#39;</span><span class="p">,</span> opts<span class="p">)</span>
+  buf_set_keymap<span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;space&gt;wa&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;cmd&gt;lua vim.lsp.buf.add_workspace_folder()&lt;CR&gt;&#39;</span><span class="p">,</span> opts<span class="p">)</span>
+  buf_set_keymap<span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;space&gt;wr&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;cmd&gt;lua vim.lsp.buf.remove_workspace_folder()&lt;CR&gt;&#39;</span><span class="p">,</span> opts<span class="p">)</span>
+  buf_set_keymap<span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;space&gt;wl&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;cmd&gt;lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))&lt;CR&gt;&#39;</span><span class="p">,</span> opts<span class="p">)</span>
+  buf_set_keymap<span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;space&gt;D&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;cmd&gt;lua vim.lsp.buf.type_definition()&lt;CR&gt;&#39;</span><span class="p">,</span> opts<span class="p">)</span>
+  buf_set_keymap<span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;space&gt;rn&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;cmd&gt;lua vim.lsp.buf.rename()&lt;CR&gt;&#39;</span><span class="p">,</span> opts<span class="p">)</span>
+  buf_set_keymap<span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;space&gt;ca&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;cmd&gt;lua vim.lsp.buf.code_action()&lt;CR&gt;&#39;</span><span class="p">,</span> opts<span class="p">)</span>
+  buf_set_keymap<span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;gr&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;cmd&gt;lua vim.lsp.buf.references()&lt;CR&gt;&#39;</span><span class="p">,</span> opts<span class="p">)</span>
+  buf_set_keymap<span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;space&gt;e&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;cmd&gt;lua vim.lsp.diagnostic.show_line_diagnostics()&lt;CR&gt;&#39;</span><span class="p">,</span> opts<span class="p">)</span>
+  buf_set_keymap<span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;[d&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;cmd&gt;lua vim.lsp.diagnostic.goto_prev()&lt;CR&gt;&#39;</span><span class="p">,</span> opts<span class="p">)</span>
+  buf_set_keymap<span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;]d&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;cmd&gt;lua vim.lsp.diagnostic.goto_next()&lt;CR&gt;&#39;</span><span class="p">,</span> opts<span class="p">)</span>
+  buf_set_keymap<span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;space&gt;q&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;cmd&gt;lua vim.lsp.diagnostic.set_loclist()&lt;CR&gt;&#39;</span><span class="p">,</span> opts<span class="p">)</span>
+  buf_set_keymap<span class="p">(</span><span class="s2">&quot;n&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;space&gt;f&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;cmd&gt;lua vim.lsp.buf.formatting()&lt;CR&gt;&quot;</span><span class="p">,</span> opts<span class="p">)</span>
 
-end
+<span class="k">end</span>
 
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
-local servers = { &quot;pyright&quot;, &quot;rust_analyzer&quot;, &quot;tsserver&quot; }
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
-    on_attach = on_attach,
-    flags = {
-      debounce_text_changes = 150,
+<span class="p">--</span> Use <span class="k">a</span> loop <span class="k">to</span> conveniently <span class="k">call</span> <span class="s1">&#39;setup&#39;</span> <span class="k">on</span> multiple servers and
+<span class="p">--</span> map buffer local keybindings when the <span class="k">language</span> server attaches
+local servers <span class="p">=</span> { <span class="s2">&quot;pyright&quot;</span><span class="p">,</span> <span class="s2">&quot;rust_analyzer&quot;</span><span class="p">,</span> <span class="s2">&quot;tsserver&quot;</span> }
+<span class="k">for</span> _<span class="p">,</span> <span class="nb">lsp</span> <span class="k">in</span> ipairs<span class="p">(</span>servers<span class="p">)</span> <span class="k">do</span>
+  nvim_lsp[<span class="nb">lsp</span>].setup {
+    on_attach <span class="p">=</span> on_attach<span class="p">,</span>
+    flags <span class="p">=</span> {
+      debounce_text_changes <span class="p">=</span> <span class="m">150</span><span class="p">,</span>
     }
   }
-end
+<span class="k">end</span>
 EOF
-</code></pre>
-<p>The <code>on_attach</code> hook is used to only activate the bindings after the language server attaches to the current buffer.</p>
+</code></pre></div>
+The <code>on_attach</code> hook is used to only activate the bindings after the language server attaches to the current buffer.</p>
 <h2 id="debugging">Debugging</h2>
 <p>The two most common reasons a language server does not start or attach are:</p>
 <ol>
@@ -1633,14 +1627,14 @@ EOF
 </ol>
 <p>:LspInfo provides a handy overview of your active and configured language servers.  Note, that it will not report any configuration changes applied in <code>on_new_config</code>.</p>
 <p>Before reporting a bug, check your logs and the output of <code>:LspInfo</code>. Add the following to your init.vim to enable logging:</p>
-<pre><code class="language-vim">lua &lt;&lt; EOF
-vim.lsp.set_log_level(&quot;debug&quot;)
+<p><div class="highlight"><pre><span></span><code><span class="k">lua</span> <span class="p">&lt;&lt;</span> EOF
+<span class="k">vim</span>.<span class="nb">lsp</span>.set_log_level<span class="p">(</span><span class="s2">&quot;debug&quot;</span><span class="p">)</span>
 EOF
-</code></pre>
-<p>Attempt to run the language server, and open the log with:</p>
-<pre><code>:lua vim.cmd('e'..vim.lsp.get_log_path())
-</code></pre>
-<p>Most of the time, the reason for failure is present in the logs.</p>
+</code></pre></div>
+Attempt to run the language server, and open the log with:
+<div class="highlight"><pre><span></span><code>:lua vim.cmd(&#39;e&#39;..vim.lsp.get_log_path())
+</code></pre></div>
+Most of the time, the reason for failure is present in the logs.</p>
 <h2 id="built-in-commands">Built-in commands</h2>
 <ul>
 <li><code>:LspInfo</code> shows the status of active and configured language servers.</li>

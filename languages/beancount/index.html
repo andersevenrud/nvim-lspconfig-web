@@ -1438,20 +1438,20 @@
                 
                 
                 <h1 id="beancount">beancount</h1>
-<p>https://github.com/polarmutex/beancount-language-server#installation</p>
-<p>See https://github.com/polarmutex/beancount-language-server#configuration for configuration options</p>
+<p><a href="https://github.com/polarmutex/beancount-language-server#installation">https://github.com/polarmutex/beancount-language-server#installation</a></p>
+<p>See <a href="https://github.com/polarmutex/beancount-language-server#configuration">https://github.com/polarmutex/beancount-language-server#configuration</a> for configuration options</p>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.beancount.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">beancount</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = { &quot;beancount-langserver&quot; }
-  filetypes = { &quot;beancount&quot; }
-  init_options = {
-    journalFile = &quot;&quot;,
-    pythonPath = &quot;python3&quot;
-  }
-  root_dir = root_pattern(&quot;elm.json&quot;)
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;beancount-langserver&quot;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;beancount&quot;</span> <span class="p">}</span>
+  <span class="n">init_options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">journalFile</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="n">pythonPath</span> <span class="o">=</span> <span class="s2">&quot;python3&quot;</span>
+  <span class="p">}</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;elm.json&quot;</span><span class="p">)</span>
+</code></pre></div>
                 
               
               

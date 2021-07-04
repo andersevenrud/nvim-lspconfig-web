@@ -1438,18 +1438,18 @@
                 
                 
                 <h1 id="tsserver">tsserver</h1>
-<p>https://github.com/theia-ide/typescript-language-server</p>
-<p><code>typescript-language-server</code> depends on <code>typescript</code>. Both packages can be installed via <code>npm</code>:</p>
-<pre><code class="language-sh">npm install -g typescript typescript-language-server
-</code></pre>
+<p><a href="https://github.com/theia-ide/typescript-language-server">https://github.com/theia-ide/typescript-language-server</a></p>
+<p><code>typescript-language-server</code> depends on <code>typescript</code>. Both packages can be installed via <code>npm</code>:
+<div class="highlight"><pre><span></span><code>npm install -g typescript typescript-language-server
+</code></pre></div></p>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.tsserver.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">tsserver</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = { &quot;typescript-language-server&quot;, &quot;--stdio&quot; }
-  filetypes = { &quot;javascript&quot;, &quot;javascriptreact&quot;, &quot;javascript.jsx&quot;, &quot;typescript&quot;, &quot;typescriptreact&quot;, &quot;typescript.tsx&quot; }
-  root_dir = root_pattern(&quot;package.json&quot;, &quot;tsconfig.json&quot;, &quot;jsconfig.json&quot;, &quot;.git&quot;)
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;typescript-language-server&quot;</span><span class="p">,</span> <span class="s2">&quot;--stdio&quot;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;javascript&quot;</span><span class="p">,</span> <span class="s2">&quot;javascriptreact&quot;</span><span class="p">,</span> <span class="s2">&quot;javascript.jsx&quot;</span><span class="p">,</span> <span class="s2">&quot;typescript&quot;</span><span class="p">,</span> <span class="s2">&quot;typescriptreact&quot;</span><span class="p">,</span> <span class="s2">&quot;typescript.tsx&quot;</span> <span class="p">}</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;package.json&quot;</span><span class="p">,</span> <span class="s2">&quot;tsconfig.json&quot;</span><span class="p">,</span> <span class="s2">&quot;jsconfig.json&quot;</span><span class="p">,</span> <span class="s2">&quot;.git&quot;</span><span class="p">)</span>
+</code></pre></div>
                 
               
               

@@ -1438,28 +1438,28 @@
                 
                 
                 <h1 id="pylsp">pylsp</h1>
-<p>https://github.com/python-lsp/python-lsp-server</p>
+<p><a href="https://github.com/python-lsp/python-lsp-server">https://github.com/python-lsp/python-lsp-server</a></p>
 <p>A Python 3.6+ implementation of the Language Server Protocol.</p>
 <p>The language server can be installed via <code>pipx install 'python-lsp-server[all]'</code>.
 Further instructions can be found in the <a href="https://github.com/python-lsp/python-lsp-server">project's README</a>.</p>
 <p>Note: This is a community fork of <code>pyls</code>.</p>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.pylsp.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">pylsp</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = { &quot;pylsp&quot; }
-  filetypes = { &quot;python&quot; }
-  root_dir = function(fname)
-        local root_files = {
-          &quot;pyproject.toml&quot;,
-          &quot;setup.py&quot;,
-          &quot;setup.cfg&quot;,
-          &quot;requirements.txt&quot;,
-          &quot;Pipfile&quot;,
-        }
-        return util.root_pattern(unpack(root_files))(fname) or util.find_git_ancestor(fname) or util.path.dirname(fname)
-      end,
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;pylsp&quot;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;python&quot;</span> <span class="p">}</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+        <span class="kd">local</span> <span class="n">root_files</span> <span class="o">=</span> <span class="p">{</span>
+          <span class="s2">&quot;pyproject.toml&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;setup.py&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;setup.cfg&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;requirements.txt&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;Pipfile&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="kr">return</span> <span class="n">util</span><span class="p">.</span><span class="n">root_pattern</span><span class="p">(</span><span class="n">unpack</span><span class="p">(</span><span class="n">root_files</span><span class="p">))(</span><span class="n">fname</span><span class="p">)</span> <span class="ow">or</span> <span class="n">util</span><span class="p">.</span><span class="n">find_git_ancestor</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span> <span class="ow">or</span> <span class="n">util</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+      <span class="kr">end</span><span class="p">,</span>
+</code></pre></div>
                 
               
               

@@ -1646,18 +1646,18 @@
                 
                 
                 <h1 id="nimls">nimls</h1>
-<p>https://github.com/PMunch/nimlsp
-<code>nimlsp</code> can be installed via the <code>nimble</code> package manager:</p>
-<pre><code class="language-sh">nimble install nimlsp
-</code></pre>
+<p><a href="https://github.com/PMunch/nimlsp">https://github.com/PMunch/nimlsp</a>
+<code>nimlsp</code> can be installed via the <code>nimble</code> package manager:
+<div class="highlight"><pre><span></span><code>nimble install nimlsp
+</code></pre></div></p>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.nimls.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">nimls</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = { &quot;nimlsp&quot; }
-  filetypes = { &quot;nim&quot; }
-  root_dir = root_pattern(&quot;.git&quot;) or os_homedir
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;nimlsp&quot;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;nim&quot;</span> <span class="p">}</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;.git&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">os_homedir</span>
+</code></pre></div>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="available-settings">Available settings</h2>
 <h3 id="nimbuildcommand"><code>nim.buildCommand</code></h3>

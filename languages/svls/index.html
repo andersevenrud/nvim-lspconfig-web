@@ -1438,19 +1438,19 @@
                 
                 
                 <h1 id="svls">svls</h1>
-<pre><code>  https://github.com/dalance/svls
+<div class="highlight"><pre><span></span><code>  https://github.com/dalance/svls
   Language server for verilog and SystemVerilog
-</code></pre>
+</code></pre></div>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.svls.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">svls</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = { &quot;svls&quot; }
-  filetypes = { &quot;verilog&quot;, &quot;systemverilog&quot; }
-  root_dir = function(startpath)
-      return M.search_ancestors(startpath, matcher)
-    end
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;svls&quot;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;verilog&quot;</span><span class="p">,</span> <span class="s2">&quot;systemverilog&quot;</span> <span class="p">}</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">startpath</span><span class="p">)</span>
+      <span class="kr">return</span> <span class="n">M</span><span class="p">.</span><span class="n">search_ancestors</span><span class="p">(</span><span class="n">startpath</span><span class="p">,</span> <span class="n">matcher</span><span class="p">)</span>
+    <span class="kr">end</span>
+</code></pre></div>
                 
               
               

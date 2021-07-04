@@ -1702,24 +1702,24 @@
                 
                 
                 <h1 id="solargraph">solargraph</h1>
-<p>https://solargraph.org/</p>
+<p><a href="https://solargraph.org/">https://solargraph.org/</a></p>
 <p>solargraph, a language server for Ruby</p>
 <p>You can install solargraph via gem install.</p>
-<pre><code class="language-sh">gem install --user-install solargraph
-</code></pre>
+<div class="highlight"><pre><span></span><code>gem install --user-install solargraph
+</code></pre></div>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.solargraph.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">solargraph</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = { &quot;solargraph&quot;, &quot;stdio&quot; }
-  filetypes = { &quot;ruby&quot; }
-  root_dir = root_pattern(&quot;Gemfile&quot;, &quot;.git&quot;)
-  settings = {
-    solargraph = {
-      diagnostics = true
-    }
-  }
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;solargraph&quot;</span><span class="p">,</span> <span class="s2">&quot;stdio&quot;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;ruby&quot;</span> <span class="p">}</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;Gemfile&quot;</span><span class="p">,</span> <span class="s2">&quot;.git&quot;</span><span class="p">)</span>
+  <span class="n">settings</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">solargraph</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="n">diagnostics</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="available-settings">Available settings</h2>
 <h3 id="solargraphautoformat"><code>solargraph.autoformat</code></h3>

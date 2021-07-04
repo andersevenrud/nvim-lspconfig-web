@@ -1452,47 +1452,47 @@
                 
                 
                 <h1 id="texlab">texlab</h1>
-<p>https://github.com/latex-lsp/texlab</p>
+<p><a href="https://github.com/latex-lsp/texlab">https://github.com/latex-lsp/texlab</a></p>
 <p>A completion engine built from scratch for (La)TeX.</p>
-<p>See https://github.com/latex-lsp/texlab/blob/master/docs/options.md for configuration options.</p>
+<p>See <a href="https://github.com/latex-lsp/texlab/blob/master/docs/options.md">https://github.com/latex-lsp/texlab/blob/master/docs/options.md</a> for configuration options.</p>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.texlab.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">texlab</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="commands">Commands</h3>
 <ul>
 <li>TexlabBuild: Build the current buffer</li>
 <li>TexlabForward: Forward search from current position</li>
 </ul>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = { &quot;texlab&quot; }
-  filetypes = { &quot;tex&quot;, &quot;bib&quot; }
-  root_dir = vim's starting directory
-  settings = {
-    texlab = {
-      auxDirectory = &quot;.&quot;,
-      bibtexFormatter = &quot;texlab&quot;,
-      build = {
-        args = { &quot;-pdf&quot;, &quot;-interaction=nonstopmode&quot;, &quot;-synctex=1&quot;, &quot;%f&quot; },
-        executable = &quot;latexmk&quot;,
-        forwardSearchAfter = false,
-        onSave = false
-      },
-      chktex = {
-        onEdit = false,
-        onOpenAndSave = false
-      },
-      diagnosticsDelay = 300,
-      formatterLineLength = 80,
-      forwardSearch = {
-        args = {}
-      },
-      latexFormatter = &quot;latexindent&quot;,
-      latexindent = {
-        modifyLineBreaks = false
-      }
-    }
-  }
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;texlab&quot;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;tex&quot;</span><span class="p">,</span> <span class="s2">&quot;bib&quot;</span> <span class="p">}</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">vim</span><span class="s1">&#39;s starting directory</span>
+<span class="s1">  settings = {</span>
+<span class="s1">    texlab = {</span>
+<span class="s1">      auxDirectory = &quot;.&quot;,</span>
+<span class="s1">      bibtexFormatter = &quot;texlab&quot;,</span>
+<span class="s1">      build = {</span>
+<span class="s1">        args = { &quot;-pdf&quot;, &quot;-interaction=nonstopmode&quot;, &quot;-synctex=1&quot;, &quot;%f&quot; },</span>
+<span class="s1">        executable = &quot;latexmk&quot;,</span>
+<span class="s1">        forwardSearchAfter = false,</span>
+<span class="s1">        onSave = false</span>
+<span class="s1">      },</span>
+<span class="s1">      chktex = {</span>
+<span class="s1">        onEdit = false,</span>
+<span class="s1">        onOpenAndSave = false</span>
+<span class="s1">      },</span>
+<span class="s1">      diagnosticsDelay = 300,</span>
+<span class="s1">      formatterLineLength = 80,</span>
+<span class="s1">      forwardSearch = {</span>
+<span class="s1">        args = {}</span>
+<span class="s1">      },</span>
+<span class="s1">      latexFormatter = &quot;latexindent&quot;,</span>
+<span class="s1">      latexindent = {</span>
+<span class="s1">        modifyLineBreaks = false</span>
+<span class="s1">      }</span>
+<span class="s1">    }</span>
+<span class="s1">  }</span>
+</code></pre></div>
                 
               
               

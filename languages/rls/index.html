@@ -1438,33 +1438,33 @@
                 
                 
                 <h1 id="rls">rls</h1>
-<p>https://github.com/rust-lang/rls</p>
+<p><a href="https://github.com/rust-lang/rls">https://github.com/rust-lang/rls</a></p>
 <p>rls, a language server for Rust</p>
-<p>See https://github.com/rust-lang/rls#setup to setup rls itself.
-See https://github.com/rust-lang/rls#configuration for rls-specific settings.
+<p>See <a href="https://github.com/rust-lang/rls#setup">https://github.com/rust-lang/rls#setup</a> to setup rls itself.
+See <a href="https://github.com/rust-lang/rls#configuration">https://github.com/rust-lang/rls#configuration</a> for rls-specific settings.
 All settings listed on the rls configuration section of the readme
 must be set under settings.rust as follows:</p>
-<pre><code class="language-lua">nvim_lsp.rls.setup {
-  settings = {
-    rust = {
-      unstable_features = true,
-      build_on_save = false,
-      all_features = true,
-    },
-  },
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">nvim_lsp</span><span class="p">.</span><span class="n">rls</span><span class="p">.</span><span class="n">setup</span> <span class="p">{</span>
+  <span class="n">settings</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">rust</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="n">unstable_features</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="n">build_on_save</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="n">all_features</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="p">},</span>
+  <span class="p">},</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>If you want to use rls for a particular build, eg nightly, set cmd as follows:</p>
-<pre><code class="language-lua">cmd = {&quot;rustup&quot;, &quot;run&quot;, &quot;nightly&quot;, &quot;rls&quot;}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;rustup&quot;</span><span class="p">,</span> <span class="s2">&quot;run&quot;</span><span class="p">,</span> <span class="s2">&quot;nightly&quot;</span><span class="p">,</span> <span class="s2">&quot;rls&quot;</span><span class="p">}</span>
+</code></pre></div>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.rls.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">rls</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = { &quot;rls&quot; }
-  filetypes = { &quot;rust&quot; }
-  root_dir = root_pattern(&quot;Cargo.toml&quot;)
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;rls&quot;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;rust&quot;</span> <span class="p">}</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;Cargo.toml&quot;</span><span class="p">)</span>
+</code></pre></div>
                 
               
               

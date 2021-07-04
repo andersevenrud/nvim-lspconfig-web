@@ -1438,38 +1438,38 @@
                 
                 
                 <h1 id="vimls">vimls</h1>
-<p>https://github.com/iamcco/vim-language-server</p>
-<p>You can install vim-language-server via npm:</p>
-<pre><code class="language-sh">npm install -g vim-language-server
-</code></pre>
+<p><a href="https://github.com/iamcco/vim-language-server">https://github.com/iamcco/vim-language-server</a></p>
+<p>You can install vim-language-server via npm:
+<div class="highlight"><pre><span></span><code>npm install -g vim-language-server
+</code></pre></div></p>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.vimls.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">vimls</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = { &quot;vim-language-server&quot;, &quot;--stdio&quot; }
-  filetypes = { &quot;vim&quot; }
-  init_options = {
-    diagnostic = {
-      enable = true
-    },
-    indexes = {
-      count = 3,
-      gap = 100,
-      projectRootPatterns = { &quot;runtime&quot;, &quot;nvim&quot;, &quot;.git&quot;, &quot;autoload&quot;, &quot;plugin&quot; },
-      runtimepath = true
-    },
-    iskeyword = &quot;@,48-57,_,192-255,-#&quot;,
-    runtimepath = &quot;&quot;,
-    suggest = {
-      fromRuntimepath = true,
-      fromVimruntime = true
-    },
-    vimruntime = &quot;&quot;
-  }
-  root_dir = function(fname)
-        return util.find_git_ancestor(fname) or vim.fn.getcwd()
-      end,
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;vim-language-server&quot;</span><span class="p">,</span> <span class="s2">&quot;--stdio&quot;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;vim&quot;</span> <span class="p">}</span>
+  <span class="n">init_options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">diagnostic</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="n">enable</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="p">},</span>
+    <span class="n">indexes</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="n">count</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="n">gap</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span>
+      <span class="n">projectRootPatterns</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;runtime&quot;</span><span class="p">,</span> <span class="s2">&quot;nvim&quot;</span><span class="p">,</span> <span class="s2">&quot;.git&quot;</span><span class="p">,</span> <span class="s2">&quot;autoload&quot;</span><span class="p">,</span> <span class="s2">&quot;plugin&quot;</span> <span class="p">},</span>
+      <span class="n">runtimepath</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="p">},</span>
+    <span class="n">iskeyword</span> <span class="o">=</span> <span class="s2">&quot;@,48-57,_,192-255,-#&quot;</span><span class="p">,</span>
+    <span class="n">runtimepath</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="n">suggest</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="n">fromRuntimepath</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="n">fromVimruntime</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="p">},</span>
+    <span class="n">vimruntime</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+  <span class="p">}</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+        <span class="kr">return</span> <span class="n">util</span><span class="p">.</span><span class="n">find_git_ancestor</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span> <span class="ow">or</span> <span class="n">vim</span><span class="p">.</span><span class="n">fn</span><span class="p">.</span><span class="n">getcwd</span><span class="p">()</span>
+      <span class="kr">end</span><span class="p">,</span>
+</code></pre></div>
                 
               
               

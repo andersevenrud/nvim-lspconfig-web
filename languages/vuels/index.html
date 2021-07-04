@@ -1968,57 +1968,57 @@
                 
                 
                 <h1 id="vuels">vuels</h1>
-<p>https://github.com/vuejs/vetur/tree/master/server</p>
+<p><a href="https://github.com/vuejs/vetur/tree/master/server">https://github.com/vuejs/vetur/tree/master/server</a></p>
 <p>Vue language server(vls)
-<code>vue-language-server</code> can be installed via <code>npm</code>:</p>
-<pre><code class="language-sh">npm install -g vls
-</code></pre>
+<code>vue-language-server</code> can be installed via <code>npm</code>:
+<div class="highlight"><pre><span></span><code>npm install -g vls
+</code></pre></div></p>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.vuels.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">vuels</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = { &quot;vls&quot; }
-  filetypes = { &quot;vue&quot; }
-  init_options = {
-    config = {
-      css = {},
-      emmet = {},
-      html = {
-        suggest = {}
-      },
-      javascript = {
-        format = {}
-      },
-      stylusSupremacy = {},
-      typescript = {
-        format = {}
-      },
-      vetur = {
-        completion = {
-          autoImport = false,
-          tagCasing = &quot;kebab&quot;,
-          useScaffoldSnippets = false
-        },
-        format = {
-          defaultFormatter = {
-            js = &quot;none&quot;,
-            ts = &quot;none&quot;
-          },
-          defaultFormatterOptions = {},
-          scriptInitialIndent = false,
-          styleInitialIndent = false
-        },
-        useWorkspaceDependencies = false,
-        validation = {
-          script = true,
-          style = true,
-          template = true
-        }
-      }
-    }
-  }
-  root_dir = root_pattern(&quot;package.json&quot;, &quot;vue.config.js&quot;)
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;vls&quot;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;vue&quot;</span> <span class="p">}</span>
+  <span class="n">init_options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="n">css</span> <span class="o">=</span> <span class="p">{},</span>
+      <span class="n">emmet</span> <span class="o">=</span> <span class="p">{},</span>
+      <span class="n">html</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">suggest</span> <span class="o">=</span> <span class="p">{}</span>
+      <span class="p">},</span>
+      <span class="n">javascript</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">format</span> <span class="o">=</span> <span class="p">{}</span>
+      <span class="p">},</span>
+      <span class="n">stylusSupremacy</span> <span class="o">=</span> <span class="p">{},</span>
+      <span class="n">typescript</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">format</span> <span class="o">=</span> <span class="p">{}</span>
+      <span class="p">},</span>
+      <span class="n">vetur</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">completion</span> <span class="o">=</span> <span class="p">{</span>
+          <span class="n">autoImport</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="n">tagCasing</span> <span class="o">=</span> <span class="s2">&quot;kebab&quot;</span><span class="p">,</span>
+          <span class="n">useScaffoldSnippets</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="n">format</span> <span class="o">=</span> <span class="p">{</span>
+          <span class="n">defaultFormatter</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">js</span> <span class="o">=</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span>
+            <span class="n">ts</span> <span class="o">=</span> <span class="s2">&quot;none&quot;</span>
+          <span class="p">},</span>
+          <span class="n">defaultFormatterOptions</span> <span class="o">=</span> <span class="p">{},</span>
+          <span class="n">scriptInitialIndent</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="n">styleInitialIndent</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="n">useWorkspaceDependencies</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="n">validation</span> <span class="o">=</span> <span class="p">{</span>
+          <span class="n">script</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="n">style</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="n">template</span> <span class="o">=</span> <span class="kc">true</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;package.json&quot;</span><span class="p">,</span> <span class="s2">&quot;vue.config.js&quot;</span><span class="p">)</span>
+</code></pre></div>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="available-settings">Available settings</h2>
 <h3 id="veturcompletionautoimport"><code>vetur.completion.autoImport</code></h3>

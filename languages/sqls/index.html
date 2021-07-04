@@ -1438,24 +1438,24 @@
                 
                 
                 <h1 id="sqls">sqls</h1>
-<p>https://github.com/lighttiger2505/sqls</p>
-<pre><code class="language-lua">require'lspconfig'.sqls.setup{
-  cmd = {&quot;path/to/command&quot;, &quot;-config&quot; &quot;path/to/config.yml&quot;};
-  ...
-}
-</code></pre>
-<p>Sqls can be installed via <code>go get github.com/lighttiger2505/sqls</code>. Instructions for compiling Sqls from the source can be found at <a href="https://github.com/lighttiger2505/sqls">lighttiger2505/sqls</a>.</p>
+<p><a href="https://github.com/lighttiger2505/sqls">https://github.com/lighttiger2505/sqls</a></p>
+<p><div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">sqls</span><span class="p">.</span><span class="n">setup</span><span class="p">{</span>
+  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;path/to/command&quot;</span><span class="p">,</span> <span class="s2">&quot;-config&quot;</span> <span class="s2">&quot;path/to/config.yml&quot;</span><span class="p">};</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div>
+Sqls can be installed via <code>go get github.com/lighttiger2505/sqls</code>. Instructions for compiling Sqls from the source can be found at <a href="https://github.com/lighttiger2505/sqls">lighttiger2505/sqls</a>.</p>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.sqls.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">sqls</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = { &quot;sqls&quot; }
-  filetypes = { &quot;sql&quot;, &quot;mysql&quot; }
-  root_dir = function(fname)
-        return util.root_pattern &quot;config.yml&quot;(fname) or util.path.dirname(fname)
-      end,
-  settings = {}
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;sqls&quot;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;sql&quot;</span><span class="p">,</span> <span class="s2">&quot;mysql&quot;</span> <span class="p">}</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+        <span class="kr">return</span> <span class="n">util</span><span class="p">.</span><span class="n">root_pattern</span> <span class="s2">&quot;config.yml&quot;</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span> <span class="ow">or</span> <span class="n">util</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+      <span class="kr">end</span><span class="p">,</span>
+  <span class="n">settings</span> <span class="o">=</span> <span class="p">{}</span>
+</code></pre></div>
                 
               
               

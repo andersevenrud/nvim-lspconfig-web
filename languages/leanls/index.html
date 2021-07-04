@@ -1438,27 +1438,27 @@
                 
                 
                 <h1 id="leanls">leanls</h1>
-<p>https://github.com/leanprover/lean4</p>
+<p><a href="https://github.com/leanprover/lean4">https://github.com/leanprover/lean4</a></p>
 <p>Lean installation instructions can be found
 <a href="https://leanprover-community.github.io/get_started.html#regular-install">here</a>.</p>
 <p>The Lean 4 language server is built-in with a Lean 4 install
 (and can be manually run with, e.g., <code>lean --server</code>).</p>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.leanls.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">leanls</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = { &quot;lean&quot;, &quot;--server&quot; }
-  filetypes = { &quot;lean&quot; }
-  on_new_config = function(config, root)
-        if not util.path.is_file(root .. &quot;/leanpkg.toml&quot;) then
-          return
-        end
-        if not config.cmd_cwd then
-          config.cmd_cwd = root
-        end
-      end,
-  root_dir = root_pattern(&quot;leanpkg.toml&quot;) or root_pattern(&quot;.git&quot;) or path.dirname
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;lean&quot;</span><span class="p">,</span> <span class="s2">&quot;--server&quot;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;lean&quot;</span> <span class="p">}</span>
+  <span class="n">on_new_config</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">root</span><span class="p">)</span>
+        <span class="kr">if</span> <span class="ow">not</span> <span class="n">util</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">is_file</span><span class="p">(</span><span class="n">root</span> <span class="o">..</span> <span class="s2">&quot;/leanpkg.toml&quot;</span><span class="p">)</span> <span class="kr">then</span>
+          <span class="kr">return</span>
+        <span class="kr">end</span>
+        <span class="kr">if</span> <span class="ow">not</span> <span class="n">config</span><span class="p">.</span><span class="n">cmd_cwd</span> <span class="kr">then</span>
+          <span class="n">config</span><span class="p">.</span><span class="n">cmd_cwd</span> <span class="o">=</span> <span class="n">root</span>
+        <span class="kr">end</span>
+      <span class="kr">end</span><span class="p">,</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;leanpkg.toml&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;.git&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">path</span><span class="p">.</span><span class="n">dirname</span>
+</code></pre></div>
                 
               
               

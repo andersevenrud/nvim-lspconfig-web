@@ -1452,11 +1452,11 @@
                 
                 
                 <h1 id="denols">denols</h1>
-<p>https://github.com/denoland/deno</p>
+<p><a href="https://github.com/denoland/deno">https://github.com/denoland/deno</a></p>
 <p>Deno's built-in language server</p>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.denols.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">denols</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="commands">Commands</h3>
 <ul>
 <li>DenolsCache: Cache a module and all of its dependencies.</li>
@@ -1464,19 +1464,19 @@
 <li>DenolsReferences: List references. This handle deno:/ schema in deno:// buffer.</li>
 </ul>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = { &quot;deno&quot;, &quot;lsp&quot; }
-  filetypes = { &quot;javascript&quot;, &quot;javascriptreact&quot;, &quot;javascript.jsx&quot;, &quot;typescript&quot;, &quot;typescriptreact&quot;, &quot;typescript.tsx&quot; }
-  handlers = {
-    [&quot;textDocument/definition&quot;] = &lt;function 1&gt;,
-    [&quot;textDocument/references&quot;] = &lt;function 1&gt;
-  }
-  init_options = {
-    enable = true,
-    lint = false,
-    unstable = false
-  }
-  root_dir = root_pattern(&quot;package.json&quot;, &quot;tsconfig.json&quot;, &quot;.git&quot;)
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;deno&quot;</span><span class="p">,</span> <span class="s2">&quot;lsp&quot;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;javascript&quot;</span><span class="p">,</span> <span class="s2">&quot;javascriptreact&quot;</span><span class="p">,</span> <span class="s2">&quot;javascript.jsx&quot;</span><span class="p">,</span> <span class="s2">&quot;typescript&quot;</span><span class="p">,</span> <span class="s2">&quot;typescriptreact&quot;</span><span class="p">,</span> <span class="s2">&quot;typescript.tsx&quot;</span> <span class="p">}</span>
+  <span class="n">handlers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">[</span><span class="s2">&quot;textDocument/definition&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="o">&lt;</span><span class="kr">function</span> <span class="err">1&gt;,</span>
+    <span class="err">[&quot;</span><span class="nf">textDocument</span><span class="o">/</span><span class="n">references</span><span class="s2">&quot;] = &lt;function 1&gt;</span>
+<span class="s2">  }</span>
+<span class="s2">  init_options = {</span>
+<span class="s2">    enable = true,</span>
+<span class="s2">    lint = false,</span>
+<span class="s2">    unstable = false</span>
+<span class="s2">  }</span>
+<span class="s2">  root_dir = root_pattern(&quot;</span><span class="n">package</span><span class="p">.</span><span class="n">json</span><span class="s2">&quot;, &quot;</span><span class="n">tsconfig</span><span class="p">.</span><span class="n">json</span><span class="s2">&quot;, &quot;</span><span class="p">.</span><span class="n">git</span><span class="s2">&quot;)</span>
+</code></pre></div>
                 
               
               

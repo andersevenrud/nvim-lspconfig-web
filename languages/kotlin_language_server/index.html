@@ -1716,22 +1716,22 @@
                 
                 
                 <h1 id="kotlin_language_server">kotlin_language_server</h1>
-<pre><code>A kotlin language server which was developed for internal usage and
+<div class="highlight"><pre><span></span><code>A kotlin language server which was developed for internal usage and
 released afterwards. Maintaining is not done by the original author,
 but by fwcd.
 
 It is builded via gradle and developed on github.
 Source and additional description:
 https://github.com/fwcd/kotlin-language-server
-</code></pre>
+</code></pre></div>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.kotlin_language_server.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">kotlin_language_server</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = { &quot;kotlin-language-server&quot; }
-  filetypes = { &quot;kotlin&quot; }
-  root_dir = root_pattern(&quot;settings.gradle&quot;)
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;kotlin-language-server&quot;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;kotlin&quot;</span> <span class="p">}</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;settings.gradle&quot;</span><span class="p">)</span>
+</code></pre></div>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="available-settings">Available settings</h2>
 <h3 id="kotlincompilerjvmtarget"><code>kotlin.compiler.jvm.target</code></h3>

@@ -1438,28 +1438,28 @@
                 
                 
                 <h1 id="hls">hls</h1>
-<p>https://github.com/haskell/haskell-language-server</p>
+<p><a href="https://github.com/haskell/haskell-language-server">https://github.com/haskell/haskell-language-server</a></p>
 <p>Haskell Language Server</p>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.hls.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">hls</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = { &quot;haskell-language-server-wrapper&quot;, &quot;--lsp&quot; }
-  filetypes = { &quot;haskell&quot;, &quot;lhaskell&quot; }
-  lspinfo = function(cfg)
-        -- return &quot;specific&quot;
-        if cfg.settings.languageServerHaskell.logFile or false then
-          return &quot;logfile: &quot; .. cfg.settings.languageServerHaskell.logFile
-        end
-        return &quot;&quot;
-      end,
-  root_dir = root_pattern(&quot;*.cabal&quot;, &quot;stack.yaml&quot;, &quot;cabal.project&quot;, &quot;package.yaml&quot;, &quot;hie.yaml&quot;)
-  settings = {
-    languageServerHaskell = {
-      formattingProvider = &quot;ormolu&quot;
-    }
-  }
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;haskell-language-server-wrapper&quot;</span><span class="p">,</span> <span class="s2">&quot;--lsp&quot;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;haskell&quot;</span><span class="p">,</span> <span class="s2">&quot;lhaskell&quot;</span> <span class="p">}</span>
+  <span class="n">lspinfo</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">cfg</span><span class="p">)</span>
+        <span class="c1">-- return &quot;specific&quot;</span>
+        <span class="kr">if</span> <span class="n">cfg</span><span class="p">.</span><span class="n">settings</span><span class="p">.</span><span class="n">languageServerHaskell</span><span class="p">.</span><span class="n">logFile</span> <span class="ow">or</span> <span class="kc">false</span> <span class="kr">then</span>
+          <span class="kr">return</span> <span class="s2">&quot;logfile: &quot;</span> <span class="o">..</span> <span class="n">cfg</span><span class="p">.</span><span class="n">settings</span><span class="p">.</span><span class="n">languageServerHaskell</span><span class="p">.</span><span class="n">logFile</span>
+        <span class="kr">end</span>
+        <span class="kr">return</span> <span class="s2">&quot;&quot;</span>
+      <span class="kr">end</span><span class="p">,</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;*.cabal&quot;</span><span class="p">,</span> <span class="s2">&quot;stack.yaml&quot;</span><span class="p">,</span> <span class="s2">&quot;cabal.project&quot;</span><span class="p">,</span> <span class="s2">&quot;package.yaml&quot;</span><span class="p">,</span> <span class="s2">&quot;hie.yaml&quot;</span><span class="p">)</span>
+  <span class="n">settings</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">languageServerHaskell</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="n">formattingProvider</span> <span class="o">=</span> <span class="s2">&quot;ormolu&quot;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div>
                 
               
               

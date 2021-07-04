@@ -1438,35 +1438,35 @@
                 
                 
                 <h1 id="powershell_es">powershell_es</h1>
-<p>https://github.com/PowerShell/PowerShellEditorServices</p>
+<p><a href="https://github.com/PowerShell/PowerShellEditorServices">https://github.com/PowerShell/PowerShellEditorServices</a></p>
 <p>Language server for PowerShell.</p>
 <p>To install, download and extract PowerShellEditorServices.zip
 from the <a href="https://github.com/PowerShell/PowerShellEditorServices/releases">releases</a>.
 To configure the language server, set the property <code>bundle_path</code> to the root
 of the extracted PowerShellEditorServices.zip.</p>
 <p>The default configuration doesn't set <code>cmd</code> unless <code>bundle_path</code> is specified.</p>
-<pre><code class="language-lua">require'lspconfig'.powershell_es.setup{
-  bundle_path = 'c:/w/PowerShellEditorServices',
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">powershell_es</span><span class="p">.</span><span class="n">setup</span><span class="p">{</span>
+  <span class="n">bundle_path</span> <span class="o">=</span> <span class="s1">&#39;c:/w/PowerShellEditorServices&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>If necessary, specific <code>cmd</code> can be defined instead of <code>bundle_path</code>.
 See <a href="https://github.com/PowerShell/PowerShellEditorServices#stdio">PowerShellEditorServices</a>
 to learn more.</p>
-<pre><code class="language-lua">require'lspconfig'.powershell_es.setup{
-  cmd = {'pwsh', '-NoLogo', '-NoProfile', '-Command', &quot;c:/PSES/Start-EditorServices.ps1 ...&quot;}
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">powershell_es</span><span class="p">.</span><span class="n">setup</span><span class="p">{</span>
+  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;pwsh&#39;</span><span class="p">,</span> <span class="s1">&#39;-NoLogo&#39;</span><span class="p">,</span> <span class="s1">&#39;-NoProfile&#39;</span><span class="p">,</span> <span class="s1">&#39;-Command&#39;</span><span class="p">,</span> <span class="s2">&quot;c:/PSES/Start-EditorServices.ps1 ...&quot;</span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.powershell_es.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">powershell_es</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  filetypes = { &quot;ps1&quot; }
-  on_new_config = function(new_config, _)
-        local bundle_path = new_config.bundle_path
-        new_config.cmd = make_cmd(bundle_path)
-      end,
-  root_dir = git root or current directory
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;ps1&quot;</span> <span class="p">}</span>
+  <span class="n">on_new_config</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">new_config</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span>
+        <span class="kd">local</span> <span class="n">bundle_path</span> <span class="o">=</span> <span class="n">new_config</span><span class="p">.</span><span class="n">bundle_path</span>
+        <span class="n">new_config</span><span class="p">.</span><span class="n">cmd</span> <span class="o">=</span> <span class="n">make_cmd</span><span class="p">(</span><span class="n">bundle_path</span><span class="p">)</span>
+      <span class="kr">end</span><span class="p">,</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">git</span> <span class="n">root</span> <span class="ow">or</span> <span class="n">current</span> <span class="n">directory</span>
+</code></pre></div>
                 
               
               

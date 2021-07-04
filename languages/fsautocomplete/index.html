@@ -1438,7 +1438,7 @@
                 
                 
                 <h1 id="fsautocomplete">fsautocomplete</h1>
-<p>https://github.com/fsharp/FsAutoComplete</p>
+<p><a href="https://github.com/fsharp/FsAutoComplete">https://github.com/fsharp/FsAutoComplete</a></p>
 <p>Language Server for F# provided by FsAutoComplete (FSAC).</p>
 <p>FsAutoComplete requires the <a href="https://dotnet.microsoft.com/download">dotnet-sdk</a> to be installed.</p>
 <p>The prefered way to install FsAutoComplete is with <code>dotnet tool install --global fsautocomplete</code>.</p>
@@ -1447,18 +1447,18 @@
 <p><code>autocmd BufNewFile,BufRead *.fs,*.fsx,*.fsi set filetype=fsharp</code></p>
 <p>This is automatically done by plugins such as <a href="https://github.com/PhilT/vim-fsharp">PhilT/vim-fsharp</a>, <a href="https://github.com/fsharp/vim-fsharp">fsharp/vim-fsharp</a>, and <a href="https://github.com/adelarsq/neofsharp.vim">adelarsq/neofsharp.vim</a>.</p>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.fsautocomplete.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">fsautocomplete</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = { &quot;dotnet&quot;, &quot;fsautocomplete&quot;, &quot;--background-service-enabled&quot; }
-  filetypes = { &quot;fsharp&quot; }
-  init_options = {
-    AutomaticWorkspaceInit = true
-  }
-  root_dir = function(startpath)
-      return M.search_ancestors(startpath, matcher)
-    end
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;dotnet&quot;</span><span class="p">,</span> <span class="s2">&quot;fsautocomplete&quot;</span><span class="p">,</span> <span class="s2">&quot;--background-service-enabled&quot;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;fsharp&quot;</span> <span class="p">}</span>
+  <span class="n">init_options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">AutomaticWorkspaceInit</span> <span class="o">=</span> <span class="kc">true</span>
+  <span class="p">}</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">startpath</span><span class="p">)</span>
+      <span class="kr">return</span> <span class="n">M</span><span class="p">.</span><span class="n">search_ancestors</span><span class="p">(</span><span class="n">startpath</span><span class="p">,</span> <span class="n">matcher</span><span class="p">)</span>
+    <span class="kr">end</span>
+</code></pre></div>
                 
               
               

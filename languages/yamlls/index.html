@@ -1688,18 +1688,18 @@
                 
                 
                 <h1 id="yamlls">yamlls</h1>
-<p>https://github.com/redhat-developer/yaml-language-server</p>
-<p><code>yaml-language-server</code> can be installed via <code>npm</code>:</p>
-<pre><code class="language-sh">npm install -g yaml-language-server
-</code></pre>
+<p><a href="https://github.com/redhat-developer/yaml-language-server">https://github.com/redhat-developer/yaml-language-server</a></p>
+<p><code>yaml-language-server</code> can be installed via <code>npm</code>:
+<div class="highlight"><pre><span></span><code>npm install -g yaml-language-server
+</code></pre></div></p>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.yamlls.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">yamlls</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = { &quot;yaml-language-server&quot;, &quot;--stdio&quot; }
-  filetypes = { &quot;yaml&quot; }
-  root_dir = root_pattern(&quot;.git&quot;, vim.fn.getcwd())
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;yaml-language-server&quot;</span><span class="p">,</span> <span class="s2">&quot;--stdio&quot;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;yaml&quot;</span> <span class="p">}</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;.git&quot;</span><span class="p">,</span> <span class="n">vim</span><span class="p">.</span><span class="n">fn</span><span class="p">.</span><span class="n">getcwd</span><span class="p">())</span>
+</code></pre></div>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="available-settings">Available settings</h2>
 <h3 id="redhattelemetryenabled"><code>redhat.telemetry.enabled</code></h3>

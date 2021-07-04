@@ -1438,18 +1438,18 @@
                 
                 
                 <h1 id="dockerls">dockerls</h1>
-<p>https://github.com/rcjsuen/dockerfile-language-server-nodejs</p>
-<p><code>docker-langserver</code> can be installed via <code>npm</code>:</p>
-<pre><code class="language-sh">npm install -g dockerfile-language-server-nodejs
-</code></pre>
+<p><a href="https://github.com/rcjsuen/dockerfile-language-server-nodejs">https://github.com/rcjsuen/dockerfile-language-server-nodejs</a></p>
+<p><code>docker-langserver</code> can be installed via <code>npm</code>:
+<div class="highlight"><pre><span></span><code>npm install -g dockerfile-language-server-nodejs
+</code></pre></div></p>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.dockerls.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">dockerls</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = { &quot;docker-langserver&quot;, &quot;--stdio&quot; }
-  filetypes = { &quot;Dockerfile&quot;, &quot;dockerfile&quot; }
-  root_dir = root_pattern(&quot;Dockerfile&quot;)
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;docker-langserver&quot;</span><span class="p">,</span> <span class="s2">&quot;--stdio&quot;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;Dockerfile&quot;</span><span class="p">,</span> <span class="s2">&quot;dockerfile&quot;</span> <span class="p">}</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;Dockerfile&quot;</span><span class="p">)</span>
+</code></pre></div>
                 
               
               

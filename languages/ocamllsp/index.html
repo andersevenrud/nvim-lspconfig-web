@@ -1438,23 +1438,23 @@
                 
                 
                 <h1 id="ocamllsp">ocamllsp</h1>
-<p>https://github.com/ocaml/ocaml-lsp</p>
+<p><a href="https://github.com/ocaml/ocaml-lsp">https://github.com/ocaml/ocaml-lsp</a></p>
 <p><code>ocaml-lsp</code> can be installed as described in <a href="https://github.com/ocaml/ocaml-lsp#installation">installation guide</a>.</p>
-<p>To install the lsp server in a particular opam switch:</p>
-<pre><code class="language-sh">opam pin add ocaml-lsp-server https://github.com/ocaml/ocaml-lsp.git
+<p>To install the lsp server in a particular opam switch:
+<div class="highlight"><pre><span></span><code>opam pin add ocaml-lsp-server https://github.com/ocaml/ocaml-lsp.git
 opam install ocaml-lsp-server
-</code></pre>
+</code></pre></div></p>
 <h2 id="setup">Setup</h2>
-<pre><code class="language-lua">require'lspconfig'.ocamllsp.setup{}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">ocamllsp</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
 <h3 id="default-values">Default Values</h3>
-<pre><code class="language-lua">  cmd = { &quot;ocamllsp&quot; }
-  filetypes = { &quot;ocaml&quot;, &quot;ocamllex&quot;, &quot;menhir&quot;, &quot;reason&quot;, &quot;ocamlinterface&quot; }
-  get_language_id = function(_, ftype)
-    return language_id_of[ftype]
-  end
-  root_dir = root_pattern(&quot;*.opam&quot;, &quot;esy.json&quot;, &quot;package.json&quot;, &quot;.git&quot;)
-</code></pre>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;ocamllsp&quot;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;ocaml&quot;</span><span class="p">,</span> <span class="s2">&quot;ocamllex&quot;</span><span class="p">,</span> <span class="s2">&quot;menhir&quot;</span><span class="p">,</span> <span class="s2">&quot;reason&quot;</span><span class="p">,</span> <span class="s2">&quot;ocamlinterface&quot;</span> <span class="p">}</span>
+  <span class="n">get_language_id</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">ftype</span><span class="p">)</span>
+    <span class="kr">return</span> <span class="n">language_id_of</span><span class="p">[</span><span class="n">ftype</span><span class="p">]</span>
+  <span class="kr">end</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;*.opam&quot;</span><span class="p">,</span> <span class="s2">&quot;esy.json&quot;</span><span class="p">,</span> <span class="s2">&quot;package.json&quot;</span><span class="p">,</span> <span class="s2">&quot;.git&quot;</span><span class="p">)</span>
+</code></pre></div>
                 
               
               
