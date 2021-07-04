@@ -794,9 +794,39 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          leanls
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         leanls
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1355,6 +1385,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1372,7 +1417,7 @@
 <a href="https://leanprover-community.github.io/get_started.html#regular-install">here</a>.</p>
 <p>The Lean 4 language server is built-in with a Lean 4 install
 (and can be manually run with, e.g., <code>lean --server</code>).</p>
-<p><strong>Snippet to enable the language server:</strong></p>
+<h2 id="setup">Setup</h2>
 <pre><code class="language-lua">require'lspconfig'.leanls.setup{}
 </code></pre>
 <p><strong>Commands and default values:</strong></p>

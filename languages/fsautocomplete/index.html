@@ -578,9 +578,39 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          fsautocomplete
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         fsautocomplete
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1355,6 +1385,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1375,7 +1420,7 @@
 <p>You may also need to configure the filetype as Vim defaults to Forth for <code>*.fs</code> files:</p>
 <p><code>autocmd BufNewFile,BufRead *.fs,*.fsx,*.fsi set filetype=fsharp</code></p>
 <p>This is automatically done by plugins such as <a href="https://github.com/PhilT/vim-fsharp">PhilT/vim-fsharp</a>, <a href="https://github.com/fsharp/vim-fsharp">fsharp/vim-fsharp</a>, and <a href="https://github.com/adelarsq/neofsharp.vim">adelarsq/neofsharp.vim</a>.</p>
-<p><strong>Snippet to enable the language server:</strong></p>
+<h2 id="setup">Setup</h2>
 <pre><code class="language-lua">require'lspconfig'.fsautocomplete.setup{}
 </code></pre>
 <p><strong>Commands and default values:</strong></p>

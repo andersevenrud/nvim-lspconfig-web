@@ -746,9 +746,94 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          jsonls
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         jsonls
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#available-settings" class="md-nav__link">
+    Available settings
+  </a>
+  
+    <nav class="md-nav" aria-label="Available settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jsoncolordecoratorsenable" class="md-nav__link">
+    json.colorDecorators.enable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jsonformatenable" class="md-nav__link">
+    json.format.enable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jsonmaxitemscomputed" class="md-nav__link">
+    json.maxItemsComputed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jsonschemadownloadenable" class="md-nav__link">
+    json.schemaDownload.enable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jsonschemas" class="md-nav__link">
+    json.schemas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jsontraceserver" class="md-nav__link">
+    json.trace.server
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1355,6 +1440,76 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#available-settings" class="md-nav__link">
+    Available settings
+  </a>
+  
+    <nav class="md-nav" aria-label="Available settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jsoncolordecoratorsenable" class="md-nav__link">
+    json.colorDecorators.enable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jsonformatenable" class="md-nav__link">
+    json.format.enable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jsonmaxitemscomputed" class="md-nav__link">
+    json.maxItemsComputed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jsonschemadownloadenable" class="md-nav__link">
+    json.schemaDownload.enable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jsonschemas" class="md-nav__link">
+    json.schemas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jsontraceserver" class="md-nav__link">
+    json.trace.server
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1383,48 +1538,7 @@
     }
 }
 </code></pre>
-<p>This server accepts configuration via the <code>settings</code> key.</p>
-<details><summary>Available settings:</summary>
-
-- **`json.colorDecorators.enable`**: `boolean`
-
-  Default: `true`
-
-  \%json\.colorDecorators\.enable\.desc\%
-
-- **`json.format.enable`**: `boolean`
-
-  Default: `true`
-
-  \%json\.format\.enable\.desc\%
-
-- **`json.maxItemsComputed`**: `number`
-
-  Default: `5000`
-
-  \%json\.maxItemsComputed\.desc\%
-
-- **`json.schemaDownload.enable`**: `boolean`
-
-  Default: `true`
-
-  \%json\.enableSchemaDownload\.desc\%
-
-- **`json.schemas`**: `array`
-
-  Array items: `{default = {fileMatch = { "/myfile" },url = "schemaURL"},properties = {fileMatch = {description = "%json.schemas.fileMatch.desc%",items = {default = "MyFile.json",description = "%json.schemas.fileMatch.item.desc%",type = "string"},minItems = 1,type = "array"},schema = {["$ref"] = "http://json-schema.org/draft-07/schema#",description = "%json.schemas.schema.desc%"},url = {default = "/user.schema.json",description = "%json.schemas.url.desc%",type = "string"}},type = "object"}`
-
-  \%json\.schemas\.desc\%
-
-- **`json.trace.server`**: `enum { "off", "messages", "verbose" }`
-
-  Default: `"off"`
-
-  \%json\.tracing\.desc\%
-
-</details>
-
-<p><strong>Snippet to enable the language server:</strong></p>
+<h2 id="setup">Setup</h2>
 <pre><code class="language-lua">require'lspconfig'.jsonls.setup{}
 </code></pre>
 <p><strong>Commands and default values:</strong></p>
@@ -1438,6 +1552,32 @@
     }
     root_dir = root_pattern(&quot;.git&quot;, vim.fn.getcwd())
 </code></pre>
+<p>This server accepts configuration via the <code>settings</code> key.</p>
+<h2 id="available-settings">Available settings</h2>
+<h3 id="jsoncolordecoratorsenable"><code>json.colorDecorators.enable</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>\%json.colorDecorators.enable.desc\%</p>
+<h3 id="jsonformatenable"><code>json.format.enable</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>\%json.format.enable.desc\%</p>
+<h3 id="jsonmaxitemscomputed"><code>json.maxItemsComputed</code></h3>
+<p>Type: <code>number</code></p>
+<p>Default: <code>5000</code></p>
+<p>\%json.maxItemsComputed.desc\%</p>
+<h3 id="jsonschemadownloadenable"><code>json.schemaDownload.enable</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>\%json.enableSchemaDownload.desc\%</p>
+<h3 id="jsonschemas"><code>json.schemas</code></h3>
+<p>Type: <code>array</code></p>
+<p>Array items: <code>{default = {fileMatch = { "/myfile" },url = "schemaURL"},properties = {fileMatch = {description = "%json.schemas.fileMatch.desc%",items = {default = "MyFile.json",description = "%json.schemas.fileMatch.item.desc%",type = "string"},minItems = 1,type = "array"},schema = {["$ref"] = "http://json-schema.org/draft-07/schema#",description = "%json.schemas.schema.desc%"},url = {default = "/user.schema.json",description = "%json.schemas.url.desc%",type = "string"}},type = "object"}</code></p>
+<p>\%json.schemas.desc\%</p>
+<h3 id="jsontraceserver"><code>json.trace.server</code></h3>
+<p><code>enum { "off", "messages", "verbose" }</code></p>
+<p>Default: <code>"off"</code></p>
+<p>\%json.tracing.desc\%</p>
                 
               
               

@@ -1106,9 +1106,87 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          sourcekit
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         sourcekit
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#available-settings" class="md-nav__link">
+    Available settings
+  </a>
+  
+    <nav class="md-nav" aria-label="Available settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sourcekit-lspinlayhintsenabled" class="md-nav__link">
+    sourcekit-lsp.inlayHints.enabled
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sourcekit-lspserverarguments" class="md-nav__link">
+    sourcekit-lsp.serverArguments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sourcekit-lspserverpath" class="md-nav__link">
+    sourcekit-lsp.serverPath
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sourcekit-lsptoolchainpath" class="md-nav__link">
+    sourcekit-lsp.toolchainPath
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sourcekit-lsptraceserver" class="md-nav__link">
+    sourcekit-lsp.trace.server
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1355,6 +1433,69 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#available-settings" class="md-nav__link">
+    Available settings
+  </a>
+  
+    <nav class="md-nav" aria-label="Available settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sourcekit-lspinlayhintsenabled" class="md-nav__link">
+    sourcekit-lsp.inlayHints.enabled
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sourcekit-lspserverarguments" class="md-nav__link">
+    sourcekit-lsp.serverArguments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sourcekit-lspserverpath" class="md-nav__link">
+    sourcekit-lsp.serverPath
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sourcekit-lsptoolchainpath" class="md-nav__link">
+    sourcekit-lsp.toolchainPath
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sourcekit-lsptraceserver" class="md-nav__link">
+    sourcekit-lsp.trace.server
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1369,42 +1510,7 @@
                 <h1 id="sourcekit">sourcekit</h1>
 <p>https://github.com/apple/sourcekit-lsp</p>
 <p>Language server for Swift and C/C++/Objective-C.</p>
-<p>This server accepts configuration via the <code>settings</code> key.</p>
-<details><summary>Available settings:</summary>
-
-- **`sourcekit-lsp.inlayHints.enabled`**: `boolean`
-
-  \(experimental\) Render inlay type annotations in the editor\.
-
-- **`sourcekit-lsp.serverArguments`**: `array`
-
-  Default: `{}`
-
-  Array items: `{type = "string"}`
-
-  Arguments to pass to sourcekit\-lsp\. Argument keys and values should be provided as separate entries in the array e\.g\. \[\'\-\-log\-level\'\, \'debug\'\]
-
-- **`sourcekit-lsp.serverPath`**: `string`
-
-  Default: `"sourcekit-lsp"`
-
-  The path of the sourcekit\-lsp executable
-
-- **`sourcekit-lsp.toolchainPath`**: `string`
-
-  Default: `""`
-
-  \(optional\) The path of the swift toolchain\. By default\, sourcekit\-lsp uses the toolchain it is installed in\.
-
-- **`sourcekit-lsp.trace.server`**: `enum { "off", "messages", "verbose" }`
-
-  Default: `"off"`
-
-  Traces the communication between VS Code and the SourceKit\-LSP language server\.
-
-</details>
-
-<p><strong>Snippet to enable the language server:</strong></p>
+<h2 id="setup">Setup</h2>
 <pre><code class="language-lua">require'lspconfig'.sourcekit.setup{}
 </code></pre>
 <p><strong>Commands and default values:</strong></p>
@@ -1415,6 +1521,28 @@
     filetypes = { &quot;swift&quot;, &quot;c&quot;, &quot;cpp&quot;, &quot;objective-c&quot;, &quot;objective-cpp&quot; }
     root_dir = root_pattern(&quot;Package.swift&quot;, &quot;.git&quot;)
 </code></pre>
+<p>This server accepts configuration via the <code>settings</code> key.</p>
+<h2 id="available-settings">Available settings</h2>
+<h3 id="sourcekit-lspinlayhintsenabled"><code>sourcekit-lsp.inlayHints.enabled</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>(experimental) Render inlay type annotations in the editor.</p>
+<h3 id="sourcekit-lspserverarguments"><code>sourcekit-lsp.serverArguments</code></h3>
+<p>Type: <code>array</code></p>
+<p>Default: <code>{}</code></p>
+<p>Array items: <code>{type = "string"}</code></p>
+<p>Arguments to pass to sourcekit-lsp. Argument keys and values should be provided as separate entries in the array e.g. [\'--log-level\'\, \'debug\']</p>
+<h3 id="sourcekit-lspserverpath"><code>sourcekit-lsp.serverPath</code></h3>
+<p>Type: <code>string</code></p>
+<p>Default: <code>"sourcekit-lsp"</code></p>
+<p>The path of the sourcekit-lsp executable</p>
+<h3 id="sourcekit-lsptoolchainpath"><code>sourcekit-lsp.toolchainPath</code></h3>
+<p>Type: <code>string</code></p>
+<p>Default: <code>""</code></p>
+<p>(optional) The path of the swift toolchain. By default\, sourcekit-lsp uses the toolchain it is installed in.</p>
+<h3 id="sourcekit-lsptraceserver"><code>sourcekit-lsp.trace.server</code></h3>
+<p><code>enum { "off", "messages", "verbose" }</code></p>
+<p>Default: <code>"off"</code></p>
+<p>Traces the communication between VS Code and the SourceKit-LSP language server.</p>
                 
               
               

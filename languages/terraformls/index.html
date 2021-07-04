@@ -1202,9 +1202,80 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          terraformls
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         terraformls
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#available-settings" class="md-nav__link">
+    Available settings
+  </a>
+  
+    <nav class="md-nav" aria-label="Available settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terraform-lsexcluderootmodules" class="md-nav__link">
+    terraform-ls.excludeRootModules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terraform-lsexperimentalfeatures" class="md-nav__link">
+    terraform-ls.experimentalFeatures
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terraform-lsrootmodules" class="md-nav__link">
+    terraform-ls.rootModules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terraformlanguageserver" class="md-nav__link">
+    terraform.languageServer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1355,6 +1426,62 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#available-settings" class="md-nav__link">
+    Available settings
+  </a>
+  
+    <nav class="md-nav" aria-label="Available settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terraform-lsexcluderootmodules" class="md-nav__link">
+    terraform-ls.excludeRootModules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terraform-lsexperimentalfeatures" class="md-nav__link">
+    terraform-ls.experimentalFeatures
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terraform-lsrootmodules" class="md-nav__link">
+    terraform-ls.rootModules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terraformlanguageserver" class="md-nav__link">
+    terraform.languageServer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1370,38 +1497,7 @@
 <p>https://github.com/hashicorp/terraform-ls</p>
 <p>Terraform language server
 Download a released binary from https://github.com/hashicorp/terraform-ls/releases.</p>
-<p>This server accepts configuration via the <code>settings</code> key.</p>
-<details><summary>Available settings:</summary>
-
-- **`terraform-ls.excludeRootModules`**: `array`
-
-  Default: `{}`
-
-  Array items: `{type = "string"}`
-
-  Per\-workspace list of module directories for the language server to exclude
-
-- **`terraform-ls.experimentalFeatures`**: `object`
-
-  Experimental \(opt\-in\) terraform\-ls features
-
-- **`terraform-ls.rootModules`**: `array`
-
-  Default: `{}`
-
-  Array items: `{type = "string"}`
-
-  Per\-workspace list of module directories for the language server to read
-
-- **`terraform.languageServer`**: `object`
-
-  Default: `{args = { "serve" },external = true,maxNumberOfProblems = 100,pathToBinary = "",["trace.server"] = "off"}`
-
-  Language Server settings
-
-</details>
-
-<p><strong>Snippet to enable the language server:</strong></p>
+<h2 id="setup">Setup</h2>
 <pre><code class="language-lua">require'lspconfig'.terraformls.setup{}
 </code></pre>
 <p><strong>Commands and default values:</strong></p>
@@ -1412,6 +1508,25 @@ Download a released binary from https://github.com/hashicorp/terraform-ls/releas
     filetypes = { &quot;terraform&quot; }
     root_dir = root_pattern(&quot;.terraform&quot;, &quot;.git&quot;)
 </code></pre>
+<p>This server accepts configuration via the <code>settings</code> key.</p>
+<h2 id="available-settings">Available settings</h2>
+<h3 id="terraform-lsexcluderootmodules"><code>terraform-ls.excludeRootModules</code></h3>
+<p>Type: <code>array</code></p>
+<p>Default: <code>{}</code></p>
+<p>Array items: <code>{type = "string"}</code></p>
+<p>Per-workspace list of module directories for the language server to exclude</p>
+<h3 id="terraform-lsexperimentalfeatures"><code>terraform-ls.experimentalFeatures</code></h3>
+<p>Type: <code>object</code></p>
+<p>Experimental (opt-in) terraform-ls features</p>
+<h3 id="terraform-lsrootmodules"><code>terraform-ls.rootModules</code></h3>
+<p>Type: <code>array</code></p>
+<p>Default: <code>{}</code></p>
+<p>Array items: <code>{type = "string"}</code></p>
+<p>Per-workspace list of module directories for the language server to read</p>
+<h3 id="terraformlanguageserver"><code>terraform.languageServer</code></h3>
+<p>Type: <code>object</code></p>
+<p>Default: <code>{args = { "serve" },external = true,maxNumberOfProblems = 100,pathToBinary = "",["trace.server"] = "off"}</code></p>
+<p>Language Server settings</p>
                 
               
               

@@ -518,9 +518,101 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          elixirls
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         elixirls
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#available-settings" class="md-nav__link">
+    Available settings
+  </a>
+  
+    <nav class="md-nav" aria-label="Available settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elixirlsdialyzerenabled" class="md-nav__link">
+    elixirLS.dialyzerEnabled
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elixirlsdialyzerformat" class="md-nav__link">
+    elixirLS.dialyzerFormat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elixirlsdialyzerwarnopts" class="md-nav__link">
+    elixirLS.dialyzerWarnOpts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elixirlsfetchdeps" class="md-nav__link">
+    elixirLS.fetchDeps
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elixirlsmixenv" class="md-nav__link">
+    elixirLS.mixEnv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elixirlsprojectdir" class="md-nav__link">
+    elixirLS.projectDir
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elixirlssuggestspecs" class="md-nav__link">
+    elixirLS.suggestSpecs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1355,6 +1447,83 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#available-settings" class="md-nav__link">
+    Available settings
+  </a>
+  
+    <nav class="md-nav" aria-label="Available settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elixirlsdialyzerenabled" class="md-nav__link">
+    elixirLS.dialyzerEnabled
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elixirlsdialyzerformat" class="md-nav__link">
+    elixirLS.dialyzerFormat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elixirlsdialyzerwarnopts" class="md-nav__link">
+    elixirLS.dialyzerWarnOpts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elixirlsfetchdeps" class="md-nav__link">
+    elixirLS.fetchDeps
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elixirlsmixenv" class="md-nav__link">
+    elixirLS.mixEnv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elixirlsprojectdir" class="md-nav__link">
+    elixirLS.projectDir
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elixirlssuggestspecs" class="md-nav__link">
+    elixirLS.suggestSpecs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1383,54 +1552,7 @@ chmod +x /path/to/elixir-ls/language_server.sh
     ...
 }
 </code></pre>
-<p>This server accepts configuration via the <code>settings</code> key.</p>
-<details><summary>Available settings:</summary>
-
-- **`elixirLS.dialyzerEnabled`**: `boolean`
-
-  Default: `true`
-
-  Run ElixirLS\'s rapid Dialyzer when code is saved
-
-- **`elixirLS.dialyzerFormat`**: `enum { "dialyzer", "dialyxir_short", "dialyxir_long" }`
-
-  Default: `"dialyzer"`
-
-  Formatter to use for Dialyzer warnings
-
-- **`elixirLS.dialyzerWarnOpts`**: `array`
-
-  Default: `{}`
-
-  Array items: `{enum = { "error_handling", "no_behaviours", "no_contracts", "no_fail_call", "no_fun_app", "no_improper_lists", "no_match", "no_missing_calls", "no_opaque", "no_return", "no_undefined_callbacks", "no_unused", "underspecs", "unknown", "unmatched_returns", "overspecs", "specdiffs" },type = "string"}`
-
-  Dialyzer options to enable or disable warnings\. See Dialyzer\'s documentation for options\. Note that the \"race\_conditions\" option is unsupported
-
-- **`elixirLS.fetchDeps`**: `boolean`
-
-  Default: `true`
-
-  Automatically fetch project dependencies when compiling
-
-- **`elixirLS.mixEnv`**: `string`
-
-  Default: `"test"`
-
-  Mix environment to use for compilation
-
-- **`elixirLS.projectDir`**: `string`
-
-  Subdirectory containing Mix project if not in the project root
-
-- **`elixirLS.suggestSpecs`**: `boolean`
-
-  Default: `true`
-
-  Suggest \@spec annotations inline using Dialyzer\'s inferred success typings \(Requires Dialyzer\)
-
-</details>
-
-<p><strong>Snippet to enable the language server:</strong></p>
+<h2 id="setup">Setup</h2>
 <pre><code class="language-lua">require'lspconfig'.elixirls.setup{}
 </code></pre>
 <p><strong>Commands and default values:</strong></p>
@@ -1440,6 +1562,36 @@ chmod +x /path/to/elixir-ls/language_server.sh
     filetypes = { &quot;elixir&quot;, &quot;eelixir&quot; }
     root_dir = root_pattern(&quot;mix.exs&quot;, &quot;.git&quot;) or vim.loop.os_homedir()
 </code></pre>
+<p>This server accepts configuration via the <code>settings</code> key.</p>
+<h2 id="available-settings">Available settings</h2>
+<h3 id="elixirlsdialyzerenabled"><code>elixirLS.dialyzerEnabled</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>Run ElixirLS\'s rapid Dialyzer when code is saved</p>
+<h3 id="elixirlsdialyzerformat"><code>elixirLS.dialyzerFormat</code></h3>
+<p><code>enum { "dialyzer", "dialyxir_short", "dialyxir_long" }</code></p>
+<p>Default: <code>"dialyzer"</code></p>
+<p>Formatter to use for Dialyzer warnings</p>
+<h3 id="elixirlsdialyzerwarnopts"><code>elixirLS.dialyzerWarnOpts</code></h3>
+<p>Type: <code>array</code></p>
+<p>Default: <code>{}</code></p>
+<p>Array items: <code>{enum = { "error_handling", "no_behaviours", "no_contracts", "no_fail_call", "no_fun_app", "no_improper_lists", "no_match", "no_missing_calls", "no_opaque", "no_return", "no_undefined_callbacks", "no_unused", "underspecs", "unknown", "unmatched_returns", "overspecs", "specdiffs" },type = "string"}</code></p>
+<p>Dialyzer options to enable or disable warnings. See Dialyzer\'s documentation for options. Note that the \"race_conditions\" option is unsupported</p>
+<h3 id="elixirlsfetchdeps"><code>elixirLS.fetchDeps</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>Automatically fetch project dependencies when compiling</p>
+<h3 id="elixirlsmixenv"><code>elixirLS.mixEnv</code></h3>
+<p>Type: <code>string</code></p>
+<p>Default: <code>"test"</code></p>
+<p>Mix environment to use for compilation</p>
+<h3 id="elixirlsprojectdir"><code>elixirLS.projectDir</code></h3>
+<p>Type: <code>string</code></p>
+<p>Subdirectory containing Mix project if not in the project root</p>
+<h3 id="elixirlssuggestspecs"><code>elixirLS.suggestSpecs</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>Suggest \@spec annotations inline using Dialyzer\'s inferred success typings (Requires Dialyzer)</p>
                 
               
               

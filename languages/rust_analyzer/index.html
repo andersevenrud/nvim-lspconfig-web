@@ -1058,9 +1058,654 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          rust_analyzer
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         rust_analyzer
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#available-settings" class="md-nav__link">
+    Available settings
+  </a>
+  
+    <nav class="md-nav" aria-label="Available settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generated-end" class="md-nav__link">
+    $generated-end
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generated-start" class="md-nav__link">
+    $generated-start
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerassistallowmergingintoglobimports" class="md-nav__link">
+    rust-analyzer.assist.allowMergingIntoGlobImports
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerassistimportenforcegranularity" class="md-nav__link">
+    rust-analyzer.assist.importEnforceGranularity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerassistimportgranularity" class="md-nav__link">
+    rust-analyzer.assist.importGranularity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerassistimportgroup" class="md-nav__link">
+    rust-analyzer.assist.importGroup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerassistimportprefix" class="md-nav__link">
+    rust-analyzer.assist.importPrefix
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercallinfofull" class="md-nav__link">
+    rust-analyzer.callInfo.full
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercargoallfeatures" class="md-nav__link">
+    rust-analyzer.cargo.allFeatures
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercargoautoreload" class="md-nav__link">
+    rust-analyzer.cargo.autoreload
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercargofeatures" class="md-nav__link">
+    rust-analyzer.cargo.features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercargonodefaultfeatures" class="md-nav__link">
+    rust-analyzer.cargo.noDefaultFeatures
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercargonosysroot" class="md-nav__link">
+    rust-analyzer.cargo.noSysroot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercargorunbuildscripts" class="md-nav__link">
+    rust-analyzer.cargo.runBuildScripts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercargotarget" class="md-nav__link">
+    rust-analyzer.cargo.target
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercargounsettest" class="md-nav__link">
+    rust-analyzer.cargo.unsetTest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercargouserustcwrapperforbuildscripts" class="md-nav__link">
+    rust-analyzer.cargo.useRustcWrapperForBuildScripts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercargorunner" class="md-nav__link">
+    rust-analyzer.cargoRunner
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercheckonsaveallfeatures" class="md-nav__link">
+    rust-analyzer.checkOnSave.allFeatures
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercheckonsavealltargets" class="md-nav__link">
+    rust-analyzer.checkOnSave.allTargets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercheckonsavecommand" class="md-nav__link">
+    rust-analyzer.checkOnSave.command
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercheckonsaveenable" class="md-nav__link">
+    rust-analyzer.checkOnSave.enable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercheckonsaveextraargs" class="md-nav__link">
+    rust-analyzer.checkOnSave.extraArgs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercheckonsavefeatures" class="md-nav__link">
+    rust-analyzer.checkOnSave.features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercheckonsavenodefaultfeatures" class="md-nav__link">
+    rust-analyzer.checkOnSave.noDefaultFeatures
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercheckonsaveoverridecommand" class="md-nav__link">
+    rust-analyzer.checkOnSave.overrideCommand
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercheckonsavetarget" class="md-nav__link">
+    rust-analyzer.checkOnSave.target
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercompletionaddcallargumentsnippets" class="md-nav__link">
+    rust-analyzer.completion.addCallArgumentSnippets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercompletionaddcallparenthesis" class="md-nav__link">
+    rust-analyzer.completion.addCallParenthesis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercompletionautoimportenable" class="md-nav__link">
+    rust-analyzer.completion.autoimport.enable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercompletionautoselfenable" class="md-nav__link">
+    rust-analyzer.completion.autoself.enable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercompletionpostfixenable" class="md-nav__link">
+    rust-analyzer.completion.postfix.enable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerdebugengine" class="md-nav__link">
+    rust-analyzer.debug.engine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerdebugenginesettings" class="md-nav__link">
+    rust-analyzer.debug.engineSettings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerdebugopendebugpane" class="md-nav__link">
+    rust-analyzer.debug.openDebugPane
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerdebugsourcefilemap" class="md-nav__link">
+    rust-analyzer.debug.sourceFileMap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerdiagnosticsdisabled" class="md-nav__link">
+    rust-analyzer.diagnostics.disabled
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerdiagnosticsenable" class="md-nav__link">
+    rust-analyzer.diagnostics.enable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerdiagnosticsenableexperimental" class="md-nav__link">
+    rust-analyzer.diagnostics.enableExperimental
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerdiagnosticsremapprefix" class="md-nav__link">
+    rust-analyzer.diagnostics.remapPrefix
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerdiagnosticswarningsashint" class="md-nav__link">
+    rust-analyzer.diagnostics.warningsAsHint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerdiagnosticswarningsasinfo" class="md-nav__link">
+    rust-analyzer.diagnostics.warningsAsInfo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerexperimentalprocattrmacros" class="md-nav__link">
+    rust-analyzer.experimental.procAttrMacros
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerfilesexcludedirs" class="md-nav__link">
+    rust-analyzer.files.excludeDirs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerfileswatcher" class="md-nav__link">
+    rust-analyzer.files.watcher
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerhighlightingstrings" class="md-nav__link">
+    rust-analyzer.highlighting.strings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerhoverdocumentation" class="md-nav__link">
+    rust-analyzer.hover.documentation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerhoverlinksinhover" class="md-nav__link">
+    rust-analyzer.hover.linksInHover
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerhoveractionsdebug" class="md-nav__link">
+    rust-analyzer.hoverActions.debug
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerhoveractionsenable" class="md-nav__link">
+    rust-analyzer.hoverActions.enable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerhoveractionsgototypedef" class="md-nav__link">
+    rust-analyzer.hoverActions.gotoTypeDef
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerhoveractionsimplementations" class="md-nav__link">
+    rust-analyzer.hoverActions.implementations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerhoveractionsreferences" class="md-nav__link">
+    rust-analyzer.hoverActions.references
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerhoveractionsrun" class="md-nav__link">
+    rust-analyzer.hoverActions.run
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerinlayhintschaininghints" class="md-nav__link">
+    rust-analyzer.inlayHints.chainingHints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerinlayhintsenable" class="md-nav__link">
+    rust-analyzer.inlayHints.enable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerinlayhintsmaxlength" class="md-nav__link">
+    rust-analyzer.inlayHints.maxLength
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerinlayhintsparameterhints" class="md-nav__link">
+    rust-analyzer.inlayHints.parameterHints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerinlayhintssmallerhints" class="md-nav__link">
+    rust-analyzer.inlayHints.smallerHints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerinlayhintstypehints" class="md-nav__link">
+    rust-analyzer.inlayHints.typeHints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerlensdebug" class="md-nav__link">
+    rust-analyzer.lens.debug
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerlensenable" class="md-nav__link">
+    rust-analyzer.lens.enable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerlensimplementations" class="md-nav__link">
+    rust-analyzer.lens.implementations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerlensmethodreferences" class="md-nav__link">
+    rust-analyzer.lens.methodReferences
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerlensreferences" class="md-nav__link">
+    rust-analyzer.lens.references
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerlensrun" class="md-nav__link">
+    rust-analyzer.lens.run
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerlinkedprojects" class="md-nav__link">
+    rust-analyzer.linkedProjects
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerlrucapacity" class="md-nav__link">
+    rust-analyzer.lruCapacity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzernotificationscargotomlnotfound" class="md-nav__link">
+    rust-analyzer.notifications.cargoTomlNotFound
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerprocmacroenable" class="md-nav__link">
+    rust-analyzer.procMacro.enable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerprocmacroserver" class="md-nav__link">
+    rust-analyzer.procMacro.server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerrunnableenv" class="md-nav__link">
+    rust-analyzer.runnableEnv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerrunnablescargoextraargs" class="md-nav__link">
+    rust-analyzer.runnables.cargoExtraArgs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerrunnablesoverridecargo" class="md-nav__link">
+    rust-analyzer.runnables.overrideCargo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerrustcsource" class="md-nav__link">
+    rust-analyzer.rustcSource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerrustfmtenablerangeformatting" class="md-nav__link">
+    rust-analyzer.rustfmt.enableRangeFormatting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerrustfmtextraargs" class="md-nav__link">
+    rust-analyzer.rustfmt.extraArgs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerrustfmtoverridecommand" class="md-nav__link">
+    rust-analyzer.rustfmt.overrideCommand
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerserverextraenv" class="md-nav__link">
+    rust-analyzer.server.extraEnv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerserverpath" class="md-nav__link">
+    rust-analyzer.server.path
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzertraceextension" class="md-nav__link">
+    rust-analyzer.trace.extension
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzertraceserver" class="md-nav__link">
+    rust-analyzer.trace.server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerupdatesaskbeforedownload" class="md-nav__link">
+    rust-analyzer.updates.askBeforeDownload
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerupdateschannel" class="md-nav__link">
+    rust-analyzer.updates.channel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerworkspacesymbolsearchkind" class="md-nav__link">
+    rust-analyzer.workspace.symbol.search.kind
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerworkspacesymbolsearchscope" class="md-nav__link">
+    rust-analyzer.workspace.symbol.search.scope
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1355,6 +2000,636 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#available-settings" class="md-nav__link">
+    Available settings
+  </a>
+  
+    <nav class="md-nav" aria-label="Available settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generated-end" class="md-nav__link">
+    $generated-end
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generated-start" class="md-nav__link">
+    $generated-start
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerassistallowmergingintoglobimports" class="md-nav__link">
+    rust-analyzer.assist.allowMergingIntoGlobImports
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerassistimportenforcegranularity" class="md-nav__link">
+    rust-analyzer.assist.importEnforceGranularity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerassistimportgranularity" class="md-nav__link">
+    rust-analyzer.assist.importGranularity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerassistimportgroup" class="md-nav__link">
+    rust-analyzer.assist.importGroup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerassistimportprefix" class="md-nav__link">
+    rust-analyzer.assist.importPrefix
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercallinfofull" class="md-nav__link">
+    rust-analyzer.callInfo.full
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercargoallfeatures" class="md-nav__link">
+    rust-analyzer.cargo.allFeatures
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercargoautoreload" class="md-nav__link">
+    rust-analyzer.cargo.autoreload
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercargofeatures" class="md-nav__link">
+    rust-analyzer.cargo.features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercargonodefaultfeatures" class="md-nav__link">
+    rust-analyzer.cargo.noDefaultFeatures
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercargonosysroot" class="md-nav__link">
+    rust-analyzer.cargo.noSysroot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercargorunbuildscripts" class="md-nav__link">
+    rust-analyzer.cargo.runBuildScripts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercargotarget" class="md-nav__link">
+    rust-analyzer.cargo.target
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercargounsettest" class="md-nav__link">
+    rust-analyzer.cargo.unsetTest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercargouserustcwrapperforbuildscripts" class="md-nav__link">
+    rust-analyzer.cargo.useRustcWrapperForBuildScripts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercargorunner" class="md-nav__link">
+    rust-analyzer.cargoRunner
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercheckonsaveallfeatures" class="md-nav__link">
+    rust-analyzer.checkOnSave.allFeatures
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercheckonsavealltargets" class="md-nav__link">
+    rust-analyzer.checkOnSave.allTargets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercheckonsavecommand" class="md-nav__link">
+    rust-analyzer.checkOnSave.command
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercheckonsaveenable" class="md-nav__link">
+    rust-analyzer.checkOnSave.enable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercheckonsaveextraargs" class="md-nav__link">
+    rust-analyzer.checkOnSave.extraArgs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercheckonsavefeatures" class="md-nav__link">
+    rust-analyzer.checkOnSave.features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercheckonsavenodefaultfeatures" class="md-nav__link">
+    rust-analyzer.checkOnSave.noDefaultFeatures
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercheckonsaveoverridecommand" class="md-nav__link">
+    rust-analyzer.checkOnSave.overrideCommand
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercheckonsavetarget" class="md-nav__link">
+    rust-analyzer.checkOnSave.target
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercompletionaddcallargumentsnippets" class="md-nav__link">
+    rust-analyzer.completion.addCallArgumentSnippets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercompletionaddcallparenthesis" class="md-nav__link">
+    rust-analyzer.completion.addCallParenthesis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercompletionautoimportenable" class="md-nav__link">
+    rust-analyzer.completion.autoimport.enable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercompletionautoselfenable" class="md-nav__link">
+    rust-analyzer.completion.autoself.enable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzercompletionpostfixenable" class="md-nav__link">
+    rust-analyzer.completion.postfix.enable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerdebugengine" class="md-nav__link">
+    rust-analyzer.debug.engine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerdebugenginesettings" class="md-nav__link">
+    rust-analyzer.debug.engineSettings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerdebugopendebugpane" class="md-nav__link">
+    rust-analyzer.debug.openDebugPane
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerdebugsourcefilemap" class="md-nav__link">
+    rust-analyzer.debug.sourceFileMap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerdiagnosticsdisabled" class="md-nav__link">
+    rust-analyzer.diagnostics.disabled
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerdiagnosticsenable" class="md-nav__link">
+    rust-analyzer.diagnostics.enable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerdiagnosticsenableexperimental" class="md-nav__link">
+    rust-analyzer.diagnostics.enableExperimental
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerdiagnosticsremapprefix" class="md-nav__link">
+    rust-analyzer.diagnostics.remapPrefix
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerdiagnosticswarningsashint" class="md-nav__link">
+    rust-analyzer.diagnostics.warningsAsHint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerdiagnosticswarningsasinfo" class="md-nav__link">
+    rust-analyzer.diagnostics.warningsAsInfo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerexperimentalprocattrmacros" class="md-nav__link">
+    rust-analyzer.experimental.procAttrMacros
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerfilesexcludedirs" class="md-nav__link">
+    rust-analyzer.files.excludeDirs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerfileswatcher" class="md-nav__link">
+    rust-analyzer.files.watcher
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerhighlightingstrings" class="md-nav__link">
+    rust-analyzer.highlighting.strings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerhoverdocumentation" class="md-nav__link">
+    rust-analyzer.hover.documentation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerhoverlinksinhover" class="md-nav__link">
+    rust-analyzer.hover.linksInHover
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerhoveractionsdebug" class="md-nav__link">
+    rust-analyzer.hoverActions.debug
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerhoveractionsenable" class="md-nav__link">
+    rust-analyzer.hoverActions.enable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerhoveractionsgototypedef" class="md-nav__link">
+    rust-analyzer.hoverActions.gotoTypeDef
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerhoveractionsimplementations" class="md-nav__link">
+    rust-analyzer.hoverActions.implementations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerhoveractionsreferences" class="md-nav__link">
+    rust-analyzer.hoverActions.references
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerhoveractionsrun" class="md-nav__link">
+    rust-analyzer.hoverActions.run
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerinlayhintschaininghints" class="md-nav__link">
+    rust-analyzer.inlayHints.chainingHints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerinlayhintsenable" class="md-nav__link">
+    rust-analyzer.inlayHints.enable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerinlayhintsmaxlength" class="md-nav__link">
+    rust-analyzer.inlayHints.maxLength
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerinlayhintsparameterhints" class="md-nav__link">
+    rust-analyzer.inlayHints.parameterHints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerinlayhintssmallerhints" class="md-nav__link">
+    rust-analyzer.inlayHints.smallerHints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerinlayhintstypehints" class="md-nav__link">
+    rust-analyzer.inlayHints.typeHints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerlensdebug" class="md-nav__link">
+    rust-analyzer.lens.debug
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerlensenable" class="md-nav__link">
+    rust-analyzer.lens.enable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerlensimplementations" class="md-nav__link">
+    rust-analyzer.lens.implementations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerlensmethodreferences" class="md-nav__link">
+    rust-analyzer.lens.methodReferences
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerlensreferences" class="md-nav__link">
+    rust-analyzer.lens.references
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerlensrun" class="md-nav__link">
+    rust-analyzer.lens.run
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerlinkedprojects" class="md-nav__link">
+    rust-analyzer.linkedProjects
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerlrucapacity" class="md-nav__link">
+    rust-analyzer.lruCapacity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzernotificationscargotomlnotfound" class="md-nav__link">
+    rust-analyzer.notifications.cargoTomlNotFound
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerprocmacroenable" class="md-nav__link">
+    rust-analyzer.procMacro.enable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerprocmacroserver" class="md-nav__link">
+    rust-analyzer.procMacro.server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerrunnableenv" class="md-nav__link">
+    rust-analyzer.runnableEnv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerrunnablescargoextraargs" class="md-nav__link">
+    rust-analyzer.runnables.cargoExtraArgs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerrunnablesoverridecargo" class="md-nav__link">
+    rust-analyzer.runnables.overrideCargo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerrustcsource" class="md-nav__link">
+    rust-analyzer.rustcSource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerrustfmtenablerangeformatting" class="md-nav__link">
+    rust-analyzer.rustfmt.enableRangeFormatting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerrustfmtextraargs" class="md-nav__link">
+    rust-analyzer.rustfmt.extraArgs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerrustfmtoverridecommand" class="md-nav__link">
+    rust-analyzer.rustfmt.overrideCommand
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerserverextraenv" class="md-nav__link">
+    rust-analyzer.server.extraEnv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerserverpath" class="md-nav__link">
+    rust-analyzer.server.path
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzertraceextension" class="md-nav__link">
+    rust-analyzer.trace.extension
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzertraceserver" class="md-nav__link">
+    rust-analyzer.trace.server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerupdatesaskbeforedownload" class="md-nav__link">
+    rust-analyzer.updates.askBeforeDownload
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerupdateschannel" class="md-nav__link">
+    rust-analyzer.updates.channel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerworkspacesymbolsearchkind" class="md-nav__link">
+    rust-analyzer.workspace.symbol.search.kind
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-analyzerworkspacesymbolsearchscope" class="md-nav__link">
+    rust-analyzer.workspace.symbol.search.scope
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1370,526 +2645,7 @@
 <p>https://github.com/rust-analyzer/rust-analyzer</p>
 <p>rust-analyzer (aka rls 2.0), a language server for Rust</p>
 <p>See <a href="https://github.com/rust-analyzer/rust-analyzer/tree/master/docs/user#settings">docs</a> for extra settings.</p>
-<p>This server accepts configuration via the <code>settings</code> key.</p>
-<details><summary>Available settings:</summary>
-
-- **`$generated-end`**
-
-  null
-
-- **`$generated-start`**
-
-  null
-
-- **`rust-analyzer.assist.allowMergingIntoGlobImports`**: `boolean`
-
-  Default: `true`
-
-  null
-
-- **`rust-analyzer.assist.importEnforceGranularity`**: `boolean`
-
-  null
-
-- **`rust-analyzer.assist.importGranularity`**: `enum { "preserve", "crate", "module", "item" }`
-
-  Default: `"crate"`
-
-  null
-
-- **`rust-analyzer.assist.importGroup`**: `boolean`
-
-  Default: `true`
-
-  null
-
-- **`rust-analyzer.assist.importPrefix`**: `enum { "plain", "self", "crate" }`
-
-  Default: `"plain"`
-
-  null
-
-- **`rust-analyzer.callInfo.full`**: `boolean`
-
-  Default: `true`
-
-  null
-
-- **`rust-analyzer.cargo.allFeatures`**: `boolean`
-
-  null
-
-- **`rust-analyzer.cargo.autoreload`**: `boolean`
-
-  Default: `true`
-
-  null
-
-- **`rust-analyzer.cargo.features`**: `array`
-
-  Default: `{}`
-
-  Array items: `{type = "string"}`
-
-  null
-
-- **`rust-analyzer.cargo.noDefaultFeatures`**: `boolean`
-
-  null
-
-- **`rust-analyzer.cargo.noSysroot`**: `boolean`
-
-  null
-
-- **`rust-analyzer.cargo.runBuildScripts`**: `boolean`
-
-  Default: `true`
-
-  null
-
-- **`rust-analyzer.cargo.target`**: `null|string`
-
-  Default: `vim.NIL`
-
-  null
-
-- **`rust-analyzer.cargo.unsetTest`**: `array`
-
-  Default: `{ "core" }`
-
-  Array items: `{type = "string"}`
-
-  null
-
-- **`rust-analyzer.cargo.useRustcWrapperForBuildScripts`**: `boolean`
-
-  Default: `true`
-
-  null
-
-- **`rust-analyzer.cargoRunner`**: `null|string`
-
-  Default: `vim.NIL`
-
-  Custom cargo runner extension ID\.
-
-- **`rust-analyzer.checkOnSave.allFeatures`**: `null|boolean`
-
-  Default: `vim.NIL`
-
-  null
-
-- **`rust-analyzer.checkOnSave.allTargets`**: `boolean`
-
-  Default: `true`
-
-  null
-
-- **`rust-analyzer.checkOnSave.command`**: `string`
-
-  Default: `"check"`
-
-  null
-
-- **`rust-analyzer.checkOnSave.enable`**: `boolean`
-
-  Default: `true`
-
-  null
-
-- **`rust-analyzer.checkOnSave.extraArgs`**: `array`
-
-  Default: `{}`
-
-  Array items: `{type = "string"}`
-
-  null
-
-- **`rust-analyzer.checkOnSave.features`**: `null|array`
-
-  Default: `vim.NIL`
-
-  Array items: `{type = "string"}`
-
-  null
-
-- **`rust-analyzer.checkOnSave.noDefaultFeatures`**: `null|boolean`
-
-  Default: `vim.NIL`
-
-  null
-
-- **`rust-analyzer.checkOnSave.overrideCommand`**: `null|array`
-
-  Default: `vim.NIL`
-
-  Array items: `{type = "string"}`
-
-  null
-
-- **`rust-analyzer.checkOnSave.target`**: `null|string`
-
-  Default: `vim.NIL`
-
-  null
-
-- **`rust-analyzer.completion.addCallArgumentSnippets`**: `boolean`
-
-  Default: `true`
-
-  null
-
-- **`rust-analyzer.completion.addCallParenthesis`**: `boolean`
-
-  Default: `true`
-
-  null
-
-- **`rust-analyzer.completion.autoimport.enable`**: `boolean`
-
-  Default: `true`
-
-  null
-
-- **`rust-analyzer.completion.autoself.enable`**: `boolean`
-
-  Default: `true`
-
-  null
-
-- **`rust-analyzer.completion.postfix.enable`**: `boolean`
-
-  Default: `true`
-
-  null
-
-- **`rust-analyzer.debug.engine`**: `enum { "auto", "vadimcn.vscode-lldb", "ms-vscode.cpptools" }`
-
-  Default: `"auto"`
-
-  Preferred debug engine\.
-
-- **`rust-analyzer.debug.engineSettings`**: `object`
-
-  Default: `vim.empty_dict()`
-
-  null
-
-- **`rust-analyzer.debug.openDebugPane`**: `boolean`
-
-  null
-
-- **`rust-analyzer.debug.sourceFileMap`**: `object|string`
-
-  Default: `{["/rustc/<id>"] = "${env:USERPROFILE}/.rustup/toolchains/<toolchain-id>/lib/rustlib/src/rust"}`
-
-  Optional source file mappings passed to the debug engine\.
-
-- **`rust-analyzer.diagnostics.disabled`**: `array`
-
-  Default: `{}`
-
-  Array items: `{type = "string"}`
-
-  null
-
-- **`rust-analyzer.diagnostics.enable`**: `boolean`
-
-  Default: `true`
-
-  null
-
-- **`rust-analyzer.diagnostics.enableExperimental`**: `boolean`
-
-  Default: `true`
-
-  null
-
-- **`rust-analyzer.diagnostics.remapPrefix`**: `object`
-
-  Default: `vim.empty_dict()`
-
-  null
-
-- **`rust-analyzer.diagnostics.warningsAsHint`**: `array`
-
-  Default: `{}`
-
-  Array items: `{type = "string"}`
-
-  null
-
-- **`rust-analyzer.diagnostics.warningsAsInfo`**: `array`
-
-  Default: `{}`
-
-  Array items: `{type = "string"}`
-
-  null
-
-- **`rust-analyzer.experimental.procAttrMacros`**: `boolean`
-
-  null
-
-- **`rust-analyzer.files.excludeDirs`**: `array`
-
-  Default: `{}`
-
-  Array items: `{type = "string"}`
-
-  null
-
-- **`rust-analyzer.files.watcher`**: `string`
-
-  Default: `"client"`
-
-  null
-
-- **`rust-analyzer.highlighting.strings`**: `boolean`
-
-  Default: `true`
-
-  null
-
-- **`rust-analyzer.hover.documentation`**: `boolean`
-
-  Default: `true`
-
-  null
-
-- **`rust-analyzer.hover.linksInHover`**: `boolean`
-
-  Default: `true`
-
-  null
-
-- **`rust-analyzer.hoverActions.debug`**: `boolean`
-
-  Default: `true`
-
-  null
-
-- **`rust-analyzer.hoverActions.enable`**: `boolean`
-
-  Default: `true`
-
-  null
-
-- **`rust-analyzer.hoverActions.gotoTypeDef`**: `boolean`
-
-  Default: `true`
-
-  null
-
-- **`rust-analyzer.hoverActions.implementations`**: `boolean`
-
-  Default: `true`
-
-  null
-
-- **`rust-analyzer.hoverActions.references`**: `boolean`
-
-  null
-
-- **`rust-analyzer.hoverActions.run`**: `boolean`
-
-  Default: `true`
-
-  null
-
-- **`rust-analyzer.inlayHints.chainingHints`**: `boolean`
-
-  Default: `true`
-
-  null
-
-- **`rust-analyzer.inlayHints.enable`**: `boolean`
-
-  Default: `true`
-
-  Whether to show inlay hints\.
-
-- **`rust-analyzer.inlayHints.maxLength`**: `null|integer`
-
-  Default: `25`
-
-  null
-
-- **`rust-analyzer.inlayHints.parameterHints`**: `boolean`
-
-  Default: `true`
-
-  null
-
-- **`rust-analyzer.inlayHints.smallerHints`**: `boolean`
-
-  Default: `true`
-
-  Whether inlay hints font size should be smaller than editor\'s font size\.
-
-- **`rust-analyzer.inlayHints.typeHints`**: `boolean`
-
-  Default: `true`
-
-  null
-
-- **`rust-analyzer.lens.debug`**: `boolean`
-
-  Default: `true`
-
-  null
-
-- **`rust-analyzer.lens.enable`**: `boolean`
-
-  Default: `true`
-
-  null
-
-- **`rust-analyzer.lens.implementations`**: `boolean`
-
-  Default: `true`
-
-  null
-
-- **`rust-analyzer.lens.methodReferences`**: `boolean`
-
-  null
-
-- **`rust-analyzer.lens.references`**: `boolean`
-
-  null
-
-- **`rust-analyzer.lens.run`**: `boolean`
-
-  Default: `true`
-
-  null
-
-- **`rust-analyzer.linkedProjects`**: `array`
-
-  Default: `{}`
-
-  Array items: `{type = { "string", "object" }}`
-
-  null
-
-- **`rust-analyzer.lruCapacity`**: `null|integer`
-
-  Default: `vim.NIL`
-
-  null
-
-- **`rust-analyzer.notifications.cargoTomlNotFound`**: `boolean`
-
-  Default: `true`
-
-  null
-
-- **`rust-analyzer.procMacro.enable`**: `boolean`
-
-  Default: `true`
-
-  null
-
-- **`rust-analyzer.procMacro.server`**: `null|string`
-
-  Default: `vim.NIL`
-
-  null
-
-- **`rust-analyzer.runnableEnv`**
-
-  Default: `vim.NIL`
-
-  null
-
-- **`rust-analyzer.runnables.cargoExtraArgs`**: `array`
-
-  Default: `{}`
-
-  Array items: `{type = "string"}`
-
-  null
-
-- **`rust-analyzer.runnables.overrideCargo`**: `null|string`
-
-  Default: `vim.NIL`
-
-  null
-
-- **`rust-analyzer.rustcSource`**: `null|string`
-
-  Default: `vim.NIL`
-
-  null
-
-- **`rust-analyzer.rustfmt.enableRangeFormatting`**: `boolean`
-
-  null
-
-- **`rust-analyzer.rustfmt.extraArgs`**: `array`
-
-  Default: `{}`
-
-  Array items: `{type = "string"}`
-
-  null
-
-- **`rust-analyzer.rustfmt.overrideCommand`**: `null|array`
-
-  Default: `vim.NIL`
-
-  Array items: `{type = "string"}`
-
-  null
-
-- **`rust-analyzer.server.extraEnv`**: `null|object`
-
-  Default: `vim.NIL`
-
-  null
-
-- **`rust-analyzer.server.path`**: `null|string`
-
-  Default: `vim.NIL`
-
-  null
-
-- **`rust-analyzer.trace.extension`**: `boolean`
-
-  Enable logging of VS Code extensions itself\.
-
-- **`rust-analyzer.trace.server`**: `enum { "off", "messages", "verbose" }`
-
-  Default: `"off"`
-
-  Trace requests to the rust\-analyzer \(this is usually overly verbose and not recommended for regular users\)\.
-
-- **`rust-analyzer.updates.askBeforeDownload`**: `boolean`
-
-  Whether to ask for permission before downloading any files from the Internet\.
-
-- **`rust-analyzer.updates.channel`**: `enum { "stable", "nightly" }`
-
-  Default: `"stable"`
-
-  null
-
-- **`rust-analyzer.workspace.symbol.search.kind`**: `enum { "only_types", "all_symbols" }`
-
-  Default: `"only_types"`
-
-  null
-
-- **`rust-analyzer.workspace.symbol.search.scope`**: `enum { "workspace", "workspace_and_dependencies" }`
-
-  Default: `"workspace"`
-
-  null
-
-</details>
-
-<p><strong>Snippet to enable the language server:</strong></p>
+<h2 id="setup">Setup</h2>
 <pre><code class="language-lua">require'lspconfig'.rust_analyzer.setup{}
 </code></pre>
 <p><strong>Commands and default values:</strong></p>
@@ -1904,6 +2660,348 @@
       [&quot;rust-analyzer&quot;] = {}
     }
 </code></pre>
+<p>This server accepts configuration via the <code>settings</code> key.</p>
+<h2 id="available-settings">Available settings</h2>
+<h3 id="generated-end"><code>$generated-end</code></h3>
+<p>null</p>
+<h3 id="generated-start"><code>$generated-start</code></h3>
+<p>null</p>
+<h3 id="rust-analyzerassistallowmergingintoglobimports"><code>rust-analyzer.assist.allowMergingIntoGlobImports</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="rust-analyzerassistimportenforcegranularity"><code>rust-analyzer.assist.importEnforceGranularity</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>null</p>
+<h3 id="rust-analyzerassistimportgranularity"><code>rust-analyzer.assist.importGranularity</code></h3>
+<p><code>enum { "preserve", "crate", "module", "item" }</code></p>
+<p>Default: <code>"crate"</code></p>
+<p>null</p>
+<h3 id="rust-analyzerassistimportgroup"><code>rust-analyzer.assist.importGroup</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="rust-analyzerassistimportprefix"><code>rust-analyzer.assist.importPrefix</code></h3>
+<p><code>enum { "plain", "self", "crate" }</code></p>
+<p>Default: <code>"plain"</code></p>
+<p>null</p>
+<h3 id="rust-analyzercallinfofull"><code>rust-analyzer.callInfo.full</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="rust-analyzercargoallfeatures"><code>rust-analyzer.cargo.allFeatures</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>null</p>
+<h3 id="rust-analyzercargoautoreload"><code>rust-analyzer.cargo.autoreload</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="rust-analyzercargofeatures"><code>rust-analyzer.cargo.features</code></h3>
+<p>Type: <code>array</code></p>
+<p>Default: <code>{}</code></p>
+<p>Array items: <code>{type = "string"}</code></p>
+<p>null</p>
+<h3 id="rust-analyzercargonodefaultfeatures"><code>rust-analyzer.cargo.noDefaultFeatures</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>null</p>
+<h3 id="rust-analyzercargonosysroot"><code>rust-analyzer.cargo.noSysroot</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>null</p>
+<h3 id="rust-analyzercargorunbuildscripts"><code>rust-analyzer.cargo.runBuildScripts</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="rust-analyzercargotarget"><code>rust-analyzer.cargo.target</code></h3>
+<p>Type: <code>null|string</code></p>
+<p>Default: <code>vim.NIL</code></p>
+<p>null</p>
+<h3 id="rust-analyzercargounsettest"><code>rust-analyzer.cargo.unsetTest</code></h3>
+<p>Type: <code>array</code></p>
+<p>Default: <code>{ "core" }</code></p>
+<p>Array items: <code>{type = "string"}</code></p>
+<p>null</p>
+<h3 id="rust-analyzercargouserustcwrapperforbuildscripts"><code>rust-analyzer.cargo.useRustcWrapperForBuildScripts</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="rust-analyzercargorunner"><code>rust-analyzer.cargoRunner</code></h3>
+<p>Type: <code>null|string</code></p>
+<p>Default: <code>vim.NIL</code></p>
+<p>Custom cargo runner extension ID.</p>
+<h3 id="rust-analyzercheckonsaveallfeatures"><code>rust-analyzer.checkOnSave.allFeatures</code></h3>
+<p>Type: <code>null|boolean</code></p>
+<p>Default: <code>vim.NIL</code></p>
+<p>null</p>
+<h3 id="rust-analyzercheckonsavealltargets"><code>rust-analyzer.checkOnSave.allTargets</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="rust-analyzercheckonsavecommand"><code>rust-analyzer.checkOnSave.command</code></h3>
+<p>Type: <code>string</code></p>
+<p>Default: <code>"check"</code></p>
+<p>null</p>
+<h3 id="rust-analyzercheckonsaveenable"><code>rust-analyzer.checkOnSave.enable</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="rust-analyzercheckonsaveextraargs"><code>rust-analyzer.checkOnSave.extraArgs</code></h3>
+<p>Type: <code>array</code></p>
+<p>Default: <code>{}</code></p>
+<p>Array items: <code>{type = "string"}</code></p>
+<p>null</p>
+<h3 id="rust-analyzercheckonsavefeatures"><code>rust-analyzer.checkOnSave.features</code></h3>
+<p>Type: <code>null|array</code></p>
+<p>Default: <code>vim.NIL</code></p>
+<p>Array items: <code>{type = "string"}</code></p>
+<p>null</p>
+<h3 id="rust-analyzercheckonsavenodefaultfeatures"><code>rust-analyzer.checkOnSave.noDefaultFeatures</code></h3>
+<p>Type: <code>null|boolean</code></p>
+<p>Default: <code>vim.NIL</code></p>
+<p>null</p>
+<h3 id="rust-analyzercheckonsaveoverridecommand"><code>rust-analyzer.checkOnSave.overrideCommand</code></h3>
+<p>Type: <code>null|array</code></p>
+<p>Default: <code>vim.NIL</code></p>
+<p>Array items: <code>{type = "string"}</code></p>
+<p>null</p>
+<h3 id="rust-analyzercheckonsavetarget"><code>rust-analyzer.checkOnSave.target</code></h3>
+<p>Type: <code>null|string</code></p>
+<p>Default: <code>vim.NIL</code></p>
+<p>null</p>
+<h3 id="rust-analyzercompletionaddcallargumentsnippets"><code>rust-analyzer.completion.addCallArgumentSnippets</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="rust-analyzercompletionaddcallparenthesis"><code>rust-analyzer.completion.addCallParenthesis</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="rust-analyzercompletionautoimportenable"><code>rust-analyzer.completion.autoimport.enable</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="rust-analyzercompletionautoselfenable"><code>rust-analyzer.completion.autoself.enable</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="rust-analyzercompletionpostfixenable"><code>rust-analyzer.completion.postfix.enable</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="rust-analyzerdebugengine"><code>rust-analyzer.debug.engine</code></h3>
+<p><code>enum { "auto", "vadimcn.vscode-lldb", "ms-vscode.cpptools" }</code></p>
+<p>Default: <code>"auto"</code></p>
+<p>Preferred debug engine.</p>
+<h3 id="rust-analyzerdebugenginesettings"><code>rust-analyzer.debug.engineSettings</code></h3>
+<p>Type: <code>object</code></p>
+<p>Default: <code>vim.empty_dict()</code></p>
+<p>null</p>
+<h3 id="rust-analyzerdebugopendebugpane"><code>rust-analyzer.debug.openDebugPane</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>null</p>
+<h3 id="rust-analyzerdebugsourcefilemap"><code>rust-analyzer.debug.sourceFileMap</code></h3>
+<p>Type: <code>object|string</code></p>
+<p>Default: <code>{["/rustc/&lt;id&gt;"] = "${env:USERPROFILE}/.rustup/toolchains/&lt;toolchain-id&gt;/lib/rustlib/src/rust"}</code></p>
+<p>Optional source file mappings passed to the debug engine.</p>
+<h3 id="rust-analyzerdiagnosticsdisabled"><code>rust-analyzer.diagnostics.disabled</code></h3>
+<p>Type: <code>array</code></p>
+<p>Default: <code>{}</code></p>
+<p>Array items: <code>{type = "string"}</code></p>
+<p>null</p>
+<h3 id="rust-analyzerdiagnosticsenable"><code>rust-analyzer.diagnostics.enable</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="rust-analyzerdiagnosticsenableexperimental"><code>rust-analyzer.diagnostics.enableExperimental</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="rust-analyzerdiagnosticsremapprefix"><code>rust-analyzer.diagnostics.remapPrefix</code></h3>
+<p>Type: <code>object</code></p>
+<p>Default: <code>vim.empty_dict()</code></p>
+<p>null</p>
+<h3 id="rust-analyzerdiagnosticswarningsashint"><code>rust-analyzer.diagnostics.warningsAsHint</code></h3>
+<p>Type: <code>array</code></p>
+<p>Default: <code>{}</code></p>
+<p>Array items: <code>{type = "string"}</code></p>
+<p>null</p>
+<h3 id="rust-analyzerdiagnosticswarningsasinfo"><code>rust-analyzer.diagnostics.warningsAsInfo</code></h3>
+<p>Type: <code>array</code></p>
+<p>Default: <code>{}</code></p>
+<p>Array items: <code>{type = "string"}</code></p>
+<p>null</p>
+<h3 id="rust-analyzerexperimentalprocattrmacros"><code>rust-analyzer.experimental.procAttrMacros</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>null</p>
+<h3 id="rust-analyzerfilesexcludedirs"><code>rust-analyzer.files.excludeDirs</code></h3>
+<p>Type: <code>array</code></p>
+<p>Default: <code>{}</code></p>
+<p>Array items: <code>{type = "string"}</code></p>
+<p>null</p>
+<h3 id="rust-analyzerfileswatcher"><code>rust-analyzer.files.watcher</code></h3>
+<p>Type: <code>string</code></p>
+<p>Default: <code>"client"</code></p>
+<p>null</p>
+<h3 id="rust-analyzerhighlightingstrings"><code>rust-analyzer.highlighting.strings</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="rust-analyzerhoverdocumentation"><code>rust-analyzer.hover.documentation</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="rust-analyzerhoverlinksinhover"><code>rust-analyzer.hover.linksInHover</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="rust-analyzerhoveractionsdebug"><code>rust-analyzer.hoverActions.debug</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="rust-analyzerhoveractionsenable"><code>rust-analyzer.hoverActions.enable</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="rust-analyzerhoveractionsgototypedef"><code>rust-analyzer.hoverActions.gotoTypeDef</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="rust-analyzerhoveractionsimplementations"><code>rust-analyzer.hoverActions.implementations</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="rust-analyzerhoveractionsreferences"><code>rust-analyzer.hoverActions.references</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>null</p>
+<h3 id="rust-analyzerhoveractionsrun"><code>rust-analyzer.hoverActions.run</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="rust-analyzerinlayhintschaininghints"><code>rust-analyzer.inlayHints.chainingHints</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="rust-analyzerinlayhintsenable"><code>rust-analyzer.inlayHints.enable</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>Whether to show inlay hints.</p>
+<h3 id="rust-analyzerinlayhintsmaxlength"><code>rust-analyzer.inlayHints.maxLength</code></h3>
+<p>Type: <code>null|integer</code></p>
+<p>Default: <code>25</code></p>
+<p>null</p>
+<h3 id="rust-analyzerinlayhintsparameterhints"><code>rust-analyzer.inlayHints.parameterHints</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="rust-analyzerinlayhintssmallerhints"><code>rust-analyzer.inlayHints.smallerHints</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>Whether inlay hints font size should be smaller than editor\'s font size.</p>
+<h3 id="rust-analyzerinlayhintstypehints"><code>rust-analyzer.inlayHints.typeHints</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="rust-analyzerlensdebug"><code>rust-analyzer.lens.debug</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="rust-analyzerlensenable"><code>rust-analyzer.lens.enable</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="rust-analyzerlensimplementations"><code>rust-analyzer.lens.implementations</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="rust-analyzerlensmethodreferences"><code>rust-analyzer.lens.methodReferences</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>null</p>
+<h3 id="rust-analyzerlensreferences"><code>rust-analyzer.lens.references</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>null</p>
+<h3 id="rust-analyzerlensrun"><code>rust-analyzer.lens.run</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="rust-analyzerlinkedprojects"><code>rust-analyzer.linkedProjects</code></h3>
+<p>Type: <code>array</code></p>
+<p>Default: <code>{}</code></p>
+<p>Array items: <code>{type = { "string", "object" }}</code></p>
+<p>null</p>
+<h3 id="rust-analyzerlrucapacity"><code>rust-analyzer.lruCapacity</code></h3>
+<p>Type: <code>null|integer</code></p>
+<p>Default: <code>vim.NIL</code></p>
+<p>null</p>
+<h3 id="rust-analyzernotificationscargotomlnotfound"><code>rust-analyzer.notifications.cargoTomlNotFound</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="rust-analyzerprocmacroenable"><code>rust-analyzer.procMacro.enable</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="rust-analyzerprocmacroserver"><code>rust-analyzer.procMacro.server</code></h3>
+<p>Type: <code>null|string</code></p>
+<p>Default: <code>vim.NIL</code></p>
+<p>null</p>
+<h3 id="rust-analyzerrunnableenv"><code>rust-analyzer.runnableEnv</code></h3>
+<p>Default: <code>vim.NIL</code></p>
+<p>null</p>
+<h3 id="rust-analyzerrunnablescargoextraargs"><code>rust-analyzer.runnables.cargoExtraArgs</code></h3>
+<p>Type: <code>array</code></p>
+<p>Default: <code>{}</code></p>
+<p>Array items: <code>{type = "string"}</code></p>
+<p>null</p>
+<h3 id="rust-analyzerrunnablesoverridecargo"><code>rust-analyzer.runnables.overrideCargo</code></h3>
+<p>Type: <code>null|string</code></p>
+<p>Default: <code>vim.NIL</code></p>
+<p>null</p>
+<h3 id="rust-analyzerrustcsource"><code>rust-analyzer.rustcSource</code></h3>
+<p>Type: <code>null|string</code></p>
+<p>Default: <code>vim.NIL</code></p>
+<p>null</p>
+<h3 id="rust-analyzerrustfmtenablerangeformatting"><code>rust-analyzer.rustfmt.enableRangeFormatting</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>null</p>
+<h3 id="rust-analyzerrustfmtextraargs"><code>rust-analyzer.rustfmt.extraArgs</code></h3>
+<p>Type: <code>array</code></p>
+<p>Default: <code>{}</code></p>
+<p>Array items: <code>{type = "string"}</code></p>
+<p>null</p>
+<h3 id="rust-analyzerrustfmtoverridecommand"><code>rust-analyzer.rustfmt.overrideCommand</code></h3>
+<p>Type: <code>null|array</code></p>
+<p>Default: <code>vim.NIL</code></p>
+<p>Array items: <code>{type = "string"}</code></p>
+<p>null</p>
+<h3 id="rust-analyzerserverextraenv"><code>rust-analyzer.server.extraEnv</code></h3>
+<p>Type: <code>null|object</code></p>
+<p>Default: <code>vim.NIL</code></p>
+<p>null</p>
+<h3 id="rust-analyzerserverpath"><code>rust-analyzer.server.path</code></h3>
+<p>Type: <code>null|string</code></p>
+<p>Default: <code>vim.NIL</code></p>
+<p>null</p>
+<h3 id="rust-analyzertraceextension"><code>rust-analyzer.trace.extension</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Enable logging of VS Code extensions itself.</p>
+<h3 id="rust-analyzertraceserver"><code>rust-analyzer.trace.server</code></h3>
+<p><code>enum { "off", "messages", "verbose" }</code></p>
+<p>Default: <code>"off"</code></p>
+<p>Trace requests to the rust-analyzer (this is usually overly verbose and not recommended for regular users).</p>
+<h3 id="rust-analyzerupdatesaskbeforedownload"><code>rust-analyzer.updates.askBeforeDownload</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Whether to ask for permission before downloading any files from the Internet.</p>
+<h3 id="rust-analyzerupdateschannel"><code>rust-analyzer.updates.channel</code></h3>
+<p><code>enum { "stable", "nightly" }</code></p>
+<p>Default: <code>"stable"</code></p>
+<p>null</p>
+<h3 id="rust-analyzerworkspacesymbolsearchkind"><code>rust-analyzer.workspace.symbol.search.kind</code></h3>
+<p><code>enum { "only_types", "all_symbols" }</code></p>
+<p>Default: <code>"only_types"</code></p>
+<p>null</p>
+<h3 id="rust-analyzerworkspacesymbolsearchscope"><code>rust-analyzer.workspace.symbol.search.scope</code></h3>
+<p><code>enum { "workspace", "workspace_and_dependencies" }</code></p>
+<p>Default: <code>"workspace"</code></p>
+<p>null</p>
                 
               
               

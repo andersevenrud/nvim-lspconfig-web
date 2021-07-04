@@ -1310,9 +1310,73 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          zeta_note
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         zeta_note
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#available-settings" class="md-nav__link">
+    Available settings
+  </a>
+  
+    <nav class="md-nav" aria-label="Available settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zetanotecustomcommand" class="md-nav__link">
+    zetaNote.customCommand
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zetanotecustomcommanddir" class="md-nav__link">
+    zetaNote.customCommandDir
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zetanotetraceserver" class="md-nav__link">
+    zetaNote.trace.server
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1355,6 +1419,55 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#available-settings" class="md-nav__link">
+    Available settings
+  </a>
+  
+    <nav class="md-nav" aria-label="Available settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zetanotecustomcommand" class="md-nav__link">
+    zetaNote.customCommand
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zetanotecustomcommanddir" class="md-nav__link">
+    zetaNote.customCommandDir
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zetanotetraceserver" class="md-nav__link">
+    zetaNote.trace.server
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1375,27 +1488,7 @@
   cmd = {'path/to/zeta-note'}
 }
 </code></pre>
-<p>This server accepts configuration via the <code>settings</code> key.</p>
-<details><summary>Available settings:</summary>
-
-- **`zetaNote.customCommand`**: `string`
-
-  When set use this command to run the language server\.
-  The command is split on spaces\: first part is the command name\, the rest is the arguments\.
-
-- **`zetaNote.customCommandDir`**: `string`
-
-  null
-
-- **`zetaNote.trace.server`**: `enum { "off", "messages", "verbose" }`
-
-  Default: `"verbose"`
-
-  Level of verbosity in communicating with the server
-
-</details>
-
-<p><strong>Snippet to enable the language server:</strong></p>
+<h2 id="setup">Setup</h2>
 <pre><code class="language-lua">require'lspconfig'.zeta_note.setup{}
 </code></pre>
 <p><strong>Commands and default values:</strong></p>
@@ -1405,6 +1498,19 @@
     filetypes = { &quot;markdown&quot; }
     root_dir = root_pattern(&quot;.zeta.toml&quot;)
 </code></pre>
+<p>This server accepts configuration via the <code>settings</code> key.</p>
+<h2 id="available-settings">Available settings</h2>
+<h3 id="zetanotecustomcommand"><code>zetaNote.customCommand</code></h3>
+<p>Type: <code>string</code></p>
+<p>When set use this command to run the language server.
+  The command is split on spaces\: first part is the command name\, the rest is the arguments.</p>
+<h3 id="zetanotecustomcommanddir"><code>zetaNote.customCommandDir</code></h3>
+<p>Type: <code>string</code></p>
+<p>null</p>
+<h3 id="zetanotetraceserver"><code>zetaNote.trace.server</code></h3>
+<p><code>enum { "off", "messages", "verbose" }</code></p>
+<p>Default: <code>"verbose"</code></p>
+<p>Level of verbosity in communicating with the server</p>
                 
               
               

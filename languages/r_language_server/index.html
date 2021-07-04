@@ -986,9 +986,115 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          r_language_server
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         r_language_server
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#available-settings" class="md-nav__link">
+    Available settings
+  </a>
+  
+    <nav class="md-nav" aria-label="Available settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rlspargs" class="md-nav__link">
+    r.lsp.args
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rlspdebug" class="md-nav__link">
+    r.lsp.debug
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rlspdiagnostics" class="md-nav__link">
+    r.lsp.diagnostics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rlsplang" class="md-nav__link">
+    r.lsp.lang
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rlsppath" class="md-nav__link">
+    r.lsp.path
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rlspuse_stdio" class="md-nav__link">
+    r.lsp.use_stdio
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rrpathlinux" class="md-nav__link">
+    r.rpath.linux
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rrpathmac" class="md-nav__link">
+    r.rpath.mac
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rrpathwindows" class="md-nav__link">
+    r.rpath.windows
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1355,6 +1461,97 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#available-settings" class="md-nav__link">
+    Available settings
+  </a>
+  
+    <nav class="md-nav" aria-label="Available settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rlspargs" class="md-nav__link">
+    r.lsp.args
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rlspdebug" class="md-nav__link">
+    r.lsp.debug
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rlspdiagnostics" class="md-nav__link">
+    r.lsp.diagnostics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rlsplang" class="md-nav__link">
+    r.lsp.lang
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rlsppath" class="md-nav__link">
+    r.lsp.path
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rlspuse_stdio" class="md-nav__link">
+    r.lsp.use_stdio
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rrpathlinux" class="md-nav__link">
+    r.rpath.linux
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rrpathmac" class="md-nav__link">
+    r.rpath.mac
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rrpathwindows" class="md-nav__link">
+    r.rpath.windows
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1377,62 +1574,7 @@ It is released on CRAN and can be easily installed by
 install.packages("languageserver")
 ```
 </code></pre>
-<p>This server accepts configuration via the <code>settings</code> key.</p>
-<details><summary>Available settings:</summary>
-
-- **`r.lsp.args`**: `array`
-
-  Default: `{}`
-
-  The command line arguments to use when launching R Language Server
-
-- **`r.lsp.debug`**: `boolean`
-
-  Debug R Language Server
-
-- **`r.lsp.diagnostics`**: `boolean`
-
-  Default: `true`
-
-  Enable Diagnostics
-
-- **`r.lsp.lang`**: `string`
-
-  Default: `""`
-
-  Override default LANG environment variable
-
-- **`r.lsp.path`**: `string`
-
-  Default: `""`
-
-  Path to R binary for launching Language Server
-
-- **`r.lsp.use_stdio`**: `boolean`
-
-  Use STDIO connection instead of TCP\. \(Unix\/macOS users only\)
-
-- **`r.rpath.linux`**: `string`
-
-  Default: `""`
-
-  Path to an R executable for Linux\. Must be \"vanilla\" R\, not radian etc\.\!
-
-- **`r.rpath.mac`**: `string`
-
-  Default: `""`
-
-  Path to an R executable for macOS\. Must be \"vanilla\" R\, not radian etc\.\!
-
-- **`r.rpath.windows`**: `string`
-
-  Default: `""`
-
-  Path to an R executable for Windows\. Must be \"vanilla\" R\, not radian etc\.\!
-
-</details>
-
-<p><strong>Snippet to enable the language server:</strong></p>
+<h2 id="setup">Setup</h2>
 <pre><code class="language-lua">require'lspconfig'.r_language_server.setup{}
 </code></pre>
 <p><strong>Commands and default values:</strong></p>
@@ -1444,6 +1586,42 @@ install.packages("languageserver")
     log_level = 2
     root_dir = root_pattern(&quot;.git&quot;) or os_homedir
 </code></pre>
+<p>This server accepts configuration via the <code>settings</code> key.</p>
+<h2 id="available-settings">Available settings</h2>
+<h3 id="rlspargs"><code>r.lsp.args</code></h3>
+<p>Type: <code>array</code></p>
+<p>Default: <code>{}</code></p>
+<p>The command line arguments to use when launching R Language Server</p>
+<h3 id="rlspdebug"><code>r.lsp.debug</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Debug R Language Server</p>
+<h3 id="rlspdiagnostics"><code>r.lsp.diagnostics</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>Enable Diagnostics</p>
+<h3 id="rlsplang"><code>r.lsp.lang</code></h3>
+<p>Type: <code>string</code></p>
+<p>Default: <code>""</code></p>
+<p>Override default LANG environment variable</p>
+<h3 id="rlsppath"><code>r.lsp.path</code></h3>
+<p>Type: <code>string</code></p>
+<p>Default: <code>""</code></p>
+<p>Path to R binary for launching Language Server</p>
+<h3 id="rlspuse_stdio"><code>r.lsp.use_stdio</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Use STDIO connection instead of TCP. (Unix\/macOS users only)</p>
+<h3 id="rrpathlinux"><code>r.rpath.linux</code></h3>
+<p>Type: <code>string</code></p>
+<p>Default: <code>""</code></p>
+<p>Path to an R executable for Linux. Must be \"vanilla\" R\, not radian etc.!</p>
+<h3 id="rrpathmac"><code>r.rpath.mac</code></h3>
+<p>Type: <code>string</code></p>
+<p>Default: <code>""</code></p>
+<p>Path to an R executable for macOS. Must be \"vanilla\" R\, not radian etc.!</p>
+<h3 id="rrpathwindows"><code>r.rpath.windows</code></h3>
+<p>Type: <code>string</code></p>
+<p>Default: <code>""</code></p>
+<p>Path to an R executable for Windows. Must be \"vanilla\" R\, not radian etc.!</p>
                 
               
               
