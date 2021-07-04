@@ -11,437 +11,437 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/</loc>
+         <loc>https://example.com/configurations/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/als/</loc>
+         <loc>https://example.com/configurations/als/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/angularls/</loc>
+         <loc>https://example.com/configurations/angularls/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/bashls/</loc>
+         <loc>https://example.com/configurations/bashls/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/beancount/</loc>
+         <loc>https://example.com/configurations/beancount/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/ccls/</loc>
+         <loc>https://example.com/configurations/ccls/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/clangd/</loc>
+         <loc>https://example.com/configurations/clangd/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/clojure_lsp/</loc>
+         <loc>https://example.com/configurations/clojure_lsp/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/cmake/</loc>
+         <loc>https://example.com/configurations/cmake/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/codeqlls/</loc>
+         <loc>https://example.com/configurations/codeqlls/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/crystalline/</loc>
+         <loc>https://example.com/configurations/crystalline/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/cssls/</loc>
+         <loc>https://example.com/configurations/cssls/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/dartls/</loc>
+         <loc>https://example.com/configurations/dartls/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/denols/</loc>
+         <loc>https://example.com/configurations/denols/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/dhall_lsp_server/</loc>
+         <loc>https://example.com/configurations/dhall_lsp_server/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/diagnosticls/</loc>
+         <loc>https://example.com/configurations/diagnosticls/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/dockerls/</loc>
+         <loc>https://example.com/configurations/dockerls/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/dotls/</loc>
+         <loc>https://example.com/configurations/dotls/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/efm/</loc>
+         <loc>https://example.com/configurations/efm/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/elixirls/</loc>
+         <loc>https://example.com/configurations/elixirls/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/elmls/</loc>
+         <loc>https://example.com/configurations/elmls/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/erlangls/</loc>
+         <loc>https://example.com/configurations/erlangls/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/flow/</loc>
+         <loc>https://example.com/configurations/flow/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/fortls/</loc>
+         <loc>https://example.com/configurations/fortls/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/fsautocomplete/</loc>
+         <loc>https://example.com/configurations/fsautocomplete/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/gdscript/</loc>
+         <loc>https://example.com/configurations/gdscript/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/ghcide/</loc>
+         <loc>https://example.com/configurations/ghcide/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/gopls/</loc>
+         <loc>https://example.com/configurations/gopls/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/graphql/</loc>
+         <loc>https://example.com/configurations/graphql/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/groovyls/</loc>
+         <loc>https://example.com/configurations/groovyls/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/haxe_language_server/</loc>
+         <loc>https://example.com/configurations/haxe_language_server/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/hie/</loc>
+         <loc>https://example.com/configurations/hie/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/hls/</loc>
+         <loc>https://example.com/configurations/hls/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/html/</loc>
+         <loc>https://example.com/configurations/html/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/intelephense/</loc>
+         <loc>https://example.com/configurations/intelephense/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/java_language_server/</loc>
+         <loc>https://example.com/configurations/java_language_server/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/jdtls/</loc>
+         <loc>https://example.com/configurations/jdtls/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/jedi_language_server/</loc>
+         <loc>https://example.com/configurations/jedi_language_server/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/jsonls/</loc>
+         <loc>https://example.com/configurations/jsonls/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/julials/</loc>
+         <loc>https://example.com/configurations/julials/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/kotlin_language_server/</loc>
+         <loc>https://example.com/configurations/kotlin_language_server/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/lean3ls/</loc>
+         <loc>https://example.com/configurations/lean3ls/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/leanls/</loc>
+         <loc>https://example.com/configurations/leanls/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/metals/</loc>
+         <loc>https://example.com/configurations/metals/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/nimls/</loc>
+         <loc>https://example.com/configurations/nimls/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/ocamlls/</loc>
+         <loc>https://example.com/configurations/ocamlls/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/ocamllsp/</loc>
+         <loc>https://example.com/configurations/ocamllsp/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/omnisharp/</loc>
+         <loc>https://example.com/configurations/omnisharp/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/perlls/</loc>
+         <loc>https://example.com/configurations/perlls/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/phpactor/</loc>
+         <loc>https://example.com/configurations/phpactor/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/powershell_es/</loc>
+         <loc>https://example.com/configurations/powershell_es/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/prismals/</loc>
+         <loc>https://example.com/configurations/prismals/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/puppet/</loc>
+         <loc>https://example.com/configurations/puppet/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/purescriptls/</loc>
+         <loc>https://example.com/configurations/purescriptls/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/pyls/</loc>
+         <loc>https://example.com/configurations/pyls/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/pyls_ms/</loc>
+         <loc>https://example.com/configurations/pyls_ms/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/pylsp/</loc>
+         <loc>https://example.com/configurations/pylsp/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/pyright/</loc>
+         <loc>https://example.com/configurations/pyright/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/r_language_server/</loc>
+         <loc>https://example.com/configurations/r_language_server/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/racket_langserver/</loc>
+         <loc>https://example.com/configurations/racket_langserver/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/rescriptls/</loc>
+         <loc>https://example.com/configurations/rescriptls/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/rls/</loc>
+         <loc>https://example.com/configurations/rls/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/rnix/</loc>
+         <loc>https://example.com/configurations/rnix/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/rome/</loc>
+         <loc>https://example.com/configurations/rome/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/rust_analyzer/</loc>
+         <loc>https://example.com/configurations/rust_analyzer/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/scry/</loc>
+         <loc>https://example.com/configurations/scry/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/solargraph/</loc>
+         <loc>https://example.com/configurations/solargraph/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/sorbet/</loc>
+         <loc>https://example.com/configurations/sorbet/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/sourcekit/</loc>
+         <loc>https://example.com/configurations/sourcekit/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/sqlls/</loc>
+         <loc>https://example.com/configurations/sqlls/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/sqls/</loc>
+         <loc>https://example.com/configurations/sqls/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/stylelint_lsp/</loc>
+         <loc>https://example.com/configurations/stylelint_lsp/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/sumneko_lua/</loc>
+         <loc>https://example.com/configurations/sumneko_lua/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/svelte/</loc>
+         <loc>https://example.com/configurations/svelte/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/svls/</loc>
+         <loc>https://example.com/configurations/svls/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/tailwindcss/</loc>
+         <loc>https://example.com/configurations/tailwindcss/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/terraformls/</loc>
+         <loc>https://example.com/configurations/terraformls/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/texlab/</loc>
+         <loc>https://example.com/configurations/texlab/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/tflint/</loc>
+         <loc>https://example.com/configurations/tflint/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/tsserver/</loc>
+         <loc>https://example.com/configurations/tsserver/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/vala_ls/</loc>
+         <loc>https://example.com/configurations/vala_ls/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/vimls/</loc>
+         <loc>https://example.com/configurations/vimls/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/vls/</loc>
+         <loc>https://example.com/configurations/vls/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/vuels/</loc>
+         <loc>https://example.com/configurations/vuels/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/yamlls/</loc>
+         <loc>https://example.com/configurations/yamlls/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/zeta_note/</loc>
+         <loc>https://example.com/configurations/zeta_note/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/lsp/zls/</loc>
+         <loc>https://example.com/configurations/zls/</loc>
          <lastmod>2021-07-04</lastmod>
          <changefreq>daily</changefreq>
     </url>

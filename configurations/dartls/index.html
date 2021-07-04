@@ -1,0 +1,3541 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://example.com/configurations/dartls/">
+      
+      <link rel="icon" href="../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.9">
+    
+    
+      
+        <title>Dart (dartls) - nvim-lspconfig</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4cae4f">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="green" data-md-color-accent="green">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dart-dartls" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="nvim-lspconfig" class="md-header__button md-logo" aria-label="nvim-lspconfig" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            nvim-lspconfig
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Dart (dartls)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/neovim/nvim-lspconfig/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../install/" class="md-tabs__link">
+      Install
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        Configurations
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="nvim-lspconfig" class="md-nav__button md-logo" aria-label="nvim-lspconfig" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    nvim-lspconfig
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/neovim/nvim-lspconfig/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install/" class="md-nav__link">
+        Install
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        Configurations
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Configurations" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Configurations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" checked>
+      
+      <label class="md-nav__link" for="__nav_3_2">
+        Languages
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Languages" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Languages
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../als/" class="md-nav__link">
+        Ada (als)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../angularls/" class="md-nav__link">
+        Angular (angularls)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bashls/" class="md-nav__link">
+        Bash (bashls)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../beancount/" class="md-nav__link">
+        Beancount (beancount)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ccls/" class="md-nav__link">
+        C like (ccls)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clangd/" class="md-nav__link">
+        C like (clangd)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sourcekit/" class="md-nav__link">
+        C like (sourcekit)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clojure_lsp/" class="md-nav__link">
+        Clojure (clojure_lsp)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cmake/" class="md-nav__link">
+        CMake (cmake)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../omnisharp/" class="md-nav__link">
+        C(omnisharp)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crystalline/" class="md-nav__link">
+        Crystal (crystalline)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scry/" class="md-nav__link">
+        Crystal (scry)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cssls/" class="md-nav__link">
+        CSS (cssls)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Dart (dartls)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Dart (dartls)
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#available-settings" class="md-nav__link">
+    Available settings
+  </a>
+  
+    <nav class="md-nav" aria-label="Available settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dartadditionalanalyzerfileextensions" class="md-nav__link">
+    dart.additionalAnalyzerFileExtensions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartallowanalytics" class="md-nav__link">
+    dart.allowAnalytics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartallowtestsoutsidetestfolder" class="md-nav__link">
+    dart.allowTestsOutsideTestFolder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartanalysisexcludedfolders" class="md-nav__link">
+    dart.analysisExcludedFolders
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartanalysisserverfolding" class="md-nav__link">
+    dart.analysisServerFolding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartanalyzeangulartemplates" class="md-nav__link">
+    dart.analyzeAngularTemplates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartanalyzeradditionalargs" class="md-nav__link">
+    dart.analyzerAdditionalArgs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartanalyzerdiagnosticsport" class="md-nav__link">
+    dart.analyzerDiagnosticsPort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartanalyzerinstrumentationlogfile" class="md-nav__link">
+    dart.analyzerInstrumentationLogFile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartanalyzerlogfile" class="md-nav__link">
+    dart.analyzerLogFile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartanalyzerpath" class="md-nav__link">
+    dart.analyzerPath
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartanalyzersshhost" class="md-nav__link">
+    dart.analyzerSshHost
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartanalyzervmserviceport" class="md-nav__link">
+    dart.analyzerVmServicePort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartautoimportcompletions" class="md-nav__link">
+    dart.autoImportCompletions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartautomaticcommentslashes" class="md-nav__link">
+    dart.automaticCommentSlashes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartbuildrunneradditionalargs" class="md-nav__link">
+    dart.buildRunnerAdditionalArgs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartcheckforsdkupdates" class="md-nav__link">
+    dart.checkForSdkUpdates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartcliconsole" class="md-nav__link">
+    dart.cliConsole
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartclosinglabels" class="md-nav__link">
+    dart.closingLabels
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartcompletefunctioncalls" class="md-nav__link">
+    dart.completeFunctionCalls
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartdaplogfile" class="md-nav__link">
+    dart.dapLogFile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartdebugextensionbackendprotocol" class="md-nav__link">
+    dart.debugExtensionBackendProtocol
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartdebugexternallibraries" class="md-nav__link">
+    dart.debugExternalLibraries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartdebugsdklibraries" class="md-nav__link">
+    dart.debugSdkLibraries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartdevtoolsbrowser" class="md-nav__link">
+    dart.devToolsBrowser
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartdevtoolslogfile" class="md-nav__link">
+    dart.devToolsLogFile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartdevtoolsport" class="md-nav__link">
+    dart.devToolsPort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartdevtoolsreusewindows" class="md-nav__link">
+    dart.devToolsReuseWindows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartdevtoolstheme" class="md-nav__link">
+    dart.devToolsTheme
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartdonotformat" class="md-nav__link">
+    dart.doNotFormat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartembeddevtools" class="md-nav__link">
+    dart.embedDevTools
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartenablecompletioncommitcharacters" class="md-nav__link">
+    dart.enableCompletionCommitCharacters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartenablesdkformatter" class="md-nav__link">
+    dart.enableSdkFormatter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartenableserversnippets" class="md-nav__link">
+    dart.enableServerSnippets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartenablesnippets" class="md-nav__link">
+    dart.enableSnippets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartenv" class="md-nav__link">
+    dart.env
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartevaluategettersindebugviews" class="md-nav__link">
+    dart.evaluateGettersInDebugViews
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartevaluatetostringindebugviews" class="md-nav__link">
+    dart.evaluateToStringInDebugViews
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartextensionlogfile" class="md-nav__link">
+    dart.extensionLogFile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartflutteradbconnectonchromeos" class="md-nav__link">
+    dart.flutterAdbConnectOnChromeOs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartflutteradditionalargs" class="md-nav__link">
+    dart.flutterAdditionalArgs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartflutterattachadditionalargs" class="md-nav__link">
+    dart.flutterAttachAdditionalArgs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartfluttercreateandroidlanguage" class="md-nav__link">
+    dart.flutterCreateAndroidLanguage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartfluttercreateioslanguage" class="md-nav__link">
+    dart.flutterCreateIOSLanguage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartfluttercreateoffline" class="md-nav__link">
+    dart.flutterCreateOffline
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartfluttercreateorganization" class="md-nav__link">
+    dart.flutterCreateOrganization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartfluttercustomemulators" class="md-nav__link">
+    dart.flutterCustomEmulators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartflutterdaemonlogfile" class="md-nav__link">
+    dart.flutterDaemonLogFile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartflutterguttericons" class="md-nav__link">
+    dart.flutterGutterIcons
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartflutterhotreloadonsave" class="md-nav__link">
+    dart.flutterHotReloadOnSave
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartflutterhotrestartonsave" class="md-nav__link">
+    dart.flutterHotRestartOnSave
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartflutteroutline" class="md-nav__link">
+    dart.flutterOutline
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartflutterrunadditionalargs" class="md-nav__link">
+    dart.flutterRunAdditionalArgs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartflutterrunlogfile" class="md-nav__link">
+    dart.flutterRunLogFile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartflutterscreenshotpath" class="md-nav__link">
+    dart.flutterScreenshotPath
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartfluttersdkpath" class="md-nav__link">
+    dart.flutterSdkPath
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartfluttersdkpaths" class="md-nav__link">
+    dart.flutterSdkPaths
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartflutterselectdevicewhenconnected" class="md-nav__link">
+    dart.flutterSelectDeviceWhenConnected
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartfluttershowemulators" class="md-nav__link">
+    dart.flutterShowEmulators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartfluttershowwebserverdevice" class="md-nav__link">
+    dart.flutterShowWebServerDevice
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartflutterstructurederrors" class="md-nav__link">
+    dart.flutterStructuredErrors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartfluttertestadditionalargs" class="md-nav__link">
+    dart.flutterTestAdditionalArgs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartfluttertestlogfile" class="md-nav__link">
+    dart.flutterTestLogFile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartfluttertrackwidgetcreation" class="md-nav__link">
+    dart.flutterTrackWidgetCreation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartflutterwebrenderer" class="md-nav__link">
+    dart.flutterWebRenderer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#darthotreloadprogress" class="md-nav__link">
+    dart.hotReloadProgress
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartinsertargumentplaceholders" class="md-nav__link">
+    dart.insertArgumentPlaceholders
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartlinelength" class="md-nav__link">
+    dart.lineLength
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartlspsnippettextedits" class="md-nav__link">
+    dart.lspSnippetTextEdits
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartmaxloglinelength" class="md-nav__link">
+    dart.maxLogLineLength
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartnotifyanalyzererrors" class="md-nav__link">
+    dart.notifyAnalyzerErrors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartopendevtools" class="md-nav__link">
+    dart.openDevTools
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartopentestview" class="md-nav__link">
+    dart.openTestView
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartpreviewbazelworkspacecustomscripts" class="md-nav__link">
+    dart.previewBazelWorkspaceCustomScripts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartpreviewcommitcharacters" class="md-nav__link">
+    dart.previewCommitCharacters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartpreviewflutteruiguides" class="md-nav__link">
+    dart.previewFlutterUiGuides
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartpreviewflutteruiguidescustomtracking" class="md-nav__link">
+    dart.previewFlutterUiGuidesCustomTracking
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartpreviewhotreloadonsavewatcher" class="md-nav__link">
+    dart.previewHotReloadOnSaveWatcher
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartpreviewlsp" class="md-nav__link">
+    dart.previewLsp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartprompttogetpackages" class="md-nav__link">
+    dart.promptToGetPackages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartprompttoruniferrors" class="md-nav__link">
+    dart.promptToRunIfErrors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartpubadditionalargs" class="md-nav__link">
+    dart.pubAdditionalArgs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartpubtestlogfile" class="md-nav__link">
+    dart.pubTestLogFile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartrunpubgetonpubspecchanges" class="md-nav__link">
+    dart.runPubGetOnPubspecChanges
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartsdkpath" class="md-nav__link">
+    dart.sdkPath
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartsdkpaths" class="md-nav__link">
+    dart.sdkPaths
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartsharedevtoolswithflutter" class="md-nav__link">
+    dart.shareDevToolsWithFlutter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartshowdartdeveloperlogs" class="md-nav__link">
+    dart.showDartDeveloperLogs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartshowdartpadsamplecodelens" class="md-nav__link">
+    dart.showDartPadSampleCodeLens
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartshowdevtoolsdebugtoolbarbuttons" class="md-nav__link">
+    dart.showDevToolsDebugToolBarButtons
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartshowignorequickfixes" class="md-nav__link">
+    dart.showIgnoreQuickFixes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartshowinspectornotificationsforwidgeterrors" class="md-nav__link">
+    dart.showInspectorNotificationsForWidgetErrors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartshowmaincodelens" class="md-nav__link">
+    dart.showMainCodeLens
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartshowskippedtests" class="md-nav__link">
+    dart.showSkippedTests
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartshowtestcodelens" class="md-nav__link">
+    dart.showTestCodeLens
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartshowtodos" class="md-nav__link">
+    dart.showTodos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#darttriggersignaturehelpautomatically" class="md-nav__link">
+    dart.triggerSignatureHelpAutomatically
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartupdateimportsonrename" class="md-nav__link">
+    dart.updateImportsOnRename
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartuseknownchromeosports" class="md-nav__link">
+    dart.useKnownChromeOSPorts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartvmadditionalargs" class="md-nav__link">
+    dart.vmAdditionalArgs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartvmservicelogfile" class="md-nav__link">
+    dart.vmServiceLogFile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartwarnwheneditingfilesinpubcache" class="md-nav__link">
+    dart.warnWhenEditingFilesInPubCache
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartwarnwheneditingfilesoutsideworkspace" class="md-nav__link">
+    dart.warnWhenEditingFilesOutsideWorkspace
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartwebdaemonlogfile" class="md-nav__link">
+    dart.webDaemonLogFile
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dhall_lsp_server/" class="md-nav__link">
+        Dhall (dhall_lsp_server)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dockerls/" class="md-nav__link">
+        Docker (dockerls)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dotls/" class="md-nav__link">
+        DOT (dotls)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../elixirls/" class="md-nav__link">
+        Elexir (elixirls)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../elmls/" class="md-nav__link">
+        Elm (elmls)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../erlangls/" class="md-nav__link">
+        Erlang (erlangls)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fsautocomplete/" class="md-nav__link">
+        F(fsautocomplete)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fortls/" class="md-nav__link">
+        Fortan (fortls)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gdscript/" class="md-nav__link">
+        GDScript (gdscript)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gopls/" class="md-nav__link">
+        Go (gopls)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graphql/" class="md-nav__link">
+        GraphQL (graphql)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ghcide/" class="md-nav__link">
+        Haskell (ghcide)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hie/" class="md-nav__link">
+        Haskell (hie)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hls/" class="md-nav__link">
+        Haskell (hls)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../haxe_language_server/" class="md-nav__link">
+        Haxe (haxe_language_server)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../html/" class="md-nav__link">
+        HTML (html)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../groovyls/" class="md-nav__link">
+        Java (groovyls)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_language_server/" class="md-nav__link">
+        Java (java_language_server)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jdtls/" class="md-nav__link">
+        Java (jdtls)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jsonls/" class="md-nav__link">
+        JSON (jsonls)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../julials/" class="md-nav__link">
+        Julia (julials)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kotlin_language_server/" class="md-nav__link">
+        Kotlin (kotlin_language_server)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lean3ls/" class="md-nav__link">
+        Lean (lean3ls)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../leanls/" class="md-nav__link">
+        Lean (leanls)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sumneko_lua/" class="md-nav__link">
+        Lua (sumneko_lua)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zeta_note/" class="md-nav__link">
+        Markdown (zeta_note)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nimls/" class="md-nav__link">
+        Nim (nimls)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rnix/" class="md-nav__link">
+        Nix (rnix)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ocamlls/" class="md-nav__link">
+        OCaml (ocamlls)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ocamllsp/" class="md-nav__link">
+        OCaml (ocamllsp)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../perlls/" class="md-nav__link">
+        Perl (perlls)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intelephense/" class="md-nav__link">
+        PHP (intelephense)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phpactor/" class="md-nav__link">
+        PHP (phpactor)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../powershell_es/" class="md-nav__link">
+        Powershell (powershell_es)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prismals/" class="md-nav__link">
+        Prisma (prismals)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../puppet/" class="md-nav__link">
+        Puppet (puppet)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../purescriptls/" class="md-nav__link">
+        PureScript (purescriptls)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jedi_language_server/" class="md-nav__link">
+        Python (jedi_language_server)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pyls/" class="md-nav__link">
+        Python (pyls)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pyls_ms/" class="md-nav__link">
+        Python (pyls_ms)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pylsp/" class="md-nav__link">
+        Python (pylsp)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pyright/" class="md-nav__link">
+        Python (pyright)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../racket_langserver/" class="md-nav__link">
+        Racket (racket_langserver)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rescriptls/" class="md-nav__link">
+        ReScript (rescriptls)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../r_language_server/" class="md-nav__link">
+        R (r_language_server)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solargraph/" class="md-nav__link">
+        Ruby (solargraph)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sorbet/" class="md-nav__link">
+        Ruby (sorbet)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rls/" class="md-nav__link">
+        Rust (rls)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rust_analyzer/" class="md-nav__link">
+        Rust (rust_analyzer)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../metals/" class="md-nav__link">
+        Scala (metals)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sqlls/" class="md-nav__link">
+        SQL (sqlls)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sqls/" class="md-nav__link">
+        SQL (sqls)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stylelint_lsp/" class="md-nav__link">
+        Stylelint (stylelint_lsp)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../svelte/" class="md-nav__link">
+        Svelte (svelte)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tailwindcss/" class="md-nav__link">
+        Tailwind (tailwindcss)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terraformls/" class="md-nav__link">
+        Terraform (terraformls)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tflint/" class="md-nav__link">
+        Terraform (tflint)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../texlab/" class="md-nav__link">
+        TexLab (texlab)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../denols/" class="md-nav__link">
+        TypeScript (denols)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/" class="md-nav__link">
+        TypeScript (flow)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rome/" class="md-nav__link">
+        TypeScript (rome)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tsserver/" class="md-nav__link">
+        TypeScript (tsserver)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vala_ls/" class="md-nav__link">
+        Vala (vala_ls)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../svls/" class="md-nav__link">
+        Verilog (svls)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vimls/" class="md-nav__link">
+        VimScript (vimls)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vuels/" class="md-nav__link">
+        Vue (vuels)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vls/" class="md-nav__link">
+        V (vls)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../yamlls/" class="md-nav__link">
+        YAML (yamlls)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zls/" class="md-nav__link">
+        Zig (zls)
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" data-md-state="indeterminate" type="checkbox" id="__nav_3_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3_3">
+        Misc Servers
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Misc Servers" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Misc Servers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../codeqlls/" class="md-nav__link">
+        CodeQL (codeqlls)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagnosticls/" class="md-nav__link">
+        Diagnostics (diagnosticls)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../efm/" class="md-nav__link">
+        Diagnostics (efm)
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#available-settings" class="md-nav__link">
+    Available settings
+  </a>
+  
+    <nav class="md-nav" aria-label="Available settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dartadditionalanalyzerfileextensions" class="md-nav__link">
+    dart.additionalAnalyzerFileExtensions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartallowanalytics" class="md-nav__link">
+    dart.allowAnalytics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartallowtestsoutsidetestfolder" class="md-nav__link">
+    dart.allowTestsOutsideTestFolder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartanalysisexcludedfolders" class="md-nav__link">
+    dart.analysisExcludedFolders
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartanalysisserverfolding" class="md-nav__link">
+    dart.analysisServerFolding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartanalyzeangulartemplates" class="md-nav__link">
+    dart.analyzeAngularTemplates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartanalyzeradditionalargs" class="md-nav__link">
+    dart.analyzerAdditionalArgs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartanalyzerdiagnosticsport" class="md-nav__link">
+    dart.analyzerDiagnosticsPort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartanalyzerinstrumentationlogfile" class="md-nav__link">
+    dart.analyzerInstrumentationLogFile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartanalyzerlogfile" class="md-nav__link">
+    dart.analyzerLogFile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartanalyzerpath" class="md-nav__link">
+    dart.analyzerPath
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartanalyzersshhost" class="md-nav__link">
+    dart.analyzerSshHost
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartanalyzervmserviceport" class="md-nav__link">
+    dart.analyzerVmServicePort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartautoimportcompletions" class="md-nav__link">
+    dart.autoImportCompletions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartautomaticcommentslashes" class="md-nav__link">
+    dart.automaticCommentSlashes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartbuildrunneradditionalargs" class="md-nav__link">
+    dart.buildRunnerAdditionalArgs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartcheckforsdkupdates" class="md-nav__link">
+    dart.checkForSdkUpdates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartcliconsole" class="md-nav__link">
+    dart.cliConsole
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartclosinglabels" class="md-nav__link">
+    dart.closingLabels
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartcompletefunctioncalls" class="md-nav__link">
+    dart.completeFunctionCalls
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartdaplogfile" class="md-nav__link">
+    dart.dapLogFile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartdebugextensionbackendprotocol" class="md-nav__link">
+    dart.debugExtensionBackendProtocol
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartdebugexternallibraries" class="md-nav__link">
+    dart.debugExternalLibraries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartdebugsdklibraries" class="md-nav__link">
+    dart.debugSdkLibraries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartdevtoolsbrowser" class="md-nav__link">
+    dart.devToolsBrowser
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartdevtoolslogfile" class="md-nav__link">
+    dart.devToolsLogFile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartdevtoolsport" class="md-nav__link">
+    dart.devToolsPort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartdevtoolsreusewindows" class="md-nav__link">
+    dart.devToolsReuseWindows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartdevtoolstheme" class="md-nav__link">
+    dart.devToolsTheme
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartdonotformat" class="md-nav__link">
+    dart.doNotFormat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartembeddevtools" class="md-nav__link">
+    dart.embedDevTools
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartenablecompletioncommitcharacters" class="md-nav__link">
+    dart.enableCompletionCommitCharacters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartenablesdkformatter" class="md-nav__link">
+    dart.enableSdkFormatter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartenableserversnippets" class="md-nav__link">
+    dart.enableServerSnippets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartenablesnippets" class="md-nav__link">
+    dart.enableSnippets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartenv" class="md-nav__link">
+    dart.env
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartevaluategettersindebugviews" class="md-nav__link">
+    dart.evaluateGettersInDebugViews
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartevaluatetostringindebugviews" class="md-nav__link">
+    dart.evaluateToStringInDebugViews
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartextensionlogfile" class="md-nav__link">
+    dart.extensionLogFile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartflutteradbconnectonchromeos" class="md-nav__link">
+    dart.flutterAdbConnectOnChromeOs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartflutteradditionalargs" class="md-nav__link">
+    dart.flutterAdditionalArgs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartflutterattachadditionalargs" class="md-nav__link">
+    dart.flutterAttachAdditionalArgs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartfluttercreateandroidlanguage" class="md-nav__link">
+    dart.flutterCreateAndroidLanguage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartfluttercreateioslanguage" class="md-nav__link">
+    dart.flutterCreateIOSLanguage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartfluttercreateoffline" class="md-nav__link">
+    dart.flutterCreateOffline
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartfluttercreateorganization" class="md-nav__link">
+    dart.flutterCreateOrganization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartfluttercustomemulators" class="md-nav__link">
+    dart.flutterCustomEmulators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartflutterdaemonlogfile" class="md-nav__link">
+    dart.flutterDaemonLogFile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartflutterguttericons" class="md-nav__link">
+    dart.flutterGutterIcons
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartflutterhotreloadonsave" class="md-nav__link">
+    dart.flutterHotReloadOnSave
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartflutterhotrestartonsave" class="md-nav__link">
+    dart.flutterHotRestartOnSave
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartflutteroutline" class="md-nav__link">
+    dart.flutterOutline
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartflutterrunadditionalargs" class="md-nav__link">
+    dart.flutterRunAdditionalArgs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartflutterrunlogfile" class="md-nav__link">
+    dart.flutterRunLogFile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartflutterscreenshotpath" class="md-nav__link">
+    dart.flutterScreenshotPath
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartfluttersdkpath" class="md-nav__link">
+    dart.flutterSdkPath
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartfluttersdkpaths" class="md-nav__link">
+    dart.flutterSdkPaths
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartflutterselectdevicewhenconnected" class="md-nav__link">
+    dart.flutterSelectDeviceWhenConnected
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartfluttershowemulators" class="md-nav__link">
+    dart.flutterShowEmulators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartfluttershowwebserverdevice" class="md-nav__link">
+    dart.flutterShowWebServerDevice
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartflutterstructurederrors" class="md-nav__link">
+    dart.flutterStructuredErrors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartfluttertestadditionalargs" class="md-nav__link">
+    dart.flutterTestAdditionalArgs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartfluttertestlogfile" class="md-nav__link">
+    dart.flutterTestLogFile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartfluttertrackwidgetcreation" class="md-nav__link">
+    dart.flutterTrackWidgetCreation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartflutterwebrenderer" class="md-nav__link">
+    dart.flutterWebRenderer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#darthotreloadprogress" class="md-nav__link">
+    dart.hotReloadProgress
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartinsertargumentplaceholders" class="md-nav__link">
+    dart.insertArgumentPlaceholders
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartlinelength" class="md-nav__link">
+    dart.lineLength
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartlspsnippettextedits" class="md-nav__link">
+    dart.lspSnippetTextEdits
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartmaxloglinelength" class="md-nav__link">
+    dart.maxLogLineLength
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartnotifyanalyzererrors" class="md-nav__link">
+    dart.notifyAnalyzerErrors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartopendevtools" class="md-nav__link">
+    dart.openDevTools
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartopentestview" class="md-nav__link">
+    dart.openTestView
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartpreviewbazelworkspacecustomscripts" class="md-nav__link">
+    dart.previewBazelWorkspaceCustomScripts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartpreviewcommitcharacters" class="md-nav__link">
+    dart.previewCommitCharacters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartpreviewflutteruiguides" class="md-nav__link">
+    dart.previewFlutterUiGuides
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartpreviewflutteruiguidescustomtracking" class="md-nav__link">
+    dart.previewFlutterUiGuidesCustomTracking
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartpreviewhotreloadonsavewatcher" class="md-nav__link">
+    dart.previewHotReloadOnSaveWatcher
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartpreviewlsp" class="md-nav__link">
+    dart.previewLsp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartprompttogetpackages" class="md-nav__link">
+    dart.promptToGetPackages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartprompttoruniferrors" class="md-nav__link">
+    dart.promptToRunIfErrors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartpubadditionalargs" class="md-nav__link">
+    dart.pubAdditionalArgs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartpubtestlogfile" class="md-nav__link">
+    dart.pubTestLogFile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartrunpubgetonpubspecchanges" class="md-nav__link">
+    dart.runPubGetOnPubspecChanges
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartsdkpath" class="md-nav__link">
+    dart.sdkPath
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartsdkpaths" class="md-nav__link">
+    dart.sdkPaths
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartsharedevtoolswithflutter" class="md-nav__link">
+    dart.shareDevToolsWithFlutter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartshowdartdeveloperlogs" class="md-nav__link">
+    dart.showDartDeveloperLogs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartshowdartpadsamplecodelens" class="md-nav__link">
+    dart.showDartPadSampleCodeLens
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartshowdevtoolsdebugtoolbarbuttons" class="md-nav__link">
+    dart.showDevToolsDebugToolBarButtons
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartshowignorequickfixes" class="md-nav__link">
+    dart.showIgnoreQuickFixes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartshowinspectornotificationsforwidgeterrors" class="md-nav__link">
+    dart.showInspectorNotificationsForWidgetErrors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartshowmaincodelens" class="md-nav__link">
+    dart.showMainCodeLens
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartshowskippedtests" class="md-nav__link">
+    dart.showSkippedTests
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartshowtestcodelens" class="md-nav__link">
+    dart.showTestCodeLens
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartshowtodos" class="md-nav__link">
+    dart.showTodos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#darttriggersignaturehelpautomatically" class="md-nav__link">
+    dart.triggerSignatureHelpAutomatically
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartupdateimportsonrename" class="md-nav__link">
+    dart.updateImportsOnRename
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartuseknownchromeosports" class="md-nav__link">
+    dart.useKnownChromeOSPorts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartvmadditionalargs" class="md-nav__link">
+    dart.vmAdditionalArgs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartvmservicelogfile" class="md-nav__link">
+    dart.vmServiceLogFile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartwarnwheneditingfilesinpubcache" class="md-nav__link">
+    dart.warnWhenEditingFilesInPubCache
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartwarnwheneditingfilesoutsideworkspace" class="md-nav__link">
+    dart.warnWhenEditingFilesOutsideWorkspace
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dartwebdaemonlogfile" class="md-nav__link">
+    dart.webDaemonLogFile
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/neovim/nvim-lspconfig/edit/master/docs/configurations/dartls.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="dart-dartls">Dart (dartls)</h1>
+<p><a href="https://github.com/dart-lang/sdk/tree/master/pkg/analysis_server/tool/lsp_spec">https://github.com/dart-lang/sdk/tree/master/pkg/analysis_server/tool/lsp_spec</a></p>
+<p>Language server for dart.</p>
+<h2 id="setup">Setup</h2>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">dartls</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
+</code></pre></div>
+<h3 id="default-values">Default Values</h3>
+<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;dart&quot;</span><span class="p">,</span> <span class="s2">&quot;/opt/dart-sdk/bin/snapshots/analysis_server.dart.snapshot&quot;</span><span class="p">,</span> <span class="s2">&quot;--lsp&quot;</span> <span class="p">}</span>
+  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;dart&quot;</span> <span class="p">}</span>
+  <span class="n">init_options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">closingLabels</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="n">flutterOutline</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="n">onlyAnalyzeProjectsWithOpenFiles</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="n">outline</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="n">suggestFromUnimportedLibraries</span> <span class="o">=</span> <span class="kc">true</span>
+  <span class="p">}</span>
+  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;pubspec.yaml&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>This server accepts configuration via the <code>settings</code> key.</p>
+<h2 id="available-settings">Available settings</h2>
+<h3 id="dartadditionalanalyzerfileextensions"><code>dart.additionalAnalyzerFileExtensions</code></h3>
+<p>Type: <code>array</code></p>
+<p>Default: <code>{}</code></p>
+<p>Array items: <code>{type = "string"}</code></p>
+<p>Additional file extensions that should be analyzed (usually used in combination with analyzer plugins).</p>
+<h3 id="dartallowanalytics"><code>dart.allowAnalytics</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>Whether to send analytics such as startup timings\, frequency of use of features and analysis server crashes.</p>
+<h3 id="dartallowtestsoutsidetestfolder"><code>dart.allowTestsOutsideTestFolder</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>null</p>
+<h3 id="dartanalysisexcludedfolders"><code>dart.analysisExcludedFolders</code></h3>
+<p>Type: <code>array</code></p>
+<p>Default: <code>{}</code></p>
+<p>Array items: <code>{type = "string"}</code></p>
+<p>An array of paths to be excluded from Dart analysis. This option should usually be set at the Workspace level. Excluded folders will also be ignored when detecting project types.</p>
+<h3 id="dartanalysisserverfolding"><code>dart.analysisServerFolding</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>Whether to use folding data from the Dart analysis server instead of the built-in VS Code indent-based folding.</p>
+<h3 id="dartanalyzeangulartemplates"><code>dart.analyzeAngularTemplates</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="dartanalyzeradditionalargs"><code>dart.analyzerAdditionalArgs</code></h3>
+<p>Type: <code>array</code></p>
+<p>Default: <code>{}</code></p>
+<p>Array items: <code>{type = "string"}</code></p>
+<p>Additional arguments to pass to the Dart analysis server.</p>
+<h3 id="dartanalyzerdiagnosticsport"><code>dart.analyzerDiagnosticsPort</code></h3>
+<p>Type: <code>null|number</code></p>
+<p>Default: <code>vim.NIL</code></p>
+<p>The port number to be used for the Dart analyzer diagnostic server.</p>
+<h3 id="dartanalyzerinstrumentationlogfile"><code>dart.analyzerInstrumentationLogFile</code></h3>
+<p>Type: <code>null|string</code></p>
+<p>Default: <code>vim.NIL</code></p>
+<p>The path to a log file for very detailed logging in the Dart analysis server that may be useful when trying to diagnose analysis server issues.</p>
+<h3 id="dartanalyzerlogfile"><code>dart.analyzerLogFile</code></h3>
+<p>Type: <code>null|string</code></p>
+<p>Default: <code>vim.NIL</code></p>
+<p>The path to a log file for communication between Dart Code and the analysis server.</p>
+<h3 id="dartanalyzerpath"><code>dart.analyzerPath</code></h3>
+<p>Type: <code>null|string</code></p>
+<p>Default: <code>vim.NIL</code></p>
+<p>The path to a custom Dart analysis server.</p>
+<h3 id="dartanalyzersshhost"><code>dart.analyzerSshHost</code></h3>
+<p>Type: <code>null|string</code></p>
+<p>Default: <code>vim.NIL</code></p>
+<p>An SSH host to run the analysis server.
+  This can be useful when modifying code on a remote machine using SSHFS.</p>
+<h3 id="dartanalyzervmserviceport"><code>dart.analyzerVmServicePort</code></h3>
+<p>Type: <code>null|number</code></p>
+<p>Default: <code>vim.NIL</code></p>
+<p>The port number to be used for the Dart analysis server VM service.</p>
+<h3 id="dartautoimportcompletions"><code>dart.autoImportCompletions</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>Whether to include symbols that have not been imported in the code completion list and automatically insert the required import when selecting them (requires restart).</p>
+<h3 id="dartautomaticcommentslashes"><code>dart.automaticCommentSlashes</code></h3>
+<p><code>enum { "none", "tripleSlash", "all" }</code></p>
+<p>Default: <code>"tripleSlash"</code></p>
+<p>null</p>
+<h3 id="dartbuildrunneradditionalargs"><code>dart.buildRunnerAdditionalArgs</code></h3>
+<p>Type: <code>array</code></p>
+<p>Default: <code>{}</code></p>
+<p>Array items: <code>{type = "string"}</code></p>
+<p>null</p>
+<h3 id="dartcheckforsdkupdates"><code>dart.checkForSdkUpdates</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>Whether to check you are using the latest version of the Dart SDK at startup.</p>
+<h3 id="dartcliconsole"><code>dart.cliConsole</code></h3>
+<p><code>enum { "debugConsole", "terminal", "externalTerminal" }</code></p>
+<p>Default: <code>"debugConsole"</code></p>
+<p>Whether to run Dart CLI apps in the Debug Console or a terminal. The Debug Console has more functionality because the process is controlled by the debug adapter\, but is unable to accept input from the user via stdin.</p>
+<h3 id="dartclosinglabels"><code>dart.closingLabels</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>Whether to show annotations against constructor\, method invocations and lists that span multiple lines.</p>
+<h3 id="dartcompletefunctioncalls"><code>dart.completeFunctionCalls</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="dartdaplogfile"><code>dart.dapLogFile</code></h3>
+<p>Type: <code>null|string</code></p>
+<p>Default: <code>vim.NIL</code></p>
+<p>null</p>
+<h3 id="dartdebugextensionbackendprotocol"><code>dart.debugExtensionBackendProtocol</code></h3>
+<p><code>enum { "sse", "ws" }</code></p>
+<p>Default: <code>"ws"</code></p>
+<p>The protocol to use for the Dart Debug Extension backend service and injected client. Using WebSockets can improve performance but may fail when connecting through some proxy servers.</p>
+<h3 id="dartdebugexternallibraries"><code>dart.debugExternalLibraries</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>null</p>
+<h3 id="dartdebugsdklibraries"><code>dart.debugSdkLibraries</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>null</p>
+<h3 id="dartdevtoolsbrowser"><code>dart.devToolsBrowser</code></h3>
+<p><code>enum { "chrome", "default" }</code></p>
+<p>Default: <code>"chrome"</code></p>
+<p>Whether to launch external DevTools windows using Chrome or the system default browser.</p>
+<h3 id="dartdevtoolslogfile"><code>dart.devToolsLogFile</code></h3>
+<p>Type: <code>null|string</code></p>
+<p>Default: <code>vim.NIL</code></p>
+<p>The path to a low-traffic log file for the Dart DevTools service.</p>
+<h3 id="dartdevtoolsport"><code>dart.devToolsPort</code></h3>
+<p>Type: <code>null|number</code></p>
+<p>Default: <code>vim.NIL</code></p>
+<p>The port number to be used for the Dart DevTools.</p>
+<h3 id="dartdevtoolsreusewindows"><code>dart.devToolsReuseWindows</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>Whether to try to reuse existing DevTools windows instead of launching new ones. Only works for instances of DevTools launched by the DevTools server on the local machine.</p>
+<h3 id="dartdevtoolstheme"><code>dart.devToolsTheme</code></h3>
+<p><code>enum { "dark", "light" }</code></p>
+<p>Default: <code>"dark"</code></p>
+<p>The theme to use for Dart DevTools.</p>
+<h3 id="dartdonotformat"><code>dart.doNotFormat</code></h3>
+<p>Type: <code>array</code></p>
+<p>Default: <code>{}</code></p>
+<p>Array items: <code>{type = "string"}</code></p>
+<p>null</p>
+<h3 id="dartembeddevtools"><code>dart.embedDevTools</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="dartenablecompletioncommitcharacters"><code>dart.enableCompletionCommitCharacters</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>null</p>
+<h3 id="dartenablesdkformatter"><code>dart.enableSdkFormatter</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="dartenableserversnippets"><code>dart.enableServerSnippets</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>null</p>
+<h3 id="dartenablesnippets"><code>dart.enableSnippets</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>Whether to include Dart and Flutter snippets in code completion.</p>
+<h3 id="dartenv"><code>dart.env</code></h3>
+<p>Type: <code>object</code></p>
+<p>Default: <code>vim.empty_dict()</code></p>
+<p>Additional environment variables to be added to all Dart\/Flutter processes spawned by the Dart and Flutter extensions.</p>
+<h3 id="dartevaluategettersindebugviews"><code>dart.evaluateGettersInDebugViews</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>Whether to evaluate getters in order to display them in debug views (such as the Variables\, Watch and Hovers views).</p>
+<h3 id="dartevaluatetostringindebugviews"><code>dart.evaluateToStringInDebugViews</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>Whether to call toString() on objects when rendering them in debug views (such as the Variables\, Watch and Hovers views). Only applies to views of 100 or fewer values for performance reasons.</p>
+<h3 id="dartextensionlogfile"><code>dart.extensionLogFile</code></h3>
+<p>Type: <code>null|string</code></p>
+<p>Default: <code>vim.NIL</code></p>
+<p>The path to a low-traffic log file for basic extension and editor issues.</p>
+<h3 id="dartflutteradbconnectonchromeos"><code>dart.flutterAdbConnectOnChromeOs</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>null</p>
+<h3 id="dartflutteradditionalargs"><code>dart.flutterAdditionalArgs</code></h3>
+<p>Type: <code>array</code></p>
+<p>Default: <code>{}</code></p>
+<p>Array items: <code>{type = "string"}</code></p>
+<p>null</p>
+<h3 id="dartflutterattachadditionalargs"><code>dart.flutterAttachAdditionalArgs</code></h3>
+<p>Type: <code>array</code></p>
+<p>Default: <code>{}</code></p>
+<p>Array items: <code>{type = "string"}</code></p>
+<p>null</p>
+<h3 id="dartfluttercreateandroidlanguage"><code>dart.flutterCreateAndroidLanguage</code></h3>
+<p><code>enum { "java", "kotlin" }</code></p>
+<p>Default: <code>"kotlin"</code></p>
+<p>The programming language to use for Android apps when creating new projects using the \'Flutter\: New Application Project\' command.</p>
+<h3 id="dartfluttercreateioslanguage"><code>dart.flutterCreateIOSLanguage</code></h3>
+<p><code>enum { "objc", "swift" }</code></p>
+<p>Default: <code>"swift"</code></p>
+<p>The programming language to use for iOS apps when creating new projects using the \'Flutter\: New Application Project\' command.</p>
+<h3 id="dartfluttercreateoffline"><code>dart.flutterCreateOffline</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Whether to use offline mode when creating new projects with the \'Flutter\: New Application Project\' command.</p>
+<h3 id="dartfluttercreateorganization"><code>dart.flutterCreateOrganization</code></h3>
+<p>Type: <code>null|string</code></p>
+<p>Default: <code>vim.NIL</code></p>
+<p>null</p>
+<h3 id="dartfluttercustomemulators"><code>dart.flutterCustomEmulators</code></h3>
+<p>Type: <code>array</code></p>
+<p>Default: <code>{}</code></p>
+<p>Array items: <code>{properties = {args = {items = {type = "string"},type = "array"},env = vim.empty_dict(),executable = {type = "string"},id = {type = "string"},name = {type = "string"}},type = "object"}</code></p>
+<p>Custom emulators to show in the emulator list for easier launching. If IDs match existing emulators returned by Flutter\, the custom emulators will override them.</p>
+<h3 id="dartflutterdaemonlogfile"><code>dart.flutterDaemonLogFile</code></h3>
+<p>Type: <code>null|string</code></p>
+<p>Default: <code>vim.NIL</code></p>
+<p>null</p>
+<h3 id="dartflutterguttericons"><code>dart.flutterGutterIcons</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>Whether to show Flutter icons and colors in the editor gutter.</p>
+<h3 id="dartflutterhotreloadonsave"><code>dart.flutterHotReloadOnSave</code></h3>
+<p><code>enum { "never", "always", "manual" }</code></p>
+<p>Default: <code>"manual"</code></p>
+<p>null</p>
+<h3 id="dartflutterhotrestartonsave"><code>dart.flutterHotRestartOnSave</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>Whether to automatically send a Hot Restart request during a debug session when saving files if Hot Reload is not available but Hot Restart is.</p>
+<h3 id="dartflutteroutline"><code>dart.flutterOutline</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>Whether to show the Flutter Outline tree in the sidebar.</p>
+<h3 id="dartflutterrunadditionalargs"><code>dart.flutterRunAdditionalArgs</code></h3>
+<p>Type: <code>array</code></p>
+<p>Default: <code>{}</code></p>
+<p>Array items: <code>{type = "string"}</code></p>
+<p>null</p>
+<h3 id="dartflutterrunlogfile"><code>dart.flutterRunLogFile</code></h3>
+<p>Type: <code>null|string</code></p>
+<p>Default: <code>vim.NIL</code></p>
+<p>null</p>
+<h3 id="dartflutterscreenshotpath"><code>dart.flutterScreenshotPath</code></h3>
+<p>Type: <code>null|string</code></p>
+<p>Default: <code>vim.NIL</code></p>
+<p>The path to a directory to save Flutter screenshots.</p>
+<h3 id="dartfluttersdkpath"><code>dart.flutterSdkPath</code></h3>
+<p>Type: <code>null|string</code></p>
+<p>Default: <code>vim.NIL</code></p>
+<p>null</p>
+<h3 id="dartfluttersdkpaths"><code>dart.flutterSdkPaths</code></h3>
+<p>Type: <code>array</code></p>
+<p>Default: <code>{}</code></p>
+<p>Array items: <code>{type = "string"}</code></p>
+<p>An array of paths that either directly point to a Flutter SDK or the parent directory of multiple Flutter SDKs. When set\, the version number in the status bar can be used to quickly switch between SDKs.</p>
+<h3 id="dartflutterselectdevicewhenconnected"><code>dart.flutterSelectDeviceWhenConnected</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>Whether to set newly connected devices as the current device in Flutter projects.</p>
+<h3 id="dartfluttershowemulators"><code>dart.flutterShowEmulators</code></h3>
+<p><code>enum { "local", "always" }</code></p>
+<p>Default: <code>"local"</code></p>
+<p>null</p>
+<h3 id="dartfluttershowwebserverdevice"><code>dart.flutterShowWebServerDevice</code></h3>
+<p><code>enum { "remote", "always" }</code></p>
+<p>Default: <code>"remote"</code></p>
+<p>null</p>
+<h3 id="dartflutterstructurederrors"><code>dart.flutterStructuredErrors</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="dartfluttertestadditionalargs"><code>dart.flutterTestAdditionalArgs</code></h3>
+<p>Type: <code>array</code></p>
+<p>Default: <code>{}</code></p>
+<p>Array items: <code>{type = "string"}</code></p>
+<p>null</p>
+<h3 id="dartfluttertestlogfile"><code>dart.flutterTestLogFile</code></h3>
+<p>Type: <code>null|string</code></p>
+<p>Default: <code>vim.NIL</code></p>
+<p>null</p>
+<h3 id="dartfluttertrackwidgetcreation"><code>dart.flutterTrackWidgetCreation</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="dartflutterwebrenderer"><code>dart.flutterWebRenderer</code></h3>
+<p><code>enum { "auto", "html", "canvaskit" }</code></p>
+<p>Default: <code>"auto"</code></p>
+<p>null</p>
+<h3 id="darthotreloadprogress"><code>dart.hotReloadProgress</code></h3>
+<p><code>enum { "notification", "statusBar" }</code></p>
+<p>Default: <code>"notification"</code></p>
+<p>Determines how to display Hot Restart and Hot Reload progress.</p>
+<h3 id="dartinsertargumentplaceholders"><code>dart.insertArgumentPlaceholders</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="dartlinelength"><code>dart.lineLength</code></h3>
+<p>Type: <code>integer</code></p>
+<p>Default: <code>80</code></p>
+<p>The maximum length of a line of code. This is used by the document formatter.</p>
+<h3 id="dartlspsnippettextedits"><code>dart.lspSnippetTextEdits</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="dartmaxloglinelength"><code>dart.maxLogLineLength</code></h3>
+<p>Type: <code>number</code></p>
+<p>Default: <code>2000</code></p>
+<p>The maximum length of a line in the log file. Lines longer than this will be truncated and suffixed with an ellipsis.</p>
+<h3 id="dartnotifyanalyzererrors"><code>dart.notifyAnalyzerErrors</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>Whether to show a notification the first few times an analysis server exception occurs.</p>
+<h3 id="dartopendevtools"><code>dart.openDevTools</code></h3>
+<p><code>enum { "never", "flutter", "always" }</code></p>
+<p>Default: <code>"never"</code></p>
+<p>Whether to automatically open DevTools at the start of a debug session. If embedded DevTools is enabled\, this will launch the Widget Inspector embedded for Flutter projects\, or launch DevTools externally in a browser for Dart projects.</p>
+<h3 id="dartopentestview"><code>dart.openTestView</code></h3>
+<p>Type: <code>array</code></p>
+<p>Default: <code>{ "testRunStart" }</code></p>
+<p>Array items: <code>{enum = { "testRunStart", "testFailure" }}</code></p>
+<p>When to automatically switch focus to the test list (array to support multiple values).</p>
+<h3 id="dartpreviewbazelworkspacecustomscripts"><code>dart.previewBazelWorkspaceCustomScripts</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>null</p>
+<h3 id="dartpreviewcommitcharacters"><code>dart.previewCommitCharacters</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>EXPERIMENTAL\: Whether to enable commit characters for the LSP server. In a future release\, the dart.enableCompletionCommitCharacters setting will also apply to LSP.</p>
+<h3 id="dartpreviewflutteruiguides"><code>dart.previewFlutterUiGuides</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>null</p>
+<h3 id="dartpreviewflutteruiguidescustomtracking"><code>dart.previewFlutterUiGuidesCustomTracking</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>EXPERIMENTAL\: Whether to enable custom tracking of Flutter UI guidelines (to hide some latency of waiting for the next Flutter Outline).</p>
+<h3 id="dartpreviewhotreloadonsavewatcher"><code>dart.previewHotReloadOnSaveWatcher</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>null</p>
+<h3 id="dartpreviewlsp"><code>dart.previewLsp</code></h3>
+<p>Type: <code>null|boolean</code></p>
+<p>Default: <code>vim.NIL</code></p>
+<p>null</p>
+<h3 id="dartprompttogetpackages"><code>dart.promptToGetPackages</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>Whether to prompt to get packages when opening a project with out of date packages.</p>
+<h3 id="dartprompttoruniferrors"><code>dart.promptToRunIfErrors</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>Whether to prompt before running if there are errors in your project. Test scripts will be excluded from the check unless they\'re the script being run.</p>
+<h3 id="dartpubadditionalargs"><code>dart.pubAdditionalArgs</code></h3>
+<p>Type: <code>array</code></p>
+<p>Default: <code>{}</code></p>
+<p>Array items: <code>{type = "string"}</code></p>
+<p>Additional args to pass to all `pub` commands.</p>
+<h3 id="dartpubtestlogfile"><code>dart.pubTestLogFile</code></h3>
+<p>Type: <code>null|string</code></p>
+<p>Default: <code>vim.NIL</code></p>
+<p>null</p>
+<h3 id="dartrunpubgetonpubspecchanges"><code>dart.runPubGetOnPubspecChanges</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="dartsdkpath"><code>dart.sdkPath</code></h3>
+<p>Type: <code>null|string</code></p>
+<p>Default: <code>vim.NIL</code></p>
+<p>null</p>
+<h3 id="dartsdkpaths"><code>dart.sdkPaths</code></h3>
+<p>Type: <code>array</code></p>
+<p>Default: <code>{}</code></p>
+<p>Array items: <code>{type = "string"}</code></p>
+<p>An array of paths that either directly point to a Dart SDK or the parent directory of multiple Dart SDKs. When set\, the version number in the status bar can be used to quickly switch between SDKs.</p>
+<h3 id="dartsharedevtoolswithflutter"><code>dart.shareDevToolsWithFlutter</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>Whether to eagerly run DevTools for Flutter workspaces and share the spawned server with `flutter run`.</p>
+<h3 id="dartshowdartdeveloperlogs"><code>dart.showDartDeveloperLogs</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="dartshowdartpadsamplecodelens"><code>dart.showDartPadSampleCodeLens</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>Whether to show CodeLens actions in the editor for opening online DartPad samples.</p>
+<h3 id="dartshowdevtoolsdebugtoolbarbuttons"><code>dart.showDevToolsDebugToolBarButtons</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>Whether to show DevTools buttons in the Debug toolbar.</p>
+<h3 id="dartshowignorequickfixes"><code>dart.showIgnoreQuickFixes</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>Whether to show quick fixes for ignoring hints and lints.</p>
+<h3 id="dartshowinspectornotificationsforwidgeterrors"><code>dart.showInspectorNotificationsForWidgetErrors</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="dartshowmaincodelens"><code>dart.showMainCodeLens</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>Whether to show CodeLens actions in the editor for quick running \/ debugging scripts with main functions.</p>
+<h3 id="dartshowskippedtests"><code>dart.showSkippedTests</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="dartshowtestcodelens"><code>dart.showTestCodeLens</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>Whether to show CodeLens actions in the editor for quick running \/ debugging tests.</p>
+<h3 id="dartshowtodos"><code>dart.showTodos</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>Whether to show TODOs in the Problems list.</p>
+<h3 id="darttriggersignaturehelpautomatically"><code>dart.triggerSignatureHelpAutomatically</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Whether to automatically trigger signature help when pressing keys such as \, and (.</p>
+<h3 id="dartupdateimportsonrename"><code>dart.updateImportsOnRename</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>Whether to automatically update imports when moving or renaming files. Currently only supports single file moves \/ renames.</p>
+<h3 id="dartuseknownchromeosports"><code>dart.useKnownChromeOSPorts</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>Whether to use specific ports for the VM service and DevTools when running in Chrome OS. This is required to connect from the native Chrome OS browser but will prevent apps from launching if the ports are already in-use (for example if trying to run a second app).</p>
+<h3 id="dartvmadditionalargs"><code>dart.vmAdditionalArgs</code></h3>
+<p>Type: <code>array</code></p>
+<p>Default: <code>{}</code></p>
+<p>Array items: <code>{type = "string"}</code></p>
+<p>Additional args to pass to the Dart VM when running\/debugging command line apps.</p>
+<h3 id="dartvmservicelogfile"><code>dart.vmServiceLogFile</code></h3>
+<p>Type: <code>null|string</code></p>
+<p>Default: <code>vim.NIL</code></p>
+<p>null</p>
+<h3 id="dartwarnwheneditingfilesinpubcache"><code>dart.warnWhenEditingFilesInPubCache</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>null</p>
+<h3 id="dartwarnwheneditingfilesoutsideworkspace"><code>dart.warnWhenEditingFilesOutsideWorkspace</code></h3>
+<p>Type: <code>boolean</code></p>
+<p>Default: <code>true</code></p>
+<p>Whether to show a warning when modifying files outside of the workspace.</p>
+<h3 id="dartwebdaemonlogfile"><code>dart.webDaemonLogFile</code></h3>
+<p>Type: <code>null|string</code></p>
+<p>Default: <code>vim.NIL</code></p>
+<p>null</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" title="Back to top" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../cssls/" class="md-footer__link md-footer__link--prev" aria-label="Previous: CSS (cssls)" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              CSS (cssls)
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../dhall_lsp_server/" class="md-footer__link md-footer__link--next" aria-label="Next: Dhall (dhall_lsp_server)" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Dhall (dhall_lsp_server)
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/neovim/nvim-lspconfig" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.82b56eb2.min.js"></script>
+      
+    
+  </body>
+</html>
