@@ -1092,7 +1092,7 @@
         
           <li class="md-nav__item">
   <a href="#default-values" class="md-nav__link">
-    Default Values
+    Default values
   </a>
   
 </li>
@@ -1628,7 +1628,7 @@
         
           <li class="md-nav__item">
   <a href="#default-values" class="md-nav__link">
-    Default Values
+    Default values
   </a>
   
 </li>
@@ -1796,15 +1796,15 @@
 <h2 id="setup">Setup</h2>
 <div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">solargraph</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
 </code></pre></div>
-<h3 id="default-values">Default Values</h3>
-<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;solargraph&quot;</span><span class="p">,</span> <span class="s2">&quot;stdio&quot;</span> <span class="p">}</span>
-  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;ruby&quot;</span> <span class="p">}</span>
-  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;Gemfile&quot;</span><span class="p">,</span> <span class="s2">&quot;.git&quot;</span><span class="p">)</span>
-  <span class="n">settings</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">solargraph</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="n">diagnostics</span> <span class="o">=</span> <span class="kc">true</span>
-    <span class="p">}</span>
+<h3 id="default-values">Default values</h3>
+<div class="highlight"><pre><span></span><code><span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;solargraph&quot;</span><span class="p">,</span> <span class="s2">&quot;stdio&quot;</span> <span class="p">}</span>
+<span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;ruby&quot;</span> <span class="p">}</span>
+<span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;Gemfile&quot;</span><span class="p">,</span> <span class="s2">&quot;.git&quot;</span><span class="p">)</span>
+<span class="n">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="n">solargraph</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">diagnostics</span> <span class="o">=</span> <span class="kc">true</span>
   <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="available-settings">Available settings</h2>
@@ -1812,65 +1812,109 @@
 <p><code>enum { true, false }</code></p>
 <p>Enable automatic formatting while typing (WARNING\: experimental)</p>
 <h3 id="solargraphbundlerpath"><code>solargraph.bundlerPath</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>"bundle"</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>"bundle"</code></p>
+</li>
+</ul>
 <p>Path to the bundle executable\, defaults to \'bundle\'. Needs to be an absolute path for the \'bundle\' exec\/shim</p>
 <h3 id="solargraphcheckgemversion"><code>solargraph.checkGemVersion</code></h3>
 <p><code>enum { true, false }</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li><em>Default</em>: <code>true</code></li>
+</ul>
 <p>Automatically check if a new version of the Solargraph gem is available.</p>
 <h3 id="solargraphcommandpath"><code>solargraph.commandPath</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>"solargraph"</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>"solargraph"</code></p>
+</li>
+</ul>
 <p>Path to the solargraph command.  Set this to an absolute path to select from multiple installed Ruby versions.</p>
 <h3 id="solargraphcompletion"><code>solargraph.completion</code></h3>
 <p><code>enum { true, false }</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li><em>Default</em>: <code>true</code></li>
+</ul>
 <p>Enable completion</p>
 <h3 id="solargraphdefinitions"><code>solargraph.definitions</code></h3>
 <p><code>enum { true, false }</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li><em>Default</em>: <code>true</code></li>
+</ul>
 <p>Enable definitions (go to\, etc.)</p>
 <h3 id="solargraphdiagnostics"><code>solargraph.diagnostics</code></h3>
 <p><code>enum { true, false }</code></p>
 <p>Enable diagnostics</p>
 <h3 id="solargraphexternalserver"><code>solargraph.externalServer</code></h3>
-<p>Type: <code>object</code></p>
-<p>Default: <code>{host = "localhost",port = 7658}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>object</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>{host = "localhost",port = 7658}</code></p>
+</li>
+</ul>
 <p>The host and port to use for external transports. (Ignored for stdio and socket transports.)</p>
 <h3 id="solargraphfolding"><code>solargraph.folding</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Enable folding ranges</p>
 <h3 id="solargraphformatting"><code>solargraph.formatting</code></h3>
 <p><code>enum { true, false }</code></p>
 <p>Enable document formatting</p>
 <h3 id="solargraphhover"><code>solargraph.hover</code></h3>
 <p><code>enum { true, false }</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li><em>Default</em>: <code>true</code></li>
+</ul>
 <p>Enable hover</p>
 <h3 id="solargraphloglevel"><code>solargraph.logLevel</code></h3>
 <p><code>enum { "warn", "info", "debug" }</code></p>
-<p>Default: <code>"warn"</code></p>
+<ul>
+<li><em>Default</em>: <code>"warn"</code></li>
+</ul>
 <p>Level of debug info to log. `warn` is least and `debug` is most.</p>
 <h3 id="solargraphreferences"><code>solargraph.references</code></h3>
 <p><code>enum { true, false }</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li><em>Default</em>: <code>true</code></li>
+</ul>
 <p>Enable finding references</p>
 <h3 id="solargraphrename"><code>solargraph.rename</code></h3>
 <p><code>enum { true, false }</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li><em>Default</em>: <code>true</code></li>
+</ul>
 <p>Enable symbol renaming</p>
 <h3 id="solargraphsymbols"><code>solargraph.symbols</code></h3>
 <p><code>enum { true, false }</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li><em>Default</em>: <code>true</code></li>
+</ul>
 <p>Enable symbols</p>
 <h3 id="solargraphtransport"><code>solargraph.transport</code></h3>
 <p><code>enum { "socket", "stdio", "external" }</code></p>
-<p>Default: <code>"socket"</code></p>
+<ul>
+<li><em>Default</em>: <code>"socket"</code></li>
+</ul>
 <p>The type of transport to use.</p>
 <h3 id="solargraphusebundler"><code>solargraph.useBundler</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>Use `bundle exec` to run solargraph. (If this is true\, the solargraph.commandPath setting is ignored.)</p>
                 
               

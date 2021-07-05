@@ -1008,7 +1008,7 @@
         
           <li class="md-nav__item">
   <a href="#default-values" class="md-nav__link">
-    Default Values
+    Default values
   </a>
   
 </li>
@@ -1817,7 +1817,7 @@
         
           <li class="md-nav__item">
   <a href="#default-values" class="md-nav__link">
-    Default Values
+    Default values
   </a>
   
 </li>
@@ -2172,197 +2172,469 @@
 <h2 id="setup">Setup</h2>
 <div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">pyls</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
 </code></pre></div>
-<h3 id="default-values">Default Values</h3>
-<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;pyls&quot;</span> <span class="p">}</span>
-  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;python&quot;</span> <span class="p">}</span>
-  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">vim</span><span class="s1">&#39;s starting directory</span>
+<h3 id="default-values">Default values</h3>
+<div class="highlight"><pre><span></span><code><span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;pyls&quot;</span> <span class="p">}</span>
+<span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;python&quot;</span> <span class="p">}</span>
+<span class="n">root_dir</span> <span class="o">=</span> <span class="n">vim</span><span class="s1">&#39;s starting directory</span>
 </code></pre></div>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="available-settings">Available settings</h2>
 <h3 id="pylsconfigurationsources"><code>pyls.configurationSources</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>{ "pycodestyle" }</code></p>
-<p>Array items: <code>{enum = { "pycodestyle", "pyflakes" },type = "string"}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>{ "pycodestyle" }</code></p>
+</li>
+<li>
+<p><em>Array items</em>: <code>{enum = { "pycodestyle", "pyflakes" },type = "string"}</code></p>
+</li>
+</ul>
 <p>List of configuration sources to use.</p>
 <h3 id="pylsexecutable"><code>pyls.executable</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>"pyls"</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>"pyls"</code></p>
+</li>
+</ul>
 <p>Language server executable</p>
 <h3 id="pylspluginsjedienv_vars"><code>pyls.plugins.jedi.env_vars</code></h3>
-<p>Type: <code>dictionary</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>dictionary</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>Define environment variables for jedi.Script and Jedi.names.</p>
 <h3 id="pylspluginsjedienvironment"><code>pyls.plugins.jedi.environment</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>Define environment for jedi.Script and Jedi.names.</p>
 <h3 id="pylspluginsjediextra_paths"><code>pyls.plugins.jedi.extra_paths</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>{}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>{}</code></p>
+</li>
+</ul>
 <p>Define extra paths for jedi.Script.</p>
 <h3 id="pylspluginsjedi_completionenabled"><code>pyls.plugins.jedi_completion.enabled</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Enable or disable the plugin.</p>
 <h3 id="pylspluginsjedi_completionfuzzy"><code>pyls.plugins.jedi_completion.fuzzy</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>Enable fuzzy when requesting autocomplete.</p>
 <h3 id="pylspluginsjedi_completioninclude_class_objects"><code>pyls.plugins.jedi_completion.include_class_objects</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Adds class objects as a separate completion item.</p>
 <h3 id="pylspluginsjedi_completioninclude_params"><code>pyls.plugins.jedi_completion.include_params</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Auto-completes methods and classes with tabstops for each parameter.</p>
 <h3 id="pylspluginsjedi_definitionenabled"><code>pyls.plugins.jedi_definition.enabled</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Enable or disable the plugin.</p>
 <h3 id="pylspluginsjedi_definitionfollow_builtin_imports"><code>pyls.plugins.jedi_definition.follow_builtin_imports</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>If follow_imports is True will decide if it follow builtin imports.</p>
 <h3 id="pylspluginsjedi_definitionfollow_imports"><code>pyls.plugins.jedi_definition.follow_imports</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>The goto call will follow imports.</p>
 <h3 id="pylspluginsjedi_hoverenabled"><code>pyls.plugins.jedi_hover.enabled</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Enable or disable the plugin.</p>
 <h3 id="pylspluginsjedi_referencesenabled"><code>pyls.plugins.jedi_references.enabled</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Enable or disable the plugin.</p>
 <h3 id="pylspluginsjedi_signature_helpenabled"><code>pyls.plugins.jedi_signature_help.enabled</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Enable or disable the plugin.</p>
 <h3 id="pylspluginsjedi_symbolsall_scopes"><code>pyls.plugins.jedi_symbols.all_scopes</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>If True lists the names of all scopes instead of only the module namespace.</p>
 <h3 id="pylspluginsjedi_symbolsenabled"><code>pyls.plugins.jedi_symbols.enabled</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Enable or disable the plugin.</p>
 <h3 id="pylspluginsmccabeenabled"><code>pyls.plugins.mccabe.enabled</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Enable or disable the plugin.</p>
 <h3 id="pylspluginsmccabethreshold"><code>pyls.plugins.mccabe.threshold</code></h3>
-<p>Type: <code>number</code></p>
-<p>Default: <code>15</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>number</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>15</code></p>
+</li>
+</ul>
 <p>The minimum threshold that triggers warnings about cyclomatic complexity.</p>
 <h3 id="pylspluginspreloadenabled"><code>pyls.plugins.preload.enabled</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Enable or disable the plugin.</p>
 <h3 id="pylspluginspreloadmodules"><code>pyls.plugins.preload.modules</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>vim.NIL</code></p>
-<p>Array items: <code>{type = "string"}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+<li>
+<p><em>Array items</em>: <code>{type = "string"}</code></p>
+</li>
+</ul>
 <p>List of modules to import on startup</p>
 <h3 id="pylspluginspycodestyleenabled"><code>pyls.plugins.pycodestyle.enabled</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Enable or disable the plugin.</p>
 <h3 id="pylspluginspycodestyleexclude"><code>pyls.plugins.pycodestyle.exclude</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>vim.NIL</code></p>
-<p>Array items: <code>{type = "string"}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+<li>
+<p><em>Array items</em>: <code>{type = "string"}</code></p>
+</li>
+</ul>
 <p>Exclude files or directories which match these patterns.</p>
 <h3 id="pylspluginspycodestylefilename"><code>pyls.plugins.pycodestyle.filename</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>vim.NIL</code></p>
-<p>Array items: <code>{type = "string"}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+<li>
+<p><em>Array items</em>: <code>{type = "string"}</code></p>
+</li>
+</ul>
 <p>When parsing directories\, only check filenames matching these patterns.</p>
 <h3 id="pylspluginspycodestylehangclosing"><code>pyls.plugins.pycodestyle.hangClosing</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>Hang closing bracket instead of matching indentation of opening bracket\'s line.</p>
 <h3 id="pylspluginspycodestyleignore"><code>pyls.plugins.pycodestyle.ignore</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>vim.NIL</code></p>
-<p>Array items: <code>{type = "string"}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+<li>
+<p><em>Array items</em>: <code>{type = "string"}</code></p>
+</li>
+</ul>
 <p>Ignore errors and warnings</p>
 <h3 id="pylspluginspycodestylemaxlinelength"><code>pyls.plugins.pycodestyle.maxLineLength</code></h3>
-<p>Type: <code>number</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>number</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>Set maximum allowed line length.</p>
 <h3 id="pylspluginspycodestyleselect"><code>pyls.plugins.pycodestyle.select</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>vim.NIL</code></p>
-<p>Array items: <code>{type = "string"}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+<li>
+<p><em>Array items</em>: <code>{type = "string"}</code></p>
+</li>
+</ul>
 <p>Select errors and warnings</p>
 <h3 id="pylspluginspydocstyleaddignore"><code>pyls.plugins.pydocstyle.addIgnore</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>vim.NIL</code></p>
-<p>Array items: <code>{type = "string"}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+<li>
+<p><em>Array items</em>: <code>{type = "string"}</code></p>
+</li>
+</ul>
 <p>Ignore errors and warnings in addition to the specified convention.</p>
 <h3 id="pylspluginspydocstyleaddselect"><code>pyls.plugins.pydocstyle.addSelect</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>vim.NIL</code></p>
-<p>Array items: <code>{type = "string"}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+<li>
+<p><em>Array items</em>: <code>{type = "string"}</code></p>
+</li>
+</ul>
 <p>Select errors and warnings in addition to the specified convention.</p>
 <h3 id="pylspluginspydocstyleconvention"><code>pyls.plugins.pydocstyle.convention</code></h3>
 <p><code>enum { "pep257", "numpy" }</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li><em>Default</em>: <code>vim.NIL</code></li>
+</ul>
 <p>Choose the basic list of checked errors by specifying an existing convention.</p>
 <h3 id="pylspluginspydocstyleenabled"><code>pyls.plugins.pydocstyle.enabled</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>Enable or disable the plugin.</p>
 <h3 id="pylspluginspydocstyleignore"><code>pyls.plugins.pydocstyle.ignore</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>vim.NIL</code></p>
-<p>Array items: <code>{type = "string"}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+<li>
+<p><em>Array items</em>: <code>{type = "string"}</code></p>
+</li>
+</ul>
 <p>Ignore errors and warnings</p>
 <h3 id="pylspluginspydocstylematch"><code>pyls.plugins.pydocstyle.match</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>"(?!test_).*\\.py"</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>"(?!test_).*\\.py"</code></p>
+</li>
+</ul>
 <p>Check only files that exactly match the given regular expression\; default is to match files that don\'t start with \'test_\' but end with \'.py\'.</p>
 <h3 id="pylspluginspydocstylematchdir"><code>pyls.plugins.pydocstyle.matchDir</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>"[^\\.].*"</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>"[^\\.].*"</code></p>
+</li>
+</ul>
 <p>Search only dirs that exactly match the given regular expression\; default is to match dirs which do not begin with a dot.</p>
 <h3 id="pylspluginspydocstyleselect"><code>pyls.plugins.pydocstyle.select</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>vim.NIL</code></p>
-<p>Array items: <code>{type = "string"}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+<li>
+<p><em>Array items</em>: <code>{type = "string"}</code></p>
+</li>
+</ul>
 <p>Select errors and warnings</p>
 <h3 id="pylspluginspyflakesenabled"><code>pyls.plugins.pyflakes.enabled</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Enable or disable the plugin.</p>
 <h3 id="pylspluginspylintargs"><code>pyls.plugins.pylint.args</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>vim.NIL</code></p>
-<p>Array items: <code>{type = "string"}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+<li>
+<p><em>Array items</em>: <code>{type = "string"}</code></p>
+</li>
+</ul>
 <p>Arguments to pass to pylint.</p>
 <h3 id="pylspluginspylintenabled"><code>pyls.plugins.pylint.enabled</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>Enable or disable the plugin.</p>
 <h3 id="pylspluginspylintexecutable"><code>pyls.plugins.pylint.executable</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>Executable to run pylint with. Enabling this will run pylint on unsaved files via stdin. Can slow down workflow. Only works with python3.</p>
 <h3 id="pylspluginsrope_completionenabled"><code>pyls.plugins.rope_completion.enabled</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Enable or disable the plugin.</p>
 <h3 id="pylspluginsyapfenabled"><code>pyls.plugins.yapf.enabled</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Enable or disable the plugin.</p>
 <h3 id="pylsropeextensionmodules"><code>pyls.rope.extensionModules</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>Builtin and c-extension modules that are allowed to be imported and inspected by rope.</p>
 <h3 id="pylsroperopefolder"><code>pyls.rope.ropeFolder</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>vim.NIL</code></p>
-<p>Array items: <code>{type = "string"}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+<li>
+<p><em>Array items</em>: <code>{type = "string"}</code></p>
+</li>
+</ul>
 <p>The name of the folder in which rope stores project configurations and data.  Pass `null` for not using such a folder at all.</p>
                 
               

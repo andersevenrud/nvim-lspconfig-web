@@ -852,7 +852,7 @@
         
           <li class="md-nav__item">
   <a href="#default-values" class="md-nav__link">
-    Default Values
+    Default values
   </a>
   
 </li>
@@ -1530,7 +1530,7 @@
         
           <li class="md-nav__item">
   <a href="#default-values" class="md-nav__link">
-    Default Values
+    Default values
   </a>
   
 </li>
@@ -1603,22 +1603,28 @@
 <h2 id="setup">Setup</h2>
 <div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">zeta_note</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
 </code></pre></div>
-<h3 id="default-values">Default Values</h3>
-<div class="highlight"><pre><span></span><code>  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;markdown&quot;</span> <span class="p">}</span>
-  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;.zeta.toml&quot;</span><span class="p">)</span>
+<h3 id="default-values">Default values</h3>
+<div class="highlight"><pre><span></span><code><span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;markdown&quot;</span> <span class="p">}</span>
+<span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;.zeta.toml&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="available-settings">Available settings</h2>
 <h3 id="zetanotecustomcommand"><code>zetaNote.customCommand</code></h3>
-<p>Type: <code>string</code></p>
+<ul>
+<li><em>Type</em>: <code>string</code></li>
+</ul>
 <p>When set use this command to run the language server.
-  The command is split on spaces\: first part is the command name\, the rest is the arguments.</p>
+ The command is split on spaces\: first part is the command name\, the rest is the arguments.</p>
 <h3 id="zetanotecustomcommanddir"><code>zetaNote.customCommandDir</code></h3>
-<p>Type: <code>string</code></p>
+<ul>
+<li><em>Type</em>: <code>string</code></li>
+</ul>
 <p>null</p>
 <h3 id="zetanotetraceserver"><code>zetaNote.trace.server</code></h3>
 <p><code>enum { "off", "messages", "verbose" }</code></p>
-<p>Default: <code>"verbose"</code></p>
+<ul>
+<li><em>Default</em>: <code>"verbose"</code></li>
+</ul>
 <p>Level of verbosity in communicating with the server</p>
                 
               

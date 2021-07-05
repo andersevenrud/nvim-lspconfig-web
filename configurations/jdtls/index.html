@@ -768,7 +768,7 @@
         
           <li class="md-nav__item">
   <a href="#default-values" class="md-nav__link">
-    Default Values
+    Default values
   </a>
   
 </li>
@@ -2041,7 +2041,7 @@
         
           <li class="md-nav__item">
   <a href="#default-values" class="md-nav__link">
-    Default Values
+    Default values
   </a>
   
 </li>
@@ -2628,318 +2628,680 @@ inferred. Please set the following environmental variables to match your install
 <h2 id="setup">Setup</h2>
 <div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">jdtls</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
 </code></pre></div>
-<h3 id="default-values">Default Values</h3>
-<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;vim.NIL/bin/java&quot;</span><span class="p">,</span> <span class="s2">&quot;-Declipse.application=org.eclipse.jdt.ls.core.id1&quot;</span><span class="p">,</span> <span class="s2">&quot;-Dosgi.bundles.defaultStartLevel=4&quot;</span><span class="p">,</span> <span class="s2">&quot;-Declipse.product=org.eclipse.jdt.ls.core.product&quot;</span><span class="p">,</span> <span class="s2">&quot;-Dlog.protocol=true&quot;</span><span class="p">,</span> <span class="s2">&quot;-Dlog.level=ALL&quot;</span><span class="p">,</span> <span class="s2">&quot;-Xms1g&quot;</span><span class="p">,</span> <span class="s2">&quot;-Xmx2G&quot;</span><span class="p">,</span> <span class="s2">&quot;-jar&quot;</span><span class="p">,</span> <span class="s2">&quot;vim.NIL&quot;</span><span class="p">,</span> <span class="s2">&quot;-configuration&quot;</span><span class="p">,</span> <span class="s2">&quot;vim.NIL&quot;</span><span class="p">,</span> <span class="s2">&quot;-data&quot;</span><span class="p">,</span> <span class="s2">&quot;vim.NIL&quot;</span><span class="p">,</span> <span class="s2">&quot;--add-modules=ALL-SYSTEM&quot;</span><span class="p">,</span> <span class="s2">&quot;--add-opens java.base/java.util=ALL-UNNAMED&quot;</span><span class="p">,</span> <span class="s2">&quot;--add-opens java.base/java.lang=ALL-UNNAMED&quot;</span> <span class="p">}</span>
-  <span class="n">cmd_env</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">GRADLE_HOME</span> <span class="o">=</span> <span class="s2">&quot;/usr/share/java/gradle&quot;</span><span class="p">,</span>
-    <span class="n">JAR</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">NIL</span>
-  <span class="p">}</span>
-  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;java&quot;</span> <span class="p">}</span>
-  <span class="n">handlers</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="p">[</span><span class="s2">&quot;language/status&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="o">&lt;</span><span class="kr">function</span> <span class="err">1&gt;,</span>
-    <span class="err">[&quot;</span><span class="nf">textDocument</span><span class="o">/</span><span class="n">codeAction</span><span class="s2">&quot;] = &lt;function 2&gt;,</span>
-<span class="s2">    [&quot;</span><span class="n">textDocument</span><span class="o">/</span><span class="n">rename</span><span class="s2">&quot;] = &lt;function 3&gt;,</span>
-<span class="s2">    [&quot;</span><span class="n">workspace</span><span class="o">/</span><span class="n">applyEdit</span><span class="s2">&quot;] = &lt;function 4&gt;</span>
-<span class="s2">  }</span>
-<span class="s2">  init_options = {</span>
-<span class="s2">    jvm_args = {},</span>
-<span class="s2">    workspace = &quot;</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">anders</span><span class="o">/</span><span class="n">workspace</span><span class="s2">&quot;</span>
-<span class="s2">  }</span>
-<span class="s2">  root_dir = root_pattern(&quot;</span><span class="p">.</span><span class="n">git</span><span class="s2">&quot;)</span>
+<h3 id="default-values">Default values</h3>
+<div class="highlight"><pre><span></span><code><span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;vim.NIL/bin/java&quot;</span><span class="p">,</span> <span class="s2">&quot;-Declipse.application=org.eclipse.jdt.ls.core.id1&quot;</span><span class="p">,</span> <span class="s2">&quot;-Dosgi.bundles.defaultStartLevel=4&quot;</span><span class="p">,</span> <span class="s2">&quot;-Declipse.product=org.eclipse.jdt.ls.core.product&quot;</span><span class="p">,</span> <span class="s2">&quot;-Dlog.protocol=true&quot;</span><span class="p">,</span> <span class="s2">&quot;-Dlog.level=ALL&quot;</span><span class="p">,</span> <span class="s2">&quot;-Xms1g&quot;</span><span class="p">,</span> <span class="s2">&quot;-Xmx2G&quot;</span><span class="p">,</span> <span class="s2">&quot;-jar&quot;</span><span class="p">,</span> <span class="s2">&quot;vim.NIL&quot;</span><span class="p">,</span> <span class="s2">&quot;-configuration&quot;</span><span class="p">,</span> <span class="s2">&quot;vim.NIL&quot;</span><span class="p">,</span> <span class="s2">&quot;-data&quot;</span><span class="p">,</span> <span class="s2">&quot;vim.NIL&quot;</span><span class="p">,</span> <span class="s2">&quot;--add-modules=ALL-SYSTEM&quot;</span><span class="p">,</span> <span class="s2">&quot;--add-opens java.base/java.util=ALL-UNNAMED&quot;</span><span class="p">,</span> <span class="s2">&quot;--add-opens java.base/java.lang=ALL-UNNAMED&quot;</span> <span class="p">}</span>
+<span class="n">cmd_env</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="n">GRADLE_HOME</span> <span class="o">=</span> <span class="s2">&quot;/usr/share/java/gradle&quot;</span><span class="p">,</span>
+  <span class="n">JAR</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">NIL</span>
+<span class="p">}</span>
+<span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;java&quot;</span> <span class="p">}</span>
+<span class="n">handlers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="p">[</span><span class="s2">&quot;language/status&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="o">&lt;</span><span class="kr">function</span> <span class="err">1&gt;,</span>
+  <span class="err">[&quot;</span><span class="nf">textDocument</span><span class="o">/</span><span class="n">codeAction</span><span class="s2">&quot;] = &lt;function 2&gt;,</span>
+<span class="s2">  [&quot;</span><span class="n">textDocument</span><span class="o">/</span><span class="n">rename</span><span class="s2">&quot;] = &lt;function 3&gt;,</span>
+<span class="s2">  [&quot;</span><span class="n">workspace</span><span class="o">/</span><span class="n">applyEdit</span><span class="s2">&quot;] = &lt;function 4&gt;</span>
+<span class="s2">}</span>
+<span class="s2">init_options = {</span>
+<span class="s2">  jvm_args = {},</span>
+<span class="s2">  workspace = &quot;</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">anders</span><span class="o">/</span><span class="n">workspace</span><span class="s2">&quot;</span>
+<span class="s2">}</span>
+<span class="s2">root_dir = root_pattern(&quot;</span><span class="p">.</span><span class="n">git</span><span class="s2">&quot;)</span>
 </code></pre></div>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="available-settings">Available settings</h2>
 <h3 id="javaautobuildenabled"><code>java.autobuild.enabled</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Enable\/disable the \'auto build\'</p>
 <h3 id="javacodegenerationgeneratecomments"><code>java.codeGeneration.generateComments</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>Generate method comments when generating the methods.</p>
 <h3 id="javacodegenerationhashcodeequalsuseinstanceof"><code>java.codeGeneration.hashCodeEquals.useInstanceof</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>Use \'instanceof\' to compare types when generating the hashCode and equals methods.</p>
 <h3 id="javacodegenerationhashcodeequalsusejava7objects"><code>java.codeGeneration.hashCodeEquals.useJava7Objects</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>Use Objects.hash and Objects.equals when generating the hashCode and equals methods. This setting only applies to Java 7 and higher.</p>
 <h3 id="javacodegenerationinsertionlocation"><code>java.codeGeneration.insertionLocation</code></h3>
 <p><code>enum { "afterCursor", "beforeCursor", "lastMember" }</code></p>
-<p>Default: <code>"afterCursor"</code></p>
+<ul>
+<li><em>Default</em>: <code>"afterCursor"</code></li>
+</ul>
 <p>Specifies the insertion location of the code generated by source actions.</p>
 <h3 id="javacodegenerationtostringcodestyle"><code>java.codeGeneration.toString.codeStyle</code></h3>
 <p><code>enum { "STRING_CONCATENATION", "STRING_BUILDER", "STRING_BUILDER_CHAINED", "STRING_FORMAT" }</code></p>
-<p>Default: <code>"STRING_CONCATENATION"</code></p>
+<ul>
+<li><em>Default</em>: <code>"STRING_CONCATENATION"</code></li>
+</ul>
 <p>The code style for generating the toString method.</p>
 <h3 id="javacodegenerationtostringlimitelements"><code>java.codeGeneration.toString.limitElements</code></h3>
-<p>Type: <code>integer</code></p>
-<p>Default: <code>0</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>integer</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>0</code></p>
+</li>
+</ul>
 <p>Limit number of items in arrays\/collections\/maps to list\, if 0 then list all.</p>
 <h3 id="javacodegenerationtostringlistarraycontents"><code>java.codeGeneration.toString.listArrayContents</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>List contents of arrays instead of using native toString().</p>
 <h3 id="javacodegenerationtostringskipnullvalues"><code>java.codeGeneration.toString.skipNullValues</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>Skip null values when generating the toString method.</p>
 <h3 id="javacodegenerationtostringtemplate"><code>java.codeGeneration.toString.template</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>"${object.className} [${member.name()}=${member.value}, ${otherMembers}]"</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>"${object.className} [${member.name()}=${member.value}, ${otherMembers}]"</code></p>
+</li>
+</ul>
 <p>The template for generating the toString method.</p>
 <h3 id="javacodegenerationuseblocks"><code>java.codeGeneration.useBlocks</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>Use blocks in \'if\' statements when generating the methods.</p>
 <h3 id="javacompletionenabled"><code>java.completion.enabled</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Enable\/disable code completion support</p>
 <h3 id="javacompletionfavoritestaticmembers"><code>java.completion.favoriteStaticMembers</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>{ "org.junit.Assert.*", "org.junit.Assume.*", "org.junit.jupiter.api.Assertions.*", "org.junit.jupiter.api.Assumptions.*", "org.junit.jupiter.api.DynamicContainer.*", "org.junit.jupiter.api.DynamicTest.*", "org.mockito.Mockito.*", "org.mockito.ArgumentMatchers.*", "org.mockito.Answers.*" }</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>{ "org.junit.Assert.*", "org.junit.Assume.*", "org.junit.jupiter.api.Assertions.*", "org.junit.jupiter.api.Assumptions.*", "org.junit.jupiter.api.DynamicContainer.*", "org.junit.jupiter.api.DynamicTest.*", "org.mockito.Mockito.*", "org.mockito.ArgumentMatchers.*", "org.mockito.Answers.*" }</code></p>
+</li>
+</ul>
 <p>Defines a list of static members or types with static members. Content assist will propose those static members even if the import is missing.</p>
 <h3 id="javacompletionfilteredtypes"><code>java.completion.filteredTypes</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>{ "java.awt.*", "com.sun.*", "sun.*" }</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>{ "java.awt.*", "com.sun.*", "sun.*" }</code></p>
+</li>
+</ul>
 <p>Defines the type filters. All types whose fully qualified name matches the selected filter strings will be ignored in content assist or quick fix proposals and when organizing imports. For example \'java.awt.*\' will hide all types from the awt packages.</p>
 <h3 id="javacompletionguessmethodarguments"><code>java.completion.guessMethodArguments</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>When set to true\, method arguments are guessed when a method is selected from as list of code assist proposals.</p>
 <h3 id="javacompletionimportorder"><code>java.completion.importOrder</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>{ "java", "javax", "com", "org" }</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>{ "java", "javax", "com", "org" }</code></p>
+</li>
+</ul>
 <p>Defines the sorting order of import statements. A package or type name prefix (e.g. \'org.eclipse\') is a valid entry. An import is always added to the most specific group.</p>
 <h3 id="javacompletionmaxresults"><code>java.completion.maxResults</code></h3>
-<p>Type: <code>integer</code></p>
-<p>Default: <code>0</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>integer</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>0</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="javacompletionoverwrite"><code>java.completion.overwrite</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>When set to true\, code completion overwrites the current text. When set to false\, code is simply added instead.</p>
 <h3 id="javaconfigurationcheckprojectsettingsexclusions"><code>java.configuration.checkProjectSettingsExclusions</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Controls whether to exclude extension-generated project settings files (.project\, .classpath\, .factorypath\, .settings\/) from the file explorer.</p>
 <h3 id="javaconfigurationmavenglobalsettings"><code>java.configuration.maven.globalSettings</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>Path to Maven\'s global settings.xml</p>
 <h3 id="javaconfigurationmavennotcoveredpluginexecutionseverity"><code>java.configuration.maven.notCoveredPluginExecutionSeverity</code></h3>
 <p><code>enum { "ignore", "warning", "error" }</code></p>
-<p>Default: <code>"warning"</code></p>
+<ul>
+<li><em>Default</em>: <code>"warning"</code></li>
+</ul>
 <p>Specifies severity if the plugin execution is not covered by Maven build lifecycle.</p>
 <h3 id="javaconfigurationmavenusersettings"><code>java.configuration.maven.userSettings</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>Path to Maven\'s user settings.xml</p>
 <h3 id="javaconfigurationruntimes"><code>java.configuration.runtimes</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>{}</code></p>
-<p>Array items: <code>{additionalProperties = false,default = vim.empty_dict(),properties = {default = {description = "Is default runtime? Only one runtime can be default.",type = "boolean"},javadoc = {description = "JDK javadoc path.",type = "string"},name = {description = "Java Execution Environment name. Must be unique.",enum = { "J2SE-1.5", "JavaSE-1.6", "JavaSE-1.7", "JavaSE-1.8", "JavaSE-9", "JavaSE-10", "JavaSE-11", "JavaSE-12", "JavaSE-13", "JavaSE-14", "JavaSE-15", "JavaSE-16" },type = "string"},path = {description = 'JDK home path. Should be the JDK installation directory, not the Java bin path.\n On Windows, backslashes must be escaped, i.e.\n"path":"C:\\\\Program Files\\\\Java\\\\jdk1.8.0_161".',pattern = ".*(?&lt;!\\/bin|\\/bin\\/|\\\\bin|\\\\bin\\\\)$",type = "string"},sources = {description = "JDK sources path.",type = "string"}},required = { "path", "name" },type = "object"}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>{}</code></p>
+</li>
+<li>
+<p><em>Array items</em>: <code>{additionalProperties = false,default = vim.empty_dict(),properties = {default = {description = "Is default runtime? Only one runtime can be default.",type = "boolean"},javadoc = {description = "JDK javadoc path.",type = "string"},name = {description = "Java Execution Environment name. Must be unique.",enum = { "J2SE-1.5", "JavaSE-1.6", "JavaSE-1.7", "JavaSE-1.8", "JavaSE-9", "JavaSE-10", "JavaSE-11", "JavaSE-12", "JavaSE-13", "JavaSE-14", "JavaSE-15", "JavaSE-16" },type = "string"},path = {description = 'JDK home path. Should be the JDK installation directory, not the Java bin path.\n On Windows, backslashes must be escaped, i.e.\n"path":"C:\\\\Program Files\\\\Java\\\\jdk1.8.0_161".',pattern = ".*(?&lt;!\\/bin|\\/bin\\/|\\\\bin|\\\\bin\\\\)$",type = "string"},sources = {description = "JDK sources path.",type = "string"}},required = { "path", "name" },type = "object"}</code></p>
+</li>
+</ul>
 <p>Map Java Execution Environments to local JDKs.</p>
 <h3 id="javaconfigurationupdatebuildconfiguration"><code>java.configuration.updateBuildConfiguration</code></h3>
 <p><code>enum { "disabled", "interactive", "automatic" }</code></p>
-<p>Default: <code>"interactive"</code></p>
+<ul>
+<li><em>Default</em>: <code>"interactive"</code></li>
+</ul>
 <p>Specifies how modifications on build files update the Java classpath\/configuration</p>
 <h3 id="javacontentproviderpreferred"><code>java.contentProvider.preferred</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>Preferred content provider (a 3rd party decompiler id\, usually)</p>
 <h3 id="javaeclipsedownloadsources"><code>java.eclipse.downloadSources</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>Enable\/disable download of Maven source artifacts for Eclipse projects.</p>
 <h3 id="javaerrorsincompleteclasspathseverity"><code>java.errors.incompleteClasspath.severity</code></h3>
 <p><code>enum { "ignore", "info", "warning", "error" }</code></p>
-<p>Default: <code>"warning"</code></p>
+<ul>
+<li><em>Default</em>: <code>"warning"</code></li>
+</ul>
 <p>Specifies the severity of the message when the classpath is incomplete for a Java file</p>
 <h3 id="javafoldingrangeenabled"><code>java.foldingRange.enabled</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Enable\/disable smart folding range support. If disabled\, it will use the default indentation-based folding range provided by VS Code.</p>
 <h3 id="javaformatcommentsenabled"><code>java.format.comments.enabled</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Includes the comments during code formatting.</p>
 <h3 id="javaformatenabled"><code>java.format.enabled</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Enable\/disable default Java formatter</p>
 <h3 id="javaformatontypeenabled"><code>java.format.onType.enabled</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Enable\/disable automatic block formatting when typing `\;`\, `\&lt;enter>` or `}`</p>
 <h3 id="javaformatsettingsprofile"><code>java.format.settings.profile</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>Optional formatter profile name from the Eclipse formatter settings.</p>
 <h3 id="javaformatsettingsurl"><code>java.format.settings.url</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="javahome"><code>java.home</code></h3>
-<p>Type: <code>string|null</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string|null</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>Specifies the folder path to the JDK (11 or more recent) used to launch the Java Language Server.
-  On Windows\, backslashes must be escaped\, i.e.
-  \"java.home\"\:\"C\:\\Program Files\\Java\\jdk11.0_8\"</p>
+ On Windows\, backslashes must be escaped\, i.e.
+ \"java.home\"\:\"C\:\\Program Files\\Java\\jdk11.0_8\"</p>
 <h3 id="javaimplementationscodelensenabled"><code>java.implementationsCodeLens.enabled</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>Enable\/disable the implementations code lens.</p>
 <h3 id="javaimportexclusions"><code>java.import.exclusions</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>{ "**/node_modules/**", "**/.metadata/**", "**/archetype-resources/**", "**/META-INF/maven/**" }</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>{ "**/node_modules/**", "**/.metadata/**", "**/archetype-resources/**", "**/META-INF/maven/**" }</code></p>
+</li>
+</ul>
 <p>Configure glob patterns for excluding folders. Use `!` to negate patterns to allow subfolders imports. You have to include a parent directory. The order is important.</p>
 <h3 id="javaimportgradlearguments"><code>java.import.gradle.arguments</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>Arguments to pass to Gradle.</p>
 <h3 id="javaimportgradleenabled"><code>java.import.gradle.enabled</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Enable\/disable the Gradle importer.</p>
 <h3 id="javaimportgradlehome"><code>java.import.gradle.home</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>Use Gradle from the specified local installation directory or GRADLE_HOME if the Gradle wrapper is missing or disabled and no \'java.import.gradle.version\' is specified.</p>
 <h3 id="javaimportgradlejavahome"><code>java.import.gradle.java.home</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>The location to the JVM used to run the Gradle daemon.</p>
 <h3 id="javaimportgradlejvmarguments"><code>java.import.gradle.jvmArguments</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>JVM arguments to pass to Gradle.</p>
 <h3 id="javaimportgradleofflineenabled"><code>java.import.gradle.offline.enabled</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>Enable\/disable the Gradle offline mode.</p>
 <h3 id="javaimportgradleuserhome"><code>java.import.gradle.user.home</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>Setting for GRADLE_USER_HOME.</p>
 <h3 id="javaimportgradleversion"><code>java.import.gradle.version</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>Use Gradle from the specific version if the Gradle wrapper is missing or disabled.</p>
 <h3 id="javaimportgradlewrapperenabled"><code>java.import.gradle.wrapper.enabled</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Use Gradle from the \'gradle-wrapper.properties\' file.</p>
 <h3 id="javaimportmavenenabled"><code>java.import.maven.enabled</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Enable\/disable the Maven importer.</p>
 <h3 id="javaimportsgradlewrapperchecksums"><code>java.imports.gradle.wrapper.checksums</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>{}</code></p>
-<p>Array items: <code>{additionalProperties = false,default = vim.empty_dict(),properties = {allowed = {default = true,label = "Is allowed?",type = "boolean"},sha256 = {label = "SHA-256 checksum.",type = "string"}},required = { "sha256" },type = "object",uniqueItems = true}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>{}</code></p>
+</li>
+<li>
+<p><em>Array items</em>: <code>{additionalProperties = false,default = vim.empty_dict(),properties = {allowed = {default = true,label = "Is allowed?",type = "boolean"},sha256 = {label = "SHA-256 checksum.",type = "string"}},required = { "sha256" },type = "object",uniqueItems = true}</code></p>
+</li>
+</ul>
 <p>Defines allowed\/disallowed SHA-256 checksums of Gradle Wrappers</p>
 <h3 id="javajdtlsvmargs"><code>java.jdt.ls.vmargs</code></h3>
-<p>Type: <code>string|null</code></p>
-<p>Default: <code>"-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m"</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string|null</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>"-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m"</code></p>
+</li>
+</ul>
 <p>Specifies extra VM arguments used to launch the Java Language Server. Eg. use `-XX\:+UseParallelGC -XX\:GCTimeRatio\=4 -XX\:AdaptiveSizePolicyWeight\=90 -Dsun.zip.disableMemoryMapping\=true -Xmx1G -Xms100m ` to optimize memory usage with the parallel garbage collector</p>
 <h3 id="javamavendownloadsources"><code>java.maven.downloadSources</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>Enable\/disable download of Maven source artifacts as part of importing Maven projects.</p>
 <h3 id="javamavenupdatesnapshots"><code>java.maven.updateSnapshots</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>Force update of Snapshots\/Releases.</p>
 <h3 id="javamaxconcurrentbuilds"><code>java.maxConcurrentBuilds</code></h3>
-<p>Type: <code>integer</code></p>
-<p>Default: <code>1</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>integer</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>1</code></p>
+</li>
+</ul>
 <p>Max simultaneous project builds</p>
 <h3 id="javaprogressreportsenabled"><code>java.progressReports.enabled</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>[Experimental] Enable\/disable progress reports from background processes on the server.</p>
 <h3 id="javaprojectimporthint"><code>java.project.importHint</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Enable\/disable the server-mode switch information\, when Java projects import is skipped on startup.</p>
 <h3 id="javaprojectimportonfirsttimestartup"><code>java.project.importOnFirstTimeStartup</code></h3>
 <p><code>enum { "disabled", "interactive", "automatic" }</code></p>
-<p>Default: <code>"interactive"</code></p>
+<ul>
+<li><em>Default</em>: <code>"interactive"</code></li>
+</ul>
 <p>Specifies whether to import the Java projects\, when opening the folder in Hybrid mode for the first time.</p>
 <h3 id="javaprojectoutputpath"><code>java.project.outputPath</code></h3>
-<p>Type: <code>string|null</code></p>
-<p>Default: <code>""</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string|null</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>""</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="javaprojectreferencedlibraries"><code>java.project.referencedLibraries</code></h3>
-<p>Type: <code>array|object</code></p>
-<p>Default: <code>{ "lib/**/*.jar" }</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array|object</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>{ "lib/**/*.jar" }</code></p>
+</li>
+</ul>
 <p>Configure glob patterns for referencing local libraries to a Java project.</p>
 <h3 id="javaprojectresourcefilters"><code>java.project.resourceFilters</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>{ "node_modules", ".git" }</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>{ "node_modules", ".git" }</code></p>
+</li>
+</ul>
 <p>Excludes files and folders from being refreshed by the Java Language Server\, which can improve the overall performance. For example\, [\"node_modules\"\,\".git\"] will exclude all files and folders named \'node_modules\' or \'.git\'. Defaults to [\"node_modules\"\,\".git\"].</p>
 <h3 id="javaprojectsourcepaths"><code>java.project.sourcePaths</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>{}</code></p>
-<p>Array items: <code>{type = "string"}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>{}</code></p>
+</li>
+<li>
+<p><em>Array items</em>: <code>{type = "string"}</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="javarecommendationsdependencyanalyticsshow"><code>java.recommendations.dependency.analytics.show</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Show the recommended Dependency Analytics extension.</p>
 <h3 id="javareferencesincludeaccessors"><code>java.references.includeAccessors</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Include getter\, setter and builder\/constructor when finding references.</p>
 <h3 id="javareferencesincludedecompiledsources"><code>java.references.includeDecompiledSources</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Include the decompiled sources when finding references.</p>
 <h3 id="javareferencescodelensenabled"><code>java.referencesCodeLens.enabled</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>Enable\/disable the references code lens.</p>
 <h3 id="javasaveactionsorganizeimports"><code>java.saveActions.organizeImports</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>Enable\/disable auto organize imports on save action</p>
 <h3 id="javaselectionrangeenabled"><code>java.selectionRange.enabled</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Enable\/disable Smart Selection support for Java. Disabling this option will not affect the VS Code built-in word-based and bracket-based smart selection.</p>
 <h3 id="javasemantichighlightingenabled"><code>java.semanticHighlighting.enabled</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Enable\/disable the semantic highlighting.</p>
 <h3 id="javaserverlaunchmode"><code>java.server.launchMode</code></h3>
 <p><code>enum { "Standard", "LightWeight", "Hybrid" }</code></p>
-<p>Default: <code>"Hybrid"</code></p>
+<ul>
+<li><em>Default</em>: <code>"Hybrid"</code></li>
+</ul>
 <p>The launch mode for the Java extension</p>
 <h3 id="javasettingsurl"><code>java.settings.url</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="javashowbuildstatusonstartenabled"><code>java.showBuildStatusOnStart.enabled</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>Automatically show build status on startup.</p>
 <h3 id="javasignaturehelpenabled"><code>java.signatureHelp.enabled</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>Enable\/disable the signature help.</p>
 <h3 id="javasourcesorganizeimportsstarthreshold"><code>java.sources.organizeImports.starThreshold</code></h3>
-<p>Type: <code>integer</code></p>
-<p>Default: <code>99</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>integer</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>99</code></p>
+</li>
+</ul>
 <p>Specifies the number of imports added before a star-import declaration is used.</p>
 <h3 id="javasourcesorganizeimportsstaticstarthreshold"><code>java.sources.organizeImports.staticStarThreshold</code></h3>
-<p>Type: <code>integer</code></p>
-<p>Default: <code>99</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>integer</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>99</code></p>
+</li>
+</ul>
 <p>Specifies the number of static imports added before a star-import declaration is used.</p>
 <h3 id="javasymbolsincludesourcemethoddeclarations"><code>java.symbols.includeSourceMethodDeclarations</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>null</p>
 <h3 id="javatemplatesfileheader"><code>java.templates.fileHeader</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>{}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>{}</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="javatemplatestypecomment"><code>java.templates.typeComment</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>{}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>{}</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="javatraceserver"><code>java.trace.server</code></h3>
 <p><code>enum { "off", "messages", "verbose" }</code></p>
-<p>Default: <code>"off"</code></p>
+<ul>
+<li><em>Default</em>: <code>"off"</code></li>
+</ul>
 <p>Traces the communication between VS Code and the Java language server.</p>
 <h3 id="javatypehierarchylazyload"><code>java.typeHierarchy.lazyLoad</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>Enable\/disable lazy loading the content in type hierarchy. Lazy loading could save a lot of loading time but every type should be expanded manually to load its content.</p>
                 
               

@@ -1135,7 +1135,7 @@
         
           <li class="md-nav__item">
   <a href="#default-values" class="md-nav__link">
-    Default Values
+    Default values
   </a>
   
 </li>
@@ -2125,7 +2125,7 @@
         
           <li class="md-nav__item">
   <a href="#default-values" class="md-nav__link">
-    Default Values
+    Default values
   </a>
   
 </li>
@@ -2778,13 +2778,13 @@
 <ul>
 <li>CargoReload: Reload current cargo workspace</li>
 </ul>
-<h3 id="default-values">Default Values</h3>
-<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;rust-analyzer&quot;</span> <span class="p">}</span>
-  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;rust&quot;</span> <span class="p">}</span>
-  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;Cargo.toml&quot;</span><span class="p">,</span> <span class="s2">&quot;rust-project.json&quot;</span><span class="p">)</span>
-  <span class="n">settings</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="p">[</span><span class="s2">&quot;rust-analyzer&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
-  <span class="p">}</span>
+<h3 id="default-values">Default values</h3>
+<div class="highlight"><pre><span></span><code><span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;rust-analyzer&quot;</span> <span class="p">}</span>
+<span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;rust&quot;</span> <span class="p">}</span>
+<span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;Cargo.toml&quot;</span><span class="p">,</span> <span class="s2">&quot;rust-project.json&quot;</span><span class="p">)</span>
+<span class="n">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="p">[</span><span class="s2">&quot;rust-analyzer&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="available-settings">Available settings</h2>
@@ -2793,340 +2793,790 @@
 <h3 id="generated-start"><code>$generated-start</code></h3>
 <p>null</p>
 <h3 id="rust-analyzerassistallowmergingintoglobimports"><code>rust-analyzer.assist.allowMergingIntoGlobImports</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerassistimportenforcegranularity"><code>rust-analyzer.assist.importEnforceGranularity</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerassistimportgranularity"><code>rust-analyzer.assist.importGranularity</code></h3>
 <p><code>enum { "preserve", "crate", "module", "item" }</code></p>
-<p>Default: <code>"crate"</code></p>
+<ul>
+<li><em>Default</em>: <code>"crate"</code></li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerassistimportgroup"><code>rust-analyzer.assist.importGroup</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerassistimportprefix"><code>rust-analyzer.assist.importPrefix</code></h3>
 <p><code>enum { "plain", "self", "crate" }</code></p>
-<p>Default: <code>"plain"</code></p>
+<ul>
+<li><em>Default</em>: <code>"plain"</code></li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzercallinfofull"><code>rust-analyzer.callInfo.full</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzercargoallfeatures"><code>rust-analyzer.cargo.allFeatures</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzercargoautoreload"><code>rust-analyzer.cargo.autoreload</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzercargofeatures"><code>rust-analyzer.cargo.features</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>{}</code></p>
-<p>Array items: <code>{type = "string"}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>{}</code></p>
+</li>
+<li>
+<p><em>Array items</em>: <code>{type = "string"}</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzercargonodefaultfeatures"><code>rust-analyzer.cargo.noDefaultFeatures</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzercargonosysroot"><code>rust-analyzer.cargo.noSysroot</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzercargorunbuildscripts"><code>rust-analyzer.cargo.runBuildScripts</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzercargotarget"><code>rust-analyzer.cargo.target</code></h3>
-<p>Type: <code>null|string</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>null|string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzercargounsettest"><code>rust-analyzer.cargo.unsetTest</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>{ "core" }</code></p>
-<p>Array items: <code>{type = "string"}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>{ "core" }</code></p>
+</li>
+<li>
+<p><em>Array items</em>: <code>{type = "string"}</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzercargouserustcwrapperforbuildscripts"><code>rust-analyzer.cargo.useRustcWrapperForBuildScripts</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzercargorunner"><code>rust-analyzer.cargoRunner</code></h3>
-<p>Type: <code>null|string</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>null|string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>Custom cargo runner extension ID.</p>
 <h3 id="rust-analyzercheckonsaveallfeatures"><code>rust-analyzer.checkOnSave.allFeatures</code></h3>
-<p>Type: <code>null|boolean</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>null|boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzercheckonsavealltargets"><code>rust-analyzer.checkOnSave.allTargets</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzercheckonsavecommand"><code>rust-analyzer.checkOnSave.command</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>"check"</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>"check"</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzercheckonsaveenable"><code>rust-analyzer.checkOnSave.enable</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzercheckonsaveextraargs"><code>rust-analyzer.checkOnSave.extraArgs</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>{}</code></p>
-<p>Array items: <code>{type = "string"}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>{}</code></p>
+</li>
+<li>
+<p><em>Array items</em>: <code>{type = "string"}</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzercheckonsavefeatures"><code>rust-analyzer.checkOnSave.features</code></h3>
-<p>Type: <code>null|array</code></p>
-<p>Default: <code>vim.NIL</code></p>
-<p>Array items: <code>{type = "string"}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>null|array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+<li>
+<p><em>Array items</em>: <code>{type = "string"}</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzercheckonsavenodefaultfeatures"><code>rust-analyzer.checkOnSave.noDefaultFeatures</code></h3>
-<p>Type: <code>null|boolean</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>null|boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzercheckonsaveoverridecommand"><code>rust-analyzer.checkOnSave.overrideCommand</code></h3>
-<p>Type: <code>null|array</code></p>
-<p>Default: <code>vim.NIL</code></p>
-<p>Array items: <code>{type = "string"}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>null|array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+<li>
+<p><em>Array items</em>: <code>{type = "string"}</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzercheckonsavetarget"><code>rust-analyzer.checkOnSave.target</code></h3>
-<p>Type: <code>null|string</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>null|string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzercompletionaddcallargumentsnippets"><code>rust-analyzer.completion.addCallArgumentSnippets</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzercompletionaddcallparenthesis"><code>rust-analyzer.completion.addCallParenthesis</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzercompletionautoimportenable"><code>rust-analyzer.completion.autoimport.enable</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzercompletionautoselfenable"><code>rust-analyzer.completion.autoself.enable</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzercompletionpostfixenable"><code>rust-analyzer.completion.postfix.enable</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerdebugengine"><code>rust-analyzer.debug.engine</code></h3>
 <p><code>enum { "auto", "vadimcn.vscode-lldb", "ms-vscode.cpptools" }</code></p>
-<p>Default: <code>"auto"</code></p>
+<ul>
+<li><em>Default</em>: <code>"auto"</code></li>
+</ul>
 <p>Preferred debug engine.</p>
 <h3 id="rust-analyzerdebugenginesettings"><code>rust-analyzer.debug.engineSettings</code></h3>
-<p>Type: <code>object</code></p>
-<p>Default: <code>vim.empty_dict()</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>object</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.empty_dict()</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerdebugopendebugpane"><code>rust-analyzer.debug.openDebugPane</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerdebugsourcefilemap"><code>rust-analyzer.debug.sourceFileMap</code></h3>
-<p>Type: <code>object|string</code></p>
-<p>Default: <code>{["/rustc/&lt;id&gt;"] = "${env:USERPROFILE}/.rustup/toolchains/&lt;toolchain-id&gt;/lib/rustlib/src/rust"}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>object|string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>{["/rustc/&lt;id&gt;"] = "${env:USERPROFILE}/.rustup/toolchains/&lt;toolchain-id&gt;/lib/rustlib/src/rust"}</code></p>
+</li>
+</ul>
 <p>Optional source file mappings passed to the debug engine.</p>
 <h3 id="rust-analyzerdiagnosticsdisabled"><code>rust-analyzer.diagnostics.disabled</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>{}</code></p>
-<p>Array items: <code>{type = "string"}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>{}</code></p>
+</li>
+<li>
+<p><em>Array items</em>: <code>{type = "string"}</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerdiagnosticsenable"><code>rust-analyzer.diagnostics.enable</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerdiagnosticsenableexperimental"><code>rust-analyzer.diagnostics.enableExperimental</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerdiagnosticsremapprefix"><code>rust-analyzer.diagnostics.remapPrefix</code></h3>
-<p>Type: <code>object</code></p>
-<p>Default: <code>vim.empty_dict()</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>object</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.empty_dict()</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerdiagnosticswarningsashint"><code>rust-analyzer.diagnostics.warningsAsHint</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>{}</code></p>
-<p>Array items: <code>{type = "string"}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>{}</code></p>
+</li>
+<li>
+<p><em>Array items</em>: <code>{type = "string"}</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerdiagnosticswarningsasinfo"><code>rust-analyzer.diagnostics.warningsAsInfo</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>{}</code></p>
-<p>Array items: <code>{type = "string"}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>{}</code></p>
+</li>
+<li>
+<p><em>Array items</em>: <code>{type = "string"}</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerexperimentalprocattrmacros"><code>rust-analyzer.experimental.procAttrMacros</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerfilesexcludedirs"><code>rust-analyzer.files.excludeDirs</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>{}</code></p>
-<p>Array items: <code>{type = "string"}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>{}</code></p>
+</li>
+<li>
+<p><em>Array items</em>: <code>{type = "string"}</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerfileswatcher"><code>rust-analyzer.files.watcher</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>"client"</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>"client"</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerhighlightingstrings"><code>rust-analyzer.highlighting.strings</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerhoverdocumentation"><code>rust-analyzer.hover.documentation</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerhoverlinksinhover"><code>rust-analyzer.hover.linksInHover</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerhoveractionsdebug"><code>rust-analyzer.hoverActions.debug</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerhoveractionsenable"><code>rust-analyzer.hoverActions.enable</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerhoveractionsgototypedef"><code>rust-analyzer.hoverActions.gotoTypeDef</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerhoveractionsimplementations"><code>rust-analyzer.hoverActions.implementations</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerhoveractionsreferences"><code>rust-analyzer.hoverActions.references</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerhoveractionsrun"><code>rust-analyzer.hoverActions.run</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerinlayhintschaininghints"><code>rust-analyzer.inlayHints.chainingHints</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerinlayhintsenable"><code>rust-analyzer.inlayHints.enable</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Whether to show inlay hints.</p>
 <h3 id="rust-analyzerinlayhintsmaxlength"><code>rust-analyzer.inlayHints.maxLength</code></h3>
-<p>Type: <code>null|integer</code></p>
-<p>Default: <code>25</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>null|integer</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>25</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerinlayhintsparameterhints"><code>rust-analyzer.inlayHints.parameterHints</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerinlayhintssmallerhints"><code>rust-analyzer.inlayHints.smallerHints</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Whether inlay hints font size should be smaller than editor\'s font size.</p>
 <h3 id="rust-analyzerinlayhintstypehints"><code>rust-analyzer.inlayHints.typeHints</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerlensdebug"><code>rust-analyzer.lens.debug</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerlensenable"><code>rust-analyzer.lens.enable</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerlensimplementations"><code>rust-analyzer.lens.implementations</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerlensmethodreferences"><code>rust-analyzer.lens.methodReferences</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerlensreferences"><code>rust-analyzer.lens.references</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerlensrun"><code>rust-analyzer.lens.run</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerlinkedprojects"><code>rust-analyzer.linkedProjects</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>{}</code></p>
-<p>Array items: <code>{type = { "string", "object" }}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>{}</code></p>
+</li>
+<li>
+<p><em>Array items</em>: <code>{type = { "string", "object" }}</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerlrucapacity"><code>rust-analyzer.lruCapacity</code></h3>
-<p>Type: <code>null|integer</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>null|integer</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzernotificationscargotomlnotfound"><code>rust-analyzer.notifications.cargoTomlNotFound</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerprocmacroenable"><code>rust-analyzer.procMacro.enable</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerprocmacroserver"><code>rust-analyzer.procMacro.server</code></h3>
-<p>Type: <code>null|string</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>null|string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerrunnableenv"><code>rust-analyzer.runnableEnv</code></h3>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li><em>Default</em>: <code>vim.NIL</code></li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerrunnablescargoextraargs"><code>rust-analyzer.runnables.cargoExtraArgs</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>{}</code></p>
-<p>Array items: <code>{type = "string"}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>{}</code></p>
+</li>
+<li>
+<p><em>Array items</em>: <code>{type = "string"}</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerrunnablesoverridecargo"><code>rust-analyzer.runnables.overrideCargo</code></h3>
-<p>Type: <code>null|string</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>null|string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerrustcsource"><code>rust-analyzer.rustcSource</code></h3>
-<p>Type: <code>null|string</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>null|string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerrustfmtenablerangeformatting"><code>rust-analyzer.rustfmt.enableRangeFormatting</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerrustfmtextraargs"><code>rust-analyzer.rustfmt.extraArgs</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>{}</code></p>
-<p>Array items: <code>{type = "string"}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>{}</code></p>
+</li>
+<li>
+<p><em>Array items</em>: <code>{type = "string"}</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerrustfmtoverridecommand"><code>rust-analyzer.rustfmt.overrideCommand</code></h3>
-<p>Type: <code>null|array</code></p>
-<p>Default: <code>vim.NIL</code></p>
-<p>Array items: <code>{type = "string"}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>null|array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+<li>
+<p><em>Array items</em>: <code>{type = "string"}</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerserverextraenv"><code>rust-analyzer.server.extraEnv</code></h3>
-<p>Type: <code>null|object</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>null|object</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerserverpath"><code>rust-analyzer.server.path</code></h3>
-<p>Type: <code>null|string</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>null|string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzertraceextension"><code>rust-analyzer.trace.extension</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>Enable logging of VS Code extensions itself.</p>
 <h3 id="rust-analyzertraceserver"><code>rust-analyzer.trace.server</code></h3>
 <p><code>enum { "off", "messages", "verbose" }</code></p>
-<p>Default: <code>"off"</code></p>
+<ul>
+<li><em>Default</em>: <code>"off"</code></li>
+</ul>
 <p>Trace requests to the rust-analyzer (this is usually overly verbose and not recommended for regular users).</p>
 <h3 id="rust-analyzerupdatesaskbeforedownload"><code>rust-analyzer.updates.askBeforeDownload</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>Whether to ask for permission before downloading any files from the Internet.</p>
 <h3 id="rust-analyzerupdateschannel"><code>rust-analyzer.updates.channel</code></h3>
 <p><code>enum { "stable", "nightly" }</code></p>
-<p>Default: <code>"stable"</code></p>
+<ul>
+<li><em>Default</em>: <code>"stable"</code></li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerworkspacesymbolsearchkind"><code>rust-analyzer.workspace.symbol.search.kind</code></h3>
 <p><code>enum { "only_types", "all_symbols" }</code></p>
-<p>Default: <code>"only_types"</code></p>
+<ul>
+<li><em>Default</em>: <code>"only_types"</code></li>
+</ul>
 <p>null</p>
 <h3 id="rust-analyzerworkspacesymbolsearchscope"><code>rust-analyzer.workspace.symbol.search.scope</code></h3>
 <p><code>enum { "workspace", "workspace_and_dependencies" }</code></p>
-<p>Default: <code>"workspace"</code></p>
+<ul>
+<li><em>Default</em>: <code>"workspace"</code></li>
+</ul>
 <p>null</p>
                 
               

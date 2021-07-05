@@ -984,7 +984,7 @@
         
           <li class="md-nav__item">
   <a href="#default-values" class="md-nav__link">
-    Default Values
+    Default values
   </a>
   
 </li>
@@ -1656,7 +1656,7 @@
         
           <li class="md-nav__item">
   <a href="#default-values" class="md-nav__link">
-    Default Values
+    Default values
   </a>
   
 </li>
@@ -1851,97 +1851,217 @@
 <h2 id="setup">Setup</h2>
 <div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">purescriptls</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
 </code></pre></div>
-<h3 id="default-values">Default Values</h3>
-<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;purescript-language-server&quot;</span><span class="p">,</span> <span class="s2">&quot;--stdio&quot;</span> <span class="p">}</span>
-  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;purescript&quot;</span> <span class="p">}</span>
-  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;spago.dhall, bower.json&quot;</span><span class="p">)</span>
+<h3 id="default-values">Default values</h3>
+<div class="highlight"><pre><span></span><code><span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;purescript-language-server&quot;</span><span class="p">,</span> <span class="s2">&quot;--stdio&quot;</span> <span class="p">}</span>
+<span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;purescript&quot;</span> <span class="p">}</span>
+<span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;spago.dhall, bower.json&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="available-settings">Available settings</h2>
 <h3 id="purescriptaddnpmpath"><code>purescript.addNpmPath</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>Whether to add the local npm bin directory to the PATH for purs IDE server and build command.</p>
 <h3 id="purescriptaddpscpackagesources"><code>purescript.addPscPackageSources</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>Whether to add psc-package sources to the globs passed to the IDE server for source locations (specifically the output of `psc-package sources`\, if this is a psc-package project). Update due to adding packages\/changing package set requires psc-ide server restart.</p>
 <h3 id="purescriptaddspagosources"><code>purescript.addSpagoSources</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Whether to add spago sources to the globs passed to the IDE server for source locations (specifically the output of `spago sources`\, if this is a spago project). Update due to adding packages\/changing package set requires psc-ide server restart.</p>
 <h3 id="purescriptautostartpscide"><code>purescript.autoStartPscIde</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Whether to automatically start\/connect to purs IDE server when editing a PureScript file (includes connecting to an existing running instance). If this is disabled\, various features like autocomplete\, tooltips\, and other type info will not work until start command is run manually.</p>
 <h3 id="purescriptautocompleteaddimport"><code>purescript.autocompleteAddImport</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Whether to automatically add imported identifiers when accepting autocomplete result.</p>
 <h3 id="purescriptautocompleteallmodules"><code>purescript.autocompleteAllModules</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Whether to always autocomplete from all built modules\, or just those imported in the file. Suggestions from all modules always available by explicitly triggering autocomplete.</p>
 <h3 id="purescriptautocompletegrouped"><code>purescript.autocompleteGrouped</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Whether to group completions in autocomplete results. Requires compiler 0.11.6</p>
 <h3 id="purescriptautocompletelimit"><code>purescript.autocompleteLimit</code></h3>
-<p>Type: <code>null|integer</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>null|integer</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>Maximum number of results to fetch for an autocompletion request. May improve performance on large projects.</p>
 <h3 id="purescriptbuildcommand"><code>purescript.buildCommand</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>"spago build --purs-args --json-errors"</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>"spago build --purs-args --json-errors"</code></p>
+</li>
+</ul>
 <p>Build command to use with arguments. Not passed to shell. eg `spago build --purs-args --json-errors`</p>
 <h3 id="purescriptcensorwarnings"><code>purescript.censorWarnings</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>{}</code></p>
-<p>Array items: <code>{type = "string"}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>{}</code></p>
+</li>
+<li>
+<p><em>Array items</em>: <code>{type = "string"}</code></p>
+</li>
+</ul>
 <p>The warning codes to censor\, both for fast rebuild and a full build. Unrelated to any psa setup. e.g.\: [\"ShadowedName\"\,\"MissingTypeDeclaration\"]</p>
 <h3 id="purescriptcodegentargets"><code>purescript.codegenTargets</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>vim.NIL</code></p>
-<p>Array items: <code>{type = "string"}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+<li>
+<p><em>Array items</em>: <code>{type = "string"}</code></p>
+</li>
+</ul>
 <p>List of codegen targets to pass to the compiler for rebuild. e.g. js\, corefn. If not specified (rather than empty array) this will not be passed and the compiler will default to js. Requires 0.12.1+</p>
 <h3 id="purescriptfastrebuild"><code>purescript.fastRebuild</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Enable purs IDE server fast rebuild</p>
 <h3 id="purescriptimportspreferredmodules"><code>purescript.importsPreferredModules</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>{ "Prelude" }</code></p>
-<p>Array items: <code>{type = "string"}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>{ "Prelude" }</code></p>
+</li>
+<li>
+<p><em>Array items</em>: <code>{type = "string"}</code></p>
+</li>
+</ul>
 <p>Module to prefer to insert when adding imports which have been re-exported. In order of preference\, most preferred first.</p>
 <h3 id="purescriptoutputdirectory"><code>purescript.outputDirectory</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>"output/"</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>"output/"</code></p>
+</li>
+</ul>
 <p>Override purs ide output directory (output\/ if not specified). This should match up to your build command</p>
 <h3 id="purescriptpackagepath"><code>purescript.packagePath</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>""</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>""</code></p>
+</li>
+</ul>
 <p>Path to installed packages. Will be used to control globs passed to IDE server for source locations.  Change requires IDE server restart.</p>
 <h3 id="purescriptpreludemodule"><code>purescript.preludeModule</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>"Prelude"</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>"Prelude"</code></p>
+</li>
+</ul>
 <p>Module to consider as your default prelude\, if an auto-complete suggestion comes from this module it will be imported unqualified.</p>
 <h3 id="purescriptpscideport"><code>purescript.pscIdePort</code></h3>
-<p>Type: <code>integer|null</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>integer|null</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>Port to use for purs IDE server (whether an existing server or to start a new one). By default a random port is chosen (or an existing port in .psc-ide-port if present)\, if this is specified no attempt will be made to select an alternative port on failure.</p>
 <h3 id="purescriptpscideloglevel"><code>purescript.pscIdelogLevel</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>""</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>""</code></p>
+</li>
+</ul>
 <p>Log level for purs IDE server</p>
 <h3 id="purescriptpursexe"><code>purescript.pursExe</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>"purs"</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>"purs"</code></p>
+</li>
+</ul>
 <p>Location of purs executable (resolved wrt PATH)</p>
 <h3 id="purescriptsourcepath"><code>purescript.sourcePath</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>"src"</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>"src"</code></p>
+</li>
+</ul>
 <p>Path to application source root. Will be used to control globs passed to IDE server for source locations. Change requires IDE server restart.</p>
 <h3 id="purescripttraceserver"><code>purescript.trace.server</code></h3>
 <p><code>enum { "off", "messages", "verbose" }</code></p>
-<p>Default: <code>"off"</code></p>
+<ul>
+<li><em>Default</em>: <code>"off"</code></li>
+</ul>
 <p>Traces the communication between VSCode and the PureScript language service.</p>
                 
               

@@ -780,7 +780,7 @@
         
           <li class="md-nav__item">
   <a href="#default-values" class="md-nav__link">
-    Default Values
+    Default values
   </a>
   
 </li>
@@ -1551,7 +1551,7 @@
         
           <li class="md-nav__item">
   <a href="#default-values" class="md-nav__link">
-    Default Values
+    Default values
   </a>
   
 </li>
@@ -1653,39 +1653,71 @@
 <h2 id="setup">Setup</h2>
 <div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">jsonls</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
 </code></pre></div>
-<h3 id="default-values">Default Values</h3>
-<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;vscode-json-language-server&quot;</span><span class="p">,</span> <span class="s2">&quot;--stdio&quot;</span> <span class="p">}</span>
-  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;json&quot;</span> <span class="p">}</span>
-  <span class="n">init_options</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">provideFormatter</span> <span class="o">=</span> <span class="kc">true</span>
-  <span class="p">}</span>
-  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;.git&quot;</span><span class="p">,</span> <span class="n">vim</span><span class="p">.</span><span class="n">fn</span><span class="p">.</span><span class="n">getcwd</span><span class="p">())</span>
+<h3 id="default-values">Default values</h3>
+<div class="highlight"><pre><span></span><code><span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;vscode-json-language-server&quot;</span><span class="p">,</span> <span class="s2">&quot;--stdio&quot;</span> <span class="p">}</span>
+<span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;json&quot;</span> <span class="p">}</span>
+<span class="n">init_options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="n">provideFormatter</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="p">}</span>
+<span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;.git&quot;</span><span class="p">,</span> <span class="n">vim</span><span class="p">.</span><span class="n">fn</span><span class="p">.</span><span class="n">getcwd</span><span class="p">())</span>
 </code></pre></div>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="available-settings">Available settings</h2>
 <h3 id="jsoncolordecoratorsenable"><code>json.colorDecorators.enable</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>\%json.colorDecorators.enable.desc\%</p>
 <h3 id="jsonformatenable"><code>json.format.enable</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>\%json.format.enable.desc\%</p>
 <h3 id="jsonmaxitemscomputed"><code>json.maxItemsComputed</code></h3>
-<p>Type: <code>number</code></p>
-<p>Default: <code>5000</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>number</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>5000</code></p>
+</li>
+</ul>
 <p>\%json.maxItemsComputed.desc\%</p>
 <h3 id="jsonschemadownloadenable"><code>json.schemaDownload.enable</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>\%json.enableSchemaDownload.desc\%</p>
 <h3 id="jsonschemas"><code>json.schemas</code></h3>
-<p>Type: <code>array</code></p>
-<p>Array items: <code>{default = {fileMatch = { "/myfile" },url = "schemaURL"},properties = {fileMatch = {description = "%json.schemas.fileMatch.desc%",items = {default = "MyFile.json",description = "%json.schemas.fileMatch.item.desc%",type = "string"},minItems = 1,type = "array"},schema = {["$ref"] = "http://json-schema.org/draft-07/schema#",description = "%json.schemas.schema.desc%"},url = {default = "/user.schema.json",description = "%json.schemas.url.desc%",type = "string"}},type = "object"}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Array items</em>: <code>{default = {fileMatch = { "/myfile" },url = "schemaURL"},properties = {fileMatch = {description = "%json.schemas.fileMatch.desc%",items = {default = "MyFile.json",description = "%json.schemas.fileMatch.item.desc%",type = "string"},minItems = 1,type = "array"},schema = {["$ref"] = "http://json-schema.org/draft-07/schema#",description = "%json.schemas.schema.desc%"},url = {default = "/user.schema.json",description = "%json.schemas.url.desc%",type = "string"}},type = "object"}</code></p>
+</li>
+</ul>
 <p>\%json.schemas.desc\%</p>
 <h3 id="jsontraceserver"><code>json.trace.server</code></h3>
 <p><code>enum { "off", "messages", "verbose" }</code></p>
-<p>Default: <code>"off"</code></p>
+<ul>
+<li><em>Default</em>: <code>"off"</code></li>
+</ul>
 <p>\%json.tracing.desc\%</p>
                 
               

@@ -864,7 +864,7 @@
         
           <li class="md-nav__item">
   <a href="#default-values" class="md-nav__link">
-    Default Values
+    Default values
   </a>
   
 </li>
@@ -1600,7 +1600,7 @@
         
           <li class="md-nav__item">
   <a href="#default-values" class="md-nav__link">
-    Default Values
+    Default values
   </a>
   
 </li>
@@ -1739,65 +1739,135 @@
 <h2 id="setup">Setup</h2>
 <div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">nimls</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
 </code></pre></div>
-<h3 id="default-values">Default Values</h3>
-<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;nimlsp&quot;</span> <span class="p">}</span>
-  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;nim&quot;</span> <span class="p">}</span>
-  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;.git&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">os_homedir</span>
+<h3 id="default-values">Default values</h3>
+<div class="highlight"><pre><span></span><code><span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;nimlsp&quot;</span> <span class="p">}</span>
+<span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;nim&quot;</span> <span class="p">}</span>
+<span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;.git&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">os_homedir</span>
 </code></pre></div>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="available-settings">Available settings</h2>
 <h3 id="nimbuildcommand"><code>nim.buildCommand</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>"c"</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>"c"</code></p>
+</li>
+</ul>
 <p>Nim build command (c\, cpp\, doc\, etc)</p>
 <h3 id="nimbuildonsave"><code>nim.buildOnSave</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>Execute build task from tasks.json file on save.</p>
 <h3 id="nimenablenimsuggest"><code>nim.enableNimsuggest</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Enable calling nimsuggest process to provide completion suggestions\, hover suggestions\, etc.
-  This option requires restart to take effect.</p>
+ This option requires restart to take effect.</p>
 <h3 id="nimlicensestring"><code>nim.licenseString</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>""</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>""</code></p>
+</li>
+</ul>
 <p>Optional license text that will be inserted on nim file creation.</p>
 <h3 id="nimlintonsave"><code>nim.lintOnSave</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Check code by using \'nim check\' on save.</p>
 <h3 id="nimlognimsuggest"><code>nim.logNimsuggest</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>Enable verbose logging of nimsuggest to use profile directory.</p>
 <h3 id="nimnimprettyindent"><code>nim.nimprettyIndent</code></h3>
-<p>Type: <code>integer</code></p>
-<p>Default: <code>0</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>integer</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>0</code></p>
+</li>
+</ul>
 <p>Nimpretty\: set the number of spaces that is used for indentation
-  --indent\:0 means autodetection (default behaviour).</p>
+ --indent\:0 means autodetection (default behaviour).</p>
 <h3 id="nimnimprettymaxlinelen"><code>nim.nimprettyMaxLineLen</code></h3>
-<p>Type: <code>integer</code></p>
-<p>Default: <code>80</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>integer</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>80</code></p>
+</li>
+</ul>
 <p>Nimpretty\: set the desired maximum line length (default\: 80).</p>
 <h3 id="nimnimsuggestrestarttimeout"><code>nim.nimsuggestRestartTimeout</code></h3>
-<p>Type: <code>integer</code></p>
-<p>Default: <code>60</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>integer</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>60</code></p>
+</li>
+</ul>
 <p>Nimsuggest will be restarted after this timeout in minutes\, if 0 then restart disabled.
-  This option requires restart to take effect.</p>
+ This option requires restart to take effect.</p>
 <h3 id="nimproject"><code>nim.project</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>{}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>{}</code></p>
+</li>
+</ul>
 <p>Nim project file\, if empty use current selected.</p>
 <h3 id="nimprojectmapping"><code>nim.projectMapping</code></h3>
-<p>Type: <code>object</code></p>
-<p>Default: <code>vim.empty_dict()</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>object</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.empty_dict()</code></p>
+</li>
+</ul>
 <p>For non project mode list of per file project mapping using regex\, for example ```{\"(.*).inim\"\: \"\$1.nim\"}```</p>
 <h3 id="nimrunoutputdirectory"><code>nim.runOutputDirectory</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>""</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>""</code></p>
+</li>
+</ul>
 <p>Output directory for run selected file command. The directory is relative to the workspace root.</p>
 <h3 id="nimtest-project"><code>nim.test-project</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>""</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>""</code></p>
+</li>
+</ul>
 <p>Optional test project.</p>
                 
               

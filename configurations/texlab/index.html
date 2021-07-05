@@ -1243,7 +1243,7 @@
         
           <li class="md-nav__item">
   <a href="#default-values" class="md-nav__link">
-    Default Values
+    Default values
   </a>
   
 </li>
@@ -1510,7 +1510,7 @@
         
           <li class="md-nav__item">
   <a href="#default-values" class="md-nav__link">
-    Default Values
+    Default values
   </a>
   
 </li>
@@ -1549,35 +1549,35 @@
 <li>TexlabBuild: Build the current buffer</li>
 <li>TexlabForward: Forward search from current position</li>
 </ul>
-<h3 id="default-values">Default Values</h3>
-<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;texlab&quot;</span> <span class="p">}</span>
-  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;tex&quot;</span><span class="p">,</span> <span class="s2">&quot;bib&quot;</span> <span class="p">}</span>
-  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">vim</span><span class="s1">&#39;s starting directory</span>
-<span class="s1">  settings = {</span>
-<span class="s1">    texlab = {</span>
-<span class="s1">      auxDirectory = &quot;.&quot;,</span>
-<span class="s1">      bibtexFormatter = &quot;texlab&quot;,</span>
-<span class="s1">      build = {</span>
-<span class="s1">        args = { &quot;-pdf&quot;, &quot;-interaction=nonstopmode&quot;, &quot;-synctex=1&quot;, &quot;%f&quot; },</span>
-<span class="s1">        executable = &quot;latexmk&quot;,</span>
-<span class="s1">        forwardSearchAfter = false,</span>
-<span class="s1">        onSave = false</span>
-<span class="s1">      },</span>
-<span class="s1">      chktex = {</span>
-<span class="s1">        onEdit = false,</span>
-<span class="s1">        onOpenAndSave = false</span>
-<span class="s1">      },</span>
-<span class="s1">      diagnosticsDelay = 300,</span>
-<span class="s1">      formatterLineLength = 80,</span>
-<span class="s1">      forwardSearch = {</span>
-<span class="s1">        args = {}</span>
-<span class="s1">      },</span>
-<span class="s1">      latexFormatter = &quot;latexindent&quot;,</span>
-<span class="s1">      latexindent = {</span>
-<span class="s1">        modifyLineBreaks = false</span>
-<span class="s1">      }</span>
+<h3 id="default-values">Default values</h3>
+<div class="highlight"><pre><span></span><code><span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;texlab&quot;</span> <span class="p">}</span>
+<span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;tex&quot;</span><span class="p">,</span> <span class="s2">&quot;bib&quot;</span> <span class="p">}</span>
+<span class="n">root_dir</span> <span class="o">=</span> <span class="n">vim</span><span class="s1">&#39;s starting directory</span>
+<span class="s1">settings = {</span>
+<span class="s1">  texlab = {</span>
+<span class="s1">    auxDirectory = &quot;.&quot;,</span>
+<span class="s1">    bibtexFormatter = &quot;texlab&quot;,</span>
+<span class="s1">    build = {</span>
+<span class="s1">      args = { &quot;-pdf&quot;, &quot;-interaction=nonstopmode&quot;, &quot;-synctex=1&quot;, &quot;%f&quot; },</span>
+<span class="s1">      executable = &quot;latexmk&quot;,</span>
+<span class="s1">      forwardSearchAfter = false,</span>
+<span class="s1">      onSave = false</span>
+<span class="s1">    },</span>
+<span class="s1">    chktex = {</span>
+<span class="s1">      onEdit = false,</span>
+<span class="s1">      onOpenAndSave = false</span>
+<span class="s1">    },</span>
+<span class="s1">    diagnosticsDelay = 300,</span>
+<span class="s1">    formatterLineLength = 80,</span>
+<span class="s1">    forwardSearch = {</span>
+<span class="s1">      args = {}</span>
+<span class="s1">    },</span>
+<span class="s1">    latexFormatter = &quot;latexindent&quot;,</span>
+<span class="s1">    latexindent = {</span>
+<span class="s1">      modifyLineBreaks = false</span>
 <span class="s1">    }</span>
 <span class="s1">  }</span>
+<span class="s1">}</span>
 </code></pre></div>
                 
               

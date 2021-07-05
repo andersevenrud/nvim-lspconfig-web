@@ -732,7 +732,7 @@
         
           <li class="md-nav__item">
   <a href="#default-values" class="md-nav__link">
-    Default Values
+    Default values
   </a>
   
 </li>
@@ -1496,7 +1496,7 @@
         
           <li class="md-nav__item">
   <a href="#default-values" class="md-nav__link">
-    Default Values
+    Default values
   </a>
   
 </li>
@@ -1541,20 +1541,20 @@ To enable completion, install a snippet plugin and add the following override to
 <h2 id="setup">Setup</h2>
 <div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">html</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
 </code></pre></div>
-<h3 id="default-values">Default Values</h3>
-<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;vscode-html-language-server&quot;</span><span class="p">,</span> <span class="s2">&quot;--stdio&quot;</span> <span class="p">}</span>
-  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;html&quot;</span> <span class="p">}</span>
-  <span class="n">init_options</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">configurationSection</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;html&quot;</span><span class="p">,</span> <span class="s2">&quot;css&quot;</span><span class="p">,</span> <span class="s2">&quot;javascript&quot;</span> <span class="p">},</span>
-    <span class="n">embeddedLanguages</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="n">css</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="n">javascript</span> <span class="o">=</span> <span class="kc">true</span>
-    <span class="p">}</span>
+<h3 id="default-values">Default values</h3>
+<div class="highlight"><pre><span></span><code><span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;vscode-html-language-server&quot;</span><span class="p">,</span> <span class="s2">&quot;--stdio&quot;</span> <span class="p">}</span>
+<span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;html&quot;</span> <span class="p">}</span>
+<span class="n">init_options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="n">configurationSection</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;html&quot;</span><span class="p">,</span> <span class="s2">&quot;css&quot;</span><span class="p">,</span> <span class="s2">&quot;javascript&quot;</span> <span class="p">},</span>
+  <span class="n">embeddedLanguages</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">css</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="n">javascript</span> <span class="o">=</span> <span class="kc">true</span>
   <span class="p">}</span>
-  <span class="n">root_dir</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
-        <span class="kr">return</span> <span class="n">root_pattern</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span> <span class="ow">or</span> <span class="n">vim</span><span class="p">.</span><span class="n">loop</span><span class="p">.</span><span class="n">os_homedir</span><span class="p">()</span>
-      <span class="kr">end</span><span class="p">,</span>
-  <span class="n">settings</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="p">}</span>
+<span class="n">root_dir</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+      <span class="kr">return</span> <span class="n">root_pattern</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span> <span class="ow">or</span> <span class="n">vim</span><span class="p">.</span><span class="n">loop</span><span class="p">.</span><span class="n">os_homedir</span><span class="p">()</span>
+    <span class="kr">end</span><span class="p">,</span>
+<span class="n">settings</span> <span class="o">=</span> <span class="p">{}</span>
 </code></pre></div>
                 
               

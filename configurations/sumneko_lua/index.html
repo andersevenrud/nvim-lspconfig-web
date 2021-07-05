@@ -840,7 +840,7 @@
         
           <li class="md-nav__item">
   <a href="#default-values" class="md-nav__link">
-    Default Values
+    Default values
   </a>
   
 </li>
@@ -1817,7 +1817,7 @@
         
           <li class="md-nav__item">
   <a href="#default-values" class="md-nav__link">
-    Default Values
+    Default values
   </a>
   
 </li>
@@ -2218,190 +2218,410 @@
 <h2 id="setup">Setup</h2>
 <div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">sumneko_lua</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
 </code></pre></div>
-<h3 id="default-values">Default Values</h3>
-<div class="highlight"><pre><span></span><code>  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;lua&quot;</span> <span class="p">}</span>
-  <span class="n">log_level</span> <span class="o">=</span> <span class="mi">2</span>
-  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;.git&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">bufdir</span>
-  <span class="n">settings</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">Lua</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="n">telemetry</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="n">enable</span> <span class="o">=</span> <span class="kc">false</span>
-      <span class="p">}</span>
+<h3 id="default-values">Default values</h3>
+<div class="highlight"><pre><span></span><code><span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;lua&quot;</span> <span class="p">}</span>
+<span class="n">log_level</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;.git&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">bufdir</span>
+<span class="n">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="n">Lua</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">telemetry</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="n">enable</span> <span class="o">=</span> <span class="kc">false</span>
     <span class="p">}</span>
   <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="available-settings">Available settings</h2>
 <h3 id="luacolormode"><code>Lua.color.mode</code></h3>
 <p><code>enum { "Grammar", "Semantic" }</code></p>
-<p>Default: <code>"Semantic"</code></p>
+<ul>
+<li><em>Default</em>: <code>"Semantic"</code></li>
+</ul>
 <p>null</p>
 <h3 id="luacompletionautorequire"><code>Lua.completion.autoRequire</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="luacompletioncallsnippet"><code>Lua.completion.callSnippet</code></h3>
 <p><code>enum { "Disable", "Both", "Replace" }</code></p>
-<p>Default: <code>"Disable"</code></p>
+<ul>
+<li><em>Default</em>: <code>"Disable"</code></li>
+</ul>
 <p>null</p>
 <h3 id="luacompletiondisplaycontext"><code>Lua.completion.displayContext</code></h3>
-<p>Type: <code>integer</code></p>
-<p>Default: <code>6</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>integer</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>6</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="luacompletionenable"><code>Lua.completion.enable</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="luacompletionkeywordsnippet"><code>Lua.completion.keywordSnippet</code></h3>
 <p><code>enum { "Disable", "Both", "Replace" }</code></p>
-<p>Default: <code>"Replace"</code></p>
+<ul>
+<li><em>Default</em>: <code>"Replace"</code></li>
+</ul>
 <p>null</p>
 <h3 id="luacompletionshowparams"><code>Lua.completion.showParams</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="luacompletionworkspaceword"><code>Lua.completion.workspaceWord</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="luadiagnosticsdisable"><code>Lua.diagnostics.disable</code></h3>
-<p>Type: <code>array</code></p>
-<p>Array items: <code>{type = "string"}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Array items</em>: <code>{type = "string"}</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="luadiagnosticsenable"><code>Lua.diagnostics.enable</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="luadiagnosticsglobals"><code>Lua.diagnostics.globals</code></h3>
-<p>Type: <code>array</code></p>
-<p>Array items: <code>{type = "string"}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Array items</em>: <code>{type = "string"}</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="luadiagnosticsneededfilestatus"><code>Lua.diagnostics.neededFileStatus</code></h3>
-<p>Type: <code>object</code></p>
+<ul>
+<li><em>Type</em>: <code>object</code></li>
+</ul>
 <p>null</p>
 <h3 id="luadiagnosticsseverity"><code>Lua.diagnostics.severity</code></h3>
-<p>Type: <code>object</code></p>
+<ul>
+<li><em>Type</em>: <code>object</code></li>
+</ul>
 <p>null</p>
 <h3 id="luadiagnosticsworkspacedelay"><code>Lua.diagnostics.workspaceDelay</code></h3>
-<p>Type: <code>integer</code></p>
-<p>Default: <code>0</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>integer</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>0</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="luadiagnosticsworkspacerate"><code>Lua.diagnostics.workspaceRate</code></h3>
-<p>Type: <code>integer</code></p>
-<p>Default: <code>100</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>integer</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>100</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="luahintenable"><code>Lua.hint.enable</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>null</p>
 <h3 id="luahintparamname"><code>Lua.hint.paramName</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="luahintparamtype"><code>Lua.hint.paramType</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="luahintsettype"><code>Lua.hint.setType</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>null</p>
 <h3 id="luahoverenable"><code>Lua.hover.enable</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="luahoverenumslimit"><code>Lua.hover.enumsLimit</code></h3>
-<p>Type: <code>integer</code></p>
-<p>Default: <code>5</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>integer</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>5</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="luahoverpreviewfields"><code>Lua.hover.previewFields</code></h3>
-<p>Type: <code>integer</code></p>
-<p>Default: <code>20</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>integer</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>20</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="luahoverviewnumber"><code>Lua.hover.viewNumber</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="luahoverviewstring"><code>Lua.hover.viewString</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="luahoverviewstringmax"><code>Lua.hover.viewStringMax</code></h3>
-<p>Type: <code>integer</code></p>
-<p>Default: <code>1000</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>integer</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>1000</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="luamiscparameters"><code>Lua.misc.parameters</code></h3>
-<p>Type: <code>array</code></p>
-<p>Array items: <code>{type = "string"}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Array items</em>: <code>{type = "string"}</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="luaruntimebuiltin"><code>Lua.runtime.builtin</code></h3>
-<p>Type: <code>object</code></p>
+<ul>
+<li><em>Type</em>: <code>object</code></li>
+</ul>
 <p>null</p>
 <h3 id="luaruntimefileencoding"><code>Lua.runtime.fileEncoding</code></h3>
 <p><code>enum { "utf8", "ansi" }</code></p>
-<p>Default: <code>"utf8"</code></p>
+<ul>
+<li><em>Default</em>: <code>"utf8"</code></li>
+</ul>
 <p>null</p>
 <h3 id="luaruntimenonstandardsymbol"><code>Lua.runtime.nonstandardSymbol</code></h3>
-<p>Type: <code>array</code></p>
-<p>Array items: <code>{enum = { "//", "/**/", "</code>", "+=", "-=", "*=", "/=", "||", "&amp;&amp;", "!", "!=", "continue" },type = "string"}`</p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Array items</em>: <code>{enum = { "//", "/**/", "</code>", "+=", "-=", "*=", "/=", "||", "&amp;&amp;", "!", "!=", "continue" },type = "string"}`</p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="luaruntimepath"><code>Lua.runtime.path</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>{ "?.lua", "?/init.lua", "?/?.lua" }</code></p>
-<p>Array items: <code>{type = "string"}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>{ "?.lua", "?/init.lua", "?/?.lua" }</code></p>
+</li>
+<li>
+<p><em>Array items</em>: <code>{type = "string"}</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="luaruntimeplugin"><code>Lua.runtime.plugin</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>""</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>""</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="luaruntimespecial"><code>Lua.runtime.special</code></h3>
-<p>Type: <code>object</code></p>
+<ul>
+<li><em>Type</em>: <code>object</code></li>
+</ul>
 <p>null</p>
 <h3 id="luaruntimeunicodename"><code>Lua.runtime.unicodeName</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>null</p>
 <h3 id="luaruntimeversion"><code>Lua.runtime.version</code></h3>
 <p><code>enum { "Lua 5.1", "Lua 5.2", "Lua 5.3", "Lua 5.4", "LuaJIT" }</code></p>
-<p>Default: <code>"Lua 5.4"</code></p>
+<ul>
+<li><em>Default</em>: <code>"Lua 5.4"</code></li>
+</ul>
 <p>null</p>
 <h3 id="luasignaturehelpenable"><code>Lua.signatureHelp.enable</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="luatelemetryenable"><code>Lua.telemetry.enable</code></h3>
-<p>Type: <code>boolean|null</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean|null</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="luawindowprogressbar"><code>Lua.window.progressBar</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="luawindowstatusbar"><code>Lua.window.statusBar</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="luaworkspaceignoredir"><code>Lua.workspace.ignoreDir</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>{ ".vscode" }</code></p>
-<p>Array items: <code>{type = "string"}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>{ ".vscode" }</code></p>
+</li>
+<li>
+<p><em>Array items</em>: <code>{type = "string"}</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="luaworkspaceignoresubmodules"><code>Lua.workspace.ignoreSubmodules</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="luaworkspacelibrary"><code>Lua.workspace.library</code></h3>
-<p>Type: <code>array</code></p>
-<p>Array items: <code>{type = "string"}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Array items</em>: <code>{type = "string"}</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="luaworkspacemaxpreload"><code>Lua.workspace.maxPreload</code></h3>
-<p>Type: <code>integer</code></p>
-<p>Default: <code>1000</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>integer</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>1000</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="luaworkspacepreloadfilesize"><code>Lua.workspace.preloadFileSize</code></h3>
-<p>Type: <code>integer</code></p>
-<p>Default: <code>100</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>integer</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>100</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="luaworkspaceusegitignore"><code>Lua.workspace.useGitIgnore</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
                 
               

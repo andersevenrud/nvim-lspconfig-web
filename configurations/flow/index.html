@@ -1260,7 +1260,7 @@
         
           <li class="md-nav__item">
   <a href="#default-values" class="md-nav__link">
-    Default Values
+    Default values
   </a>
   
 </li>
@@ -1621,7 +1621,7 @@
         
           <li class="md-nav__item">
   <a href="#default-values" class="md-nav__link">
-    Default Values
+    Default values
   </a>
   
 </li>
@@ -1784,74 +1784,152 @@
 <h2 id="setup">Setup</h2>
 <div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">flow</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
 </code></pre></div>
-<h3 id="default-values">Default Values</h3>
-<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;npx&quot;</span><span class="p">,</span> <span class="s2">&quot;--no-install&quot;</span><span class="p">,</span> <span class="s2">&quot;flow&quot;</span><span class="p">,</span> <span class="s2">&quot;lsp&quot;</span> <span class="p">}</span>
-  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;javascript&quot;</span><span class="p">,</span> <span class="s2">&quot;javascriptreact&quot;</span><span class="p">,</span> <span class="s2">&quot;javascript.jsx&quot;</span> <span class="p">}</span>
-  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;.flowconfig&quot;</span><span class="p">)</span>
+<h3 id="default-values">Default values</h3>
+<div class="highlight"><pre><span></span><code><span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;npx&quot;</span><span class="p">,</span> <span class="s2">&quot;--no-install&quot;</span><span class="p">,</span> <span class="s2">&quot;flow&quot;</span><span class="p">,</span> <span class="s2">&quot;lsp&quot;</span> <span class="p">}</span>
+<span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;javascript&quot;</span><span class="p">,</span> <span class="s2">&quot;javascriptreact&quot;</span><span class="p">,</span> <span class="s2">&quot;javascript.jsx&quot;</span> <span class="p">}</span>
+<span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;.flowconfig&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="available-settings">Available settings</h2>
 <h3 id="flowcoverageseverity"><code>flow.coverageSeverity</code></h3>
 <p><code>enum { "error", "warn", "info" }</code></p>
-<p>Default: <code>"info"</code></p>
+<ul>
+<li><em>Default</em>: <code>"info"</code></li>
+</ul>
 <p>Type coverage diagnostic severity</p>
 <h3 id="flowenabled"><code>flow.enabled</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Is flow enabled</p>
 <h3 id="flowfileextensions"><code>flow.fileExtensions</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>{ ".js", ".mjs", ".jsx", ".flow", ".json" }</code></p>
-<p>Array items: <code>{type = "string"}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>{ ".js", ".mjs", ".jsx", ".flow", ".json" }</code></p>
+</li>
+<li>
+<p><em>Array items</em>: <code>{type = "string"}</code></p>
+</li>
+</ul>
 <p>(Supported only when useLSP\: false). File extensions to consider for flow processing</p>
 <h3 id="flowlazymode"><code>flow.lazyMode</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>Set value to enable flow lazy mode</p>
 <h3 id="flowloglevel"><code>flow.logLevel</code></h3>
 <p><code>enum { "error", "warn", "info", "trace" }</code></p>
-<p>Default: <code>"info"</code></p>
+<ul>
+<li><em>Default</em>: <code>"info"</code></li>
+</ul>
 <p>Log level for output panel logs</p>
 <h3 id="flowpathtoflow"><code>flow.pathToFlow</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>"flow"</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>"flow"</code></p>
+</li>
+</ul>
 <p>Absolute path to flow binary. Special var \${workspaceFolder} or \${flowconfigDir} can be used in path (NOTE\: in windows you can use \'\/\' and can omit \'.cmd\' in path)</p>
 <h3 id="flowrunonallfiles"><code>flow.runOnAllFiles</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>(Supported only when useLSP\: false) Run Flow on all files\, No need to put \/\/\@flow comment on top of files.</p>
 <h3 id="flowrunonedit"><code>flow.runOnEdit</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>If true will run flow on every edit\, otherwise will run only when changes are saved (Note\: \'useLSP\: true\' only supports syntax errors)</p>
 <h3 id="flowshowstatus"><code>flow.showStatus</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>(Supported only when useLSP\: false) If true will display flow status is the statusbar</p>
 <h3 id="flowshowuncovered"><code>flow.showUncovered</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>If true will show uncovered code by default</p>
 <h3 id="flowstopflowonexit"><code>flow.stopFlowOnExit</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Stop Flow on Exit</p>
 <h3 id="flowtraceserver"><code>flow.trace.server</code></h3>
-<p>Default: <code>"off"</code></p>
+<ul>
+<li><em>Default</em>: <code>"off"</code></li>
+</ul>
 <p>Traces the communication between VSCode and the flow lsp service.</p>
 <h3 id="flowusebundledflow"><code>flow.useBundledFlow</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>If true will use flow bundled with this plugin if nothing works</p>
 <h3 id="flowusecodesnippetonfunctionsuggest"><code>flow.useCodeSnippetOnFunctionSuggest</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Complete functions with their parameter signature.</p>
 <h3 id="flowuselsp"><code>flow.useLSP</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Turn off to switch from the official Flow Language Server implementation to talking directly to flow.</p>
 <h3 id="flowusenpmpackagedflow"><code>flow.useNPMPackagedFlow</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Support using flow through your node_modules folder\, WARNING\: Checking this box is a security risk. When you open a project we will immediately run code contained within it.</p>
                 
               

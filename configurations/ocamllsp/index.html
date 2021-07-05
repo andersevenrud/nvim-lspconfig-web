@@ -900,7 +900,7 @@
         
           <li class="md-nav__item">
   <a href="#default-values" class="md-nav__link">
-    Default Values
+    Default values
   </a>
   
 </li>
@@ -1496,7 +1496,7 @@
         
           <li class="md-nav__item">
   <a href="#default-values" class="md-nav__link">
-    Default Values
+    Default values
   </a>
   
 </li>
@@ -1533,13 +1533,13 @@ opam install ocaml-lsp-server
 <h2 id="setup">Setup</h2>
 <div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">ocamllsp</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
 </code></pre></div>
-<h3 id="default-values">Default Values</h3>
-<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;ocamllsp&quot;</span> <span class="p">}</span>
-  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;menhir&quot;</span><span class="p">,</span> <span class="s2">&quot;ocaml&quot;</span><span class="p">,</span> <span class="s2">&quot;reason&quot;</span><span class="p">,</span> <span class="s2">&quot;ocamllex&quot;</span><span class="p">,</span> <span class="s2">&quot;ocamlinterface&quot;</span> <span class="p">}</span>
-  <span class="n">get_language_id</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">ftype</span><span class="p">)</span>
-    <span class="kr">return</span> <span class="n">language_id_of</span><span class="p">[</span><span class="n">ftype</span><span class="p">]</span>
-  <span class="kr">end</span>
-  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;*.opam&quot;</span><span class="p">,</span> <span class="s2">&quot;esy.json&quot;</span><span class="p">,</span> <span class="s2">&quot;package.json&quot;</span><span class="p">,</span> <span class="s2">&quot;.git&quot;</span><span class="p">)</span>
+<h3 id="default-values">Default values</h3>
+<div class="highlight"><pre><span></span><code><span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;ocamllsp&quot;</span> <span class="p">}</span>
+<span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;ocamllex&quot;</span><span class="p">,</span> <span class="s2">&quot;menhir&quot;</span><span class="p">,</span> <span class="s2">&quot;ocamlinterface&quot;</span><span class="p">,</span> <span class="s2">&quot;ocaml&quot;</span><span class="p">,</span> <span class="s2">&quot;reason&quot;</span> <span class="p">}</span>
+<span class="n">get_language_id</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">ftype</span><span class="p">)</span>
+  <span class="kr">return</span> <span class="n">language_id_of</span><span class="p">[</span><span class="n">ftype</span><span class="p">]</span>
+<span class="kr">end</span>
+<span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;*.opam&quot;</span><span class="p">,</span> <span class="s2">&quot;esy.json&quot;</span><span class="p">,</span> <span class="s2">&quot;package.json&quot;</span><span class="p">,</span> <span class="s2">&quot;.git&quot;</span><span class="p">)</span>
 </code></pre></div>
                 
               

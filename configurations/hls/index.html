@@ -708,7 +708,7 @@
         
           <li class="md-nav__item">
   <a href="#default-values" class="md-nav__link">
-    Default Values
+    Default values
   </a>
   
 </li>
@@ -1496,7 +1496,7 @@
         
           <li class="md-nav__item">
   <a href="#default-values" class="md-nav__link">
-    Default Values
+    Default values
   </a>
   
 </li>
@@ -1529,22 +1529,22 @@
 <h2 id="setup">Setup</h2>
 <div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">hls</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
 </code></pre></div>
-<h3 id="default-values">Default Values</h3>
-<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;haskell-language-server-wrapper&quot;</span><span class="p">,</span> <span class="s2">&quot;--lsp&quot;</span> <span class="p">}</span>
-  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;haskell&quot;</span><span class="p">,</span> <span class="s2">&quot;lhaskell&quot;</span> <span class="p">}</span>
-  <span class="n">lspinfo</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">cfg</span><span class="p">)</span>
-        <span class="c1">-- return &quot;specific&quot;</span>
-        <span class="kr">if</span> <span class="n">cfg</span><span class="p">.</span><span class="n">settings</span><span class="p">.</span><span class="n">languageServerHaskell</span><span class="p">.</span><span class="n">logFile</span> <span class="ow">or</span> <span class="kc">false</span> <span class="kr">then</span>
-          <span class="kr">return</span> <span class="s2">&quot;logfile: &quot;</span> <span class="o">..</span> <span class="n">cfg</span><span class="p">.</span><span class="n">settings</span><span class="p">.</span><span class="n">languageServerHaskell</span><span class="p">.</span><span class="n">logFile</span>
-        <span class="kr">end</span>
-        <span class="kr">return</span> <span class="s2">&quot;&quot;</span>
-      <span class="kr">end</span><span class="p">,</span>
-  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;*.cabal&quot;</span><span class="p">,</span> <span class="s2">&quot;stack.yaml&quot;</span><span class="p">,</span> <span class="s2">&quot;cabal.project&quot;</span><span class="p">,</span> <span class="s2">&quot;package.yaml&quot;</span><span class="p">,</span> <span class="s2">&quot;hie.yaml&quot;</span><span class="p">)</span>
-  <span class="n">settings</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">languageServerHaskell</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="n">formattingProvider</span> <span class="o">=</span> <span class="s2">&quot;ormolu&quot;</span>
-    <span class="p">}</span>
+<h3 id="default-values">Default values</h3>
+<div class="highlight"><pre><span></span><code><span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;haskell-language-server-wrapper&quot;</span><span class="p">,</span> <span class="s2">&quot;--lsp&quot;</span> <span class="p">}</span>
+<span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;haskell&quot;</span><span class="p">,</span> <span class="s2">&quot;lhaskell&quot;</span> <span class="p">}</span>
+<span class="n">lspinfo</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">cfg</span><span class="p">)</span>
+      <span class="c1">-- return &quot;specific&quot;</span>
+      <span class="kr">if</span> <span class="n">cfg</span><span class="p">.</span><span class="n">settings</span><span class="p">.</span><span class="n">languageServerHaskell</span><span class="p">.</span><span class="n">logFile</span> <span class="ow">or</span> <span class="kc">false</span> <span class="kr">then</span>
+        <span class="kr">return</span> <span class="s2">&quot;logfile: &quot;</span> <span class="o">..</span> <span class="n">cfg</span><span class="p">.</span><span class="n">settings</span><span class="p">.</span><span class="n">languageServerHaskell</span><span class="p">.</span><span class="n">logFile</span>
+      <span class="kr">end</span>
+      <span class="kr">return</span> <span class="s2">&quot;&quot;</span>
+    <span class="kr">end</span><span class="p">,</span>
+<span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;*.cabal&quot;</span><span class="p">,</span> <span class="s2">&quot;stack.yaml&quot;</span><span class="p">,</span> <span class="s2">&quot;cabal.project&quot;</span><span class="p">,</span> <span class="s2">&quot;package.yaml&quot;</span><span class="p">,</span> <span class="s2">&quot;hie.yaml&quot;</span><span class="p">)</span>
+<span class="n">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="n">languageServerHaskell</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">formattingProvider</span> <span class="o">=</span> <span class="s2">&quot;ormolu&quot;</span>
   <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
                 
               

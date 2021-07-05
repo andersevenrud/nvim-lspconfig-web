@@ -804,7 +804,7 @@
         
           <li class="md-nav__item">
   <a href="#default-values" class="md-nav__link">
-    Default Values
+    Default values
   </a>
   
 </li>
@@ -1635,7 +1635,7 @@
         
           <li class="md-nav__item">
   <a href="#default-values" class="md-nav__link">
-    Default Values
+    Default values
   </a>
   
 </li>
@@ -1813,82 +1813,174 @@ https://github.com/fwcd/kotlin-language-server
 <h2 id="setup">Setup</h2>
 <div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">kotlin_language_server</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
 </code></pre></div>
-<h3 id="default-values">Default Values</h3>
-<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;kotlin-language-server&quot;</span> <span class="p">}</span>
-  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;kotlin&quot;</span> <span class="p">}</span>
-  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;settings.gradle&quot;</span><span class="p">)</span>
+<h3 id="default-values">Default values</h3>
+<div class="highlight"><pre><span></span><code><span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;kotlin-language-server&quot;</span> <span class="p">}</span>
+<span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;kotlin&quot;</span> <span class="p">}</span>
+<span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;settings.gradle&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="available-settings">Available settings</h2>
 <h3 id="kotlincompilerjvmtarget"><code>kotlin.compiler.jvm.target</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>"default"</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>"default"</code></p>
+</li>
+</ul>
 <p>Specifies the JVM target\, e.g. \"1.6\" or \"1.8\"</p>
 <h3 id="kotlincompletionsnippetsenabled"><code>kotlin.completion.snippets.enabled</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Specifies whether code completion should provide snippets (true) or plain-text items (false).</p>
 <h3 id="kotlindebouncetime"><code>kotlin.debounceTime</code></h3>
-<p>Type: <code>integer</code></p>
-<p>Default: <code>250</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>integer</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>250</code></p>
+</li>
+</ul>
 <p>[DEPRECATED] Specifies the debounce time limit. Lower to increase responsiveness at the cost of possibile stability issues.</p>
 <h3 id="kotlindebugadapterenabled"><code>kotlin.debugAdapter.enabled</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>[Recommended] Specifies whether the debug adapter should be used. When enabled a debugger for Kotlin will be available.</p>
 <h3 id="kotlindebugadapterpath"><code>kotlin.debugAdapter.path</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>""</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>""</code></p>
+</li>
+</ul>
 <p>Optionally a custom path to the debug adapter executable.</p>
 <h3 id="kotlinexternalsourcesautoconverttokotlin"><code>kotlin.externalSources.autoConvertToKotlin</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Specifies whether decompiled\/external classes should be auto-converted to Kotlin.</p>
 <h3 id="kotlinexternalsourcesuseklsscheme"><code>kotlin.externalSources.useKlsScheme</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>[Recommended] Specifies whether URIs inside JARs should be represented using the \'kls\'-scheme.</p>
 <h3 id="kotlinindexingenabled"><code>kotlin.indexing.enabled</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Whether global symbols in the project should be indexed automatically in the background. This enables e.g. code completion for unimported classes and functions.</p>
 <h3 id="kotlinlanguageserverdebugattachautosuspend"><code>kotlin.languageServer.debugAttach.autoSuspend</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>[DEBUG] If enabled (together with debugAttach.enabled)\, the language server will not immediately launch but instead listen on the specified attach port and wait for a debugger. This is ONLY useful if you need to debug the language server ITSELF.</p>
 <h3 id="kotlinlanguageserverdebugattachenabled"><code>kotlin.languageServer.debugAttach.enabled</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>[DEBUG] Whether the language server should listen for debuggers\, i.e. be debuggable while running in VSCode. This is ONLY useful if you need to debug the language server ITSELF.</p>
 <h3 id="kotlinlanguageserverdebugattachport"><code>kotlin.languageServer.debugAttach.port</code></h3>
-<p>Type: <code>integer</code></p>
-<p>Default: <code>5005</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>integer</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>5005</code></p>
+</li>
+</ul>
 <p>[DEBUG] If transport is stdio this enables you to attach to the running langugage server with a debugger. This is ONLY useful if you need to debug the language server ITSELF.</p>
 <h3 id="kotlinlanguageserverenabled"><code>kotlin.languageServer.enabled</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>[Recommended] Specifies whether the language server should be used. When enabled the extension will provide code completions and linting\, otherwise just syntax highlighting. Might require a reload to apply.</p>
 <h3 id="kotlinlanguageserverpath"><code>kotlin.languageServer.path</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>""</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>""</code></p>
+</li>
+</ul>
 <p>Optionally a custom path to the language server executable.</p>
 <h3 id="kotlinlanguageserverport"><code>kotlin.languageServer.port</code></h3>
-<p>Type: <code>integer</code></p>
-<p>Default: <code>0</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>integer</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>0</code></p>
+</li>
+</ul>
 <p>The port to which the client will attempt to connect to. A random port is used if zero. Only used if the transport layer is TCP.</p>
 <h3 id="kotlinlanguageservertransport"><code>kotlin.languageServer.transport</code></h3>
 <p><code>enum { "stdio", "tcp" }</code></p>
-<p>Default: <code>"stdio"</code></p>
+<ul>
+<li><em>Default</em>: <code>"stdio"</code></li>
+</ul>
 <p>The transport layer beneath the language server protocol. Note that the extension will launch the server even if a TCP socket is used.</p>
 <h3 id="kotlinlintingdebouncetime"><code>kotlin.linting.debounceTime</code></h3>
-<p>Type: <code>integer</code></p>
-<p>Default: <code>250</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>integer</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>250</code></p>
+</li>
+</ul>
 <p>[DEBUG] Specifies the debounce time limit. Lower to increase responsiveness at the cost of possibile stability issues.</p>
 <h3 id="kotlinsnippetsenabled"><code>kotlin.snippetsEnabled</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>[DEPRECATED] Specifies whether code completion should provide snippets (true) or plain-text items (false).</p>
 <h3 id="kotlintraceserver"><code>kotlin.trace.server</code></h3>
 <p><code>enum { "off", "messages", "verbose" }</code></p>
-<p>Default: <code>"off"</code></p>
+<ul>
+<li><em>Default</em>: <code>"off"</code></li>
+</ul>
 <p>Traces the communication between VSCode and the Kotlin language server.</p>
                 
               

@@ -696,7 +696,7 @@
         
           <li class="md-nav__item">
   <a href="#default-values" class="md-nav__link">
-    Default Values
+    Default values
   </a>
   
 </li>
@@ -1726,7 +1726,7 @@
         
           <li class="md-nav__item">
   <a href="#default-values" class="md-nav__link">
-    Default Values
+    Default values
   </a>
   
 </li>
@@ -2001,136 +2001,302 @@
 <h2 id="setup">Setup</h2>
 <div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">hie</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
 </code></pre></div>
-<h3 id="default-values">Default Values</h3>
-<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;hie-wrapper&quot;</span><span class="p">,</span> <span class="s2">&quot;--lsp&quot;</span> <span class="p">}</span>
-  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;haskell&quot;</span> <span class="p">}</span>
-  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;stack.yaml&quot;</span><span class="p">,</span> <span class="s2">&quot;package.yaml&quot;</span><span class="p">,</span> <span class="s2">&quot;.git&quot;</span><span class="p">)</span>
+<h3 id="default-values">Default values</h3>
+<div class="highlight"><pre><span></span><code><span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;hie-wrapper&quot;</span><span class="p">,</span> <span class="s2">&quot;--lsp&quot;</span> <span class="p">}</span>
+<span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;haskell&quot;</span> <span class="p">}</span>
+<span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;stack.yaml&quot;</span><span class="p">,</span> <span class="s2">&quot;package.yaml&quot;</span><span class="p">,</span> <span class="s2">&quot;.git&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="available-settings">Available settings</h2>
 <h3 id="haskellcompletionsnippetson"><code>haskell.completionSnippetsOn</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Show snippets with type information when using code completion</p>
 <h3 id="haskelldiagnosticsonchange"><code>haskell.diagnosticsOnChange</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Compute diagnostics continuously as you type. Turn off to only generate diagnostics on file save.</p>
 <h3 id="haskellformatonimporton"><code>haskell.formatOnImportOn</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>When adding an import\, use the formatter on the result</p>
 <h3 id="haskellformattingprovider"><code>haskell.formattingProvider</code></h3>
 <p><code>enum { "brittany", "floskell", "fourmolu", "ormolu", "stylish-haskell", "none" }</code></p>
-<p>Default: <code>"ormolu"</code></p>
+<ul>
+<li><em>Default</em>: <code>"ormolu"</code></li>
+</ul>
 <p>The formatter to use when formatting a document or range. Ensure the plugin is enabled.</p>
 <h3 id="haskellhlinton"><code>haskell.hlintOn</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Get suggestions from hlint</p>
 <h3 id="haskelllogfile"><code>haskell.logFile</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>""</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>""</code></p>
+</li>
+</ul>
 <p>If set\, redirects the logs to a file.</p>
 <h3 id="haskellpluginclassglobalon"><code>haskell.plugin.class.globalOn</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Enables type class plugin</p>
 <h3 id="haskellpluginevalglobalon"><code>haskell.plugin.eval.globalOn</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Enables eval plugin</p>
 <h3 id="haskellpluginghcide-completionsconfigautoextendon"><code>haskell.plugin.ghcide-completions.config.autoExtendOn</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="haskellpluginghcide-completionsconfigsnippetson"><code>haskell.plugin.ghcide-completions.config.snippetsOn</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="haskellpluginghcide-type-lensesconfigmode"><code>haskell.plugin.ghcide-type-lenses.config.mode</code></h3>
 <p><code>enum { "always", "exported", "diagnostics" }</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li><em>Default</em>: <code>true</code></li>
+</ul>
 <p>Control how type lenses are shown</p>
 <h3 id="haskellpluginghcide-type-lensesglobalon"><code>haskell.plugin.ghcide-type-lenses.globalOn</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Enables type lenses plugin</p>
 <h3 id="haskellpluginhaddockcommentsglobalon"><code>haskell.plugin.haddockComments.globalOn</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Enables haddock comments plugin</p>
 <h3 id="haskellpluginhlintcodeactionson"><code>haskell.plugin.hlint.codeActionsOn</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Enables hlint code actions (apply hints)</p>
 <h3 id="haskellpluginhlintdiagnosticson"><code>haskell.plugin.hlint.diagnosticsOn</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Enables hlint diagnostics</p>
 <h3 id="haskellpluginimportlenscodeactionson"><code>haskell.plugin.importLens.codeActionsOn</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Enables explicit imports code actions</p>
 <h3 id="haskellpluginimportlenscodelenson"><code>haskell.plugin.importLens.codeLensOn</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Enables explicit imports code lenses</p>
 <h3 id="haskellpluginmodulenameglobalon"><code>haskell.plugin.moduleName.globalOn</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Enables module name plugin</p>
 <h3 id="haskellpluginpragmascodeactionson"><code>haskell.plugin.pragmas.codeActionsOn</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Enables pragmas code actions</p>
 <h3 id="haskellpluginpragmascompletionon"><code>haskell.plugin.pragmas.completionOn</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Enables pragmas completions</p>
 <h3 id="haskellpluginretrieglobalon"><code>haskell.plugin.retrie.globalOn</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Enables retrie plugin</p>
 <h3 id="haskellpluginspliceglobalon"><code>haskell.plugin.splice.globalOn</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Enables splice plugin (expand template haskell definitions)</p>
 <h3 id="haskellplugintacticconfigfeatures"><code>haskell.plugin.tactic.config.features</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="haskellplugintacticconfigmax_use_ctor_actions"><code>haskell.plugin.tactic.config.max_use_ctor_actions</code></h3>
-<p>Type: <code>integer</code></p>
-<p>Default: <code>5</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>integer</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>5</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="haskellplugintacticglobalon"><code>haskell.plugin.tactic.globalOn</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Enables wingman (tactic) plugin</p>
 <h3 id="haskellplugintacticsconfighole_severity"><code>haskell.plugin.tactics.config.hole_severity</code></h3>
 <p><code>enum { 1, 2, 3, 4, vim.NIL }</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li><em>Default</em>: <code>vim.NIL</code></li>
+</ul>
 <p>The severity to use when showing hole diagnostics.</p>
 <h3 id="haskellplugintacticsconfigtimeout_duration"><code>haskell.plugin.tactics.config.timeout_duration</code></h3>
-<p>Type: <code>integer</code></p>
-<p>Default: <code>2</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>integer</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>2</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="haskellreleasesurl"><code>haskell.releasesURL</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>""</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>""</code></p>
+</li>
+</ul>
 <p>An optional URL to override where to check for haskell-language-server releases</p>
 <h3 id="haskellserverexecutablepath"><code>haskell.serverExecutablePath</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>""</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>""</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="haskelltraceserver"><code>haskell.trace.server</code></h3>
 <p><code>enum { "off", "messages" }</code></p>
-<p>Default: <code>"off"</code></p>
+<ul>
+<li><em>Default</em>: <code>"off"</code></li>
+</ul>
 <p>Traces the communication between VS Code and the language server.</p>
 <h3 id="haskellupdatebehavior"><code>haskell.updateBehavior</code></h3>
 <p><code>enum { "keep-up-to-date", "prompt", "never-check" }</code></p>
-<p>Default: <code>"keep-up-to-date"</code></p>
+<ul>
+<li><em>Default</em>: <code>"keep-up-to-date"</code></li>
+</ul>
 <p>null</p>
                 
               

@@ -792,7 +792,7 @@
         
           <li class="md-nav__item">
   <a href="#default-values" class="md-nav__link">
-    Default Values
+    Default values
   </a>
   
 </li>
@@ -1852,7 +1852,7 @@
         
           <li class="md-nav__item">
   <a href="#default-values" class="md-nav__link">
-    Default Values
+    Default values
   </a>
   
 </li>
@@ -2275,212 +2275,470 @@ You can find the path to the globally installed LanguageServer.jl package with t
 <h2 id="setup">Setup</h2>
 <div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">julials</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
 </code></pre></div>
-<h3 id="default-values">Default Values</h3>
-<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;julia&quot;</span><span class="p">,</span> <span class="s2">&quot;--startup-file=no&quot;</span><span class="p">,</span> <span class="s2">&quot;--history-file=no&quot;</span><span class="p">,</span> <span class="s2">&quot;-e&quot;</span><span class="p">,</span> <span class="s1">&#39;    using Pkg;</span><span class="se">\n</span><span class="s1">    Pkg.instantiate()</span><span class="se">\n</span><span class="s1">    using LanguageServer; using SymbolServer;</span><span class="se">\n</span><span class="s1">    depot_path = get(ENV, &quot;JULIA_DEPOT_PATH&quot;, &quot;&quot;)</span><span class="se">\n</span><span class="s1">    project_path = dirname(something(Base.current_project(pwd()), Base.load_path_expand(LOAD_PATH[2])))</span><span class="se">\n</span><span class="s1">    # Make sure that we only load packages from this environment specifically.</span><span class="se">\n</span><span class="s1">    @info &quot;Running language server&quot; env=Base.load_path()[1] pwd() project_path depot_path</span><span class="se">\n</span><span class="s1">    server = LanguageServer.LanguageServerInstance(stdin, stdout, project_path, depot_path);</span><span class="se">\n</span><span class="s1">    server.runlinter = true;</span><span class="se">\n</span><span class="s1">    run(server);</span><span class="se">\n</span><span class="s1">  &#39;</span> <span class="p">}</span>
-  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;julia&quot;</span> <span class="p">}</span>
-  <span class="n">on_new_config</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">new_config</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span>
-        <span class="kd">local</span> <span class="n">server_path</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">fn</span><span class="p">.</span><span class="n">system</span> <span class="s2">&quot;julia --startup-file=no -q -e &#39;print(Base.find_package(</span><span class="se">\&quot;</span><span class="s2">LanguageServer</span><span class="se">\&quot;</span><span class="s2">))&#39;&quot;</span>
-        <span class="kd">local</span> <span class="n">new_cmd</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
-        <span class="nb">table.insert</span><span class="p">(</span><span class="n">new_cmd</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;--project=&quot;</span> <span class="o">..</span> <span class="n">server_path</span><span class="p">:</span><span class="n">sub</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">19</span><span class="p">))</span>
-        <span class="n">new_config</span><span class="p">.</span><span class="n">cmd</span> <span class="o">=</span> <span class="n">new_cmd</span>
-      <span class="kr">end</span><span class="p">,</span>
-  <span class="n">root_dir</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
-        <span class="kr">return</span> <span class="n">util</span><span class="p">.</span><span class="n">find_git_ancestor</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span> <span class="ow">or</span> <span class="n">vim</span><span class="p">.</span><span class="n">fn</span><span class="p">.</span><span class="n">getcwd</span><span class="p">()</span>
-      <span class="kr">end</span><span class="p">,</span>
+<h3 id="default-values">Default values</h3>
+<div class="highlight"><pre><span></span><code><span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;julia&quot;</span><span class="p">,</span> <span class="s2">&quot;--startup-file=no&quot;</span><span class="p">,</span> <span class="s2">&quot;--history-file=no&quot;</span><span class="p">,</span> <span class="s2">&quot;-e&quot;</span><span class="p">,</span> <span class="s1">&#39;    using Pkg;</span><span class="se">\n</span><span class="s1">    Pkg.instantiate()</span><span class="se">\n</span><span class="s1">    using LanguageServer; using SymbolServer;</span><span class="se">\n</span><span class="s1">    depot_path = get(ENV, &quot;JULIA_DEPOT_PATH&quot;, &quot;&quot;)</span><span class="se">\n</span><span class="s1">    project_path = dirname(something(Base.current_project(pwd()), Base.load_path_expand(LOAD_PATH[2])))</span><span class="se">\n</span><span class="s1">    # Make sure that we only load packages from this environment specifically.</span><span class="se">\n</span><span class="s1">    @info &quot;Running language server&quot; env=Base.load_path()[1] pwd() project_path depot_path</span><span class="se">\n</span><span class="s1">    server = LanguageServer.LanguageServerInstance(stdin, stdout, project_path, depot_path);</span><span class="se">\n</span><span class="s1">    server.runlinter = true;</span><span class="se">\n</span><span class="s1">    run(server);</span><span class="se">\n</span><span class="s1">  &#39;</span> <span class="p">}</span>
+<span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;julia&quot;</span> <span class="p">}</span>
+<span class="n">on_new_config</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">new_config</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span>
+      <span class="kd">local</span> <span class="n">server_path</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">fn</span><span class="p">.</span><span class="n">system</span> <span class="s2">&quot;julia --startup-file=no -q -e &#39;print(Base.find_package(</span><span class="se">\&quot;</span><span class="s2">LanguageServer</span><span class="se">\&quot;</span><span class="s2">))&#39;&quot;</span>
+      <span class="kd">local</span> <span class="n">new_cmd</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+      <span class="nb">table.insert</span><span class="p">(</span><span class="n">new_cmd</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;--project=&quot;</span> <span class="o">..</span> <span class="n">server_path</span><span class="p">:</span><span class="n">sub</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">19</span><span class="p">))</span>
+      <span class="n">new_config</span><span class="p">.</span><span class="n">cmd</span> <span class="o">=</span> <span class="n">new_cmd</span>
+    <span class="kr">end</span><span class="p">,</span>
+<span class="n">root_dir</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+      <span class="kr">return</span> <span class="n">util</span><span class="p">.</span><span class="n">find_git_ancestor</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span> <span class="ow">or</span> <span class="n">vim</span><span class="p">.</span><span class="n">fn</span><span class="p">.</span><span class="n">getcwd</span><span class="p">()</span>
+    <span class="kr">end</span><span class="p">,</span>
 </code></pre></div>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="available-settings">Available settings</h2>
 <h3 id="julianumthreads"><code>julia.NumThreads</code></h3>
-<p>Type: <code>integer|null</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>integer|null</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>Number of threads to use for Julia processes.</p>
 <h3 id="juliaadditionalargs"><code>julia.additionalArgs</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>{}</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>{}</code></p>
+</li>
+</ul>
 <p>Additional Julia arguments.</p>
 <h3 id="juliacompletionmode"><code>julia.completionmode</code></h3>
 <p><code>enum { "exportedonly", "import", "qualify" }</code></p>
-<p>Default: <code>"import"</code></p>
+<ul>
+<li><em>Default</em>: <code>"import"</code></li>
+</ul>
 <p>Sets the mode for completions.</p>
 <h3 id="juliadebuggerdefaultcompiled"><code>julia.debuggerDefaultCompiled</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>{ "Base.", "-Base.!", "-Base.all", "-Base.all!", "-Base.any", "-Base.any!", "-Base.cd", "-Base.iterate", "-Base.collect", "-Base.collect_similar", "-Base._collect", "-Base.collect_to!", "-Base.collect_to_with_first!", "-Base.filter", "-Base.filter!", "-Base.foreach", "-Base.findall", "-Base.findfirst", "-Base.findlast", "-Base.findnext", "-Base.findprev", "-Base.Generator", "-Base.map", "-Base.map!", "-Base.maximum!", "-Base.minimum!", "-Base.mktemp", "-Base.mktempdir", "-Base.open", "-Base.prod!", "-Base.redirect_stderr", "-Base.redirect_stdin", "-Base.redirect_stdout", "-Base.reenable_sigint", "-Base.setindex!", "-Base.setprecision", "-Base.setrounding", "-Base.show", "-Base.sprint", "-Base.sum", "-Base.sum!", "-Base.task_local_storage", "-Base.timedwait", "-Base.withenv", "Core", "Core.Compiler.", "Core.IR", "Core.Intrinsics", "DelimitedFiles", "Distributed", "LinearAlgebra.", "Serialization", "Statistics", "-Statistics.mean", "SparseArrays", "Mmap" }</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>{ "Base.", "-Base.!", "-Base.all", "-Base.all!", "-Base.any", "-Base.any!", "-Base.cd", "-Base.iterate", "-Base.collect", "-Base.collect_similar", "-Base._collect", "-Base.collect_to!", "-Base.collect_to_with_first!", "-Base.filter", "-Base.filter!", "-Base.foreach", "-Base.findall", "-Base.findfirst", "-Base.findlast", "-Base.findnext", "-Base.findprev", "-Base.Generator", "-Base.map", "-Base.map!", "-Base.maximum!", "-Base.minimum!", "-Base.mktemp", "-Base.mktempdir", "-Base.open", "-Base.prod!", "-Base.redirect_stderr", "-Base.redirect_stdin", "-Base.redirect_stdout", "-Base.reenable_sigint", "-Base.setindex!", "-Base.setprecision", "-Base.setrounding", "-Base.show", "-Base.sprint", "-Base.sum", "-Base.sum!", "-Base.task_local_storage", "-Base.timedwait", "-Base.withenv", "Core", "Core.Compiler.", "Core.IR", "Core.Intrinsics", "DelimitedFiles", "Distributed", "LinearAlgebra.", "Serialization", "Statistics", "-Statistics.mean", "SparseArrays", "Mmap" }</code></p>
+</li>
+</ul>
 <p>Functions or modules that are set to compiled mode when setting the defaults.</p>
 <h3 id="juliadeletejuliacovfiles"><code>julia.deleteJuliaCovFiles</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>"true"</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>"true"</code></p>
+</li>
+</ul>
 <p>Delete Julia .cov files when running tests with coverage\, leaving only a .lcov file behind.</p>
 <h3 id="juliaeditor"><code>julia.editor</code></h3>
-<p>Type: <code>string|null</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string|null</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="juliaenablecrashreporter"><code>julia.enableCrashReporter</code></h3>
-<p>Type: <code>boolean|null</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean|null</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>Enable crash reports to be sent to the julia VS Code extension developers.</p>
 <h3 id="juliaenabletelemetry"><code>julia.enableTelemetry</code></h3>
-<p>Type: <code>boolean|null</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean|null</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>Enable usage data and errors to be sent to the julia VS Code extension developers.</p>
 <h3 id="juliaenvironmentpath"><code>julia.environmentPath</code></h3>
-<p>Type: <code>string|null</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string|null</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>Path to a julia environment. VS Code needs to be reloaded for changes to take effect.</p>
 <h3 id="juliaexecutablepath"><code>julia.executablePath</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>""</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>""</code></p>
+</li>
+</ul>
 <p>Points to the julia executable.</p>
 <h3 id="juliaexecutioncodeinrepl"><code>julia.execution.codeInREPL</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>Print executed code in REPL and append it to the REPL history.</p>
 <h3 id="juliaexecutioninlineresultscolors"><code>julia.execution.inlineResults.colors</code></h3>
-<p>Type: <code>object</code></p>
-<p>Default: <code>vim.empty_dict()</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>object</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.empty_dict()</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="juliaexecutionresulttype"><code>julia.execution.resultType</code></h3>
 <p><code>enum { "REPL", "inline", "inline, errors in REPL", "both" }</code></p>
-<p>Default: <code>"REPL"</code></p>
+<ul>
+<li><em>Default</em>: <code>"REPL"</code></li>
+</ul>
 <p>Specifies how to show inline execution results</p>
 <h3 id="juliafocusplotnavigator"><code>julia.focusPlotNavigator</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>Whether to automatically show the plot navigator when plotting.</p>
 <h3 id="juliaformatcalls"><code>julia.format.calls</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Format function calls.</p>
 <h3 id="juliaformatcomments"><code>julia.format.comments</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Format comments.</p>
 <h3 id="juliaformatcurly"><code>julia.format.curly</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Format braces.</p>
 <h3 id="juliaformatdocs"><code>julia.format.docs</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Format inline documentation.</p>
 <h3 id="juliaformatindent"><code>julia.format.indent</code></h3>
-<p>Type: <code>integer</code></p>
-<p>Default: <code>4</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>integer</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>4</code></p>
+</li>
+</ul>
 <p>Indent size for formatting.</p>
 <h3 id="juliaformatindents"><code>julia.format.indents</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Format file indents.</p>
 <h3 id="juliaformatiterops"><code>julia.format.iterOps</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Format loop iterators.</p>
 <h3 id="juliaformatkeywords"><code>julia.format.keywords</code></h3>
-<p>Type: <code>bool</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>bool</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Ensure single spacing following keywords.</p>
 <h3 id="juliaformatkwarg"><code>julia.format.kwarg</code></h3>
 <p><code>enum { "none", "single", "off" }</code></p>
-<p>Default: <code>"none"</code></p>
+<ul>
+<li><em>Default</em>: <code>"none"</code></li>
+</ul>
 <p>Format whitespace around function keyword arguments.</p>
 <h3 id="juliaformatops"><code>julia.format.ops</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Format whitespace around operators.</p>
 <h3 id="juliaformattuples"><code>julia.format.tuples</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Format tuples.</p>
 <h3 id="julialintcall"><code>julia.lint.call</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>This compares  call signatures against all known methods for the called function. Calls with too many or too few arguments\, or unknown keyword parameters are highlighted.</p>
 <h3 id="julialintconstif"><code>julia.lint.constif</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Check for constant conditionals in if statements that result in branches never being reached..</p>
 <h3 id="julialintdatadecl"><code>julia.lint.datadecl</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Check variables used in type declarations are datatypes.</p>
 <h3 id="julialintdisableddirs"><code>julia.lint.disabledDirs</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>{ "docs", "test" }</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>{ "docs", "test" }</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="julialintiter"><code>julia.lint.iter</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Check iterator syntax of loops. Will identify\, for example\, attempts to iterate over single values.</p>
 <h3 id="julialintlazy"><code>julia.lint.lazy</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Check for deterministic lazy boolean operators.</p>
 <h3 id="julialintmissingrefs"><code>julia.lint.missingrefs</code></h3>
 <p><code>enum { "none", "symbols", "all" }</code></p>
-<p>Default: <code>"none"</code></p>
+<ul>
+<li><em>Default</em>: <code>"none"</code></li>
+</ul>
 <p>Highlight unknown symbols. The `symbols` option will not mark unknown fields.</p>
 <h3 id="julialintmodname"><code>julia.lint.modname</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Check submodule names do not shadow their parent\'s name.</p>
 <h3 id="julialintnothingcomp"><code>julia.lint.nothingcomp</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Check for use of `\=\=` rather than `\=\=\=` when comparing against `nothing`. </p>
 <h3 id="julialintpirates"><code>julia.lint.pirates</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Check for type piracy - the overloading of external functions with methods specified for external datatypes. \'External\' here refers to imported code.</p>
 <h3 id="julialintrun"><code>julia.lint.run</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Run the linter on active files.</p>
 <h3 id="julialinttypeparam"><code>julia.lint.typeparam</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Check parameters declared in `where` statements or datatype declarations are used.</p>
 <h3 id="julialintuseoffuncargs"><code>julia.lint.useoffuncargs</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Check that all declared arguments are used within the function body.</p>
 <h3 id="julialivetestfile"><code>julia.liveTestFile</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>"test/runtests.jl"</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>"test/runtests.jl"</code></p>
+</li>
+</ul>
 <p>A workspace relative path to a Julia file that contains the tests that should be run for live testing.</p>
 <h3 id="juliapackageserver"><code>julia.packageServer</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>""</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>""</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="juliapersistentsessionenabled"><code>julia.persistentSession.enabled</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>null</p>
 <h3 id="juliapersistentsessionshell"><code>julia.persistentSession.shell</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>"/bin/sh"</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>"/bin/sh"</code></p>
+</li>
+</ul>
 <p>Shell used to start the persistent session.</p>
 <h3 id="juliapersistentsessionshellexecutionargument"><code>julia.persistentSession.shellExecutionArgument</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>"-c"</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>"-c"</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="juliapersistentsessiontmuxsessionname"><code>julia.persistentSession.tmuxSessionName</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>"julia_vscode"</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>"julia_vscode"</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="juliatraceserver"><code>julia.trace.server</code></h3>
 <p><code>enum { "off", "messages", "verbose" }</code></p>
-<p>Default: <code>"off"</code></p>
+<ul>
+<li><em>Default</em>: <code>"off"</code></li>
+</ul>
 <p>Traces the communication between VS Code and the language server.</p>
 <h3 id="juliausecustomsysimage"><code>julia.useCustomSysimage</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>Use an existing custom sysimage when starting the REPL</p>
 <h3 id="juliauseplotpane"><code>julia.usePlotPane</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Display plots within VS Code. Might require a restart of the Julia process.</p>
 <h3 id="juliauseprogressfrontend"><code>julia.useProgressFrontend</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>null</p>
 <h3 id="juliauserevise"><code>julia.useRevise</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Load Revise.jl on startup of the REPL.</p>
                 
               

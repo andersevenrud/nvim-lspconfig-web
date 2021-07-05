@@ -451,7 +451,7 @@
         
           <li class="md-nav__item">
   <a href="#default-values" class="md-nav__link">
-    Default Values
+    Default values
   </a>
   
 </li>
@@ -1510,7 +1510,7 @@
         
           <li class="md-nav__item">
   <a href="#default-values" class="md-nav__link">
-    Default Values
+    Default values
   </a>
   
 </li>
@@ -1550,12 +1550,12 @@ For details on how to automatically generate one using CMake look <a href="https
 <ul>
 <li>ClangdSwitchSourceHeader: Switch between source/header</li>
 </ul>
-<h3 id="default-values">Default Values</h3>
-<div class="highlight"><pre><span></span><code>  <span class="n">capabilities</span> <span class="o">=</span> <span class="n">default</span> <span class="n">capabilities</span><span class="p">,</span> <span class="n">with</span> <span class="n">offsetEncoding</span> <span class="n">utf</span><span class="o">-</span><span class="mi">8</span>
-  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;clangd&quot;</span><span class="p">,</span> <span class="s2">&quot;--background-index&quot;</span> <span class="p">}</span>
-  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;cpp&quot;</span><span class="p">,</span> <span class="s2">&quot;objc&quot;</span><span class="p">,</span> <span class="s2">&quot;objcpp&quot;</span> <span class="p">}</span>
-  <span class="n">on_init</span> <span class="o">=</span> <span class="kr">function</span> <span class="nf">to</span> <span class="n">handle</span> <span class="n">changing</span> <span class="n">offsetEncoding</span>
-  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;compile_commands.json&quot;</span><span class="p">,</span> <span class="s2">&quot;compile_flags.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;.git&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">dirname</span>
+<h3 id="default-values">Default values</h3>
+<div class="highlight"><pre><span></span><code><span class="n">capabilities</span> <span class="o">=</span> <span class="n">default</span> <span class="n">capabilities</span><span class="p">,</span> <span class="n">with</span> <span class="n">offsetEncoding</span> <span class="n">utf</span><span class="o">-</span><span class="mi">8</span>
+<span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;clangd&quot;</span><span class="p">,</span> <span class="s2">&quot;--background-index&quot;</span> <span class="p">}</span>
+<span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;cpp&quot;</span><span class="p">,</span> <span class="s2">&quot;objc&quot;</span><span class="p">,</span> <span class="s2">&quot;objcpp&quot;</span> <span class="p">}</span>
+<span class="n">on_init</span> <span class="o">=</span> <span class="kr">function</span> <span class="nf">to</span> <span class="n">handle</span> <span class="n">changing</span> <span class="n">offsetEncoding</span>
+<span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;compile_commands.json&quot;</span><span class="p">,</span> <span class="s2">&quot;compile_flags.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;.git&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">dirname</span>
 </code></pre></div>
                 
               

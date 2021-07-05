@@ -912,7 +912,7 @@
         
           <li class="md-nav__item">
   <a href="#default-values" class="md-nav__link">
-    Default Values
+    Default values
   </a>
   
 </li>
@@ -1628,7 +1628,7 @@
         
           <li class="md-nav__item">
   <a href="#default-values" class="md-nav__link">
-    Default Values
+    Default values
   </a>
   
 </li>
@@ -1794,86 +1794,180 @@
 <h2 id="setup">Setup</h2>
 <div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">perlls</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
 </code></pre></div>
-<h3 id="default-values">Default Values</h3>
-<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;perl&quot;</span><span class="p">,</span> <span class="s2">&quot;-MPerl::LanguageServer&quot;</span><span class="p">,</span> <span class="s2">&quot;-e&quot;</span><span class="p">,</span> <span class="s2">&quot;Perl::LanguageServer::run&quot;</span><span class="p">,</span> <span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="s2">&quot;--port 13603&quot;</span><span class="p">,</span> <span class="s2">&quot;--nostdio 0&quot;</span><span class="p">,</span> <span class="s2">&quot;--version 2.1.0&quot;</span> <span class="p">}</span>
-  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;perl&quot;</span> <span class="p">}</span>
-  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">vim</span><span class="s1">&#39;s starting directory</span>
-<span class="s1">  settings = {</span>
-<span class="s1">    perl = {</span>
-<span class="s1">      fileFilter = { &quot;.pm&quot;, &quot;.pl&quot; },</span>
-<span class="s1">      ignoreDirs = &quot;.git&quot;,</span>
-<span class="s1">      perlCmd = &quot;perl&quot;,</span>
-<span class="s1">      perlInc = &quot; &quot;</span>
-<span class="s1">    }</span>
+<h3 id="default-values">Default values</h3>
+<div class="highlight"><pre><span></span><code><span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;perl&quot;</span><span class="p">,</span> <span class="s2">&quot;-MPerl::LanguageServer&quot;</span><span class="p">,</span> <span class="s2">&quot;-e&quot;</span><span class="p">,</span> <span class="s2">&quot;Perl::LanguageServer::run&quot;</span><span class="p">,</span> <span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="s2">&quot;--port 13603&quot;</span><span class="p">,</span> <span class="s2">&quot;--nostdio 0&quot;</span><span class="p">,</span> <span class="s2">&quot;--version 2.1.0&quot;</span> <span class="p">}</span>
+<span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;perl&quot;</span> <span class="p">}</span>
+<span class="n">root_dir</span> <span class="o">=</span> <span class="n">vim</span><span class="s1">&#39;s starting directory</span>
+<span class="s1">settings = {</span>
+<span class="s1">  perl = {</span>
+<span class="s1">    fileFilter = { &quot;.pm&quot;, &quot;.pl&quot; },</span>
+<span class="s1">    ignoreDirs = &quot;.git&quot;,</span>
+<span class="s1">    perlCmd = &quot;perl&quot;,</span>
+<span class="s1">    perlInc = &quot; &quot;</span>
 <span class="s1">  }</span>
+<span class="s1">}</span>
 </code></pre></div>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="available-settings">Available settings</h2>
 <h3 id="perldebugadapterport"><code>perl.debugAdapterPort</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>"13603"</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>"13603"</code></p>
+</li>
+</ul>
 <p>port to use for connection between vscode and debug adapter inside Perl\:\:LanguageServer. On a multi user system every user must use a different port.</p>
 <h3 id="perldisablecache"><code>perl.disableCache</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>if true\, the LanguageServer will not cache the result of parsing source files on disk\, so it can be used within readonly directories</p>
 <h3 id="perlenable"><code>perl.enable</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>enable\/disable this extension</p>
 <h3 id="perlfilefilter"><code>perl.fileFilter</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>array for filtering perl file\, defaults to *.pm|*.pl</p>
 <h3 id="perlignoredirs"><code>perl.ignoreDirs</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>directories to ignore\, defaults to .vscode\, .git\, .svn</p>
 <h3 id="perllogfile"><code>perl.logFile</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>If set\, log output is written to the given logfile\, instead of displaying it in the vscode output pane. Log output is always appended so you are responsible for rotating the file.</p>
 <h3 id="perlloglevel"><code>perl.logLevel</code></h3>
-<p>Type: <code>integer</code></p>
-<p>Default: <code>0</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>integer</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>0</code></p>
+</li>
+</ul>
 <p>Log level 0-2</p>
 <h3 id="perlpathmap"><code>perl.pathMap</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>mapping of local to remote paths</p>
 <h3 id="perlperlcmd"><code>perl.perlCmd</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>defaults to perl</p>
 <h3 id="perlperlinc"><code>perl.perlInc</code></h3>
-<p>Type: <code>array</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>array</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>array with paths to add to perl library path. This setting is used by the syntax checker and for the debugee and also for the LanguageServer itself.</p>
 <h3 id="perlshowlocalvars"><code>perl.showLocalVars</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>if true\, show also local variables in symbol view</p>
 <h3 id="perlsshaddr"><code>perl.sshAddr</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>ip address of remote system</p>
 <h3 id="perlsshargs"><code>perl.sshArgs</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>optional arguments for ssh</p>
 <h3 id="perlsshcmd"><code>perl.sshCmd</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>defaults to ssh on unix and plink on windows</p>
 <h3 id="perlsshport"><code>perl.sshPort</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>optional\, port for ssh to remote system</p>
 <h3 id="perlsshuser"><code>perl.sshUser</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>user for ssh login</p>
 <h3 id="perlsshworkspaceroot"><code>perl.sshWorkspaceRoot</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>vim.NIL</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>vim.NIL</code></p>
+</li>
+</ul>
 <p>path of the workspace root on remote system</p>
                 
               

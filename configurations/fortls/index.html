@@ -636,7 +636,7 @@
         
           <li class="md-nav__item">
   <a href="#default-values" class="md-nav__link">
-    Default Values
+    Default values
   </a>
   
 </li>
@@ -1607,7 +1607,7 @@
         
           <li class="md-nav__item">
   <a href="#default-values" class="md-nav__link">
-    Default Values
+    Default values
   </a>
   
 </li>
@@ -1751,64 +1751,120 @@
 <h2 id="setup">Setup</h2>
 <div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">fortls</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
 </code></pre></div>
-<h3 id="default-values">Default Values</h3>
-<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;fortls&quot;</span> <span class="p">}</span>
-  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;fortran&quot;</span> <span class="p">}</span>
-  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;.fortls&quot;</span><span class="p">)</span>
-  <span class="n">settings</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">nthreads</span> <span class="o">=</span> <span class="mi">1</span>
-  <span class="p">}</span>
+<h3 id="default-values">Default values</h3>
+<div class="highlight"><pre><span></span><code><span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;fortls&quot;</span> <span class="p">}</span>
+<span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;fortran&quot;</span> <span class="p">}</span>
+<span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;.fortls&quot;</span><span class="p">)</span>
+<span class="n">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="n">nthreads</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="available-settings">Available settings</h2>
 <h3 id="fortran-lsautocompleteprefix"><code>fortran-ls.autocompletePrefix</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>Filter autocomplete suggestions with variable prefix</p>
 <h3 id="fortran-lsdisablediagnostics"><code>fortran-ls.disableDiagnostics</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>Disable diagnostics (requires v1.12.0+).</p>
 <h3 id="fortran-lsdisplayverwarning"><code>fortran-ls.displayVerWarning</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Provides notifications when the underlying language server is out of date.</p>
 <h3 id="fortran-lsenablecodeactions"><code>fortran-ls.enableCodeActions</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>Enable experimental code actions (requires v1.7.0+).</p>
 <h3 id="fortran-lsexecutablepath"><code>fortran-ls.executablePath</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>"fortls"</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>"fortls"</code></p>
+</li>
+</ul>
 <p>Path to the Fortran language server (fortls).</p>
 <h3 id="fortran-lshoversignature"><code>fortran-ls.hoverSignature</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>Show signature information in hover for argument (also enables \'variableHover\').</p>
 <h3 id="fortran-lsincludesymbolmem"><code>fortran-ls.includeSymbolMem</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Include type members in document outline (also used for \'Go to Symbol in File\')</p>
 <h3 id="fortran-lsincrementalsync"><code>fortran-ls.incrementalSync</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Use incremental synchronization for file changes.</p>
 <h3 id="fortran-lslowercaseintrinsics"><code>fortran-ls.lowercaseIntrinsics</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>Use lowercase for intrinsics and keywords in autocomplete requests.</p>
 <h3 id="fortran-lsmaxcommentlinelength"><code>fortran-ls.maxCommentLineLength</code></h3>
-<p>Type: <code>number</code></p>
-<p>Default: <code>-1</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>number</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>-1</code></p>
+</li>
+</ul>
 <p>Maximum comment line length (requires v1.8.0+).</p>
 <h3 id="fortran-lsmaxlinelength"><code>fortran-ls.maxLineLength</code></h3>
-<p>Type: <code>number</code></p>
-<p>Default: <code>-1</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>number</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>-1</code></p>
+</li>
+</ul>
 <p>Maximum line length (requires v1.8.0+).</p>
 <h3 id="fortran-lsnotifyinit"><code>fortran-ls.notifyInit</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>Notify when workspace initialization is complete (requires v1.7.0+).</p>
 <h3 id="fortran-lsusesignaturehelp"><code>fortran-ls.useSignatureHelp</code></h3>
-<p>Type: <code>boolean</code></p>
-<p>Default: <code>true</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>boolean</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>true</code></p>
+</li>
+</ul>
 <p>Use signature help instead of snippets when available.</p>
 <h3 id="fortran-lsvariablehover"><code>fortran-ls.variableHover</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>Show hover information for variables.</p>
                 
               

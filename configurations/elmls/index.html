@@ -600,7 +600,7 @@
         
           <li class="md-nav__item">
   <a href="#default-values" class="md-nav__link">
-    Default Values
+    Default values
   </a>
   
 </li>
@@ -1579,7 +1579,7 @@
         
           <li class="md-nav__item">
   <a href="#default-values" class="md-nav__link">
-    Default Values
+    Default values
   </a>
   
 </li>
@@ -1697,54 +1697,90 @@
 <h2 id="setup">Setup</h2>
 <div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">.</span><span class="n">elmls</span><span class="p">.</span><span class="n">setup</span><span class="p">{}</span>
 </code></pre></div>
-<h3 id="default-values">Default Values</h3>
-<div class="highlight"><pre><span></span><code>  <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;elm-language-server&quot;</span> <span class="p">}</span>
-  <span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;elm&quot;</span> <span class="p">}</span>
-  <span class="n">init_options</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">elmAnalyseTrigger</span> <span class="o">=</span> <span class="s2">&quot;change&quot;</span><span class="p">,</span>
-    <span class="n">elmFormatPath</span> <span class="o">=</span> <span class="s2">&quot;elm-format&quot;</span><span class="p">,</span>
-    <span class="n">elmPath</span> <span class="o">=</span> <span class="s2">&quot;elm&quot;</span><span class="p">,</span>
-    <span class="n">elmTestPath</span> <span class="o">=</span> <span class="s2">&quot;elm-test&quot;</span>
-  <span class="p">}</span>
-  <span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;elm.json&quot;</span><span class="p">)</span>
+<h3 id="default-values">Default values</h3>
+<div class="highlight"><pre><span></span><code><span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;elm-language-server&quot;</span> <span class="p">}</span>
+<span class="n">filetypes</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;elm&quot;</span> <span class="p">}</span>
+<span class="n">init_options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="n">elmAnalyseTrigger</span> <span class="o">=</span> <span class="s2">&quot;change&quot;</span><span class="p">,</span>
+  <span class="n">elmFormatPath</span> <span class="o">=</span> <span class="s2">&quot;elm-format&quot;</span><span class="p">,</span>
+  <span class="n">elmPath</span> <span class="o">=</span> <span class="s2">&quot;elm&quot;</span><span class="p">,</span>
+  <span class="n">elmTestPath</span> <span class="o">=</span> <span class="s2">&quot;elm-test&quot;</span>
+<span class="p">}</span>
+<span class="n">root_dir</span> <span class="o">=</span> <span class="n">root_pattern</span><span class="p">(</span><span class="s2">&quot;elm.json&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>This server accepts configuration via the <code>settings</code> key.</p>
 <h2 id="available-settings">Available settings</h2>
 <h3 id="elmlsdisableelmlsdiagnostics"><code>elmLS.disableElmLSDiagnostics</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>Disable linting diagnostics from the language server.</p>
 <h3 id="elmlselmformatpath"><code>elmLS.elmFormatPath</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>""</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>""</code></p>
+</li>
+</ul>
 <p>The path to your elm-format executable. Should be empty by default\, in that case it will assume the name and try to first get it from a local npm installation or a global one. If you set it manually it will not try to load from the npm folder.</p>
 <h3 id="elmlselmpath"><code>elmLS.elmPath</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>""</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>""</code></p>
+</li>
+</ul>
 <p>The path to your elm executable. Should be empty by default\, in that case it will assume the name and try to first get it from a local npm installation or a global one. If you set it manually it will not try to load from the npm folder.</p>
 <h3 id="elmlselmreviewdiagnostics"><code>elmLS.elmReviewDiagnostics</code></h3>
 <p><code>enum { "off", "warning", "error" }</code></p>
-<p>Default: <code>"off"</code></p>
+<ul>
+<li><em>Default</em>: <code>"off"</code></li>
+</ul>
 <p>Set severity or disable linting diagnostics for elm-review.</p>
 <h3 id="elmlselmreviewpath"><code>elmLS.elmReviewPath</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>""</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>""</code></p>
+</li>
+</ul>
 <p>The path to your elm-review executable. Should be empty by default\, in that case it will assume the name and try to first get it from a local npm installation or a global one. If you set it manually it will not try to load from the npm folder.</p>
 <h3 id="elmlselmtestpath"><code>elmLS.elmTestPath</code></h3>
-<p>Type: <code>string</code></p>
-<p>Default: <code>""</code></p>
+<ul>
+<li>
+<p><em>Type</em>: <code>string</code></p>
+</li>
+<li>
+<p><em>Default</em>: <code>""</code></p>
+</li>
+</ul>
 <p>The path to your elm-test executable. Should be empty by default\, in that case it will assume the name and try to first get it from a local npm installation or a global one. If you set it manually it will not try to load from the npm folder.</p>
 <h3 id="elmlselmtestrunnershowelmtestoutput"><code>elmLS.elmTestRunner.showElmTestOutput</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>Show output of elm-test as terminal task</p>
 <h3 id="elmlsonlyupdatediagnosticsonsave"><code>elmLS.onlyUpdateDiagnosticsOnSave</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>Only update compiler diagnostics on save\, not on document change.</p>
 <h3 id="elmlsskipinstallpackageconfirmation"><code>elmLS.skipInstallPackageConfirmation</code></h3>
-<p>Type: <code>boolean</code></p>
+<ul>
+<li><em>Type</em>: <code>boolean</code></li>
+</ul>
 <p>Skips confirmation for the Install Package code action.</p>
 <h3 id="elmlstraceserver"><code>elmLS.trace.server</code></h3>
 <p><code>enum { "off", "messages", "verbose" }</code></p>
-<p>Default: <code>"off"</code></p>
+<ul>
+<li><em>Default</em>: <code>"off"</code></li>
+</ul>
 <p>Traces the communication between VS Code and the language server.</p>
                 
               
